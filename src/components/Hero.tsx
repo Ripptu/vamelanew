@@ -4,13 +4,16 @@ import { motion } from 'motion/react';
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <section className="pt-24 md:pt-40 pb-20 px-4 sm:px-6 lg:px-8 w-full text-center relative overflow-hidden">
-      {/* Image Background */}
-      <img 
-        src="https://s1.directupload.eu/images/260311/7cub544u.png" 
-        alt="Hero Background"
+      {/* Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
         className="absolute inset-0 w-full h-full object-cover z-0"
-        referrerPolicy="no-referrer"
-      />
+      >
+        <source src="https://res.cloudinary.com/dubyt9p64/video/upload/v1773257630/hf_20260311_191854_939b9625-99a5-4581-ae75-85b8cadc0a5b_ymyfwx.mp4" type="video/mp4" />
+      </video>
       {/* White Fade Overlay - stronger fade to white */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white"></div>
 

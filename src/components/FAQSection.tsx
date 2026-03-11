@@ -5,35 +5,51 @@ import { motion } from 'motion/react';
 export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const faqs = [
     {
-      q: "Wie lange dauert eine Webseite?",
-      a: "In der Regel dauert die Umsetzung einer kompletten Webseite ca. 3-4 Wochen, abhängig vom Umfang und deinen individuellen Anforderungen."
+      q: "Wie lange dauert die Erstellung einer professionellen Webseite bei VAMELA?",
+      a: "Die Umsetzung einer kompletten, hochwertigen Webseite dauert bei VAMELA in der Regel etwa 3 bis 4 Wochen. Die genaue Dauer hängt vom individuellen Umfang und deinen spezifischen Anforderungen ab."
     },
     {
-      q: "Wie viel kostet eine Webseite?",
-      a: "Die Kosten variieren je nach Umfang und Anforderungen. In einem kostenlosen Erstgespräch klären wir deine Bedürfnisse und erstellen dir ein individuelles Angebot."
+      q: "Was kostet professionelles Webdesign bei VAMELA?",
+      a: "Die Kosten für eine Webseite sind individuell und hängen stark von den Anforderungen und dem Umfang ab. Wir bieten keine Pauschalpreise an, sondern erstellen nach einem kostenlosen Erstgespräch ein maßgeschneidertes Angebot, das genau auf deine Ziele zugeschnitten ist."
     },
     {
-      q: "Wann macht eine Zusammenarbeit Sinn?",
-      a: "Wenn du bereit bist, in einen professionellen Online-Auftritt zu investieren, der dir messbar mehr Kunden und Umsatz bringt."
+      q: "Warum sollte ich VAMELA für mein Webdesign wählen?",
+      a: "VAMELA ist spezialisiert auf Webdesign für B2B-Dienstleister und Berater. Wir bauen nicht nur Webseiten, sondern Flaggschiff-Webseiten, die als starker Hebel im Verkaufs- und Marketingprozess dienen, um dich als Marktführer zu positionieren."
     },
     {
-      q: "Sind die Webseiten SEO optimiert?",
-      a: "Ja, alle unsere Webseiten werden nach den neuesten SEO-Standards entwickelt, um eine optimale Sichtbarkeit bei Google zu gewährleisten."
+      q: "Sind die Webseiten von VAMELA für Google SEO optimiert?",
+      a: "Ja, SEO ist ein integraler Bestandteil unseres Prozesses. Alle Webseiten werden nach aktuellen SEO-Standards entwickelt, um eine optimale Sichtbarkeit bei Google und anderen Suchmaschinen zu gewährleisten."
     },
     {
-      q: "Beinhaltet eine Webseite auch die entsprechenden Werbe-& Marketing Texte?",
-      a: "Ja, wir erstellen verkaufspsychologisch optimierte Texte, die deine Zielgruppe überzeugen und zu Handlungen animieren."
+      q: "Erstellt VAMELA auch die Texte für meine Webseite?",
+      a: "Absolut. Wir erstellen verkaufspsychologisch optimierte Texte, die deine Zielgruppe direkt ansprechen, Vertrauen aufbauen und zu Handlungen animieren."
     },
     {
-      q: "Was muss ich vorbereiten oder mitbringen?",
-      a: "Du musst nichts vorbereiten. In unserem Erstgespräch klären wir alle Details und führen dich durch den gesamten Prozess."
+      q: "Muss ich für die Webseitenerstellung viel vorbereiten?",
+      a: "Nein, du musst nichts vorbereiten. Wir führen dich durch den gesamten Prozess. In unserem Erstgespräch klären wir alle Details, sodass du dich entspannt zurücklehnen kannst, während wir deine Webseite entwickeln."
     }
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
       <div className="flex flex-col md:flex-row gap-16">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}

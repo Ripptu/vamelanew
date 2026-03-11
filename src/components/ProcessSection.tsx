@@ -138,7 +138,7 @@ export function ProcessSection() {
                     className="hidden md:block flex-1 relative group"
                   >
                     <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src={step.animation} alt={step.title} className="w-full h-auto rounded-2xl shadow-lg border border-slate-100 relative z-10" referrerPolicy="no-referrer" />
+                    <img src={step.animation} alt={step.title} className="w-full h-auto rounded-2xl shadow-lg border border-slate-100 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
                   </motion.div>
                 )}
               </div>
