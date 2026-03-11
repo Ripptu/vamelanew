@@ -2,10 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
-
 const PROJECTS = [
   {
     id: 1,
@@ -69,11 +65,25 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
 
   return (
-    <section className="py-20 bg-white text-slate-900 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white text-slate-900 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-16 text-center">Unsere Projekte</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold tracking-tight mb-16 text-center"
+        >
+          Unsere Projekte
+        </motion.h2>
         
-        <div className="flex flex-col md:flex-row gap-4 h-[600px]">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row gap-4 h-[600px]"
+        >
           {PROJECTS.map((project) => (
             <motion.div
               key={project.id}
@@ -109,7 +119,7 @@ export function PortfolioSection() {
                       href={project.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-white text-black px-6 py-2 rounded-full font-medium inline-block"
+                      className="bg-white text-black px-6 py-2 rounded-full font-medium inline-block hover:bg-slate-100 transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Website besuchen
@@ -119,7 +129,7 @@ export function PortfolioSection() {
               </AnimatePresence>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -128,49 +138,63 @@ export function PortfolioSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-3xl p-8 max-w-4xl w-full flex flex-col md:flex-row gap-8"
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-white rounded-[2rem] p-8 max-w-4xl w-full flex flex-col md:flex-row gap-8 shadow-2xl relative overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={selectedProject.image} alt={selectedProject.title} className="w-full md:w-1/2 rounded-2xl object-cover" referrerPolicy="no-referrer" />
-              <div className="flex-1 relative">
-                <button onClick={() => setSelectedProject(null)} className="absolute top-0 right-0 text-slate-900"><X /></button>
-                <h2 className="text-4xl font-bold mb-2">{selectedProject.title}</h2>
-                <span className="text-primary font-medium mb-6 block">{selectedProject.category}</span>
+              <button 
+                onClick={() => setSelectedProject(null)} 
+                className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <img src={selectedProject.image} alt={selectedProject.title} className="w-full md:w-1/2 rounded-2xl object-cover shadow-sm" referrerPolicy="no-referrer" />
+              <div className="flex-1 relative pt-4 md:pt-0">
+                <h2 className="text-4xl font-bold mb-2 tracking-tight">{selectedProject.title}</h2>
+                <span className="text-primary font-medium mb-8 block bg-primary/5 inline-block px-3 py-1 rounded-full text-sm">{selectedProject.category}</span>
                 
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <Target className="text-primary" />
+                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-transform">
+                    <Target className="text-primary shrink-0" />
                     <div>
-                      <h4 className="font-bold">Challenge</h4>
+                      <h4 className="font-bold text-slate-900">Challenge</h4>
                       <p className="text-slate-600 text-sm">{selectedProject.challenge}</p>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <Lightbulb className="text-primary" />
+                  </motion.div>
+                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-transform">
+                    <Lightbulb className="text-primary shrink-0" />
                     <div>
-                      <h4 className="font-bold">Solution</h4>
+                      <h4 className="font-bold text-slate-900">Solution</h4>
                       <p className="text-slate-600 text-sm">{selectedProject.solution}</p>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <TrendingUp className="text-primary" />
+                  </motion.div>
+                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-primary/5 border border-primary/20 transition-transform">
+                    <TrendingUp className="text-primary shrink-0" />
                     <div>
-                      <h4 className="font-bold text-green-600">Result</h4>
-                      <p className="text-slate-600 text-sm">{selectedProject.result}</p>
+                      <h4 className="font-bold text-primary-hover">Result</h4>
+                      <p className="text-primary-hover text-sm">{selectedProject.result}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
                 
-                <a href={selectedProject.url} className="mt-8 inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium">
+                <motion.a 
+                  href={selectedProject.url} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-primary/20"
+                >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>

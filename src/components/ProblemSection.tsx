@@ -2,21 +2,31 @@ import { motion } from 'motion/react';
 
 export function ProblemSection() {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-20">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-3xl mx-auto mb-20"
+      >
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           Das Problem mit <span className="font-serif italic text-primary font-normal">normalen Webseiten</span>
         </h2>
         <p className="text-slate-500 text-lg">
           In 2026 wird jedes Unternehmen geprüft und verglichen, bevor es eine Chance bekommt. Deine Webseite ist das Erste, was sie sehen — <span className="italic">Make it count.</span>
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid md:grid-cols-3 gap-8">
         {/* Card 1 */}
         <motion.div 
-          whileHover={{ y: -5, rotateX: 5, rotateY: 5 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
+          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
         >
           <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
@@ -49,8 +59,12 @@ export function ProblemSection() {
 
         {/* Card 2 */}
         <motion.div 
-          whileHover={{ y: -5, rotateX: 5, rotateY: 5 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
+          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
         >
           <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
@@ -79,8 +93,12 @@ export function ProblemSection() {
 
         {/* Card 3 */}
         <motion.div 
-          whileHover={{ y: -5, rotateX: 5, rotateY: 5 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
+          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
         >
           <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}

@@ -30,7 +30,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
-      <Navbar />
+      <Navbar onOpenContact={openPopup} />
       <main>
         <div id="home"><Hero onOpenContact={openPopup} /></div>
         <LogoCloud />
@@ -41,8 +41,8 @@ function HomePage() {
         <TestimonialsSection />
         <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
-        <NextStepsSection />
-        <FAQSection />
+        <NextStepsSection onOpenContact={openPopup} />
+        <FAQSection onOpenContact={openPopup} />
         <FooterCTA onOpenContact={openPopup} />
       </main>
       <Footer />

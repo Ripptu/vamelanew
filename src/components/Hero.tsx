@@ -4,16 +4,13 @@ import { motion } from 'motion/react';
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <section className="pt-24 md:pt-40 pb-20 px-4 sm:px-6 lg:px-8 w-full text-center relative overflow-hidden">
-      {/* Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
+      {/* Image Background */}
+      <img 
+        src="https://s1.directupload.eu/images/260311/7cub544u.png" 
+        alt="Hero Background"
         className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4" type="video/mp4" />
-      </video>
+        referrerPolicy="no-referrer"
+      />
       {/* White Fade Overlay - stronger fade to white */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white"></div>
 
@@ -52,12 +49,12 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       >
         <motion.button
           onClick={onOpenContact}
-          whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer"
+          whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
+          whileTap={{ scale: 0.98 }}
+          className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer"
         >
           Kostenloses Webseiten-Konzept
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </motion.button>
         
         <div className="flex items-center gap-3 text-sm text-slate-900 text-left">
@@ -71,7 +68,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           <div>
             <div className="font-bold text-slate-950">+40 zufriedene Kunden</div>
             <div className="flex items-center gap-1 text-xs">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
               Aktuell 2 Projektplätze verfügbar
             </div>
           </div>

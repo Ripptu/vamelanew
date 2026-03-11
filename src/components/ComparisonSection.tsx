@@ -15,10 +15,11 @@ export function ComparisonSection() {
     if (type === 'c') return (
       <motion.div
         initial={{ scale: 0, rotate: -45 }}
-        animate={{ scale: 1, rotate: 0 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <Check className="w-6 h-6 text-green-600 bg-green-100 rounded-full p-1" />
+        <Check className="w-6 h-6 text-primary bg-primary/10 rounded-full p-1" />
       </motion.div>
     );
     if (type === 'x') return <X className="w-5 h-5 text-slate-300" />;
@@ -27,14 +28,26 @@ export function ComparisonSection() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6"
+      >
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
           Endlich der <span className="font-serif italic text-primary font-normal">richtige Partner</span>
         </h2>
-      </div>
+      </motion.div>
 
-      <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
+      >
         <div className="overflow-x-auto">
           <div className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-800 text-center min-w-[600px]">
             <div className="p-6 text-left border-r border-slate-200"></div>
@@ -47,16 +60,24 @@ export function ComparisonSection() {
           </div>
           
           {criteria.map((row, i) => (
-            <div key={i} className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] border-b border-slate-100 last:border-0 text-sm min-w-[600px]">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              whileHover={{ backgroundColor: "rgba(248, 250, 252, 0.8)" }}
+              className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] border-b border-slate-100 last:border-0 text-sm min-w-[600px] transition-colors"
+            >
               <div className="p-6 font-medium text-slate-800 border-r border-slate-100 flex items-center">{row.name}</div>
               <div className="p-6 border-r border-slate-100 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
               <div className="p-6 border-r border-slate-100 flex items-center justify-center">{renderIcon(row.kr)}</div>
               <div className="p-6 border-r border-slate-100 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>
               <div className="p-6 bg-indigo-50/30 flex items-center justify-center">{renderIcon(row.s)}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

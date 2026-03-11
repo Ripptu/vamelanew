@@ -1,23 +1,37 @@
 import { motion } from 'motion/react';
 export function TestimonialsSection() {
-  const TESTIMONIAL_IMAGE = "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ad0cc1420ea818c8df60a3_69875ccc2c5c028e7ff18ff0_DSC08708.jpg%202.avif";
+  const TESTIMONIAL_IMAGE = "https://s1.directupload.eu/images/260311/776oivlr.jpg";
 
   return (
-    <section className="py-32 bg-slate-50 px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-slate-50 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
-        </div>
+        </motion.div>
 
         {/* Featured Testimonial */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm mb-8 flex flex-col md:flex-row gap-8 items-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm mb-8 flex flex-col md:flex-row gap-8 items-center transition-shadow hover:shadow-xl"
+        >
           <div className="flex-1">
             <div className="flex gap-1 text-primary mb-6">
               {[1,2,3,4,5].map(i => (
                 <motion.span 
                   key={i} 
                   initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1, color: "#EAB308" }}
+                  whileInView={{ opacity: 1, scale: 1, color: "#EAB308" }}
+                  viewport={{ once: true }}
                   transition={{ delay: i * 0.1, type: "spring" }}
                 >
                   ★
@@ -36,10 +50,17 @@ export function TestimonialsSection() {
           </div>
           <div className="w-full md:w-1/3">
             <div className="aspect-square rounded-2xl overflow-hidden relative flex items-center justify-center">
-              <img src={TESTIMONIAL_IMAGE} alt="Thomas Rott" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+              <motion.img 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+                src={TESTIMONIAL_IMAGE} 
+                alt="Thomas Rott" 
+                className="w-full h-full object-contain" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Grid Testimonials */}
         <div className="grid md:grid-cols-3 gap-6">
@@ -60,13 +81,22 @@ export function TestimonialsSection() {
               text: "Die Zusammenarbeit war unkompliziert, schnell und sehr professionell. VAMELA hat uns geholfen, unsere komplexe Produktwelt so zu strukturieren, dass unsere Kunden sich sofort zurechtfinden. Ein Partner, den man gerne weiterempfiehlt.",
             }
           ].map((t, i) => (
-            <div key={i} className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col transition-shadow hover:shadow-xl"
+            >
               <div className="flex gap-1 mb-4 text-sm">
                 {[1,2,3,4,5].map(j => (
                   <motion.span 
                     key={j} 
                     initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1, color: "#EAB308" }}
+                    whileInView={{ opacity: 1, scale: 1, color: "#EAB308" }}
+                    viewport={{ once: true }}
                     transition={{ delay: j * 0.1, type: "spring" }}
                   >
                     ★
@@ -83,7 +113,7 @@ export function TestimonialsSection() {
                   <div className="text-slate-500 text-xs">{t.role}</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
