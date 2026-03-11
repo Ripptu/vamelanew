@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,11 +49,41 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             Kostenloses Design-Konzept
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </motion.button>
-          <button className="md:hidden p-2 text-slate-900">
+          <button 
+            className="md:hidden p-2 text-slate-900" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menü öffnen"
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 p-4 shadow-lg"
+        >
+          <div className="flex flex-col gap-4 text-sm font-medium text-slate-600">
+            <a href="/#home" onClick={() => setIsMenuOpen(false)} className="text-slate-900 py-2">Home</a>
+            <a href="/#leistungen" onClick={() => setIsMenuOpen(false)} className="hover:text-slate-900 py-2">Leistungen</a>
+            <a href="/#referenzen" onClick={() => setIsMenuOpen(false)} className="hover:text-slate-900 py-2">Referenzen</a>
+            <a href="/#prozess" onClick={() => setIsMenuOpen(false)} className="hover:text-slate-900 py-2">Prozess</a>
+            <button 
+              onClick={() => {
+                setIsMenuOpen(false);
+                onOpenContact?.();
+              }}
+              className="bg-primary text-white px-5 py-3 rounded-full font-medium text-sm mt-2"
+            >
+              Kostenloses Design-Konzept
+            </button>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }
