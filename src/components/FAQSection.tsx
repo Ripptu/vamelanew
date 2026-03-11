@@ -62,6 +62,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
           <p className="text-slate-600 mb-8">Du findest keine Antwort? Kontaktiere unser Team.</p>
           <motion.button 
             onClick={onOpenContact}
+            aria-label="Termin buchen"
             whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
             whileTap={{ scale: 0.98 }}
             className="group bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-all text-sm shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer"
