@@ -14,7 +14,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           Was unsere <span className="font-serif italic text-primary font-normal">Flaggschiff Webseiten</span><br/>anders machen
         </h2>
-        <p className="text-slate-500 text-lg">
+        <p className="text-slate-600 text-lg">
           Deine Webseite sollte nicht nur deine Visitenkarte sein, sondern der stärkste Hebel im gesamten Verkaufs- und Marketingprozess. Wir machen sie dazu.
         </p>
       </motion.div>
@@ -31,7 +31,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         >
           <div className="text-center mb-10 relative z-10">
             <h3 className="text-xl font-bold mb-2">Marktführer Branding</h3>
-            <p className="text-slate-500 text-sm">Von einer weiteren Option zur absoluten #1</p>
+            <p className="text-slate-600 text-sm">Von einer weiteren Option zur absoluten #1</p>
           </div>
           <div className="relative h-48 flex justify-center items-end">
             <div className="w-full max-w-md bg-white border border-slate-200 rounded-t-xl shadow-lg relative flex flex-col items-center pt-8">
@@ -76,7 +76,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         >
           <div className="text-center mb-10 relative z-10">
             <h3 className="text-xl font-bold mb-2">Conversion Optimiert</h3>
-            <p className="text-slate-500 text-sm">Entwickelt um Besucher in heiße Anfragen zu verwandeln</p>
+            <p className="text-slate-600 text-sm">Entwickelt um Besucher in heiße Anfragen zu verwandeln</p>
           </div>
           <div className="relative h-48 flex justify-center items-end">
             <div className="w-full max-w-md bg-white border border-slate-200 rounded-xl shadow-lg p-6 relative overflow-hidden">
@@ -155,7 +155,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             </div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10">A-Player Team</h3>
-          <p className="text-slate-500 text-xs relative z-10">Ein Experten-Team in allen wichtigen Bereichen</p>
+          <p className="text-slate-600 text-xs relative z-10">Ein Experten-Team in allen wichtigen Bereichen</p>
         </motion.div>
 
         {/* Card 4 */}
@@ -182,7 +182,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             <div className="absolute bottom-8 left-1/3 w-0.5 h-4 bg-primary/20 rounded-full"></div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10">Blitzschnell</h3>
-          <p className="text-slate-500 text-xs relative z-10">Optimierte Ladezeiten für maximale Performance</p>
+          <p className="text-slate-600 text-xs relative z-10">Optimierte Ladezeiten für maximale Performance</p>
         </motion.div>
 
         {/* Card 5 */}
@@ -209,7 +209,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             </motion.div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10">Webflow Development</h3>
-          <p className="text-slate-500 text-xs relative z-10">Webflow bietet grenzenlose Möglichkeiten</p>
+          <p className="text-slate-600 text-xs relative z-10">Webflow bietet grenzenlose Möglichkeiten</p>
         </motion.div>
       </div>
 

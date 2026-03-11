@@ -52,7 +52,7 @@ export function ProcessSection() {
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           In 4 Schritten zur<br/><span className="font-serif italic text-primary font-normal">Marktführer Positionierung</span>
         </h2>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Unser einzigartiger Prozess, um Tag für Tag neue Marktführer Marken mit hochkonvertierenden Online Auftritten zu erschaffen
         </p>
       </motion.div>
@@ -117,13 +117,13 @@ export function ProcessSection() {
                 <div className="flex-1">
                   <div className="text-6xl font-bold text-slate-200 mb-2 font-serif">{step.num}</div>
                   <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-slate-500 mb-6 text-sm">{step.desc}</p>
+                  <p className="text-slate-600 mb-6 text-sm">{step.desc}</p>
                   <ul className="space-y-3">
                     {step.bullets.map((bullet, j) => (
                       <motion.li 
                         key={j} 
                         whileHover={{ x: 5 }}
-                        className="flex items-center gap-3 text-sm font-medium text-slate-700"
+                        className="flex items-center gap-3 text-sm font-medium text-slate-800"
                       >
                         <CheckCircle2 className="w-5 h-5 text-primary" />
                         {bullet}
@@ -138,7 +138,7 @@ export function ProcessSection() {
                     className="hidden md:block flex-1 relative group"
                   >
                     <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src={step.animation} alt={step.title} className="w-full h-auto rounded-2xl shadow-lg border border-slate-100 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
+                    <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl shadow-lg border border-slate-100 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
                   </motion.div>
                 )}
               </div>

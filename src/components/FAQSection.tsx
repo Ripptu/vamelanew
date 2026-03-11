@@ -59,7 +59,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
           className="w-full md:w-1/3"
         >
           <h2 className="text-3xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
-          <p className="text-slate-500 mb-8">Du findest keine Antwort? Kontaktiere unser Team.</p>
+          <p className="text-slate-600 mb-8">Du findest keine Antwort? Kontaktiere unser Team.</p>
           <motion.button 
             onClick={onOpenContact}
             whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
@@ -85,13 +85,13 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
                 className="w-full px-6 py-6 text-left flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="font-medium text-slate-800">{faq.q}</span>
-                <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
+                <span className="font-medium text-slate-900">{faq.q}</span>
+                <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
               </button>
               <div 
                 className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <p className="text-slate-500 leading-relaxed text-sm">{faq.a}</p>
+                <p className="text-slate-600 leading-relaxed text-sm">{faq.a}</p>
               </div>
             </motion.div>
           ))}

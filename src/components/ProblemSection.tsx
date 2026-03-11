@@ -13,7 +13,7 @@ export function ProblemSection() {
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           Das Problem mit <span className="font-serif italic text-primary font-normal">normalen Webseiten</span>
         </h2>
-        <p className="text-slate-500 text-lg">
+        <p className="text-slate-600 text-lg">
           In 2026 wird jedes Unternehmen geprüft und verglichen, bevor es eine Chance bekommt. Deine Webseite ist das Erste, was sie sehen — <span className="italic">Make it count.</span>
         </p>
       </motion.div>
@@ -52,7 +52,7 @@ export function ProblemSection() {
             </div>
           </div>
           <h3 className="text-xl font-bold mb-3">Fehlendes Vertrauen</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <p className="text-slate-600 text-sm leading-relaxed">
             In einer Zeit in der jeder ein Unternehmen starten kann, ist Vertrauen die wertvollste Währung. Eine unseriöse Webseite ist der Vertrauens-Killer Nr. 1.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ export function ProblemSection() {
             </div>
           </div>
           <h3 className="text-xl font-bold mb-3">Du bist vergleichbar</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <p className="text-slate-600 text-sm leading-relaxed">
             0815 Baukasten-Seiten lassen dich wie "einer von vielen" wirken. Dadurch wird dein Vertrieb unnötig erschwert und du gewinnst weniger Kunden.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export function ProblemSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-slate-300 z-0"></div>
           </div>
           <h3 className="text-xl font-bold mb-3">Kein Premium Branding</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <p className="text-slate-600 text-sm leading-relaxed">
             Durchschnittliche Webseiten sorgen für durchschnittliche Wahrnehmung. Premium-Preise abzurufen wird so quasi unmöglich.
           </p>
         </motion.div>
