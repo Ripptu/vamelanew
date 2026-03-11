@@ -75,9 +75,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         
         <div className="flex items-center gap-3 text-sm text-slate-900 text-left">
           <div className="flex -space-x-2">
-            {[1, 2, 3].map((i) => (
+            {[
+              "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
+              "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80",
+              "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100&q=80"
+            ].map((src, i) => (
               <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                <img src={`https://i.pravatar.cc/100?img=${i}`} alt="User" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={src} alt="Kunde" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
             ))}
           </div>

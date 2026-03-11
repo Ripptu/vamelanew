@@ -91,9 +91,6 @@ export function TestimonialsSection() {
               </div>
               <p className="text-sm leading-relaxed mb-8 flex-1 text-slate-700">"{t.text}"</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">
-                  {t.name.charAt(0)}
-                </div>
                 <div>
                   <div className="font-bold text-sm">{t.name}</div>
                   <div className="text-slate-600 text-xs">{t.role}</div>
