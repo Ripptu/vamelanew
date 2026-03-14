@@ -1,7 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+const USER_COUNT = 40;
+let AVAILABLE_SLOTS = 2;
+
+function getDynamicMessage(slots: number) {
+  if (slots === 0) return "Alle Plätze belegt. Trage dich für die Warteliste ein.";
+  if (slots === 1) return "Nur noch 1 Platz frei! Sichere dir jetzt deinen Vorsprung.";
+  return `Aktuell ${slots} Projektplätze verfügbar – starte jetzt dein Projekt.`;
+}
+
 export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
+  const dynamicMessage = getDynamicMessage(AVAILABLE_SLOTS);
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative overflow-hidden">
       <motion.div 
@@ -67,11 +78,11 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                <span className="font-bold text-slate-900">+40 zufriedene Kunden</span>
+                <span className="font-bold text-slate-900">+{USER_COUNT} zufriedene Kunden</span>
                 <div className="hidden sm:block w-1 h-1 bg-slate-400 rounded-full"></div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
-                  <span>Aktuell 2 Projektplätze verfügbar</span>
+                  <div className={`w-2 h-2 rounded-full ${AVAILABLE_SLOTS > 0 ? 'bg-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]' : 'bg-red-500'}`}></div>
+                  <span className={AVAILABLE_SLOTS === 1 ? 'text-red-600 font-bold' : ''}>{dynamicMessage}</span>
                 </div>
               </div>
             </div>

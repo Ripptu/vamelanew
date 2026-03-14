@@ -58,8 +58,8 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                 
                 <div className="mt-8 pt-8 border-t border-slate-100 space-y-3">
                   <p className="text-sm text-slate-400 text-center">Oder direkt kontaktieren:</p>
-                  <a href="mailto:info@vamela.info" className="flex items-center justify-center gap-2 text-primary font-medium hover:underline">
-                    <Mail className="w-4 h-4" /> info@vamela.info
+                  <a href="mailto:kontakt@vamela.info" className="flex items-center justify-center gap-2 text-primary font-medium hover:underline">
+                    <Mail className="w-4 h-4" /> kontakt@vamela.info
                   </a>
                   <a href="tel:+4917624200179" className="flex items-center justify-center gap-2 text-slate-600 font-medium hover:underline">
                     <Phone className="w-4 h-4" /> +49 176 24200179

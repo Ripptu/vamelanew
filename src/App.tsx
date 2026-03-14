@@ -83,7 +83,7 @@ export default function App() {
             </section>
             <section>
               <h2 className="text-xl font-bold">Kontakt</h2>
-              <p>Telefon: +49 176 24200179<br/>E-Mail: info@vamela.info</p>
+              <p>Telefon: +49 176 24200179<br/>E-Mail: kontakt@vamela.info</p>
             </section>
             <section>
               <h2 className="text-xl font-bold">Umsatzsteuer-ID</h2>
