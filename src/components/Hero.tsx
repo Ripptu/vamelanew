@@ -82,7 +82,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
             whileTap={{ scale: 0.98 }}
             className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
           >
-            Kostenloses Webseiten-Konzept
+            Kostenlosen Entwurf anfragen
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </motion.button>
           

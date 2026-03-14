@@ -65,40 +65,36 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
             </h2>
             
             <p className="text-slate-600 mb-8 text-lg">
-              Hol dir unsere <span className="font-bold text-slate-900">kostenlose Website-Checkliste</span> und erfahre, welche 5 fatalen Fehler dich aktuell Kunden kosten.
+              Willst du dir nicht einen <span className="font-bold text-slate-900">kostenlosen Website-Entwurf</span> schnappen? Wir erstellen dir ein individuelles Konzept – komplett ohne Kosten.
             </p>
             
             <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
               {[
-                "Die 5 größten Conversion-Killer",
-                "Wie du Vertrauen in 3 Sekunden aufbaust",
-                "Sofort umsetzbare Optimierungen"
+                "Individuell für dein Business",
+                "SEO-optimierte Struktur",
+                "Sofort einsatzbereites Konzept"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-slate-700">
-                  <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-blue-500 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
             
             <div className="flex flex-col gap-3">
-              <motion.button
-                onClick={() => {
-                  setIsVisible(false);
-                  onOpenContact();
-                }}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
+              <a
+                href="/#zahlung"
+                onClick={() => setIsVisible(false)}
                 className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
               >
-                Checkliste jetzt sichern
+                Jetzt Entwurf sichern
                 <ArrowRight className="w-5 h-5" />
-              </motion.button>
+              </a>
               <button 
                 onClick={() => setIsVisible(false)}
                 className="text-slate-500 hover:text-slate-700 font-medium py-2 transition-colors focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:outline-none rounded-md"
               >
-                Nein danke, ich verzichte auf mehr Kunden
+                Nein danke, ich verzichte auf meinen Entwurf
               </button>
             </div>
           </div>
