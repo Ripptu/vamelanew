@@ -16,6 +16,7 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FounderSection } from './components/FounderSection';
 import { ComparisonSection } from './components/ComparisonSection';
 import { PricingSection } from './components/PricingSection';
+import { FreeDraftSection } from './components/FreeDraftSection';
 import { NextStepsSection } from './components/NextStepsSection';
 import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
@@ -59,6 +60,7 @@ function HomePage() {
         <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
         <PricingSection />
+        <FreeDraftSection />
         <NextStepsSection onOpenContact={openPopup} />
         <FAQSection onOpenContact={openPopup} />
         <FooterCTA onOpenContact={openPopup} />
