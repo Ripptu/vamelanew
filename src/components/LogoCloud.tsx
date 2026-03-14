@@ -27,7 +27,7 @@ export function LogoCloud() {
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`first-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
+                <img src={logo} alt="Logo" width="40" height="40" loading="lazy" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
               </div>
             ))}
           </div>
@@ -35,7 +35,7 @@ export function LogoCloud() {
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`second-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
+                <img src={logo} alt="Logo" width="40" height="40" loading="lazy" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
               </div>
             ))}
           </div>

@@ -151,7 +151,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
               </motion.div>
             </div>
             <div className="w-16 h-16 bg-slate-900 rounded-full shadow-md flex items-center justify-center z-10 p-3">
-              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="w-full h-auto object-contain" referrerPolicy="no-referrer" />
+              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" width="64" height="64" className="w-full h-auto object-contain" referrerPolicy="no-referrer" />
             </div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10">A-Player Team</h3>

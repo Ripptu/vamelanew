@@ -112,6 +112,9 @@ export function PortfolioSection() {
               <motion.img
                 src={project.image}
                 alt={project.title}
+                width="400"
+                height="300"
+                loading="lazy"
                 className="w-full h-full object-cover"
                 animate={{ filter: expandedId === project.id ? 'grayscale(0%)' : 'grayscale(100%)' }}
                 referrerPolicy="no-referrer"
@@ -175,7 +178,7 @@ export function PortfolioSection() {
                 <X className="w-5 h-5" />
               </button>
 
-              <img src={selectedProject.image} alt={selectedProject.title} className="w-full md:w-1/2 rounded-2xl object-cover shadow-sm" referrerPolicy="no-referrer" />
+              <img src={selectedProject.image} alt={selectedProject.title} width="800" height="600" className="w-full md:w-1/2 rounded-2xl object-cover shadow-sm" referrerPolicy="no-referrer" />
               <div className="flex-1 relative pt-4 md:pt-0">
                 <h2 className="text-4xl font-bold mb-2 tracking-tight">{selectedProject.title}</h2>
                 <div className="flex flex-wrap gap-2 mb-8">

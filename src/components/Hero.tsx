@@ -81,7 +81,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100&q=80"
             ].map((src, i) => (
               <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                <img src={src} alt="Kunde" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={src} alt="Kunde" width="40" height="40" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
             ))}
           </div>
