@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Mail, MessageCircle, ArrowRight, Phone } from 'lucide-react';
+import { GamifiedWhatsAppForm } from './GamifiedWhatsAppForm';
 
 interface ContactPopupProps {
   isOpen: boolean;
@@ -53,63 +54,16 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                   </div>
                 </div>
                 
-                <div className="space-y-3 sm:space-y-4">
-                  <motion.a 
-                    href="https://wa.me/4917624200179" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:from-[#25D366]/20 hover:to-[#25D366]/10 border border-[#25D366]/20 transition-all cursor-pointer relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
-                  >
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-                    <div className="flex items-center gap-4 relative z-10">
-                      <div className="w-12 h-12 bg-[#25D366] text-white rounded-full shadow-lg shadow-[#25D366]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
-                        <MessageCircle className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <div className="text-xs sm:text-sm text-[#1da851] font-bold mb-0.5 uppercase tracking-wider">Schnellste Antwort</div>
-                        <div className="font-semibold text-slate-900 text-base sm:text-lg">WhatsApp Chat</div>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#25D366] group-hover:translate-x-1 transition-transform relative z-10" />
-                  </motion.a>
-
-                  <motion.a 
-                    href="mailto:info@vamela.info" 
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-primary/5 border border-slate-100 hover:border-primary/20 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-full shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
-                        <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-xs sm:text-sm text-slate-500 font-medium mb-0.5">E-Mail schreiben</div>
-                        <div className="font-semibold text-slate-900 text-sm sm:text-base">info@vamela.info</div>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-primary group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                  
-                  <motion.a 
-                    href="tel:+4917624200179" 
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-100 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500 focus-visible:outline-none"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-full shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
-                        <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600" />
-                      </div>
-                      <div>
-                        <div className="text-xs sm:text-sm text-slate-500 font-medium mb-0.5">Anrufen</div>
-                        <div className="font-semibold text-slate-900 text-sm sm:text-base">+49 176 24200179</div>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-slate-600 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
+                <GamifiedWhatsAppForm onClose={onClose} />
+                
+                <div className="mt-8 pt-8 border-t border-slate-100 space-y-3">
+                  <p className="text-sm text-slate-400 text-center">Oder direkt kontaktieren:</p>
+                  <a href="mailto:info@vamela.info" className="flex items-center justify-center gap-2 text-primary font-medium hover:underline">
+                    <Mail className="w-4 h-4" /> info@vamela.info
+                  </a>
+                  <a href="tel:+4917624200179" className="flex items-center justify-center gap-2 text-slate-600 font-medium hover:underline">
+                    <Phone className="w-4 h-4" /> +49 176 24200179
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
@@ -72,20 +72,34 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="relative z-20 flex flex-col sm:flex-row items-center justify-center gap-6"
+        className="relative z-20 flex flex-col items-center gap-6"
       >
-        <motion.button
-          onClick={onOpenContact}
-          aria-label="Kostenloses Webseiten-Konzept anfragen"
-          whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
-          whileTap={{ scale: 0.98 }}
-          className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
-        >
-          Kostenloses Webseiten-Konzept
-          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-        </motion.button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <motion.button
+            onClick={onOpenContact}
+            aria-label="Kostenloses Webseiten-Konzept anfragen"
+            whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
+            whileTap={{ scale: 0.98 }}
+            className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+          >
+            Kostenloses Webseiten-Konzept
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </motion.button>
+          
+          <motion.a
+            href="https://wa.me/4917624200179?text=Hallo%20VAMELA,%20ich%20hätte%20gerne%20eine%20kurze%20Einschätzung%20zu%20meiner%20Website."
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 211, 102, 0.4), 0 8px 10px -6px rgba(37, 211, 102, 0.2)" }}
+            whileTap={{ scale: 0.98 }}
+            className="group bg-[#25D366] hover:bg-[#1da851] text-white px-8 py-4 rounded-full font-medium text-lg flex items-center gap-2 transition-all shadow-lg shadow-[#25D366]/30 relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
+          >
+            Jetzt per WhatsApp anfragen
+            <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
+          </motion.a>
+        </div>
         
-        <div className="flex items-center gap-3 text-sm text-slate-900 text-left">
+        <div className="flex items-center gap-3 text-sm text-slate-900">
           <div className="flex -space-x-2">
             {[
               "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
@@ -97,7 +111,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               </div>
             ))}
           </div>
-          <div>
+          <div className="text-left">
             <div className="font-bold text-slate-950">+40 zufriedene Kunden</div>
             <div className="flex items-center gap-1 text-xs">
               <div className="w-2 h-2 rounded-full bg-primary"></div>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -24,9 +24,21 @@ import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { LiveChat } from './components/LiveChat';
 import { SmoothScroller } from './components/SmoothScroller';
+import { WhatsAppBanner } from './components/WhatsAppBanner';
 
 function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isPopupOpen]);
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
@@ -37,6 +49,7 @@ function HomePage() {
       <main>
         <div id="home"><Hero onOpenContact={openPopup} /></div>
         <LogoCloud />
+        <WhatsAppBanner />
         <ProblemSection />
         <SolutionSection onOpenContact={openPopup} />
         <div id="referenzen"><PortfolioSection /></div>
