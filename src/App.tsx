@@ -42,7 +42,7 @@ function HomePage() {
         <div id="referenzen"><PortfolioSection /></div>
         <div id="prozess"><ProcessSection /></div>
         <TestimonialsSection />
-        <div id="ueber-mich"><FounderSection /></div>
+        <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
         <NextStepsSection onOpenContact={openPopup} />
         <FAQSection onOpenContact={openPopup} />
@@ -59,7 +59,6 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
-      <SmoothScroller />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={

@@ -49,7 +49,6 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           <a href="/#leistungen" aria-label="Zu den Leistungen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Leistungen</a>
           <a href="/#referenzen" aria-label="Zu den Referenzen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Referenzen</a>
           <a href="/#prozess" aria-label="Zum Prozess" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Prozess</a>
-          <a href="/#ueber-mich" aria-label="Über mich" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Über mich</a>
         </div>
 
         <div className="flex items-center">
@@ -103,7 +102,6 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               <a href="/#leistungen" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Leistungen</a>
               <a href="/#referenzen" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Referenzen</a>
               <a href="/#prozess" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Prozess</a>
-              <a href="/#ueber-mich" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Über mich</a>
             </div>
             
             <div className="p-8 mt-auto mb-8">
