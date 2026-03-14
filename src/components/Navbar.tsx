@@ -49,7 +49,6 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           <a href="/#leistungen" aria-label="Zu den Leistungen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Leistungen</a>
           <a href="/#referenzen" aria-label="Zu den Referenzen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Referenzen</a>
           <a href="/#prozess" aria-label="Zum Prozess" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Prozess</a>
-          <a href="/#ueber-mich" aria-label="Über mich" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Über mich</a>
         </div>
 
         <div className="flex items-center">
@@ -58,7 +57,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             aria-label="Kostenloses Design-Konzept anfragen"
             whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
             whileTap={{ scale: 0.98 }}
-            className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="group hidden md:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
           >
             Kostenloses Design-Konzept
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -103,7 +102,6 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               <a href="/#leistungen" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Leistungen</a>
               <a href="/#referenzen" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Referenzen</a>
               <a href="/#prozess" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Prozess</a>
-              <a href="/#ueber-mich" onClick={() => setIsMenuOpen(false)} className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">Über mich</a>
             </div>
             
             <div className="p-8 mt-auto mb-8">

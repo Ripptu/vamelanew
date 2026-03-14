@@ -42,7 +42,7 @@ function HomePage() {
         <div id="referenzen"><PortfolioSection /></div>
         <div id="prozess"><ProcessSection /></div>
         <TestimonialsSection />
-        <div id="ueber-mich"><FounderSection /></div>
+        <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
         <NextStepsSection onOpenContact={openPopup} />
         <FAQSection onOpenContact={openPopup} />
