@@ -23,7 +23,6 @@ import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { LiveChat } from './components/LiveChat';
-import { SmoothScroller } from './components/SmoothScroller';
 
 function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -42,7 +41,7 @@ function HomePage() {
         <div id="referenzen"><PortfolioSection /></div>
         <div id="prozess"><ProcessSection /></div>
         <TestimonialsSection />
-        <FounderSection />
+        <div id="ueber-mich"><FounderSection /></div>
         <div id="leistungen"><ComparisonSection /></div>
         <NextStepsSection onOpenContact={openPopup} />
         <FAQSection onOpenContact={openPopup} />
