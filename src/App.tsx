@@ -23,6 +23,7 @@ import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { LiveChat } from './components/LiveChat';
+import { SmoothScroller } from './components/SmoothScroller';
 
 function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -58,6 +59,7 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
+      <SmoothScroller />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={

@@ -4,30 +4,31 @@ import Lenis from 'lenis';
 export function SmoothScroller() {
   useEffect(() => {
     let lenis: Lenis | null = null;
+    let animationFrameId: number;
 
     const initLenis = () => {
       if (lenis) return;
       
-      try {
-        // Initialize Lenis for a "heavy" and "professional" scroll feel
-        lenis = new Lenis({
-          duration: 1.5, // Longer duration for a heavier feel
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth Expo Out
-          wheelMultiplier: 0.8, // Slightly slower wheel scroll
-          autoRaf: true, // Let Lenis handle the requestAnimationFrame loop
-        });
-      } catch (e) {
-        console.error("Failed to initialize Lenis:", e);
+      // Initialize Lenis for a "heavy" and "professional" scroll feel
+      lenis = new Lenis({
+        duration: 1.5, // Longer duration for a heavier feel
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth Expo Out
+        smoothWheel: true,
+        wheelMultiplier: 0.8, // Slightly slower wheel scroll
+      });
+
+      function raf(time: number) {
+        lenis?.raf(time);
+        animationFrameId = requestAnimationFrame(raf);
       }
+
+      requestAnimationFrame(raf);
     };
 
     const destroyLenis = () => {
       if (!lenis) return;
-      try {
-        lenis.destroy();
-      } catch (e) {
-        console.error("Failed to destroy Lenis:", e);
-      }
+      cancelAnimationFrame(animationFrameId);
+      lenis.destroy();
       lenis = null;
     };
 
@@ -56,11 +57,7 @@ export function SmoothScroller() {
       ) {
         if (lenis && window.innerWidth >= 1024) {
           e.preventDefault();
-          try {
-            lenis.scrollTo(anchor.hash, { offset: 0 });
-          } catch (e) {
-            console.error("Lenis scrollTo failed:", e);
-          }
+          lenis.scrollTo(anchor.hash, { offset: 0 });
         }
       }
     };
