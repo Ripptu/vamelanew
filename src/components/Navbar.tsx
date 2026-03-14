@@ -44,7 +44,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           </Link>
         </div>
         
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 bg-white/90 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-sm absolute left-1/2 -translate-x-1/2">
+        <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 bg-white/90 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-sm absolute left-1/2 -translate-x-1/2">
           <a href="/#home" aria-label="Zur Startseite" className="text-slate-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Home</a>
           <a href="/#leistungen" aria-label="Zu den Leistungen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Leistungen</a>
           <a href="/#referenzen" aria-label="Zu den Referenzen" className="hover:text-slate-900 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md px-2 py-1">Referenzen</a>
@@ -57,13 +57,13 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             aria-label="Kostenloses Design-Konzept anfragen"
             whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
             whileTap={{ scale: 0.98 }}
-            className="group hidden md:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
           >
             Kostenloses Design-Konzept
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </motion.button>
           <button 
-            className="md:hidden p-2 text-slate-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md" 
+            className="lg:hidden p-2 text-slate-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-label="Menü umschalten"
@@ -82,7 +82,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 z-[100] bg-black flex flex-col"
+            className="lg:hidden fixed inset-0 z-[100] bg-black flex flex-col"
           >
             <div className="flex justify-between items-center p-4 border-b border-white/10">
               <Link to="/" onClick={() => setIsMenuOpen(false)}>

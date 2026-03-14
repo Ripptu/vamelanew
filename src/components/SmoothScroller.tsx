@@ -32,9 +32,9 @@ export function SmoothScroller() {
       lenis = null;
     };
 
-    // Only enable on desktop (>= 768px)
+    // Only enable on desktop (>= 1024px)
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         destroyLenis();
       } else {
         initLenis();
@@ -55,7 +55,7 @@ export function SmoothScroller() {
         anchor.hash.startsWith('#') && 
         anchor.origin === window.location.origin
       ) {
-        if (lenis && window.innerWidth >= 768) {
+        if (lenis && window.innerWidth >= 1024) {
           e.preventDefault();
           lenis.scrollTo(anchor.hash, { offset: 0 });
         }
