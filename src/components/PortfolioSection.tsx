@@ -12,7 +12,8 @@ const PROJECTS = [
     description: "Modernste B2B-Webseite mit Fokus auf Conversion und Markenautorität.",
     challenge: "Etablierung als Marktführer durch ein Premium-Design.",
     solution: "Entwicklung einer Flaggschiff-Webseite mit verkaufspsychologischer Copy.",
-    result: "Signifikante Steigerung der qualifizierten Anfragen."
+    result: "Signifikante Steigerung der qualifizierten Anfragen.",
+    metric: "+45% Conversion-Rate"
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const PROJECTS = [
     description: "Professionelle Präsenz für Experten-Positionierung.",
     challenge: "Komplexe Dienstleistungen einfach und überzeugend darstellen.",
     solution: "Klares Design-System und strukturierte Informationsarchitektur.",
-    result: "Höhere Vertrauensbildung bei potenziellen Kunden."
+    result: "Höhere Vertrauensbildung bei potenziellen Kunden.",
+    metric: "Ladezeit 4s → 0.8s"
   },
   {
     id: 3,
@@ -34,7 +36,8 @@ const PROJECTS = [
     description: "Ästhetisches und funktionales Webdesign für maximale Wirkung.",
     challenge: "Modernisierung des Markenauftritts.",
     solution: "Implementierung eines zeitgemäßen, minimalistischen Designs.",
-    result: "Verbesserte Markenwahrnehmung und Nutzererfahrung."
+    result: "Verbesserte Markenwahrnehmung und Nutzererfahrung.",
+    metric: "+120% mehr Anfragen"
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ const PROJECTS = [
     description: "Performance-orientierte Web-Lösung für nachhaltiges Wachstum.",
     challenge: "Optimierung der Conversion-Rate.",
     solution: "Fokus auf User-Experience und klare Call-to-Actions.",
-    result: "Deutlich messbare Verbesserung der Lead-Qualität."
+    result: "Deutlich messbare Verbesserung der Lead-Qualität.",
+    metric: "-60% Bounce-Rate"
   },
   {
     id: 5,
@@ -56,7 +60,8 @@ const PROJECTS = [
     description: "Technisch exzellente Webseite für industrielle Anforderungen.",
     challenge: "Komplexe Produktpalette übersichtlich präsentieren.",
     solution: "Intuitive Navigation und performante technische Umsetzung.",
-    result: "Effizientere Kundenberatung durch digitale Unterstützung."
+    result: "Effizientere Kundenberatung durch digitale Unterstützung.",
+    metric: "+85% Sichtbarkeit"
   }
 ];
 
@@ -87,10 +92,19 @@ export function PortfolioSection() {
           {PROJECTS.map((project) => (
             <motion.div
               key={project.id}
-              className={`relative rounded-3xl overflow-hidden cursor-pointer ${expandedId === project.id ? 'flex-[3]' : 'flex-1'}`}
+              className={`relative rounded-3xl overflow-hidden cursor-pointer focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none ${expandedId === project.id ? 'flex-[3]' : 'flex-1'}`}
               onMouseEnter={() => setExpandedId(project.id)}
               onMouseLeave={() => setExpandedId(null)}
               onClick={() => setSelectedProject(project)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`Projekt ${project.title} ansehen`}
               initial={false}
               animate={{ flex: expandedId === project.id ? 3 : 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -114,12 +128,16 @@ export function PortfolioSection() {
                   >
                     <span className="bg-primary text-white text-xs px-3 py-1 rounded-full mb-2 inline-block whitespace-nowrap">{project.category}</span>
                     <h3 className="text-3xl font-bold mb-2 whitespace-nowrap">{project.title}</h3>
+                    <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 border border-green-500/30 px-3 py-1 rounded-full text-sm font-bold mb-3">
+                      <TrendingUp className="w-4 h-4" />
+                      {project.metric}
+                    </div>
                     <p className="text-slate-200 mb-4">{project.description}</p>
                     <a 
                       href={project.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-white text-black px-6 py-2 rounded-full font-medium inline-block hover:bg-slate-100 transition-colors"
+                      className="bg-white text-black px-6 py-2 rounded-full font-medium inline-block hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Website besuchen
@@ -151,7 +169,8 @@ export function PortfolioSection() {
             >
               <button 
                 onClick={() => setSelectedProject(null)} 
-                className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10"
+                className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                aria-label="Projekt Details schließen"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -159,7 +178,13 @@ export function PortfolioSection() {
               <img src={selectedProject.image} alt={selectedProject.title} className="w-full md:w-1/2 rounded-2xl object-cover shadow-sm" referrerPolicy="no-referrer" />
               <div className="flex-1 relative pt-4 md:pt-0">
                 <h2 className="text-4xl font-bold mb-2 tracking-tight">{selectedProject.title}</h2>
-                <span className="text-primary font-medium mb-8 block bg-primary/5 inline-block px-3 py-1 rounded-full text-sm">{selectedProject.category}</span>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  <span className="text-primary font-medium bg-primary/5 px-3 py-1 rounded-full text-sm">{selectedProject.category}</span>
+                  <span className="text-green-600 font-bold bg-green-50 border border-green-200 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+                    <TrendingUp className="w-4 h-4" />
+                    {selectedProject.metric}
+                  </span>
+                </div>
                 
                 <div className="space-y-6">
                   <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-transform">
@@ -191,7 +216,7 @@ export function PortfolioSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-primary/20"
+                  className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-primary/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
                 >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
                 </motion.a>

@@ -48,7 +48,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Kostenloses Design Konzept anfragen"
               whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
               whileTap={{ scale: 0.98 }}
-              className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer"
+              className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               Kostenloses Design Konzept
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

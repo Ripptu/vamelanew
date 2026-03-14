@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }) {
@@ -150,8 +150,8 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
                 <div className="absolute top-1/2 right-4 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-[10px] text-primary shadow-sm -translate-x-1/2 -translate-y-1/2">&lt;/&gt;</div>
               </motion.div>
             </div>
-            <div className="w-12 h-12 bg-slate-900 rounded-full shadow-md flex items-center justify-center z-10 text-white font-bold italic">
-              S
+            <div className="w-16 h-16 bg-slate-900 rounded-full shadow-md flex items-center justify-center z-10 p-3">
+              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="w-full h-auto object-contain" referrerPolicy="no-referrer" />
             </div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10">A-Player Team</h3>
@@ -172,9 +172,9 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             <motion.div 
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.5 }}
-              className="w-20 h-20 bg-gradient-to-br from-blue-400 to-primary rounded-2xl rotate-12 flex items-center justify-center shadow-lg shadow-primary/20"
+              className="w-20 h-20 bg-slate-900 rounded-2xl rotate-12 flex items-center justify-center shadow-lg shadow-yellow-400/20"
             >
-              <div className="text-4xl text-white -rotate-12">⚡</div>
+              <Zap className="w-10 h-10 text-yellow-400 fill-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.8)] -rotate-12" />
             </motion.div>
             {/* Speed lines */}
             <div className="absolute top-4 left-1/4 w-0.5 h-8 bg-primary/20 rounded-full"></div>
@@ -222,9 +222,10 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
       >
         <motion.button
           onClick={onOpenContact}
+          aria-label="Projektanfrage starten"
           whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(15, 23, 42, 0.4), 0 8px 10px -6px rgba(15, 23, 42, 0.2)" }}
           whileTap={{ scale: 0.98 }}
-          className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all relative overflow-hidden animate-shimmer shadow-lg shadow-slate-900/20"
+          className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all relative overflow-hidden animate-shimmer shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
         >
           Projektanfrage
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -21,6 +21,9 @@ import { FooterCTA } from './components/FooterCTA';
 import { Footer } from './components/Footer';
 import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
+import { ExitIntentPopup } from './components/ExitIntentPopup';
+import { LiveChat } from './components/LiveChat';
+import { SmoothScroller } from './components/SmoothScroller';
 
 function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -47,6 +50,8 @@ function HomePage() {
       </main>
       <Footer />
       <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
+      <ExitIntentPopup onOpenContact={openPopup} />
+      <LiveChat />
     </div>
   );
 }
@@ -54,6 +59,7 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
+      <SmoothScroller />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={
@@ -76,7 +82,7 @@ export default function App() {
             </section>
             <section>
               <h2 className="text-xl font-bold">EU-Streitschlichtung</h2>
-              <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://ec.europa.eu/consumers/odr/</a>.<br/>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+              <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-sm px-1">https://ec.europa.eu/consumers/odr/</a>.<br/>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
             </section>
           </div>
         } />} />

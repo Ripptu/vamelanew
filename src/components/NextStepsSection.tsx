@@ -74,9 +74,10 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
       >
         <motion.button 
           onClick={onOpenContact}
+          aria-label="Design Konzept anfragen"
           whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(15, 23, 42, 0.4), 0 8px 10px -6px rgba(15, 23, 42, 0.2)" }}
           whileTap={{ scale: 0.98 }}
-          className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all relative overflow-hidden animate-shimmer shadow-lg shadow-slate-900/20"
+          className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all relative overflow-hidden animate-shimmer shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
         >
           Design Konzept anfragen
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

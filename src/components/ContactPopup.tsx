@@ -39,7 +39,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
               {/* Close Button - Made larger and more accessible */}
               <button 
                 onClick={onClose} 
-                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 group"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 group focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 aria-label="Schließen"
               >
                 <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
@@ -47,12 +47,6 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
               
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8 pr-12">
-                  <div className="relative shrink-0">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md">
-                      <img src="https://i.postimg.cc/cZPmBdCM/4995ad88-01bd-465e-9b20-c3178ee83d1e.png" alt="Christian Stockmeier" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 bg-primary border-2 border-white rounded-full shadow-sm"></div>
-                  </div>
                   <div>
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Lass uns sprechen</h2>
                     <p className="text-slate-500 font-medium text-sm sm:text-base">Christian antwortet meist in wenigen Stunden.</p>
@@ -66,7 +60,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                     rel="noopener noreferrer" 
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:from-[#25D366]/20 hover:to-[#25D366]/10 border border-[#25D366]/20 transition-all cursor-pointer relative overflow-hidden"
+                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:from-[#25D366]/20 hover:to-[#25D366]/10 border border-[#25D366]/20 transition-all cursor-pointer relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
                   >
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
                     <div className="flex items-center gap-4 relative z-10">
@@ -85,7 +79,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                     href="mailto:info@vamela.info" 
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-primary/5 border border-slate-100 hover:border-primary/20 transition-all cursor-pointer"
+                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-primary/5 border border-slate-100 hover:border-primary/20 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-white rounded-full shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
@@ -103,7 +97,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                     href="tel:+4917624200179" 
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-100 transition-all cursor-pointer"
+                    className="group flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-100 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500 focus-visible:outline-none"
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-white rounded-full shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
