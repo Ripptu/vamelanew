@@ -4,7 +4,19 @@ import { MessageSquare, X, Send, Bot, User, ExternalLink } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 
 // Initialize Gemini API
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let ai: GoogleGenAI | null = null;
+
+function getAiClient() {
+  if (!ai) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error("GEMINI_API_KEY is not set");
+      return null;
+    }
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+}
 
 interface Message {
   id: string;
@@ -61,10 +73,21 @@ export function LiveChat() {
 
     setIsTyping(true);
 
+    const aiClient = getAiClient();
+    if (!aiClient) {
+      setMessages(prev => [...prev, { 
+        id: `bot-error-${Date.now()}-${Math.random()}`, 
+        text: "Entschuldigung, der Chat ist aktuell nicht verfügbar.", 
+        sender: 'bot' 
+      }]);
+      setIsTyping(false);
+      return;
+    }
+
     try {
       const currentDate = new Date().toLocaleDateString('de-DE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
       // Call Gemini API
-      const response = await ai.models.generateContent({
+      const response = await aiClient.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,
         config: {
