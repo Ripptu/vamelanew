@@ -6,21 +6,19 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    console.log('ExitIntentPopup useEffect running');
     const handleMouseLeave = (e: MouseEvent) => {
+      console.log('Mouse leave detected', e.clientY, e.relatedTarget);
       // Check if the mouse left the top of the window (indicating intent to close/switch tab)
-      if (e.clientY <= 0) {
-        const hasSeenPopup = sessionStorage.getItem('hasSeenExitIntent');
-        if (!hasSeenPopup) {
-          setIsVisible(true);
-          sessionStorage.setItem('hasSeenExitIntent', 'true');
-        }
+      if (e.clientY <= 0 && !e.relatedTarget) {
+        setIsVisible(true);
       }
     };
 
-    document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseout', handleMouseLeave);
 
     return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseout', handleMouseLeave);
     };
   }, []);
 
@@ -83,7 +81,7 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
             
             <div className="flex flex-col gap-3">
               <a
-                href="/#zahlung"
+                href="/#gratis-entwurf"
                 onClick={() => setIsVisible(false)}
                 className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
               >

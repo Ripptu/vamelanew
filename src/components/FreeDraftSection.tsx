@@ -7,7 +7,7 @@ export function FreeDraftSection() {
     name: '',
     business: '',
     goal: '',
-    style: 'minimalistisch'
+    style: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -24,7 +24,7 @@ export function FreeDraftSection() {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section id="gratis-entwurf" className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -75,19 +75,16 @@ export function FreeDraftSection() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Stil?</label>
-              <select 
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Stil ? <span className="text-slate-400 font-normal text-xs">Ideen: minimalistisch, dunkel, hell, modern, clean</span>
+              </label>
+              <input 
+                type="text"
                 className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                placeholder="Dein gewünschter Stil"
                 value={formData.style}
                 onChange={(e) => setFormData({...formData, style: e.target.value})}
-              >
-                <option value="minimalistisch">Minimalistisch</option>
-                <option value="dunkel">Dunkel</option>
-                <option value="hell">Hell</option>
-                <option value="modern">Modern</option>
-                <option value="altmodisch">Altmodisch</option>
-                <option value="clean">Clean</option>
-              </select>
+              />
             </div>
             
             <motion.button
