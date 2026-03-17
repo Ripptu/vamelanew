@@ -48,22 +48,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white pointer-events-none"></div>
 
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 text-primary text-sm font-medium mb-8 border border-primary/10 backdrop-blur-md shadow-sm"
-        >
-          Für B2B-Dienstleister und Berater
-        </motion.div>
-        
         <motion.h1 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-6 leading-[1.05] text-slate-950"
         >
-          Wir Bauen <span className="font-serif italic text-primary font-normal">Flaggschiff Webseiten</span><br/>die dich als Marktführer<br/>positionieren
+          Wir bauen <span className="font-serif italic text-primary font-normal">Flaggschiff Webseiten</span><br/>die deinen Markt<br/>dominieren.
         </motion.h1>
         
         <motion.p 
@@ -72,7 +63,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Deine Webseite sollte nicht nur deine Visitenkarte sein, sondern der stärkste Hebel im gesamten Verkaufs- und Marketingprozess.
+          Verwandle deine Webseite in eine digitale Vertriebsmaschine, die rund um die Uhr Premium-Anfragen generiert.
         </motion.p>
         
         <motion.div 

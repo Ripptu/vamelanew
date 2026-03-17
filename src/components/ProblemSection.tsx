@@ -11,10 +11,10 @@ export function ProblemSection() {
         className="text-center max-w-3xl mx-auto mb-20"
       >
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-          Das Problem mit <span className="font-serif italic text-primary font-normal">normalen Webseiten</span>
+          Warum du aktuell <span className="font-serif italic text-primary font-normal">Kunden verlierst</span>
         </h2>
         <p className="text-slate-600 text-lg">
-          In 2026 wird jedes Unternehmen geprüft und verglichen, bevor es eine Chance bekommt. Deine Webseite ist das Erste, was sie sehen — <span className="italic">Make it count.</span>
+          Wenn deine Webseite nicht für dich arbeitet, arbeitet sie gegen dich. Das sind die drei häufigsten Gründe, warum B2B-Dienstleister Potenzial auf der Strecke lassen:
         </p>
       </motion.div>
 
@@ -51,9 +51,9 @@ export function ProblemSection() {
               <div className="text-4xl font-serif text-slate-400 font-bold opacity-30 absolute top-8 right-8 rotate-12">?</div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Fehlendes Vertrauen</h3>
+          <h3 className="text-xl font-bold mb-3">Konkurrenz wirkt besser</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            In einer Zeit in der jeder ein Unternehmen starten kann, ist Vertrauen die wertvollste Währung. Eine unseriöse Webseite ist der Vertrauens-Killer Nr. 1.
+            Obwohl dein Angebot vielleicht viel besser ist, entscheiden sich Interessenten für die Konkurrenz – einfach weil deren Webseite professioneller und vertrauenswürdiger wirkt.
           </p>
         </motion.div>
 
@@ -85,9 +85,9 @@ export function ProblemSection() {
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Du bist vergleichbar</h3>
+          <h3 className="text-xl font-bold mb-3">Vertrieb ist unnötig schwer</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            0815 Baukasten-Seiten lassen dich wie "einer von vielen" wirken. Dadurch wird dein Vertrieb unnötig erschwert und du gewinnst weniger Kunden.
+            Du musst in Erstgesprächen immer wieder bei null anfangen, weil deine aktuelle Webseite deine Expertise nicht klar kommuniziert und Besucher nicht vorqualifiziert.
           </p>
         </motion.div>
 
@@ -119,9 +119,9 @@ export function ProblemSection() {
             {/* Connecting line */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-slate-300 z-0"></div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Kein Premium Branding</h3>
+          <h3 className="text-xl font-bold mb-3">Falsche Kundenanfragen</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Durchschnittliche Webseiten sorgen für durchschnittliche Wahrnehmung. Premium-Preise abzurufen wird so quasi unmöglich.
+            Eine unprofessionelle Webseite zieht Kunden an, die nur auf den Preis schauen. Premium-Kunden buchen nur bei Experten, die auch digital wie Experten auftreten.
           </p>
         </motion.div>
       </div>
