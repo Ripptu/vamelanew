@@ -42,7 +42,7 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-md relative z-10"
         >
-          <div className="bg-white/90 backdrop-blur-3xl rounded-[2.5rem] p-10 sm:p-12 shadow-2xl shadow-black/10 border border-white/50 text-center relative overflow-hidden">
+          <div className="bg-white/90 backdrop-blur-3xl rounded-3xl md:rounded-[2.5rem] p-6 sm:p-10 md:p-12 shadow-2xl shadow-black/10 border border-white/50 text-center relative overflow-hidden">
             {/* Subtle Gradient Background */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
             <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -50,21 +50,21 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
             {/* Close Button */}
             <button 
               onClick={() => setIsVisible(false)} 
-              className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               aria-label="Schließen"
             >
               <X className="w-5 h-5" strokeWidth={2} />
             </button>
             
-            <div className="w-16 h-16 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-slate-100 relative z-10">
-              <Sparkles className="w-8 h-8" strokeWidth={1.5} />
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-50 text-slate-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-sm border border-slate-100 relative z-10">
+              <Sparkles className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
             </div>
             
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 mb-4 relative z-10">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-3 md:mb-4 relative z-10">
               Ein Geschenk für dich.
             </h2>
             
-            <p className="text-slate-500 mb-10 text-[1.05rem] leading-relaxed relative z-10">
+            <p className="text-slate-500 mb-8 md:mb-10 text-base md:text-[1.05rem] leading-relaxed relative z-10">
               Bevor du gehst: Lass uns dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – komplett kostenlos.
             </p>
             
@@ -72,13 +72,13 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
               <a
                 href="/#gratis-entwurf"
                 onClick={() => setIsVisible(false)}
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-medium text-base md:text-lg transition-all shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
               >
                 Gratis-Entwurf sichern
               </a>
               <button 
                 onClick={() => setIsVisible(false)}
-                className="text-slate-500 hover:text-slate-900 font-medium py-3 transition-colors focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:outline-none rounded-full"
+                className="text-slate-500 hover:text-slate-900 font-medium py-2 md:py-3 transition-colors focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:outline-none rounded-full text-sm md:text-base"
               >
                 Vielleicht später
               </button>

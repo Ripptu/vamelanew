@@ -13,7 +13,6 @@ export function LegalPage({ title, content }: { title: string; content: React.Re
           {content}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

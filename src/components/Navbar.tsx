@@ -55,19 +55,20 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           
           <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-slate-50/80 backdrop-blur-md border border-slate-200/60 rounded-full p-1 shadow-sm absolute left-1/2 -translate-x-1/2">
             {[
-              { name: 'Home', href: '/#home' },
+              { name: 'Home', href: '/' },
+              { name: 'Strategie-Workshop', href: '/strategie-workshop' },
               { name: 'Leistungen', href: '/#leistungen' },
               { name: 'Referenzen', href: '/#referenzen' },
               { name: 'Prozess', href: '/#prozess' },
               { name: 'Bezahlung', href: '/#zahlung' }
             ].map((item) => (
-              <a 
+              <Link 
                 key={item.name}
-                href={item.href} 
+                to={item.href} 
                 className="px-4 py-2 rounded-full hover:bg-white hover:text-slate-900 hover:shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -122,23 +123,27 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             
             <div className="flex-1 flex flex-col justify-center px-8 gap-6">
               {[
-                { name: 'Home', href: '/#home' },
+                { name: 'Home', href: '/' },
+                { name: 'Strategie-Workshop', href: '/strategie-workshop' },
                 { name: 'Leistungen', href: '/#leistungen' },
                 { name: 'Referenzen', href: '/#referenzen' },
                 { name: 'Prozess', href: '/#prozess' },
                 { name: 'Bezahlung', href: '/#zahlung' }
               ].map((item, i) => (
-                <motion.a 
+                <motion.div
                   key={item.name}
-                  href={item.href} 
-                  onClick={() => setIsMenuOpen(false)} 
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                  className="text-4xl sm:text-5xl font-bold text-white tracking-tight hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md"
                 >
-                  {item.name}
-                </motion.a>
+                  <Link 
+                    to={item.href} 
+                    onClick={() => setIsMenuOpen(false)} 
+                    className="text-4xl sm:text-5xl font-bold text-white tracking-tight hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
               ))}
             </div>
             

@@ -3,16 +3,16 @@ import { Star } from 'lucide-react';
 
 export function TestimonialsSection() {
   return (
-    <section className="py-32 bg-slate-50 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="py-16 md:py-32 bg-slate-50 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
         </motion.div>
 
         {/* Featured Testimonial */}
@@ -22,9 +22,9 @@ export function TestimonialsSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ y: -5 }}
-          className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm mb-8 transition-shadow hover:shadow-xl"
+          className="bg-white rounded-3xl p-6 md:p-12 border border-slate-100 shadow-sm mb-8 transition-shadow hover:shadow-xl"
         >
-          <div className="flex gap-1 mb-6">
+          <div className="flex gap-1 mb-4 md:mb-6">
             {[1,2,3,4,5].map(i => (
               <motion.div 
                 key={i} 
@@ -33,23 +33,23 @@ export function TestimonialsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, type: "spring" }}
               >
-                <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                <Star className="w-5 h-5 md:w-6 md:h-6 fill-yellow-400 text-yellow-400" />
               </motion.div>
             ))}
           </div>
-          <p className="text-lg md:text-xl font-medium leading-relaxed mb-8 text-slate-800">
+          <p className="text-base md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-slate-800">
             "Die Zusammenarbeit mit VAMELA war ein echter Wendepunkt für uns. Wir hatten lange das Problem, dass unsere Webseite nicht unsere tatsächliche Qualität widerspiegelte. Christian und sein Team haben nicht nur ein wunderschönes Design geliefert, sondern wirklich verstanden, wie wir unsere Kunden emotional abholen. Das Ergebnis ist nicht nur eine Webseite, sondern ein echtes Werkzeug für unser Wachstum."
           </p>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-bold text-lg">Thomas Rott</div>
-              <div className="text-slate-600 text-sm">Geschäftsführer, Thomas Rott Facility Management</div>
+              <div className="font-bold text-base md:text-lg">Thomas Rott</div>
+              <div className="text-slate-600 text-xs md:text-sm">Geschäftsführer, Thomas Rott Facility Management</div>
             </div>
           </div>
         </motion.div>
 
         {/* Grid Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
               name: "Barnekow",

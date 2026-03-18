@@ -14,7 +14,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
 
   return (
     <section 
-      className="relative w-full pt-32 pb-24 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
+      className="relative w-full pt-40 pb-32 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
       {isMobile ? (
@@ -52,16 +52,16 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-6 leading-[1.05] text-slate-950"
+          className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-8 leading-[1.05] text-slate-950"
         >
-          Wir bauen <span className="font-serif italic text-primary font-normal">Flaggschiff Webseiten</span><br/>die deinen Markt<br/>dominieren.
+          Webdesign, das<br/><span className="font-serif italic text-primary font-normal">Anfragen generiert.</span>
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-slate-700 mb-16 max-w-2xl mx-auto leading-relaxed"
         >
           Verwandle deine Webseite in eine digitale Vertriebsmaschine, die rund um die Uhr Premium-Anfragen generiert.
         </motion.p>
@@ -78,7 +78,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Kostenlosen Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20 relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20 relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Kostenlosen Entwurf anfragen
@@ -94,7 +94,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Jetzt per WhatsApp anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#25D366]/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#25D366]/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
             >
               Jetzt per WhatsApp anfragen
               <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />

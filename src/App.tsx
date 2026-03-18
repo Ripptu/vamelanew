@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -28,57 +29,13 @@ import { LiveChat } from './components/LiveChat';
 import { SmoothScroller } from './components/SmoothScroller';
 import { WhatsAppBanner } from './components/WhatsAppBanner';
 
-function HomePage() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  useEffect(() => {
-    if (isPopupOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isPopupOpen]);
-
-  const openPopup = () => setIsPopupOpen(true);
-  const closePopup = () => setIsPopupOpen(false);
-
+function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
-      <Navbar onOpenContact={openPopup} />
-      <main>
-        <div id="home"><Hero onOpenContact={openPopup} /></div>
-        <LogoCloud />
-        <WhatsAppBanner />
-        <ProblemSection />
-        <SolutionSection onOpenContact={openPopup} />
-        <div id="referenzen"><PortfolioSection /></div>
-        <div id="prozess"><ProcessSection /></div>
-        <TestimonialsSection />
-        <FounderSection />
-        <div id="leistungen"><ComparisonSection /></div>
-        <PricingSection />
-        <FreeDraftSection />
-        <NextStepsSection onOpenContact={openPopup} />
-        <FAQSection onOpenContact={openPopup} />
-        <FooterCTA onOpenContact={openPopup} />
-      </main>
-      <Footer />
-      <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
-      <ExitIntentPopup onOpenContact={openPopup} />
-      {process.env.GEMINI_API_KEY && <LiveChat />}
-    </div>
-  );
-}
-
-export default function App() {
-  return (
-    <Router>
-      <SmoothScroller />
+    <>
+      <Navbar onOpenContact={onOpenContact} />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
+        <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={
           <div className="space-y-6">
             <section>
@@ -130,6 +87,59 @@ export default function App() {
           </div>
         } />} />
       </Routes>
+      <Footer />
+    </>
+  );
+}
+
+function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
+  return (
+    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
+      <main>
+        <div id="home"><Hero onOpenContact={onOpenContact} /></div>
+        <LogoCloud />
+        <WhatsAppBanner />
+        <ProblemSection />
+        <SolutionSection onOpenContact={onOpenContact} />
+        <div id="referenzen"><PortfolioSection /></div>
+        <div id="prozess"><ProcessSection /></div>
+        <TestimonialsSection />
+        <FounderSection />
+        <div id="leistungen"><ComparisonSection /></div>
+        <PricingSection />
+        <FreeDraftSection />
+        <NextStepsSection onOpenContact={onOpenContact} />
+        <FAQSection onOpenContact={onOpenContact} />
+        <FooterCTA onOpenContact={onOpenContact} />
+      </main>
+    </div>
+  );
+}
+
+export default function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isPopupOpen]);
+
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
+
+  return (
+    <Router>
+      <SmoothScroller />
+      <AppContent onOpenContact={openPopup} />
+      <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
+      <ExitIntentPopup onOpenContact={openPopup} />
+      {process.env.GEMINI_API_KEY && <LiveChat />}
     </Router>
   );
 }
