@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, Target, Lightbulb, TrendingUp, ArrowRight } from 'lucide-react';
+import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { CircularGallery } from './ui/circular-gallery';
 
 const PROJECTS = [
+// ... (keep existing projects)
+
   {
     id: 1,
     title: "Vamela",
@@ -177,93 +180,38 @@ export function PortfolioSection() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
 
+  const [radius, setRadius] = useState(600);
+
+  useEffect(() => {
+    const updateRadius = () => {
+      // Adjust radius based on screen width to ensure it fits
+      setRadius(window.innerWidth < 768 ? 300 : 600);
+    };
+    updateRadius();
+    window.addEventListener('resize', updateRadius);
+    return () => window.removeEventListener('resize', updateRadius);
+  }, []);
+
   return (
-    <section className="py-24 bg-slate-50 text-slate-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Unsere Projekte
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Eine Auswahl unserer erfolgreichsten Webdesign- und Strategie-Projekte.
-          </p>
-        </motion.div>
-      </div>
-      
-      <div className="w-full px-2 md:px-4">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col lg:flex-row gap-2 md:gap-4 h-[1200px] lg:h-[600px]"
-        >
-          {PROJECTS.map((project) => (
-            <motion.div
-              key={project.id}
-              className="relative rounded-3xl overflow-hidden cursor-pointer focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none flex-1"
-              onMouseEnter={() => setExpandedId(project.id)}
-              onMouseLeave={() => setExpandedId(null)}
-              onClick={() => setSelectedProject(project)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setSelectedProject(project);
-                }
-              }}
-              tabIndex={0}
-              role="button"
-              aria-label={`Projekt ${project.title} ansehen`}
-              initial={false}
-              animate={{ flex: expandedId === project.id ? 8 : 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover"
-                animate={{ filter: expandedId === project.id ? 'grayscale(0%)' : 'grayscale(100%)' }}
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-black/20" />
-              
-              <AnimatePresence>
-                {expandedId === project.id && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, transition: { duration: 0 } }}
-                    className="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full max-w-[350px] overflow-hidden"
-                  >
-                    <span className="bg-primary text-white text-xs px-3 py-1 rounded-full mb-2 inline-block whitespace-nowrap">{project.category}</span>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2 whitespace-nowrap">{project.title}</h3>
-                    <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 border border-green-500/30 px-3 py-1 rounded-full text-sm font-bold mb-3">
-                      <TrendingUp className="w-4 h-4" />
-                      {project.metric}
-                    </div>
-                    <p className="text-slate-200 mb-4 line-clamp-3 text-sm md:text-base">{project.description}</p>
-                    <a 
-                      href={project.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="bg-white text-black px-6 py-2 rounded-full font-medium inline-block hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none whitespace-nowrap"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Website besuchen
-                    </a>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section className="bg-slate-950 text-white overflow-hidden relative">
+      <div className="w-full" style={{ height: '400vh' }}>
+        <div className="w-full h-screen sticky top-0 flex flex-col items-center justify-center overflow-hidden">
+          <div className="text-center mb-8 absolute top-24 z-10 px-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4">
+              Unsere Projekte
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              Scrollen um die Galerie zu drehen. Klick auf ein Projekt für Details.
+            </p>
+          </div>
+          <div className="w-full h-full pt-20">
+            <CircularGallery 
+              items={PROJECTS} 
+              radius={radius} 
+              onItemClick={setSelectedProject} 
+            />
+          </div>
+        </div>
       </div>
 
       <AnimatePresence>

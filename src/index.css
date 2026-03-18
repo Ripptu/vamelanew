@@ -1,10 +1,4 @@
-@font-face {
-  font-family: 'Helveticaneue';
-  src: url('https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ad644a64c111bc17cceb0e_HelveticaNeue-01.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Instrumentserif';
@@ -18,7 +12,8 @@
 
 @theme {
   /* Typography Scale (9 Levels) */
-  --font-sans: "Helveticaneue", Arial, sans-serif;
+  --font-sans: "Inter", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-serif: "Instrumentserif", Arial, sans-serif;
   
   --text-display: 4.5rem;

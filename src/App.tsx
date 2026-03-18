@@ -98,7 +98,6 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
-        <WhatsAppBanner />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} />
         <div id="referenzen"><PortfolioSection /></div>
