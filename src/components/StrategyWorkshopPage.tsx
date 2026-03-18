@@ -5,7 +5,15 @@ import { useEffect } from 'react';
 
 export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => void }) {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll immediately
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    
+    // Fallback for some browsers/routers that might delay rendering
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 50);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (

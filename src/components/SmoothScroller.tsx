@@ -1,23 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 
 export function SmoothScroller() {
   const { pathname } = useLocation();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   useEffect(() => {
-    let lenis: Lenis | null = null;
     let animationFrameId: number;
 
     const initLenis = () => {
-      if (lenis) return;
+      if (lenisRef.current) return;
       
       // Initialize Lenis for a "heavy" and "professional" scroll feel
-      lenis = new Lenis({
+      lenisRef.current = new Lenis({
         duration: 1.5, // Longer duration for a heavier feel
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth Expo Out
         smoothWheel: true,
@@ -25,7 +29,7 @@ export function SmoothScroller() {
       });
 
       function raf(time: number) {
-        lenis?.raf(time);
+        lenisRef.current?.raf(time);
         animationFrameId = requestAnimationFrame(raf);
       }
 
@@ -33,10 +37,10 @@ export function SmoothScroller() {
     };
 
     const destroyLenis = () => {
-      if (!lenis) return;
+      if (!lenisRef.current) return;
       cancelAnimationFrame(animationFrameId);
-      lenis.destroy();
-      lenis = null;
+      lenisRef.current.destroy();
+      lenisRef.current = null;
     };
 
     // Only enable on desktop (>= 1024px)
@@ -62,9 +66,9 @@ export function SmoothScroller() {
         anchor.hash.startsWith('#') && 
         anchor.origin === window.location.origin
       ) {
-        if (lenis && window.innerWidth >= 1024) {
+        if (lenisRef.current && window.innerWidth >= 1024) {
           e.preventDefault();
-          lenis.scrollTo(anchor.hash, { offset: 0 });
+          lenisRef.current.scrollTo(anchor.hash, { offset: 0 });
         }
       }
     };
