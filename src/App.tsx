@@ -139,7 +139,7 @@ export default function App() {
       <AppContent onOpenContact={openPopup} />
       <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
       <ExitIntentPopup onOpenContact={openPopup} />
-      {process.env.GEMINI_API_KEY && <LiveChat />}
+      <LiveChat />
     </Router>
   );
 }

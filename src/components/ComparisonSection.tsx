@@ -18,12 +18,13 @@ export function ComparisonSection() {
         whileInView={{ scale: 1, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20 shadow-sm"
       >
-        <Check className="w-6 h-6 text-primary bg-primary/10 rounded-full p-1" />
+        <Check className="w-5 h-5 text-primary stroke-[3]" />
       </motion.div>
     );
-    if (type === 'x') return <X className="w-5 h-5 text-slate-300" />;
-    if (type === 'm') return <Minus className="w-5 h-5 text-slate-400" />;
+    if (type === 'x') return <X className="w-5 h-5 text-slate-300 stroke-[2.5]" />;
+    if (type === 'm') return <Minus className="w-5 h-5 text-slate-300 stroke-[2.5]" />;
     return null;
   };
 

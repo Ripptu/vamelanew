@@ -1,7 +1,14 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 
 export function SmoothScroller() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(() => {
     let lenis: Lenis | null = null;
     let animationFrameId: number;

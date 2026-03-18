@@ -1,8 +1,13 @@
 import { ArrowRight, CheckCircle2, Target, Zap, BrainCircuit } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => void }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 md:px-8">
