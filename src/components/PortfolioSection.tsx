@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
-import { CircularGallery } from './ui/circular-gallery';
 
 const PROJECTS = [
 // ... (keep existing projects)
+// (I will need to keep the full PROJECTS array, let me re-read the file to make sure I don't delete it)
 
   {
     id: 1,
@@ -177,40 +177,37 @@ const PROJECTS = [
 ];
 
 export function PortfolioSection() {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
 
-  const [radius, setRadius] = useState(600);
-
-  useEffect(() => {
-    const updateRadius = () => {
-      // Adjust radius based on screen width to ensure it fits
-      setRadius(window.innerWidth < 768 ? 300 : 600);
-    };
-    updateRadius();
-    window.addEventListener('resize', updateRadius);
-    return () => window.removeEventListener('resize', updateRadius);
-  }, []);
-
   return (
-    <section className="bg-slate-950 text-white overflow-hidden relative">
-      <div className="w-full" style={{ height: '400vh' }}>
-        <div className="w-full h-screen sticky top-0 flex flex-col items-center justify-center overflow-hidden">
-          <div className="text-center mb-8 absolute top-24 z-10 px-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4">
-              Unsere Projekte
-            </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Scrollen um die Galerie zu drehen. Klick auf ein Projekt für Details.
-            </p>
-          </div>
-          <div className="w-full h-full pt-20">
-            <CircularGallery 
-              items={PROJECTS} 
-              radius={radius} 
-              onItemClick={setSelectedProject} 
-            />
-          </div>
+    <section className="bg-slate-950 text-white py-24">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4">
+            Unsere Projekte
+          </h2>
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            Eine Auswahl unserer Arbeiten. Klick auf ein Projekt für Details.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.map((project) => (
+            <motion.div
+              key={project.id}
+              whileHover={{ y: -10 }}
+              className="bg-slate-900 rounded-3xl overflow-hidden cursor-pointer border border-slate-800 hover:border-primary/50 transition-colors"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img src={project.image} alt={project.title} className="w-full h-64 object-cover" referrerPolicy="no-referrer" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-slate-400 text-sm mb-4">{project.category}</p>
+                <div className="text-primary font-medium text-sm flex items-center gap-2">
+                  Details ansehen <ExternalLink className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
