@@ -6,7 +6,11 @@ export function LogoCloud() {
     "https://www.svgrepo.com/show/508753/premiere.svg",
     "https://www.svgrepo.com/show/532271/figma.svg",
     "https://www.svgrepo.com/show/409983/webflow.svg",
-    "https://www.svgrepo.com/show/521303/react-16.svg"
+    "https://www.svgrepo.com/show/521303/react-16.svg",
+    "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/affinity-studio-icon.png",
+    "https://www.svgrepo.com/show/331444/ionos.svg",
+    "https://images.seeklogo.com/logo-png/66/1/higgsfield-logo-png_seeklogo-660244.png?v=1964531789390079920",
+    "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/netlify-icon.png"
   ];
 
   // Duplicate a few times so one half is wider than most screens

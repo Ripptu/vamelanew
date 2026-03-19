@@ -101,16 +101,23 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
             </motion.a>
           </div>
           
-          <div className="flex items-center gap-4 bg-white/60 backdrop-blur-md px-6 py-3 rounded-full border border-slate-200/50 shadow-sm">
+          <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {[
-                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
-                "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80",
-                "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100&q=80"
+                "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100&q=80",
+                "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80",
+                "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100&q=80"
               ].map((src, i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.5, x: -10 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1, type: "spring", stiffness: 200 }}
+                  whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
+                  className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm cursor-pointer"
+                >
                   <img src={src} alt="" role="presentation" width="40" height="40" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                </div>
+                </motion.div>
               ))}
             </div>
             <div className="text-left">
