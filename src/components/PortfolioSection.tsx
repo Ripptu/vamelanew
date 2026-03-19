@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
-import { CardStack } from './ui/card-stack';
+import { ExternalLink, X, Target, Lightbulb, TrendingUp, ArrowRight, ArrowDown } from 'lucide-react';
 
 const PROJECTS = [
 // ... (keep existing projects)
-// (I will need to keep the full PROJECTS array, let me re-read the file to make sure I don't delete it)
 
   {
     id: 1,
@@ -179,69 +177,99 @@ const PROJECTS = [
 
 export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 4);
 
   return (
-    <section className="bg-slate-50 text-slate-900 py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4">
-            Unsere Projekte
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Eine Auswahl unserer Arbeiten. Klick auf ein Projekt für Details.
-          </p>
+    <section className="bg-white text-slate-900 py-24 md:py-32 relative overflow-hidden" id="referenzen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 md:mb-32 max-w-3xl">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display tracking-tight mb-6"
+          >
+            Ausgewählte Arbeiten.
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-2xl text-slate-500 font-light leading-relaxed"
+          >
+            Minimalistisch im Design, maximal in der Wirkung. Entdecken Sie Projekte, die Marken transformieren und messbare Ergebnisse liefern.
+          </motion.p>
         </div>
-        <div className="mx-auto w-full max-w-5xl flex justify-center mt-12">
-          <CardStack
-            items={PROJECTS.map(p => ({
-              id: p.id,
-              title: p.title,
-              description: p.description,
-              imageSrc: p.image,
-              href: p.url,
-              project: p
-            }))}
-            initialIndex={0}
-            autoAdvance
-            intervalMs={2500}
-            pauseOnHover
-            showDots
-            renderCard={(item, { active }) => (
-              <div className="relative h-full w-full group">
-                <div className="absolute inset-0">
-                  <img
-                    src={item.imageSrc}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                    draggable={false}
-                    loading="eager"
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
+          {displayedProjects.map((project, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div 
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: isEven ? 0 : 0.2 }}
+                className={`group cursor-pointer flex flex-col gap-6 ${!isEven ? 'md:mt-32' : ''}`}
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/5] md:aspect-[3/4]">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                </div>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="relative z-10 flex h-full flex-col justify-end p-6">
-                  <div className="truncate text-2xl font-bold text-white mb-1">
-                    {item.title}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+                  
+                  {/* Hover overlay with button */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="bg-white/90 backdrop-blur-sm text-slate-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      Case Study <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                  <div className="mt-1 line-clamp-2 text-sm text-white/80 mb-4">
-                    {item.description}
-                  </div>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedProject(item.project);
-                    }}
-                    className={`bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full text-sm font-medium w-fit transition-all duration-300 ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
-                  >
-                    Details ansehen
-                  </button>
                 </div>
-              </div>
-            )}
-          />
+
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h3>
+                    <span className="text-sm font-medium text-slate-500 uppercase tracking-wider">{project.category}</span>
+                  </div>
+                  <p className="text-slate-600 text-lg line-clamp-2">{project.description}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {PROJECTS.length > 4 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 md:mt-32 flex justify-center"
+          >
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+            >
+              {showAll ? 'Weniger anzeigen' : 'Mehr anzeigen'}
+              <motion.div
+                animate={{ rotate: showAll ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ArrowDown className="w-5 h-5" />
+              </motion.div>
+            </button>
+          </motion.div>
+        )}
       </div>
 
+      {/* Modal for project details */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -256,7 +284,7 @@ export function PortfolioSection() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-[2rem] p-8 max-w-4xl w-full flex flex-col md:flex-row gap-8 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
@@ -264,42 +292,51 @@ export function PortfolioSection() {
                 className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 aria-label="Projekt Details schließen"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               </button>
 
-              <img src={selectedProject.image} alt={selectedProject.title} width="800" height="600" className="w-full md:w-1/2 rounded-2xl object-cover shadow-sm" referrerPolicy="no-referrer" />
-              <div className="flex-1 relative pt-4 md:pt-0">
-                <h2 className="text-4xl font-bold mb-2 tracking-tight">{selectedProject.title}</h2>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  <span className="text-primary font-medium bg-primary/5 px-3 py-1 rounded-full text-sm">{selectedProject.category}</span>
-                  <span className="text-green-600 font-bold bg-green-50 border border-green-200 px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                    <TrendingUp className="w-4 h-4" />
-                    {selectedProject.metric}
-                  </span>
+              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className="w-full h-full object-cover" 
+                  referrerPolicy="no-referrer" 
+                />
+              </div>
+              
+              <div className="flex-1 relative pt-4 md:pt-8 flex flex-col">
+                <div className="mb-8">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{selectedProject.title}</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="text-slate-600 font-medium bg-slate-100 px-4 py-1.5 rounded-full text-sm uppercase tracking-wider">
+                      {selectedProject.category}
+                    </span>
+                    <span className="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-full text-sm flex items-center gap-1.5">
+                      <TrendingUp className="w-4 h-4" />
+                      {selectedProject.metric}
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="space-y-6">
-                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-transform">
-                    <Target className="text-primary shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-slate-900">Challenge</h4>
-                      <p className="text-slate-600 text-sm">{selectedProject.challenge}</p>
-                    </div>
-                  </motion.div>
-                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-transform">
-                    <Lightbulb className="text-primary shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-slate-900">Solution</h4>
-                      <p className="text-slate-600 text-sm">{selectedProject.solution}</p>
-                    </div>
-                  </motion.div>
-                  <motion.div whileHover={{ x: 5 }} className="flex gap-4 p-4 rounded-2xl bg-primary/5 border border-primary/20 transition-transform">
-                    <TrendingUp className="text-primary shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-primary-hover">Result</h4>
-                      <p className="text-primary-hover text-sm">{selectedProject.result}</p>
-                    </div>
-                  </motion.div>
+                <div className="space-y-8 flex-1">
+                  <div>
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
+                      <Target className="w-4 h-4 text-slate-400" /> Challenge
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">{selectedProject.challenge}</p>
+                  </div>
+                  <div>
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
+                      <Lightbulb className="w-4 h-4 text-slate-400" /> Solution
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">{selectedProject.solution}</p>
+                  </div>
+                  <div>
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
+                      <TrendingUp className="w-4 h-4 text-slate-400" /> Result
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed">{selectedProject.result}</p>
+                  </div>
                 </div>
                 
                 <motion.a 
@@ -308,7 +345,7 @@ export function PortfolioSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-8 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-primary/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
                 >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
                 </motion.a>

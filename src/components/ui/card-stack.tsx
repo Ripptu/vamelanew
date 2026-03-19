@@ -85,8 +85,8 @@ export function CardStack<T extends CardStackItem>({
   initialIndex = 0,
   maxVisible = 7,
 
-  cardWidth = 520,
-  cardHeight = 320,
+  cardWidth: propCardWidth = 520,
+  cardHeight: propCardHeight = 320,
 
   overlap = 0.48,
   spreadDeg = 48,
@@ -120,6 +120,27 @@ export function CardStack<T extends CardStackItem>({
     wrapIndex(initialIndex, len),
   );
   const [hovering, setHovering] = React.useState(false);
+
+  const [cardWidth, setCardWidth] = React.useState(propCardWidth);
+  const [cardHeight, setCardHeight] = React.useState(propCardHeight);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      const padding = 32; // 16px on each side
+      if (screenWidth < propCardWidth + padding) {
+        const newWidth = screenWidth - padding;
+        setCardWidth(newWidth);
+        setCardHeight(newWidth * (propCardHeight / propCardWidth));
+      } else {
+        setCardWidth(propCardWidth);
+        setCardHeight(propCardHeight);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [propCardWidth, propCardHeight]);
 
   // keep active in bounds if items change
   React.useEffect(() => {
@@ -279,6 +300,7 @@ export function CardStack<T extends CardStackItem>({
                     height: cardHeight,
                     zIndex,
                     transformStyle: "preserve-3d",
+                    touchAction: isActive ? "pan-y" : "auto",
                   }}
                   initial={
                     reduceMotion
