@@ -26,7 +26,6 @@ import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { LiveChat } from './components/LiveChat';
-import { SmoothScroller } from './components/SmoothScroller';
 import { WhatsAppBanner } from './components/WhatsAppBanner';
 
 function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
@@ -98,6 +97,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
+        <WhatsAppBanner />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} />
         <div id="referenzen"><PortfolioSection /></div>
@@ -134,7 +134,6 @@ export default function App() {
 
   return (
     <Router>
-      <SmoothScroller />
       <AppContent onOpenContact={openPopup} />
       <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
       <ExitIntentPopup onOpenContact={openPopup} />
