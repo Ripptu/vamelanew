@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, X, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { CardStack } from './ui/card-stack';
 
 const PROJECTS = [
 // ... (keep existing projects)
@@ -180,34 +181,64 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
 
   return (
-    <section className="bg-slate-950 text-white py-24">
+    <section className="bg-slate-50 text-slate-900 py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4">
             Unsere Projekte
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Eine Auswahl unserer Arbeiten. Klick auf ein Projekt für Details.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project) => (
-            <motion.div
-              key={project.id}
-              whileHover={{ y: -10 }}
-              className="bg-slate-900 rounded-3xl overflow-hidden cursor-pointer border border-slate-800 hover:border-primary/50 transition-colors"
-              onClick={() => setSelectedProject(project)}
-            >
-              <img src={project.image} alt={project.title} className="w-full h-64 object-cover" referrerPolicy="no-referrer" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-slate-400 text-sm mb-4">{project.category}</p>
-                <div className="text-primary font-medium text-sm flex items-center gap-2">
-                  Details ansehen <ExternalLink className="w-4 h-4" />
+        <div className="mx-auto w-full max-w-5xl flex justify-center mt-12">
+          <CardStack
+            items={PROJECTS.map(p => ({
+              id: p.id,
+              title: p.title,
+              description: p.description,
+              imageSrc: p.image,
+              href: p.url,
+              project: p
+            }))}
+            initialIndex={0}
+            autoAdvance
+            intervalMs={2500}
+            pauseOnHover
+            showDots
+            renderCard={(item, { active }) => (
+              <div className="relative h-full w-full group">
+                <div className="absolute inset-0">
+                  <img
+                    src={item.imageSrc}
+                    alt={item.title}
+                    className="h-full w-full object-cover"
+                    draggable={false}
+                    loading="eager"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="relative z-10 flex h-full flex-col justify-end p-6">
+                  <div className="truncate text-2xl font-bold text-white mb-1">
+                    {item.title}
+                  </div>
+                  <div className="mt-1 line-clamp-2 text-sm text-white/80 mb-4">
+                    {item.description}
+                  </div>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProject(item.project);
+                    }}
+                    className={`bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full text-sm font-medium w-fit transition-all duration-300 ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+                  >
+                    Details ansehen
+                  </button>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            )}
+          />
         </div>
       </div>
 
