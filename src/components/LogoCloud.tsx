@@ -23,7 +23,7 @@ export function LogoCloud() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       id="logos" 
-      className="py-16 border-y border-border bg-white overflow-hidden"
+      className="py-16 bg-white overflow-hidden"
     >
       <div className="relative flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <div className="animate-marquee flex w-max">

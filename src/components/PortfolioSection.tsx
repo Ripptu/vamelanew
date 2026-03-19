@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, X, Target, Lightbulb, TrendingUp, ArrowRight, ArrowDown } from 'lucide-react';
 
@@ -178,8 +178,20 @@ const PROJECTS = [
 export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 4);
+
+  const handleToggleShowAll = () => {
+    if (showAll) {
+      setShowAll(false);
+      setTimeout(() => {
+        buttonRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    } else {
+      setShowAll(true);
+    }
+  };
 
   return (
     <section className="bg-white text-slate-900 py-24 md:py-32 relative overflow-hidden" id="referenzen">
@@ -248,13 +260,14 @@ export function PortfolioSection() {
 
         {PROJECTS.length > 4 && (
           <motion.div 
+            ref={buttonRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mt-20 md:mt-32 flex justify-center"
           >
             <button
-              onClick={() => setShowAll(!showAll)}
+              onClick={handleToggleShowAll}
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
             >
               {showAll ? 'Weniger anzeigen' : 'Mehr anzeigen'}
@@ -284,7 +297,7 @@ export function PortfolioSection() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 border border-slate-200 relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
@@ -345,7 +358,7 @@ export function PortfolioSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
                 >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
                 </motion.a>

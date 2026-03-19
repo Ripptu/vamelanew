@@ -5,7 +5,7 @@
 
 import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LogoCloud } from './components/LogoCloud';
@@ -25,8 +25,26 @@ import { Footer } from './components/Footer';
 import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
-import { LiveChat } from './components/LiveChat';
 import { WhatsAppBanner } from './components/WhatsAppBanner';
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
   return (
@@ -93,7 +111,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
 
 function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-background font-sans text-body selection:bg-primary/20 selection:text-primary">
+    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
@@ -105,7 +123,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <TestimonialsSection />
         <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
-        <PricingSection />
+        <div id="zahlung"><PricingSection /></div>
         <FreeDraftSection />
         <NextStepsSection onOpenContact={onOpenContact} />
         <FAQSection onOpenContact={onOpenContact} />
@@ -134,10 +152,10 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <AppContent onOpenContact={openPopup} />
       <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
       <ExitIntentPopup onOpenContact={openPopup} />
-      <LiveChat />
     </Router>
   );
 }
