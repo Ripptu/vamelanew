@@ -52,25 +52,24 @@ export function ProcessSection() {
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           In 4 Schritten zur<br/><span className="font-serif italic text-primary font-normal">Marktführer Positionierung</span>
         </h2>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto">
           Unser einzigartiger Prozess, um Tag für Tag neue Marktführer Marken mit hochkonvertierenden Online Auftritten zu erschaffen
         </p>
       </motion.div>
 
       <div className="relative">
         {/* Vertical Line Track */}
-        <div className="absolute left-[25px] top-8 bottom-8 w-1.5 bg-slate-100 rounded-full">
+        <div className="absolute left-[25px] top-8 bottom-8 w-1.5 bg-slate-200 rounded-full">
           {/* Animated Gradient Beam */}
           <motion.div 
             className="absolute top-0 left-0 w-full rounded-full bg-gradient-to-b from-indigo-300 via-primary to-primary"
             style={{ 
-              height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
-              boxShadow: "0 0 20px 2px rgba(37, 99, 235, 0.3)"
+              height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
             }}
           >
             {/* Leading Spark/Comet */}
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-16 bg-gradient-to-t from-white to-transparent rounded-full blur-[3px] opacity-80"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-6 bg-white rounded-full shadow-[0_0_15px_5px_rgba(96,165,250,0.9)]"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-6 bg-white rounded-full"></div>
           </motion.div>
         </div>
 
@@ -89,14 +88,13 @@ export function ProcessSection() {
               viewport={{ amount: 0.5, margin: "-20% 0px -20% 0px" }}
             >
               {/* Dot */}
-              <div className="absolute left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white shadow-sm bg-white flex items-center justify-center z-10">
+              <div className="absolute left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
                 <motion.div 
                   variants={{
-                    hidden: { backgroundColor: "#e2e8f0", scale: 0.8, boxShadow: "0 0 0px 0px rgba(37, 99, 235, 0)" },
+                    hidden: { backgroundColor: "#e2e8f0", scale: 0.8 },
                     visible: { 
-                      backgroundColor: "#2563EB", 
-                      scale: [1, 1.2, 1], 
-                      boxShadow: ["0 0 0px 0px rgba(37, 99, 235, 0.4)", "0 0 15px 6px rgba(37, 99, 235, 0.3)", "0 0 0px 0px rgba(37, 99, 235, 0.4)"]
+                      backgroundColor: "#4F46E5", 
+                      scale: [1, 1.2, 1]
                     }
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -117,13 +115,13 @@ export function ProcessSection() {
                 <div className="flex-1">
                   <div className="text-6xl font-bold text-slate-200 mb-2 font-serif">{step.num}</div>
                   <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-slate-600 mb-6 text-sm">{step.desc}</p>
+                  <p className="text-slate-500 mb-6 text-sm">{step.desc}</p>
                   <ul className="space-y-3">
                     {step.bullets.map((bullet, j) => (
                       <motion.li 
                         key={j} 
                         whileHover={{ x: 5 }}
-                        className="flex items-center gap-3 text-sm font-medium text-slate-800"
+                        className="flex items-center gap-3 text-sm font-medium text-slate-500"
                       >
                         <CheckCircle2 className="w-5 h-5 text-primary" />
                         {bullet}
@@ -137,8 +135,7 @@ export function ProcessSection() {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="hidden md:block flex-1 relative group"
                   >
-                    <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl shadow-lg border border-slate-100 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
+                    <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl border border-slate-200 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
                   </motion.div>
                 )}
               </div>

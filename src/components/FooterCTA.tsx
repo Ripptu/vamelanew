@@ -20,7 +20,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-        className="bg-gradient-to-br from-white to-slate-100 rounded-[40px] border border-slate-200 p-12 md:p-20 text-center relative shadow-xl overflow-hidden"
+        className="bg-white rounded-[40px] border border-slate-200 p-12 md:p-20 text-center relative overflow-hidden"
       >
         {/* Grid Background Pattern */}
         <div className="absolute inset-0 opacity-[0.05]" 
@@ -42,7 +42,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-slate-600 text-lg max-w-2xl mx-auto mb-10"
+            className="text-slate-500 text-lg max-w-2xl mx-auto mb-10"
           >
             Im kostenlosen Erstgespräch zeigen wir dir, wie dein neuer Online-Auftritt aussehen und rund um die Uhr für dich verkaufen wird.
           </motion.p>
@@ -57,15 +57,15 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             <motion.button
               onClick={onOpenContact}
               aria-label="Kostenloses Design Konzept anfragen"
-              whileHover={{ y: -2, boxShadow: "0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.2)" }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all shadow-lg shadow-primary/30 relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               Kostenloses Design Konzept
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </motion.button>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-600">
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-500">
               <div className="flex -space-x-3">
                 {[
                   "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
@@ -79,9 +79,9 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
                 <span className="font-bold text-slate-900">+{USER_COUNT} zufriedene Kunden</span>
-                <div className="hidden sm:block w-1 h-1 bg-slate-400 rounded-full"></div>
+                <div className="hidden sm:block w-1 h-1 bg-slate-200 rounded-full"></div>
                 <div className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full ${AVAILABLE_SLOTS > 0 ? 'bg-primary shadow-[0_0_8px_rgba(37,99,235,0.6)]' : 'bg-red-500'}`}></div>
+                  <div className={`w-2 h-2 rounded-full ${AVAILABLE_SLOTS > 0 ? 'bg-primary' : 'bg-red-500'}`}></div>
                   <span className={AVAILABLE_SLOTS === 1 ? 'text-red-600 font-bold' : ''}>{dynamicMessage}</span>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
           whileInView={{ opacity: 0.8, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-[120px] md:text-[200px] font-bold text-slate-100 leading-none tracking-tighter whitespace-nowrap"
+          className="text-[120px] md:text-[200px] font-bold text-slate-200 leading-none tracking-tighter whitespace-nowrap"
         >
           VAMELA
         </motion.div>

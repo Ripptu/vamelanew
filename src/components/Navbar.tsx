@@ -49,11 +49,11 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
         <nav className="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <Link to="/" className="focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">
-              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 md:h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 md:h-10 w-auto object-contain brightness-0" referrerPolicy="no-referrer" />
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-slate-50/80 backdrop-blur-md border border-slate-200/60 rounded-full p-1 shadow-sm absolute left-1/2 -translate-x-1/2">
+          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-slate-50/80 backdrop-blur-md border border-slate-200/60 rounded-full p-1 absolute left-1/2 -translate-x-1/2">
             {[
               { name: 'Home', href: '/' },
               { name: 'Strategie-Workshop', href: '/strategie-workshop' },
@@ -65,7 +65,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               <Link 
                 key={item.name}
                 to={item.href} 
-                className="px-4 py-2 rounded-full hover:bg-white hover:text-slate-900 hover:shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="px-4 py-2 rounded-full hover:bg-white hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {item.name}
               </Link>
@@ -78,7 +78,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               aria-label="Kostenloses Design-Konzept anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-colors shadow-md shadow-primary/20 relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Kostenloses Design-Konzept
@@ -153,7 +153,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                   setIsMenuOpen(false);
                   onOpenContact?.();
                 }}
-                className="w-full bg-primary text-white text-lg font-semibold py-4 rounded-xl hover:bg-primary-hover transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-primary focus-visible:outline-none shadow-lg shadow-primary/20"
+                className="w-full bg-primary text-white text-lg font-semibold py-4 rounded-xl hover:bg-primary-hover transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-primary focus-visible:outline-none"
               >
                 Projekt anfragen
               </button>

@@ -26,13 +26,13 @@ export function ProblemSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
+          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center">
+          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
-            <div className="w-full max-w-[200px] bg-white rounded-t-xl border border-slate-200 shadow-sm h-full translate-y-4 relative z-10 p-3">
+            <div className="w-full max-w-[200px] bg-white rounded-t-xl border border-slate-200 h-full translate-y-4 relative z-10 p-3">
               <div className="flex gap-1 mb-3 border-b border-slate-100 pb-2">
                 <div className="w-2 h-2 rounded-full bg-red-400"></div>
                 <div className="w-2 h-2 rounded-full bg-amber-400"></div>
@@ -51,7 +51,7 @@ export function ProblemSection() {
               <div className="text-4xl font-serif text-slate-400 font-bold opacity-30 absolute top-8 right-8 rotate-12">?</div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Konkurrenz wirkt besser</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Konkurrenz wirkt besser</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
             Obwohl dein Angebot vielleicht viel besser ist, entscheiden sich Interessenten für die Konkurrenz – einfach weil deren Webseite professioneller und vertrauenswürdiger wirkt.
           </p>
@@ -64,20 +64,20 @@ export function ProblemSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
+          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center gap-2">
+          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
-            <div className="w-28 h-36 bg-white rounded-lg border border-slate-200 shadow-md relative z-10 -rotate-6 translate-y-2 p-2">
+            <div className="w-28 h-36 bg-white rounded-lg border border-slate-200 relative z-10 -rotate-6 translate-y-2 p-2">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[8px] px-2 py-0.5 rounded-full whitespace-nowrap z-20">Deine Webseite</div>
               <div className="h-2 bg-slate-200 rounded w-3/4 mb-2 mt-2"></div>
               <div className="h-12 bg-slate-100 rounded w-full mb-2"></div>
               <div className="h-2 bg-slate-200 rounded w-full mb-1"></div>
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
-            <div className="w-28 h-36 bg-white rounded-lg border border-slate-200 shadow-sm relative z-0 rotate-6 -translate-y-2 p-2 opacity-80">
+            <div className="w-28 h-36 bg-white rounded-lg border border-slate-200 relative z-0 rotate-6 -translate-y-2 p-2 opacity-80">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-600 text-white text-[8px] px-2 py-0.5 rounded-full whitespace-nowrap z-20">Andere Webseiten</div>
               <div className="h-2 bg-slate-200 rounded w-3/4 mb-2 mt-2"></div>
               <div className="h-12 bg-slate-100 rounded w-full mb-2"></div>
@@ -85,7 +85,7 @@ export function ProblemSection() {
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Vertrieb ist unnötig schwer</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Vertrieb ist unnötig schwer</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
             Du musst in Erstgesprächen immer wieder bei null anfangen, weil deine aktuelle Webseite deine Expertise nicht klar kommuniziert und Besucher nicht vorqualifiziert.
           </p>
@@ -98,19 +98,19 @@ export function ProblemSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.3 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm transition-shadow hover:shadow-xl"
+          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mb-8 border border-indigo-100/50 p-4 relative overflow-hidden flex items-center justify-center gap-4">
+          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
-            <div className="w-16 h-16 rounded-xl bg-white border-2 border-primary flex items-center justify-center z-10 shadow-sm">
+            <div className="w-16 h-16 rounded-xl bg-white border border-primary flex items-center justify-center z-10">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-serif italic text-lg">Y</div>
             </div>
             
-            <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold z-10 shadow-sm text-sm">≠</div>
+            <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold z-10 text-sm">≠</div>
             
-            <div className="w-16 h-16 rounded-xl bg-white border border-slate-200 flex items-center justify-center z-10 shadow-sm">
+            <div className="w-16 h-16 rounded-xl bg-white border border-slate-200 flex items-center justify-center z-10">
               <div className="w-6 h-6 bg-slate-200 rotate-45 flex items-center justify-center">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
@@ -119,7 +119,7 @@ export function ProblemSection() {
             {/* Connecting line */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-slate-300 z-0"></div>
           </div>
-          <h3 className="text-xl font-bold mb-3">Falsche Kundenanfragen</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Falsche Kundenanfragen</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
             Eine unprofessionelle Webseite zieht Kunden an, die nur auf den Preis schauen. Premium-Kunden buchen nur bei Experten, die auch digital wie Experten auftreten.
           </p>

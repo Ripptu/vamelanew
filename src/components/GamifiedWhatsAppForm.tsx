@@ -50,7 +50,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
   return (
     <div className="w-full">
       {/* Progress Bar */}
-      <div className="h-2 w-full bg-slate-100 rounded-full mb-8 overflow-hidden">
+      <div className="h-2 w-full bg-border rounded-full mb-8 overflow-hidden">
         <motion.div 
           className="h-full bg-primary"
           initial={{ width: 0 }}
@@ -70,7 +70,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
           <motion.label 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="block text-2xl font-bold text-slate-900 leading-tight"
+            className="block text-2xl font-bold text-heading leading-tight"
           >
             {steps[step].question}
           </motion.label>
@@ -79,7 +79,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={steps[step].placeholder}
-            className="w-full p-5 text-lg rounded-2xl border-2 border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300"
+            className="w-full p-5 text-lg rounded-2xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 bg-white text-body"
             onKeyDown={(e) => e.key === 'Enter' && inputValue && handleNext()}
             autoFocus
           />
@@ -89,7 +89,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
               disabled={!inputValue}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {step === steps.length - 1 ? 'Anfrage senden' : 'Weiter'}
               {step === steps.length - 1 ? <Send className="w-5 h-5" /> : <ArrowRight className="w-5 h-5" />}

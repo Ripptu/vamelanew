@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ y: -5 }}
-          className="bg-white rounded-3xl p-6 md:p-12 border border-slate-100 shadow-sm mb-8 transition-shadow hover:shadow-xl"
+          className="bg-white rounded-3xl p-6 md:p-12 border border-slate-200 mb-8 transition-transform"
         >
           <div className="flex gap-1 mb-4 md:mb-6">
             {[1,2,3,4,5].map(i => (
@@ -37,13 +37,13 @@ export function TestimonialsSection() {
               </motion.div>
             ))}
           </div>
-          <p className="text-base md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-slate-800">
+          <p className="text-base md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-slate-500">
             "Die Zusammenarbeit mit VAMELA war ein echter Wendepunkt für uns. Wir hatten lange das Problem, dass unsere Webseite nicht unsere tatsächliche Qualität widerspiegelte. Christian und sein Team haben nicht nur ein wunderschönes Design geliefert, sondern wirklich verstanden, wie wir unsere Kunden emotional abholen. Das Ergebnis ist nicht nur eine Webseite, sondern ein echtes Werkzeug für unser Wachstum."
           </p>
           <div className="flex items-center justify-between">
             <div>
               <div className="font-bold text-base md:text-lg">Thomas Rott</div>
-              <div className="text-slate-600 text-xs md:text-sm">Geschäftsführer, Thomas Rott Facility Management</div>
+              <div className="text-slate-500 text-xs md:text-sm">Geschäftsführer, Thomas Rott Facility Management</div>
             </div>
           </div>
         </motion.div>
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col transition-shadow hover:shadow-xl"
+              className="bg-white rounded-3xl p-8 border border-slate-200 flex flex-col transition-transform"
             >
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(j => (
@@ -89,11 +89,11 @@ export function TestimonialsSection() {
                   </motion.div>
                 ))}
               </div>
-              <p className="text-sm leading-relaxed mb-8 flex-1 text-slate-700">"{t.text}"</p>
+              <p className="text-sm leading-relaxed mb-8 flex-1 text-slate-500">"{t.text}"</p>
               <div className="flex items-center gap-4">
                 <div>
                   <div className="font-bold text-sm">{t.name}</div>
-                  <div className="text-slate-600 text-xs">{t.role}</div>
+                  <div className="text-slate-500 text-xs">{t.role}</div>
                 </div>
               </div>
             </motion.div>

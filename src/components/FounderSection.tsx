@@ -14,9 +14,9 @@ export function FounderSection() {
         >
           <div className="relative">
             {/* Decorative background element */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-slate-100 to-slate-50 rounded-[2rem] md:rounded-[2.5rem] -z-10 transform -rotate-3"></div>
+            <div className="absolute -inset-4 bg-slate-200 rounded-[2rem] md:rounded-[2.5rem] -z-10 transform -rotate-3"></div>
             
-            <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl relative border border-white/50">
+            <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden relative border border-slate-200">
               <img src="https://i.postimg.cc/cZPmBdCM/4995ad88-01bd-465e-9b20-c3178ee83d1e.png" alt="Christian" className="w-full aspect-[4/5] object-cover" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
               
@@ -41,7 +41,7 @@ export function FounderSection() {
         >
           <Quote className="w-10 h-10 md:w-16 md:h-16 text-primary/20 mb-6 md:mb-8" />
           
-          <div className="space-y-4 md:space-y-6 text-base md:text-xl text-slate-700 leading-relaxed">
+          <div className="space-y-4 md:space-y-6 text-base md:text-xl text-slate-500 leading-relaxed">
             <p>
               Der Markt ist voll von alt eingesessenen Agenturen, die auf veralteten Systemen und ressourcenfressenden Prozessen festhängen – nur um am Ende eine Seite zu liefern, die aussieht, als wäre sie aus 2016.
             </p>

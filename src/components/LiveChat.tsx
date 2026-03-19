@@ -40,7 +40,7 @@ export function LiveChat() {
 
   useEffect(() => {
     scrollToBottom();
-    if (isOpen) {
+    if (isOpen && window.innerWidth < 640) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -150,7 +150,7 @@ export function LiveChat() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring" }}
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 w-14 h-14 bg-slate-900 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-slate-800 transition-colors z-40 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 w-14 h-14 bg-heading text-white rounded-full border border-heading flex items-center justify-center hover:bg-heading/90 transition-colors z-40 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none ${isOpen ? 'hidden' : 'flex'}`}
         aria-label="Chat öffnen"
       >
         <MessageSquare className="w-6 h-6" />
@@ -160,14 +160,14 @@ export function LiveChat() {
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-end justify-end p-4 sm:p-6 pointer-events-none">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="absolute inset-0 bg-slate-900/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-heading/20 backdrop-blur-sm pointer-events-auto sm:hidden"
             />
             
             {/* Chat Window */}
@@ -176,10 +176,10 @@ export function LiveChat() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="w-full max-w-[350px] h-[500px] max-h-[90vh] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden relative z-10"
+              className="w-full sm:w-[350px] h-[500px] max-h-[90vh] bg-white rounded-2xl border border-border flex flex-col overflow-hidden relative z-10 pointer-events-auto mb-16 sm:mb-20"
             >
               {/* Header */}
-              <div className="bg-[#075E54] text-white p-4 flex items-center justify-between shrink-0">
+              <div className="bg-primary text-white p-4 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
                   <button onClick={() => setIsOpen(false)} className="md:hidden p-1">
                     <X className="w-6 h-6" />
@@ -189,7 +189,7 @@ export function LiveChat() {
                   </div>
                   <div>
                     <h3 className="font-bold text-sm">VAMELA Support</h3>
-                    <div className="flex items-center gap-1 text-xs text-slate-200">
+                    <div className="flex items-center gap-1 text-xs text-white/80">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                       Online
                     </div>
@@ -198,14 +198,14 @@ export function LiveChat() {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={handleSendToWhatsApp}
-                    className="text-white hover:text-green-300 transition-colors p-1"
+                    className="text-white hover:text-white/80 transition-colors p-1"
                     aria-label="Verlauf auf WhatsApp senden"
                   >
                     <MessageCircle className="w-6 h-6" />
                   </button>
                   <button 
                     onClick={() => setIsOpen(false)}
-                    className="hidden md:block text-slate-300 hover:text-white transition-colors p-1"
+                    className="hidden md:block text-white/80 hover:text-white transition-colors p-1"
                     aria-label="Chat schließen"
                   >
                     <X className="w-5 h-5" />
@@ -214,20 +214,20 @@ export function LiveChat() {
               </div>
 
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#E5DDD5]">
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background">
                 {messages.map((msg) => (
                   <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[85%] rounded-lg p-3 text-sm relative ${
                       msg.sender === 'user' 
-                        ? 'bg-[#DCF8C6] text-slate-900 rounded-tr-none' 
-                        : 'bg-white text-slate-800 rounded-tl-none shadow-sm'
+                        ? 'bg-primary text-white rounded-tr-none' 
+                        : 'bg-white text-body rounded-tl-none border border-border'
                     }`}>
                       {msg.isLink ? (
                         <a 
                           href="https://wa.me/4917624200179" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-[#25D366] font-bold hover:underline"
+                          className="flex items-center gap-2 text-primary font-bold hover:underline"
                         >
                           {msg.text} <ExternalLink className="w-4 h-4" />
                         </a>
@@ -235,16 +235,16 @@ export function LiveChat() {
                         <p className="leading-relaxed">{msg.text}</p>
                       )}
                       {/* Tail */}
-                      <div className={`absolute top-0 w-2 h-2 ${msg.sender === 'user' ? '-right-2 bg-[#DCF8C6]' : '-left-2 bg-white'}`} style={{ clipPath: msg.sender === 'user' ? 'polygon(0 0, 100% 0, 0 100%)' : 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+                      <div className={`absolute top-0 w-2 h-2 ${msg.sender === 'user' ? '-right-2 bg-primary' : '-left-2 bg-white'}`} style={{ clipPath: msg.sender === 'user' ? 'polygon(0 0, 100% 0, 0 100%)' : 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
                     </div>
                   </div>
                 ))}
                 {isTyping && (
                   <div className="flex justify-start">
-                    <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm flex gap-1">
-                      <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="bg-white rounded-lg rounded-tl-none p-3 border border-border flex gap-1">
+                      <div className="w-2 h-2 bg-body rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-body rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-body rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
                     </div>
                   </div>
                 )}
@@ -252,20 +252,20 @@ export function LiveChat() {
               </div>
 
               {/* Input */}
-              <form onSubmit={handleSendMessage} className="p-3 bg-[#F0F0F0] border-t border-slate-200 shrink-0">
+              <form onSubmit={handleSendMessage} className="p-3 bg-white border-t border-border shrink-0">
                 <div className="relative flex items-center gap-2">
                   <input
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Nachricht..."
-                    className="flex-1 bg-white border border-slate-200 rounded-full py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#075E54]/50 transition-all"
+                    className="flex-1 bg-background border border-border rounded-full py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-body"
                     aria-label="Chat Nachricht eingeben"
                   />
                   <button 
                     type="submit"
                     disabled={!inputValue.trim() || isTyping}
-                    className="w-10 h-10 bg-[#075E54] text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#054a42] transition-colors"
+                    className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors"
                     aria-label="Nachricht senden"
                   >
                     <Send className="w-4 h-4 ml-0.5" />

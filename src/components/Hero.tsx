@@ -61,7 +61,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-slate-700 mb-16 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-slate-500 mb-16 max-w-2xl mx-auto leading-relaxed"
         >
           Verwandle deine Webseite in eine digitale Vertriebsmaschine, die rund um die Uhr Premium-Anfragen generiert.
         </motion.p>
@@ -78,7 +78,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Kostenlosen Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20 relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Kostenlosen Entwurf anfragen
@@ -94,7 +94,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Jetzt per WhatsApp anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#25D366]/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
             >
               Jetzt per WhatsApp anfragen
               <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -114,7 +114,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1, type: "spring", stiffness: 200 }}
                   whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
-                  className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm cursor-pointer"
+                  className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden cursor-pointer"
                 >
                   <img src={src} alt="" role="presentation" width="40" height="40" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </motion.div>
@@ -122,7 +122,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
             </div>
             <div className="text-left">
               <div className="font-semibold text-slate-900 text-sm">+40 zufriedene Kunden</div>
-              <div className="flex items-center gap-1.5 text-xs text-slate-600 font-medium mt-0.5">
+              <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mt-0.5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>

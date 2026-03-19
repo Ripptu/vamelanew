@@ -284,7 +284,7 @@ export function PortfolioSection() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 border border-slate-200 relative overflow-hidden max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
@@ -345,7 +345,7 @@ export function PortfolioSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
                 >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
                 </motion.a>

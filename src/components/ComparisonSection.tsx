@@ -18,7 +18,7 @@ export function ComparisonSection() {
         whileInView={{ scale: 1, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20 shadow-sm"
+        className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20"
       >
         <Check className="w-5 h-5 text-primary stroke-[3]" />
       </motion.div>
@@ -47,16 +47,16 @@ export function ComparisonSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
+        className="bg-white rounded-3xl border border-slate-200 overflow-hidden"
       >
         <div className="overflow-x-auto">
-          <div className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-800 text-center min-w-[600px]">
+          <div className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[600px]">
             <div className="p-6 text-left border-r border-slate-200"></div>
             <div className="p-6 border-r border-slate-200 flex items-center justify-center">Klassische Webagenturen</div>
             <div className="p-6 border-r border-slate-200 flex items-center justify-center">Kreativagenturen</div>
             <div className="p-6 border-r border-slate-200 flex items-center justify-center">Marketingagenturen</div>
             <div className="p-6 bg-indigo-50 text-indigo-900 flex items-center justify-center gap-2 text-sm">
-              <img src="https://s1.directupload.eu/images/260310/oe9nbm82.png" alt="VAMELA Logo" className="h-8 object-contain" referrerPolicy="no-referrer" />
+              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 object-contain brightness-0" referrerPolicy="no-referrer" />
             </div>
           </div>
           
@@ -68,12 +68,12 @@ export function ComparisonSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ backgroundColor: "rgba(248, 250, 252, 0.8)" }}
-              className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] border-b border-slate-100 last:border-0 text-sm min-w-[600px] transition-colors"
+              className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] border-b border-slate-200 last:border-0 text-sm min-w-[600px] transition-colors"
             >
-              <div className="p-6 font-medium text-slate-800 border-r border-slate-100 flex items-center">{row.name}</div>
-              <div className="p-6 border-r border-slate-100 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
-              <div className="p-6 border-r border-slate-100 flex items-center justify-center">{renderIcon(row.kr)}</div>
-              <div className="p-6 border-r border-slate-100 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>
+              <div className="p-6 font-medium text-slate-500 border-r border-slate-200 flex items-center">{row.name}</div>
+              <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
+              <div className="p-6 border-r border-slate-200 flex items-center justify-center">{renderIcon(row.kr)}</div>
+              <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>
               <div className="p-6 bg-indigo-50/30 flex items-center justify-center">{renderIcon(row.s)}</div>
             </motion.div>
           ))}

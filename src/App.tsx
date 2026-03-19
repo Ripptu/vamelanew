@@ -93,7 +93,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
 
 function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
+    <div className="min-h-screen bg-background font-sans text-body selection:bg-primary/20 selection:text-primary">
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
