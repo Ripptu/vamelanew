@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { MessageCircle, Instagram } from 'lucide-react';
+import { niches } from '../data/niches';
 
 export function Footer() {
   return (
@@ -16,6 +17,22 @@ export function Footer() {
           >
             VAMELA
           </motion.h2>
+        </div>
+
+        {/* SEO Niche Links */}
+        <div className="mb-16 border-t border-border pt-12">
+          <h3 className="text-lg font-bold text-foreground mb-6">Branchenlösungen</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {niches.map((niche) => (
+              <Link 
+                key={niche.slug} 
+                to={`/branchen/${niche.slug}`}
+                className="text-sm text-body hover:text-primary transition-colors"
+              >
+                Webdesign für {niche.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-8 border-t border-border pt-10 md:pt-12">

@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, Target, Zap, BrainCircuit } from 'lucide-reac
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => void }) {
   useEffect(() => {
@@ -18,6 +19,11 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
 
   return (
     <main className="min-h-screen bg-background pt-24 pb-16">
+      <Helmet>
+        <title>Strategie-Workshop | VAMELA Agentur</title>
+        <meta name="description" content="Gemeinsam entwickeln wir die perfekte digitale Strategie für Ihr Unternehmen. Jetzt kostenlosen Strategie-Workshop anfragen." />
+        <link rel="canonical" href="https://vamela.info/strategie-workshop" />
+      </Helmet>
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

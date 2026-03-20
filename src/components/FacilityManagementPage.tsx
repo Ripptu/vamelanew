@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, ShieldCheck, Search, PenTool, Building2, ChevronDown } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () => void }) {
   useEffect(() => {
@@ -23,6 +24,14 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
 
   return (
     <main className="min-h-screen bg-slate-50 pt-24 pb-16">
+      <Helmet>
+        <title>Webdesign für Facility Management | VAMELA Agentur</title>
+        <meta name="description" content="Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices." />
+        <meta property="og:title" content="Webdesign für Facility Management | VAMELA" />
+        <meta property="og:description" content="Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices." />
+        <link rel="canonical" href="https://vamela.info/branchen/facility-management" />
+      </Helmet>
+
       {/* Schema.org JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 

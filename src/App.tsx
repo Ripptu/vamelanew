@@ -5,6 +5,7 @@
 
 import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
 import { FacilityManagementPage } from './components/FacilityManagementPage';
+import { NichePage } from './components/NichePage';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -56,6 +57,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
         <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
         <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
         <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
+        <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={
           <div className="space-y-6">
             <section>
@@ -112,9 +114,16 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
   );
 }
 
+import { Helmet } from 'react-helmet-async';
+
 function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
+      <Helmet>
+        <title>VAMELA | Webdesign Agentur für mehr Anfragen</title>
+        <meta name="description" content="Wir bauen hochkonvertierende Websites für Dienstleister und Handwerker. Mehr Anfragen, mehr Umsatz, weniger Stress." />
+        <link rel="canonical" href="https://vamela.info/" />
+      </Helmet>
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />

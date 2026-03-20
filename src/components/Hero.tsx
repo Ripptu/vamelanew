@@ -3,7 +3,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -18,17 +18,8 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       aria-label="Hero Section"
     >
       {isMobile ? (
-        /* Mobile Image Background */
-        <img 
-          src="https://s1.directupload.eu/images/260311/7cub544u.png" 
-          alt=""
-          role="presentation"
-          loading="eager"
-          width="1920"
-          height="1080"
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-          referrerPolicy="no-referrer"
-        />
+        /* Mobile White Background */
+        <div className="absolute inset-0 w-full h-full bg-white z-0 pointer-events-none" />
       ) : (
         /* Desktop Video Background */
         <video 
