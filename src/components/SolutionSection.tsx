@@ -12,10 +12,10 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          Welche Webdesign-Lösungen bietet <span className="font-serif italic text-primary font-normal">VAMELA an?</span>
+          Die smarte Lösung: <span className="font-serif italic text-primary font-normal">Website as a Service</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Wir bauen nicht einfach nur "schöne Webseiten". Wir entwickeln digitale Erlebnisse, die Vertrauen aufbauen, deine Marke stärken und Besucher in Kunden verwandeln.
+          Wir bauen nicht einfach nur Webseiten. Wir bieten dir ein Rundum-Sorglos-Paket, das mit deinem Unternehmen wächst – zum fairen monatlichen Festpreis.
         </p>
       </motion.div>
 
@@ -30,8 +30,8 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
           className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
         >
           <div className="text-center mb-8 md:mb-10 relative z-10">
-            <h3 className="text-xl font-bold mb-2 text-slate-900">Premium-Wahrnehmung</h3>
-            <p className="text-slate-600 text-sm">Wir designen deine Webseite so, dass sie deine wahre Qualität widerspiegelt. Du wirst sofort als der Experte wahrgenommen, der du bist.</p>
+            <h3 className="text-xl font-bold mb-2 text-slate-900">Professionelles Design</h3>
+            <p className="text-slate-600 text-sm">Eine Webseite, die deine wahre Qualität widerspiegelt und Vertrauen aufbaut – ganz ohne hohe Einmalkosten.</p>
           </div>
           <div className="relative h-40 md:h-48 flex justify-center items-end">
             <div className="w-full max-w-md bg-white border border-slate-200 rounded-t-xl relative flex flex-col items-center pt-8">
@@ -75,7 +75,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
           className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
         >
           <div className="text-center mb-8 md:mb-10 relative z-10">
-            <h3 className="text-xl font-bold mb-2 text-slate-900">Automatisierte Anfragen</h3>
+            <h3 className="text-xl font-bold mb-2 text-slate-900">Mehr Kunden gewinnen</h3>
             <p className="text-slate-600 text-sm">Wir optimieren jeden Text und Button so, dass Besucher genau wissen, was sie tun müssen: Bei dir anfragen.</p>
           </div>
           <div className="relative h-40 md:h-48 flex justify-center items-end">
@@ -154,8 +154,8 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
               <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" width="64" height="64" className="w-full h-auto object-contain" referrerPolicy="no-referrer" />
             </div>
           </div>
-          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Zeitersparnis im Vertrieb</h3>
-          <p className="text-slate-600 text-sm md:text-base relative z-10">Die Webseite beantwortet Fragen vorab und qualifiziert Interessenten für dich.</p>
+          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">All-Inclusive Service</h3>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Wir kümmern uns um Hosting, Wartung und Updates. Du lehnst dich entspannt zurück.</p>
         </motion.article>
 
         {/* Card 4 */}
@@ -181,8 +181,8 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             <div className="absolute top-12 right-1/4 w-0.5 h-6 bg-primary/20 rounded-full"></div>
             <div className="absolute bottom-8 left-1/3 w-0.5 h-4 bg-primary/20 rounded-full"></div>
           </div>
-          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sichtbarkeit bei Google</h3>
-          <p className="text-slate-600 text-sm md:text-base relative z-10">Wir bauen blitzschnelle Webseiten, die von Google geliebt und hoch gerankt werden.</p>
+          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Immer aktuell & sicher</h3>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Deine Seite bleibt technisch auf dem neuesten Stand, sicher vor Angriffen und wird von Google geliebt.</p>
         </motion.article>
 
         {/* Card 5 */}
@@ -208,8 +208,8 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
               </div>
             </motion.div>
           </div>
-          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sorgenfreie Technik</h3>
-          <p className="text-slate-600 text-sm md:text-base relative z-10">Kein Ärger mehr mit Updates oder Abstürzen dank modernster Webflow-Technologie.</p>
+          <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Flexibel & Skalierbar</h3>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Dein Unternehmen wächst? Deine Webseite wächst mit – Anpassungen sind im Abo inklusive.</p>
         </motion.article>
       </div>
 

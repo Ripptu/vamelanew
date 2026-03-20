@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, Sparkles } from 'lucide-react';
+import { Send, Info } from 'lucide-react';
 
 export function FreeDraftSection() {
   const [formData, setFormData] = useState({
     name: '',
     business: '',
     goal: '',
-    style: ''
+    style: '',
+    subscription: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hallo! Ich hätte gerne einen Gratis Website-Entwurf.\n\nWer bin ich: ${formData.name}\nWas mache ich: ${formData.business}\nZiel der Website: ${formData.goal}\nGewünschter Stil: ${formData.style}`;
+    const message = `Hallo! Ich hätte gerne einen Gratis Website-Entwurf.\n\nWer bin ich: ${formData.name}\nWas mache ich: ${formData.business}\nZiel der Website: ${formData.goal}\nGewünschter Stil: ${formData.style}\nGewünschtes Abo: ${formData.subscription || 'Noch unentschlossen'}`;
     
     const whatsappUrl = `https://wa.me/4917624200179?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -29,11 +30,8 @@ export function FreeDraftSection() {
           className="bg-white p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] border border-slate-200 relative overflow-hidden"
         >
           <div className="text-center mb-8 md:mb-12 relative z-10">
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-50 text-slate-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 border border-slate-200">
-              <Sparkles className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
-            </div>
             <h2 id="free-draft-title" className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4 md:mb-6">
-              Dein Gratis Website-Entwurf.
+              Dein Gratis <span className="font-serif italic text-primary font-normal">Website-Entwurf.</span>
             </h2>
             <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto px-2">
               Lass uns dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – komplett kostenlos und unverbindlich.
@@ -88,6 +86,26 @@ export function FreeDraftSection() {
                 value={formData.style}
                 onChange={(e) => setFormData({...formData, style: e.target.value})}
               />
+            </div>
+            <div className="space-y-1.5 md:space-y-2">
+              <div className="flex items-center gap-2 ml-1">
+                <label htmlFor="draft-subscription" className="block text-xs md:text-sm font-medium text-slate-900">Welches Abo möchtest du?</label>
+                <a href="#zahlung" title="Zur Preisübersicht" className="text-slate-400 hover:text-primary transition-colors">
+                  <Info className="w-4 h-4" />
+                </a>
+              </div>
+              <select
+                id="draft-subscription"
+                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm md:text-base text-slate-900 appearance-none"
+                value={formData.subscription}
+                onChange={(e) => setFormData({...formData, subscription: e.target.value})}
+              >
+                <option value="" disabled>Bitte wählen (optional)</option>
+                <option value="Noch unentschlossen">Ich weiß es noch nicht</option>
+                <option value="Digitale Visitenkarte">Digitale Visitenkarte</option>
+                <option value="Lokal-Dominanz">Lokal-Dominanz</option>
+                <option value="Premium Partner">Premium Partner (VIP)</option>
+              </select>
             </div>
             
             <div className="pt-4 md:pt-6">

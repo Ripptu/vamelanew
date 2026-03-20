@@ -1,39 +1,27 @@
-import { useState, useEffect } from 'react';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   return (
     <section 
       className="relative w-full pt-28 pb-16 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
-      {isMobile ? (
-        /* Mobile White Background */
-        <div className="absolute inset-0 w-full h-full bg-white z-0 pointer-events-none" />
-      ) : (
-        /* Desktop Video Background */
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          controls={false}
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-          aria-hidden="true"
-        >
-          <source src="https://res.cloudinary.com/dubyt9p64/video/upload/v1773257630/hf_20260311_191854_939b9625-99a5-4581-ae75-85b8cadc0a5b_ymyfwx.mp4" type="video/mp4" />
-        </video>
-      )}
+      {/* Mobile White Background */}
+      <div className="md:hidden absolute inset-0 w-full h-full bg-white z-0 pointer-events-none" />
+      
+      {/* Desktop Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        controls={false}
+        className="hidden md:block absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        aria-hidden="true"
+      >
+        <source src="https://res.cloudinary.com/dubyt9p64/video/upload/v1773257630/hf_20260311_191854_939b9625-99a5-4581-ae75-85b8cadc0a5b_ymyfwx.mp4" type="video/mp4" />
+      </video>
       
       {/* White Fade Overlay - stronger fade to white */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white pointer-events-none"></div>
@@ -45,7 +33,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
-          Wir gestalten Webseiten,<br/><span className="font-serif italic text-primary font-normal">die nachhaltig begeistern.</span>
+          Professionelle Webseiten<br/><span className="font-serif italic text-primary font-normal">im günstigen Abo.</span>
         </motion.h1>
         
         <motion.p 
@@ -54,7 +42,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-base md:text-xl text-slate-500 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
-          VAMELA entwickelt moderne digitale Erlebnisse, die deine Marke perfekt in Szene setzen, Vertrauen aufbauen und deine Zielgruppe genau dort abholen, wo sie steht.
+          Keine hohen Einmalkosten. Wir kümmern uns um Design, Hosting, Wartung und Updates – alles in einem flexiblen monatlichen Paket. So kannst du dich voll auf dein Geschäft konzentrieren.
         </motion.p>
         
         <motion.div 

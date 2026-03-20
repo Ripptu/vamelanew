@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Send } from 'lucide-react';
+import { ArrowRight, Send, Info } from 'lucide-react';
 
 interface FormData {
   needs: string;
   goals: string;
   company: string;
   budget: string;
+  subscription: string;
 }
 
 const steps = [
@@ -14,11 +15,12 @@ const steps = [
   { id: 'goals', question: 'Was ist dein Ziel? 🎯', placeholder: 'z.B. Mehr Anfragen...' },
   { id: 'company', question: 'Wie heißt dein Unternehmen? 🏢', placeholder: 'z.B. Vamela' },
   { id: 'budget', question: 'Wie hoch ist dein Budget? 💰', placeholder: 'z.B. 2.000€ - 5.000€' },
+  { id: 'subscription', question: 'Welches Abo bevorzugst du? 📦', placeholder: 'z.B. Lokal-Dominanz (oder "Weiß nicht")' },
 ];
 
 export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState<FormData>({ needs: '', goals: '', company: '', budget: '' });
+  const [formData, setFormData] = useState<FormData>({ needs: '', goals: '', company: '', budget: '', subscription: '' });
   const [inputValue, setInputValue] = useState('');
 
   const handleNext = () => {
@@ -38,7 +40,8 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
 - Bedarf: ${finalData.needs}
 - Ziel: ${finalData.goals}
 - Unternehmen: ${finalData.company}
-- Budget: ${finalData.budget}`;
+- Budget: ${finalData.budget}
+- Gewünschtes Abo: ${finalData.subscription}`;
     
     const whatsappUrl = `https://wa.me/4917624200179?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -70,9 +73,14 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
           <motion.label 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="block text-2xl font-bold text-heading leading-tight"
+            className="flex items-center gap-2 text-2xl font-bold text-heading leading-tight"
           >
             {steps[step].question}
+            {steps[step].id === 'subscription' && (
+              <a href="#zahlung" onClick={onClose} title="Zur Preisübersicht" className="text-slate-400 hover:text-primary transition-colors">
+                <Info className="w-5 h-5" />
+              </a>
+            )}
           </motion.label>
           <input
             type="text"

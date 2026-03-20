@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 
 export function LogoCloud() {
   const baseLogos = [
-    "https://www.svgrepo.com/show/508752/photoshop.svg",
-    "https://www.svgrepo.com/show/508753/premiere.svg",
-    "https://www.svgrepo.com/show/532271/figma.svg",
+    "https://www.svgrepo.com/show/303177/photoshop-cc-logo.svg",
+    "https://www.svgrepo.com/show/452150/adobe-premiere.svg",
+    "https://www.svgrepo.com/show/452202/figma.svg",
     "https://www.svgrepo.com/show/409983/webflow.svg",
     "https://www.svgrepo.com/show/521303/react-16.svg",
     "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/affinity-studio-icon.png",

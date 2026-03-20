@@ -37,6 +37,13 @@ export function ProcessSection() {
       desc: "Deine Webseite läuft auf der Nr. 1 Webseiten-Plattform",
       bullets: ["Blitzschnelle Ladezeiten", "Perfekt um auf Google gefunden zu werden", "Atemberaubende Animationen"],
       animation: "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ac91a15d07945e1fea4711_Frame%202147239858.avif"
+    },
+    {
+      num: "5",
+      title: "All-Inclusive Betreuung",
+      desc: "Wir kümmern uns um alles, damit du dich auf dein Geschäft konzentrieren kannst",
+      bullets: ["Premium Hosting inklusive", "Regelmäßige Sicherheits-Updates", "Kleine Anpassungen auf Zuruf"],
+      animation: "https://s1.directupload.eu/images/260320/mgj4ozbw.webp"
     }
   ];
 

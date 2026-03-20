@@ -1,9 +1,21 @@
-import { motion } from 'motion/react';
-import { Check, Zap, Calendar, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Check, Zap, Calendar, ArrowRight, Sparkles, ShieldCheck, X } from 'lucide-react';
 
 export function PricingSection() {
+  const [isYearly, setIsYearly] = useState(false);
+
   return (
-    <section id="zahlung" className="py-20 md:py-32 relative overflow-hidden bg-slate-50">
+    <section id="zahlung" className="py-16 md:py-24 relative overflow-hidden bg-slate-50">
+      <style>{`
+        @keyframes goldShimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        .animate-gold-shimmer {
+          animation: goldShimmer 3s linear infinite;
+        }
+      `}</style>
       {/* Background Effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
@@ -14,110 +26,258 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 mb-6">
             <ShieldCheck className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-slate-700">Transparente Investition</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">
-            Flexibilität, die zu <span className="font-serif italic text-primary font-normal">dir passt.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">
+            Professionelle Webseiten <span className="font-serif italic text-primary font-normal">im fairen Abo.</span>
           </h2>
-          <p className="text-base md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Egal ob einmaliges Projekt oder kontinuierliches Wachstum – wähle das Modell, das dein Unternehmen voranbringt.
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+            Keine hohen Einmalkosten. Wähle das Paket, das zu deinem Unternehmen passt und profitiere von unserem All-Inclusive Service.
           </p>
+
+          {/* Pricing Toggle */}
+          <div className="flex items-center justify-center gap-4">
+            <span className={`text-sm font-medium transition-colors ${!isYearly ? 'text-slate-900' : 'text-slate-500'}`}>Monatlich</span>
+            <button 
+              onClick={() => setIsYearly(!isYearly)}
+              className="relative inline-flex h-7 w-14 items-center rounded-full bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              style={{ backgroundColor: isYearly ? '#3b82f6' : '#e2e8f0' }}
+            >
+              <span className="sr-only">Abrechnungsintervall umschalten</span>
+              <motion.span
+                layout
+                className="inline-block h-5 w-5 rounded-full bg-white shadow transform transition-transform"
+                animate={{ x: isYearly ? 32 : 4 }}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+              />
+            </button>
+            <span className={`text-sm font-medium flex items-center gap-1.5 transition-colors ${isYearly ? 'text-slate-900' : 'text-slate-500'}`}>
+              Jährlich <span className="text-[10px] uppercase tracking-wider bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold">Bis zu 35% sparen</span>
+            </span>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
-          {/* One-time */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-6xl mx-auto">
+          {/* Starter */}
           <motion.article 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-12 rounded-[2rem] border border-slate-200 flex flex-col relative z-10"
+            whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            className="bg-white p-6 md:p-8 rounded-[1.5rem] border border-slate-200 flex flex-col relative z-10 h-full"
           >
-            <div className="mb-6 md:mb-8">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 text-slate-700 rounded-2xl flex items-center justify-center mb-4 md:mb-6 border border-slate-100">
-                <Zap className="w-6 h-6 md:w-7 md:h-7" strokeWidth={1.5} />
+            <div className="mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-slate-50 text-slate-700 rounded-xl flex items-center justify-center border border-slate-100">
+                  <Zap className="w-5 h-5" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Digitale Visitenkarte</h3>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 md:mb-3">Einmaliges Projekt</h3>
-              <p className="text-slate-500 text-sm md:text-base leading-relaxed">
-                Perfekt für den Start oder klar definierte Anforderungen. Volle Kontrolle, einmalige Investition.
+              <div className="mb-2 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">
+                  {isYearly ? '89 €' : '99 €'}
+                </span>
+                <span className="text-slate-500 font-medium text-sm">/ Monat</span>
+              </div>
+              <div className="h-6 mb-2">
+                <AnimatePresence>
+                  {isYearly && (
+                    <motion.span 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="inline-block text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md"
+                    >
+                      10% Ersparnis (jährlich)
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Die Basis-Präsenz für den kleinen Start. Jede weitere Änderung kostet extra.
               </p>
             </div>
             
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-8"></div>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-6"></div>
             
-            <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-1">
+            <ul className="space-y-3 mb-8 flex-1">
               {[
-                'Klar definierter Projektumfang', 
-                'Fester Preis ohne Überraschungen', 
-                'Schnelle & zielgerichtete Umsetzung', 
-                'Volle Eigentumsrechte nach Abschluss'
+                { text: 'High-Speed Hosting & SSL', included: true },
+                { text: '1-Pager Design (Startseite)', included: true },
+                { text: 'Basis-Kontaktformular', included: true },
+                { text: 'Keine Domain enthalten', included: false },
+                { text: 'Keine SEO-Optimierung', included: false },
+                { text: 'Keine inbegriffenen Änderungen', included: false },
+                { text: 'Kein Google My Business', included: false }
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 md:gap-4 text-slate-700 text-sm md:text-base">
-                  <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-slate-600" strokeWidth={2.5} /> 
+                <li key={item.text} className={`flex items-start gap-3 text-sm ${item.included ? 'text-slate-700' : 'text-slate-400'}`}>
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${item.included ? 'bg-slate-100' : 'bg-slate-50'}`}>
+                    {item.included ? (
+                      <Check className="w-3 h-3 text-slate-600" strokeWidth={2.5} /> 
+                    ) : (
+                      <X className="w-3 h-3 text-slate-400" strokeWidth={2.5} />
+                    )}
                   </div>
-                  <span className="font-medium">{item}</span>
+                  <span className={item.included ? 'font-medium' : ''}>{item.text}</span>
                 </li>
               ))}
             </ul>
 
-            <a href="#gratis-entwurf" className="group w-full bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium text-center transition-all flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none">
+            <a href="#gratis-entwurf" className="group w-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium text-sm text-center transition-all flex items-center justify-center gap-2 mt-auto">
               Projekt anfragen
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.article>
 
-          {/* Subscription */}
+          {/* Premium */}
           <motion.article 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-12 rounded-[2rem] border-2 border-primary flex flex-col relative z-20 md:-ml-4 lg:-ml-8 md:scale-105"
+            whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-blue-500 flex flex-col relative z-30 md:scale-105 shadow-[0_0_50px_rgba(59,130,246,0.6)] h-full"
           >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 md:px-6 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wide flex items-center gap-1.5 md:gap-2 border border-white whitespace-nowrap">
-              <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 border border-white whitespace-nowrap shadow-sm">
+              <Sparkles className="w-3 h-3" />
               Am beliebtesten
             </div>
             
-            <div className="mb-6 md:mb-8 mt-2 md:mt-4 relative z-10">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 text-primary rounded-2xl flex items-center justify-center mb-4 md:mb-6 border border-slate-200">
-                <Calendar className="w-6 h-6 md:w-7 md:h-7" strokeWidth={1.5} />
+            <div className="mb-6 mt-2 relative z-10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center border border-blue-100">
+                  <Calendar className="w-5 h-5" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Lokal-Dominanz</h3>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 md:mb-3">Monats-Abo</h3>
-              <p className="text-slate-500 text-sm md:text-base leading-relaxed">
-                Kontinuierliche Weiterentwicklung und Support zu einem günstigeren Preis. Monatlich kündbar – maximale Freiheit.
+              <div className="mb-2 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">
+                  {isYearly ? '239 €' : '299 €'}
+                </span>
+                <span className="text-blue-600/80 font-medium text-sm">/ Monat</span>
+              </div>
+              <div className="h-6 mb-2">
+                <AnimatePresence>
+                  {isYearly && (
+                    <motion.span 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="inline-block text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md"
+                    >
+                      20% Ersparnis (jährlich)
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Hier ist ALLES drin, was ein Handwerker/Facility-Betrieb braucht.
               </p>
             </div>
             
-            <div className="h-px w-full bg-slate-200 mb-8 relative z-10"></div>
+            <div className="h-px w-full bg-slate-200 mb-6 relative z-10"></div>
             
-            <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-1 relative z-10">
+            <ul className="space-y-3 mb-8 flex-1 relative z-10">
               {[
-                'Kontinuierliche Conversion-Optimierung', 
-                'Bevorzugter VIP-Support', 
-                'Geringere initiale Investition', 
-                'Jederzeit monatlich kündbar'
+                'Premium High-Speed Hosting & SSL',
+                'Domain inklusive',
+                'Bis zu 5 Unterseiten',
+                'Lokale SEO-Grundoptimierung',
+                'Google Business Profile Verknüpfung',
+                '3 Stunden Änderungen pro Monat INKLUSIVE!',
+                'Schneller WhatsApp-Support'
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 md:gap-4 text-slate-700 text-sm md:text-base">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 border border-primary/20">
-                    <Check className="w-3.5 h-3.5 text-primary" strokeWidth={2.5} /> 
+                <li key={item} className="flex items-start gap-3 text-slate-700 text-sm">
+                  <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100">
+                    <Check className="w-3 h-3 text-blue-600" strokeWidth={2.5} /> 
                   </div>
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <a href="#gratis-entwurf" className="group w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-medium text-center transition-all flex items-center justify-center gap-2 relative z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:ring-primary focus-visible:outline-none">
+            <a href="#gratis-entwurf" className="group w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium text-sm text-center transition-all flex items-center justify-center gap-2 relative z-10 mt-auto shadow-md">
               Abo anfragen
               <ArrowRight className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
             </a>
+          </motion.article>
+
+          {/* VIP */}
+          <motion.article 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            className="relative p-[2px] rounded-[1.5rem] flex flex-col h-full z-10 shadow-md"
+          >
+            {/* Gold Shimmer Border */}
+            <div className="absolute inset-0 bg-[linear-gradient(110deg,#fbbf24,45%,#fffbeb,55%,#fbbf24)] bg-[length:200%_100%] animate-gold-shimmer rounded-[1.5rem]"></div>
+            
+            <div className="relative bg-white p-6 md:p-8 rounded-[calc(1.5rem-2px)] flex flex-col h-full z-10">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center border border-amber-100">
+                    <ShieldCheck className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">Premium Partner</h3>
+                </div>
+                <div className="mb-2 flex items-baseline gap-2">
+                  <span className="text-4xl font-extrabold text-slate-900">
+                    {isYearly ? '519 €' : '799 €'}
+                  </span>
+                  <span className="text-amber-600/80 font-medium text-sm">/ Monat</span>
+                </div>
+                <div className="h-6 mb-2">
+                  <AnimatePresence>
+                    {isYearly && (
+                      <motion.span 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="inline-block text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md"
+                      >
+                        35% Ersparnis (jährlich)
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Nur für extrem solvente Betriebe. Das absolute Rundum-Sorglos-Paket.
+                </p>
+              </div>
+              
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-6"></div>
+              
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  'Alles aus dem Lokal-Dominanz Paket',
+                  'Unbegrenzte Unterseiten',
+                  'GEO Optimierung (Sichtbar in KI-Antworten wie ChatGPT)',
+                  'Erweiterte SEO-Optimierung (Monatlich)',
+                  'Performance-Reporting (PDF)',
+                  'Unbegrenzte Änderungen inklusive',
+                  'Vollständige Pflege eures Blogs'
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-slate-700 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center shrink-0 mt-0.5 border border-amber-100">
+                      <Check className="w-3 h-3 text-amber-600" strokeWidth={2.5} /> 
+                    </div>
+                    <span className="font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="#gratis-entwurf" className="group w-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium text-sm text-center transition-all flex items-center justify-center gap-2 mt-auto">
+                VIP anfragen
+                <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </motion.article>
         </div>
       </div>

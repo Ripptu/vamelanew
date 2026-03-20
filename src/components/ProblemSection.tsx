@@ -11,10 +11,10 @@ export function ProblemSection() {
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          Warum deine aktuelle Webseite <span className="font-serif italic text-primary font-normal">Potenzial verschenkt</span>
+          Warum klassisches Webdesign <span className="font-serif italic text-primary font-normal">oft frustrierend ist</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Eine Webseite sollte dein stärkster Vertriebsmitarbeiter sein. Das sind die drei häufigsten Gründe, warum viele Webseiten ihr volles Potenzial nicht ausschöpfen:
+          Eine professionelle Webseite ist wichtig, aber der Weg dorthin ist oft steinig. Das sind die drei größten Probleme bei traditionellen Agenturen:
         </p>
       </motion.div>
 
@@ -51,9 +51,9 @@ export function ProblemSection() {
               <div className="text-4xl font-serif text-slate-400 font-bold opacity-30 absolute top-8 right-8 rotate-12">?</div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Der erste Eindruck zählt</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Hohe Einmalkosten</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Oft entscheiden sich Interessenten für den Anbieter mit dem professionelleren digitalen Auftritt, selbst wenn dein Angebot eigentlich besser ist.
+            Professionelle Webseiten kosten oft tausende Euro auf einen Schlag. Ein großes finanzielles Risiko, besonders für wachsende Unternehmen.
           </p>
         </motion.article>
 
@@ -85,9 +85,9 @@ export function ProblemSection() {
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Fehlende Klarheit</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Veraltete Technik</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Wenn deine Webseite deine Expertise nicht klar kommuniziert, musst du in Gesprächen immer wieder bei null anfangen, um Vertrauen aufzubauen.
+            Nach dem Launch kümmert sich niemand mehr um die Seite. Sie veraltet schnell, wird unsicher und verliert an Wirkung bei Google und Kunden.
           </p>
         </motion.article>
 
@@ -119,9 +119,9 @@ export function ProblemSection() {
             {/* Connecting line */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-slate-300 z-0"></div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Die falsche Zielgruppe</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Versteckter Aufwand</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Ein unklarer Auftritt zieht oft Anfragen an, die nicht zu dir passen. Wer hochwertige Leistungen anbietet, muss auch digital entsprechende Qualität ausstrahlen.
+            Hosting, Updates, kleine Textänderungen – alles kostet extra Zeit und Geld. Du bist ständig selbst gefragt, anstatt dich auf dein Geschäft zu konzentrieren.
           </p>
         </motion.article>
       </div>

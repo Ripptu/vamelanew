@@ -9,16 +9,16 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
       a: "Die Umsetzung einer kompletten, hochwertigen Webseite dauert bei VAMELA in der Regel etwa 3 bis 4 Wochen. Die genaue Dauer hängt vom individuellen Umfang und deinen spezifischen Anforderungen ab."
     },
     {
-      q: "Was kostet professionelles Webdesign bei VAMELA?",
-      a: "Die Kosten für eine Webseite sind individuell und hängen stark von den Anforderungen und dem Umfang ab. Wir bieten keine Pauschalpreise an, sondern erstellen nach einem kostenlosen Erstgespräch ein maßgeschneidertes Angebot, das genau auf deine Ziele zugeschnitten ist."
+      q: "Was kostet eine professionelle Webseite bei VAMELA?",
+      a: "Wir bieten Webseiten im flexiblen Abo-Modell an. Statt hoher Einmalkosten zahlst du eine faire monatliche Pauschale, die Design, Hosting, Wartung und regelmäßige Updates abdeckt."
     },
     {
-      q: "Warum sollte ich VAMELA für mein Webdesign wählen?",
-      a: "VAMELA ist spezialisiert auf Webdesign für B2B-Dienstleister und Berater. Wir bauen nicht nur Webseiten, sondern Flaggschiff-Webseiten, die als starker Hebel im Verkaufs- und Marketingprozess dienen, um dich als Marktführer zu positionieren."
+      q: "Gibt es eine Mindestlaufzeit für das Abo?",
+      a: "Unsere Abos sind flexibel gestaltet. Wir bieten Modelle mit kurzer Mindestlaufzeit an, damit du volle Freiheit genießt und kein finanzielles Risiko eingehst."
     },
     {
-      q: "Sind die Webseiten von VAMELA für Google SEO optimiert?",
-      a: "Ja, SEO ist ein integraler Bestandteil unseres Prozesses. Alle Webseiten werden nach aktuellen SEO-Standards entwickelt, um eine optimale Sichtbarkeit bei Google und anderen Suchmaschinen zu gewährleisten."
+      q: "Gehört die Webseite mir?",
+      a: "Ja, du bist Inhaber der Domain. Nach einer bestimmten Laufzeit oder gegen eine Ablöse kannst du die Webseite auch komplett übernehmen. Während des Abos kümmern wir uns als dein technischer Partner um alles."
     },
     {
       q: "Erstellt VAMELA auch die Texte für meine Webseite?",

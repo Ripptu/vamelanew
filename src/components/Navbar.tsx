@@ -72,12 +72,10 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           
           <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-slate-50/80 backdrop-blur-md border border-slate-200/60 rounded-full p-1 absolute left-1/2 -translate-x-1/2">
             {[
-              { name: 'Home', href: '/' },
               { name: 'Strategie-Workshop', href: '/strategie-workshop' },
-              { name: 'Leistungen', href: '/#leistungen' },
               { name: 'Referenzen', href: '/#referenzen' },
               { name: 'Prozess', href: '/#prozess' },
-              { name: 'Bezahlung', href: '/#zahlung' }
+              { name: 'Preise', href: '/#zahlung' }
             ].map((item) => (
               <Link 
                 key={item.name}
@@ -141,12 +139,10 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             
             <div className="flex-1 flex flex-col justify-center px-8 gap-6">
               {[
-                { name: 'Home', href: '/' },
                 { name: 'Strategie-Workshop', href: '/strategie-workshop' },
-                { name: 'Leistungen', href: '/#leistungen' },
                 { name: 'Referenzen', href: '/#referenzen' },
                 { name: 'Prozess', href: '/#prozess' },
-                { name: 'Bezahlung', href: '/#zahlung' }
+                { name: 'Preise', href: '/#zahlung' }
               ].map((item, i) => (
                 <motion.div
                   key={item.name}
