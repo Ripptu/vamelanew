@@ -226,10 +226,10 @@ export function PortfolioSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: isEven ? 0 : 0.2 }}
-                className={`group cursor-pointer flex flex-col gap-6 ${!isEven ? 'md:mt-32' : ''}`}
+                className={`group cursor-pointer flex flex-col gap-4 md:gap-6 ${!isEven ? 'md:mt-32' : ''}`}
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/5] md:aspect-[3/4]">
+                <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3] sm:aspect-[4/5] md:aspect-[3/4]">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -302,13 +302,13 @@ export function PortfolioSection() {
             >
               <button 
                 onClick={() => setSelectedProject(null)} 
-                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white/80 backdrop-blur-sm"
+                className="absolute top-3 right-3 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white/90 backdrop-blur-sm shadow-sm"
                 aria-label="Projekt Details schließen"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
-              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100">
+              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100 aspect-video md:aspect-auto">
                 <img 
                   src={selectedProject.image} 
                   alt={selectedProject.title} 

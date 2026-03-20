@@ -4,6 +4,7 @@
  */
 
 import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
+import { FacilityManagementPage } from './components/FacilityManagementPage';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -54,6 +55,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
       <Routes>
         <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
         <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
+        <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
         <Route path="/impressum" element={<LegalPage title="Impressum" content={
           <div className="space-y-6">
             <section>
@@ -123,7 +125,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <TestimonialsSection />
         <FounderSection />
         <div id="leistungen"><ComparisonSection /></div>
-        <div id="zahlung"><PricingSection /></div>
+        <PricingSection />
         <FreeDraftSection />
         <NextStepsSection onOpenContact={onOpenContact} />
         <FAQSection onOpenContact={onOpenContact} />

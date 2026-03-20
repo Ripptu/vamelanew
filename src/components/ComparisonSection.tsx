@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export function ComparisonSection() {
   const criteria = [
-    { name: "Marktführer Design-Level", k: "x", kr: "m", m: "x", s: "c" },
+    { name: "Premium Design-Level", k: "x", kr: "m", m: "x", s: "c" },
     { name: "Conversion-Optimierte Texte", k: "x", kr: "x", m: "c", s: "c" },
     { name: "Kombination aus Marketing & Design", k: "m", kr: "x", m: "x", s: "c" },
     { name: "Umsetzung in Wochen", k: "x", kr: "x", m: "m", s: "c" },

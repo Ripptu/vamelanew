@@ -52,25 +52,25 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-4 md:mb-8 leading-[1.1] md:leading-[1.05] text-slate-950"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
-          Webdesign, das aus Besuchern<br/><span className="font-serif italic text-primary font-normal">zahlende Kunden macht.</span>
+          Wir gestalten Webseiten,<br/><span className="font-serif italic text-primary font-normal">die nachhaltig begeistern.</span>
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base md:text-xl text-slate-500 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-slate-500 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
-          VAMELA entwickelt maßgeschneiderte Webseiten, die dein Angebot glasklar kommunizieren, Vertrauen aufbauen und messbar qualifizierte Anfragen generieren.
+          VAMELA entwickelt moderne digitale Erlebnisse, die deine Marke perfekt in Szene setzen, Vertrauen aufbauen und deine Zielgruppe genau dort abholen, wo sie steht.
         </motion.p>
         
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center gap-6 md:gap-8 w-full"
+          className="flex flex-col items-center gap-8 md:gap-8 w-full"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full sm:w-auto">
             <motion.button
@@ -78,7 +78,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Kostenlosen Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-4 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Kostenlosen Entwurf anfragen
@@ -94,14 +94,14 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Jetzt per WhatsApp anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-4 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
             >
               Jetzt per WhatsApp anfragen
               <MessageCircle className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:scale-110" />
             </motion.a>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-2 sm:mt-0">
             <div className="flex -space-x-3">
               {[
                 "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100&q=80",
@@ -114,15 +114,15 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1, type: "spring", stiffness: 200 }}
                   whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
-                  className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden cursor-pointer"
+                  className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white bg-slate-200 overflow-hidden cursor-pointer shadow-sm"
                 >
-                  <img src={src} alt="" role="presentation" width="40" height="40" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src={src} alt="" role="presentation" width="48" height="48" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </motion.div>
               ))}
             </div>
-            <div className="text-left">
-              <div className="font-semibold text-slate-900 text-sm">+40 zufriedene Kunden</div>
-              <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mt-0.5">
+            <div className="text-center sm:text-left">
+              <div className="font-semibold text-slate-900 text-sm sm:text-base">+40 zufriedene Kunden</div>
+              <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>

@@ -11,10 +11,10 @@ export function ProblemSection() {
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          Warum du aktuell <span className="font-serif italic text-primary font-normal">Kunden verlierst</span>
+          Warum deine aktuelle Webseite <span className="font-serif italic text-primary font-normal">Potenzial verschenkt</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Wenn deine Webseite nicht für dich arbeitet, arbeitet sie gegen dich. Das sind die drei häufigsten Gründe, warum B2B-Dienstleister Potenzial auf der Strecke lassen:
+          Eine Webseite sollte dein stärkster Vertriebsmitarbeiter sein. Das sind die drei häufigsten Gründe, warum viele Webseiten ihr volles Potenzial nicht ausschöpfen:
         </p>
       </motion.div>
 
@@ -51,9 +51,9 @@ export function ProblemSection() {
               <div className="text-4xl font-serif text-slate-400 font-bold opacity-30 absolute top-8 right-8 rotate-12">?</div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Konkurrenz wirkt besser</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Der erste Eindruck zählt</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Obwohl dein Angebot vielleicht viel besser ist, entscheiden sich Interessenten für die Konkurrenz – einfach weil deren Webseite professioneller und vertrauenswürdiger wirkt.
+            Oft entscheiden sich Interessenten für den Anbieter mit dem professionelleren digitalen Auftritt, selbst wenn dein Angebot eigentlich besser ist.
           </p>
         </motion.article>
 
@@ -85,9 +85,9 @@ export function ProblemSection() {
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Vertrieb ist unnötig schwer</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Fehlende Klarheit</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Du musst in Erstgesprächen immer wieder bei null anfangen, weil deine aktuelle Webseite deine Expertise nicht klar kommuniziert und Besucher nicht vorqualifiziert.
+            Wenn deine Webseite deine Expertise nicht klar kommuniziert, musst du in Gesprächen immer wieder bei null anfangen, um Vertrauen aufzubauen.
           </p>
         </motion.article>
 
@@ -119,9 +119,9 @@ export function ProblemSection() {
             {/* Connecting line */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-slate-300 z-0"></div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Falsche Kundenanfragen</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Die falsche Zielgruppe</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Eine unprofessionelle Webseite zieht Kunden an, die nur auf den Preis schauen. Premium-Kunden buchen nur bei Experten, die auch digital wie Experten auftreten.
+            Ein unklarer Auftritt zieht oft Anfragen an, die nicht zu dir passen. Wer hochwertige Leistungen anbietet, muss auch digital entsprechende Qualität ausstrahlen.
           </p>
         </motion.article>
       </div>

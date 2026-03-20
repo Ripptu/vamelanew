@@ -50,10 +50,10 @@ export function ProcessSection() {
         className="text-center mb-16 md:mb-20"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          In 4 Schritten zur<br/><span className="font-serif italic text-primary font-normal">Marktführer Positionierung</span>
+          In 4 Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
-          Unser einzigartiger Prozess, um Tag für Tag neue Marktführer Marken mit hochkonvertierenden Online Auftritten zu erschaffen
+          Unser bewährter Prozess, um Tag für Tag beeindruckende Marken mit hochkonvertierenden Online-Auftritten zu erschaffen.
         </p>
       </motion.div>
 
@@ -133,7 +133,7 @@ export function ProcessSection() {
                   <motion.div 
                     whileHover={{ scale: 1.02, rotate: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="hidden md:block flex-1 relative group"
+                    className="flex-1 relative group mt-6 md:mt-0 w-full"
                   >
                     <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl border border-slate-200 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
                   </motion.div>

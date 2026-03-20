@@ -12,10 +12,10 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          Welche Webdesign-Lösungen bietet <span className="font-serif italic text-primary font-normal">VAMELA für B2B-Kunden an?</span>
+          Welche Webdesign-Lösungen bietet <span className="font-serif italic text-primary font-normal">VAMELA an?</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Wir bauen nicht einfach nur "schöne Webseiten". Wir entwickeln digitale Vertriebsmaschinen, die Vertrauen aufbauen, Einwände vorab klären und Besucher in Kunden verwandeln.
+          Wir bauen nicht einfach nur "schöne Webseiten". Wir entwickeln digitale Erlebnisse, die Vertrauen aufbauen, deine Marke stärken und Besucher in Kunden verwandeln.
         </p>
       </motion.div>
 
@@ -155,7 +155,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             </div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Zeitersparnis im Vertrieb</h3>
-          <p className="text-slate-600 text-xs relative z-10">Die Webseite beantwortet Fragen vorab und qualifiziert Interessenten für dich.</p>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Die Webseite beantwortet Fragen vorab und qualifiziert Interessenten für dich.</p>
         </motion.article>
 
         {/* Card 4 */}
@@ -182,7 +182,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             <div className="absolute bottom-8 left-1/3 w-0.5 h-4 bg-primary/20 rounded-full"></div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sichtbarkeit bei Google</h3>
-          <p className="text-slate-600 text-xs relative z-10">Wir bauen blitzschnelle Webseiten, die von Google geliebt und hoch gerankt werden.</p>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Wir bauen blitzschnelle Webseiten, die von Google geliebt und hoch gerankt werden.</p>
         </motion.article>
 
         {/* Card 5 */}
@@ -209,7 +209,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
             </motion.div>
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sorgenfreie Technik</h3>
-          <p className="text-slate-600 text-xs relative z-10">Kein Ärger mehr mit Updates oder Abstürzen dank modernster Webflow-Technologie.</p>
+          <p className="text-slate-600 text-sm md:text-base relative z-10">Kein Ärger mehr mit Updates oder Abstürzen dank modernster Webflow-Technologie.</p>
         </motion.article>
       </div>
 

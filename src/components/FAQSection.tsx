@@ -97,7 +97,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
                 <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
               </summary>
               <div 
-                className="px-5 md:px-6 pb-5 md:pb-6 text-slate-500 leading-relaxed text-xs sm:text-sm"
+                className="px-5 md:px-6 pb-5 md:pb-6 text-slate-500 leading-relaxed text-sm md:text-base"
               >
                 <p>{faq.a}</p>
               </div>

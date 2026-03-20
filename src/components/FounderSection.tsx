@@ -52,7 +52,7 @@ export function FounderSection() {
               VAMELA existiert, um diese <span className="text-primary">Lücke zu schließen.</span>
             </p>
             <p>
-              Wir kombinieren Flaggschiff-Design, verkaufspsychologische Copy und modernste Technologie. Alles aus einer Hand, ohne Kompromisse. Unser Ziel ist es, dich als unangefochtenen Marktführer in deiner Nische zu positionieren.
+              Wir kombinieren Flaggschiff-Design, verkaufspsychologische Copy und modernste Technologie. Alles aus einer Hand, ohne Kompromisse. Unser Ziel ist es, deinen digitalen Auftritt so stark zu machen, dass du in deiner Branche als klarer Favorit wahrgenommen wirst.
             </p>
           </div>
           
