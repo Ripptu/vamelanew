@@ -182,6 +182,7 @@ export function PricingSection() {
               {[
                 'Premium High-Speed Hosting & SSL',
                 'Domain inklusive',
+                '1 kostenlose E-Mail-Adresse',
                 'Bis zu 5 Unterseiten',
                 'Lokale SEO-Grundoptimierung',
                 'Google Business Profile Verknüpfung',
@@ -253,6 +254,7 @@ export function PricingSection() {
               <ul className="space-y-3 mb-8 flex-1">
                 {[
                   'Alles aus dem Lokal-Dominanz Paket',
+                  'Bis zu 10 kostenlose E-Mail-Adressen',
                   'Unbegrenzte Unterseiten',
                   'GEO Optimierung (Sichtbar in KI-Antworten wie ChatGPT)',
                   'Erweiterte SEO-Optimierung (Monatlich)',
