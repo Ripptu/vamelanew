@@ -14,13 +14,13 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
   const dynamicMessage = getDynamicMessage(AVAILABLE_SLOTS);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative overflow-hidden">
+    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, scale: 0.95, y: 40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-        className="bg-white rounded-[40px] border border-slate-200 p-12 md:p-20 text-center relative overflow-hidden"
+        className="bg-white rounded-[32px] md:rounded-[40px] border border-slate-200 p-8 sm:p-12 md:p-20 text-center relative overflow-hidden"
       >
         {/* Grid Background Pattern */}
         <div className="absolute inset-0 opacity-[0.05]" 
@@ -33,7 +33,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-slate-900"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-slate-900"
           >
             Bereit, endlich als<br/><span className="font-serif italic text-primary font-normal">Marktführer aufzutreten?</span>
           </motion.h2>
@@ -42,7 +42,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-slate-500 text-lg max-w-2xl mx-auto mb-10"
+            className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto mb-8 md:mb-10"
           >
             Im kostenlosen Erstgespräch zeigen wir dir, wie dein neuer Online-Auftritt aussehen und rund um die Uhr für dich verkaufen wird.
           </motion.p>
@@ -65,7 +65,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </motion.button>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-500">
+            <div className="flex flex-col items-center gap-4 text-sm text-slate-500">
               <div className="flex -space-x-3">
                 {[
                   "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
@@ -77,9 +77,8 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+              <div className="flex flex-col items-center gap-2">
                 <span className="font-bold text-slate-900">+{USER_COUNT} zufriedene Kunden</span>
-                <div className="hidden sm:block w-1 h-1 bg-slate-200 rounded-full"></div>
                 <div className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${AVAILABLE_SLOTS > 0 ? 'bg-primary' : 'bg-red-500'}`}></div>
                   <span className={AVAILABLE_SLOTS === 1 ? 'text-red-600 font-bold' : ''}>{dynamicMessage}</span>

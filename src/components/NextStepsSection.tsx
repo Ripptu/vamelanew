@@ -3,25 +3,25 @@ import { motion } from 'motion/react';
 
 export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center overflow-hidden">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
           Du wünschst dir eine<br/><span className="font-serif italic text-primary font-normal">neue Webseite?</span>
         </h2>
-        <p className="text-slate-500 text-lg mb-16">Das sind deine nächsten Schritte!</p>
+        <p className="text-slate-500 text-base md:text-lg mb-10 md:mb-16">Das sind deine nächsten Schritte!</p>
       </motion.div>
 
-      <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 relative mb-12">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 relative mb-10 md:mb-12">
         {/* Dashed line connecting steps */}
         <div className="absolute top-20 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-200 hidden md:block"></div>
         
-        <div className="grid md:grid-cols-3 gap-12 relative z-10">
-          <motion.div 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative z-10">
+          <motion.article 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -33,9 +33,9 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
             </div>
             <h3 className="font-bold mb-3 text-slate-900">Kostenloses Design-Konzept</h3>
             <p className="text-sm text-slate-500">In einem gemeinsamen Erstgespräch lernen wir dich und dein Angebot kennen, um ein grobes Design-Konzept auszuarbeiten.</p>
-          </motion.div>
+          </motion.article>
           
-          <motion.div 
+          <motion.article 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -47,9 +47,9 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
             </div>
             <h3 className="font-bold mb-3 text-slate-900">Einzelheiten besprechen</h3>
             <p className="text-sm text-slate-500">Gemeinsam besprechen wir alle relevanten Details: Preise, Umfang, Dauer und alles, was du sonst noch wissen musst.</p>
-          </motion.div>
+          </motion.article>
           
-          <motion.div 
+          <motion.article 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -61,7 +61,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
             </div>
             <h3 className="font-bold mb-3 text-slate-900">Lehn dich entspannt zurück!</h3>
             <p className="text-sm text-slate-500">Wir beginnen mit unserer Arbeit, du erhältst regelmäßige Updates und hast nach Ø 3 Wochen deine fertige Flaggschiff-Webseite.</p>
-          </motion.div>
+          </motion.article>
         </div>
       </div>
 

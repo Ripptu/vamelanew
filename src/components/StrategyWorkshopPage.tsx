@@ -17,7 +17,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
   }, []);
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
+    <main className="min-h-screen bg-background pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
             { title: "Brand Voice", icon: Zap, desc: "Wir definieren, wie deine Marke spricht und welche Trust-Elemente nötig sind, um unwiderstehliche Autorität aufzubauen." },
             { title: "Technik & SEO", icon: CheckCircle2, desc: "Wir legen den Grundstein für eine blitzschnelle, SEO-optimierte Webseite, die Google und deine Kunden lieben." }
           ].map((item, i) => (
-            <motion.div 
+            <motion.article 
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
               <item.icon className="w-8 h-8 md:w-10 md:h-10 text-primary mb-4 md:mb-6" />
               <h3 className="text-lg md:text-xl font-bold text-heading mb-2 md:mb-3">{item.title}</h3>
               <p className="text-sm md:text-base text-body leading-relaxed">{item.desc}</p>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
@@ -102,6 +102,6 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
           </div>
         </motion.div>
       </div>
-    </div>
+    </main>
   );
 }

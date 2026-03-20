@@ -41,25 +41,25 @@ export function ProcessSection() {
   ];
 
   return (
-    <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
+    <section ref={containerRef} className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-20"
+        className="text-center mb-16 md:mb-20"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
           In 4 Schritten zur<br/><span className="font-serif italic text-primary font-normal">Marktführer Positionierung</span>
         </h2>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
           Unser einzigartiger Prozess, um Tag für Tag neue Marktführer Marken mit hochkonvertierenden Online Auftritten zu erschaffen
         </p>
       </motion.div>
 
       <div className="relative">
         {/* Vertical Line Track */}
-        <div className="absolute left-[25px] top-8 bottom-8 w-1.5 bg-slate-200 rounded-full">
+        <div className="absolute left-[19px] md:left-[25px] top-8 bottom-8 w-1.5 bg-slate-200 rounded-full">
           {/* Animated Gradient Beam */}
           <motion.div 
             className="absolute top-0 left-0 w-full rounded-full bg-gradient-to-b from-indigo-300 via-primary to-primary"
@@ -73,11 +73,11 @@ export function ProcessSection() {
           </motion.div>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-16 md:space-y-24">
           {steps.map((step, i) => (
-            <motion.div 
+            <motion.article 
               key={i} 
-              className="relative pl-20"
+              className="relative pl-14 md:pl-20"
               whileInView="visible"
               initial="hidden"
               variants={{
@@ -88,7 +88,7 @@ export function ProcessSection() {
               viewport={{ amount: 0.5, margin: "-20% 0px -20% 0px" }}
             >
               {/* Dot */}
-              <div className="absolute left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
+              <div className="absolute left-[7px] md:left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
                 <motion.div 
                   variants={{
                     hidden: { backgroundColor: "#e2e8f0", scale: 0.8 },
@@ -111,12 +111,12 @@ export function ProcessSection() {
                 </motion.div>
               </div>
               
-              <div className="flex flex-col md:flex-row gap-12 items-center">
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center">
                 <div className="flex-1">
-                  <div className="text-6xl font-bold text-slate-200 mb-2 font-serif">{step.num}</div>
-                  <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-slate-500 mb-6 text-sm">{step.desc}</p>
-                  <ul className="space-y-3">
+                  <div className="text-5xl md:text-6xl font-bold text-slate-200 mb-1 md:mb-2 font-serif leading-none">{step.num}</div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-slate-500 mb-4 md:mb-6 text-sm">{step.desc}</p>
+                  <ul className="space-y-2 md:space-y-3">
                     {step.bullets.map((bullet, j) => (
                       <motion.li 
                         key={j} 
@@ -139,7 +139,7 @@ export function ProcessSection() {
                   </motion.div>
                 )}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

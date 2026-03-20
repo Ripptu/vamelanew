@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -39,16 +39,33 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#') && window.location.pathname === '/') {
+      e.preventDefault();
+      const id = href.replace('/#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+      }
+    } else if (href === '/' && window.location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, '', '/');
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
-      <div 
+      <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${isScrolled ? 'backdrop-blur-2xl bg-white/5' : 'bg-transparent'}`}
       >
         <nav className="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <Link to="/" className="focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">
+            <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">
               <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 md:h-10 w-auto object-contain brightness-0" referrerPolicy="no-referrer" />
             </Link>
           </div>
@@ -65,6 +82,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               <Link 
                 key={item.name}
                 to={item.href} 
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="px-4 py-2 rounded-full hover:bg-white hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {item.name}
@@ -96,7 +114,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             </button>
           </div>
         </nav>
-      </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -106,10 +124,10 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden fixed inset-0 z-[100] bg-slate-950 flex flex-col"
+            className="lg:hidden fixed inset-0 z-[100] bg-slate-950 flex flex-col h-[100dvh]"
           >
             <div className="flex justify-between items-center p-4 border-b border-white/10">
-              <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/" onClick={(e) => handleNavClick(e, '/')}>
                 <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 w-auto object-contain brightness-0 invert" referrerPolicy="no-referrer" />
               </Link>
               <button 
@@ -138,7 +156,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 >
                   <Link 
                     to={item.href} 
-                    onClick={() => setIsMenuOpen(false)} 
+                    onClick={(e) => handleNavClick(e, item.href)} 
                     className="text-4xl sm:text-5xl font-bold text-white tracking-tight hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md"
                   >
                     {item.name}

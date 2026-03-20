@@ -14,7 +14,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
 
   return (
     <section 
-      className="relative w-full pt-40 pb-32 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
+      className="relative w-full pt-28 pb-16 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
       {isMobile ? (
@@ -52,37 +52,37 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-8 leading-[1.05] text-slate-950"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-4 md:mb-8 leading-[1.1] md:leading-[1.05] text-slate-950"
         >
-          Webdesign, das<br/><span className="font-serif italic text-primary font-normal">Anfragen generiert.</span>
+          Webdesign, das aus Besuchern<br/><span className="font-serif italic text-primary font-normal">zahlende Kunden macht.</span>
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-slate-500 mb-16 max-w-2xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-slate-500 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed"
         >
-          Verwandle deine Webseite in eine digitale Vertriebsmaschine, die rund um die Uhr Premium-Anfragen generiert.
+          VAMELA entwickelt maßgeschneiderte Webseiten, die dein Angebot glasklar kommunizieren, Vertrauen aufbauen und messbar qualifizierte Anfragen generieren.
         </motion.p>
         
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center gap-8 w-full"
+          className="flex flex-col items-center gap-6 md:gap-8 w-full"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full sm:w-auto">
             <motion.button
               onClick={onOpenContact}
               aria-label="Kostenlosen Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Kostenlosen Entwurf anfragen
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
               </span>
               <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
             </motion.button>
@@ -94,10 +94,10 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               aria-label="Jetzt per WhatsApp anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
+              className="group w-full sm:w-auto bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
             >
               Jetzt per WhatsApp anfragen
-              <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <MessageCircle className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:scale-110" />
             </motion.a>
           </div>
           

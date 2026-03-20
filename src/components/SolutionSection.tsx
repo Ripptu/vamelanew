@@ -3,37 +3,37 @@ import { motion } from 'motion/react';
 
 export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-3xl mx-auto mb-20"
+        className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-          Wie wir diese Probleme <span className="font-serif italic text-primary font-normal">für dich lösen</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
+          Welche Webdesign-Lösungen bietet <span className="font-serif italic text-primary font-normal">VAMELA für B2B-Kunden an?</span>
         </h2>
-        <p className="text-slate-600 text-lg">
+        <p className="text-slate-600 text-base md:text-lg">
           Wir bauen nicht einfach nur "schöne Webseiten". Wir entwickeln digitale Vertriebsmaschinen, die Vertrauen aufbauen, Einwände vorab klären und Besucher in Kunden verwandeln.
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         {/* Card 1 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileHover={{ y: -5, scale: 1.01 }}
-          className="bg-white rounded-3xl p-10 border border-slate-200 overflow-hidden relative transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
         >
-          <div className="text-center mb-10 relative z-10">
+          <div className="text-center mb-8 md:mb-10 relative z-10">
             <h3 className="text-xl font-bold mb-2 text-slate-900">Premium-Wahrnehmung</h3>
             <p className="text-slate-600 text-sm">Wir designen deine Webseite so, dass sie deine wahre Qualität widerspiegelt. Du wirst sofort als der Experte wahrgenommen, der du bist.</p>
           </div>
-          <div className="relative h-48 flex justify-center items-end">
+          <div className="relative h-40 md:h-48 flex justify-center items-end">
             <div className="w-full max-w-md bg-white border border-slate-200 rounded-t-xl relative flex flex-col items-center pt-8">
               <div className="absolute -top-6 w-12 h-12 bg-white rounded-full border border-slate-200 flex items-center justify-center text-primary font-bold italic z-10">S</div>
               
@@ -63,22 +63,22 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
 
         {/* Card 2 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ y: -5, scale: 1.01 }}
-          className="bg-white rounded-3xl p-10 border border-slate-200 overflow-hidden relative transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
         >
-          <div className="text-center mb-10 relative z-10">
+          <div className="text-center mb-8 md:mb-10 relative z-10">
             <h3 className="text-xl font-bold mb-2 text-slate-900">Automatisierte Anfragen</h3>
             <p className="text-slate-600 text-sm">Wir optimieren jeden Text und Button so, dass Besucher genau wissen, was sie tun müssen: Bei dir anfragen.</p>
           </div>
-          <div className="relative h-48 flex justify-center items-end">
+          <div className="relative h-40 md:h-48 flex justify-center items-end">
             <div className="w-full max-w-md bg-white border border-slate-200 rounded-xl p-6 relative overflow-hidden">
               <div className="flex justify-between items-center mb-8 relative z-10">
                 <div className="text-sm font-bold">Conversions Rate</div>
@@ -106,21 +106,21 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
               <div className="absolute top-[60%] left-0 right-0 border-t-2 border-dashed border-primary/30 z-0"></div>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 mb-12">
         {/* Card 3 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.3 }}
           whileHover={{ y: -5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
         >
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
-          <div className="h-40 flex items-center justify-center mb-6 relative z-10">
+          <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
             {/* Orbit graphic */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-48 h-48 rounded-full border border-slate-200 absolute"></div>
@@ -156,19 +156,19 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Zeitersparnis im Vertrieb</h3>
           <p className="text-slate-600 text-xs relative z-10">Die Webseite beantwortet Fragen vorab und qualifiziert Interessenten für dich.</p>
-        </motion.div>
+        </motion.article>
 
         {/* Card 4 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.4 }}
           whileHover={{ y: -5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
-          <div className="h-40 flex items-center justify-center mb-6 relative z-10">
+          <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
             <motion.div 
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.5 }}
@@ -183,19 +183,19 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sichtbarkeit bei Google</h3>
           <p className="text-slate-600 text-xs relative z-10">Wir bauen blitzschnelle Webseiten, die von Google geliebt und hoch gerankt werden.</p>
-        </motion.div>
+        </motion.article>
 
         {/* Card 5 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.5 }}
           whileHover={{ y: -5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
         >
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
-          <div className="h-40 flex items-center justify-center mb-6 relative z-10">
+          <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
             <motion.div 
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -210,7 +210,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
           </div>
           <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">Sorgenfreie Technik</h3>
           <p className="text-slate-600 text-xs relative z-10">Kein Ärger mehr mit Updates oder Abstürzen dank modernster Webflow-Technologie.</p>
-        </motion.div>
+        </motion.article>
       </div>
 
       <motion.div 

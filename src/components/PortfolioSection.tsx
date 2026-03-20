@@ -186,7 +186,7 @@ export function PortfolioSection() {
     if (showAll) {
       setShowAll(false);
       setTimeout(() => {
-        buttonRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        buttonRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }, 100);
     } else {
       setShowAll(true);
@@ -194,14 +194,14 @@ export function PortfolioSection() {
   };
 
   return (
-    <section className="bg-white text-slate-900 py-24 md:py-32 relative overflow-hidden" id="referenzen">
+    <section className="bg-white text-slate-900 py-20 md:py-32 relative overflow-hidden" id="referenzen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 md:mb-32 max-w-3xl">
+        <div className="mb-12 md:mb-32 max-w-3xl">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display tracking-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold font-display tracking-tight mb-4 md:mb-6"
           >
             Ausgewählte Arbeiten.
           </motion.h2>
@@ -210,7 +210,7 @@ export function PortfolioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-2xl text-slate-500 font-light leading-relaxed"
+            className="text-base md:text-2xl text-slate-500 font-light leading-relaxed"
           >
             Minimalistisch im Design, maximal in der Wirkung. Entdecken Sie Projekte, die Marken transformieren und messbare Ergebnisse liefern.
           </motion.p>
@@ -220,7 +220,7 @@ export function PortfolioSection() {
           {displayedProjects.map((project, index) => {
             const isEven = index % 2 === 0;
             return (
-              <motion.div 
+              <motion.article 
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -247,13 +247,13 @@ export function PortfolioSection() {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h3>
-                    <span className="text-sm font-medium text-slate-500 uppercase tracking-wider">{project.category}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1 sm:gap-4">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h3>
+                    <span className="text-xs sm:text-sm font-medium text-slate-500 uppercase tracking-wider">{project.category}</span>
                   </div>
-                  <p className="text-slate-600 text-lg line-clamp-2">{project.description}</p>
+                  <p className="text-slate-600 text-base md:text-lg line-clamp-2">{project.description}</p>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
@@ -297,12 +297,12 @@ export function PortfolioSection() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-[2rem] p-8 max-w-5xl w-full flex flex-col md:flex-row gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-3xl md:rounded-[2rem] p-6 md:p-8 max-w-5xl w-full flex flex-col md:flex-row gap-6 md:gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedProject(null)} 
-                className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white/80 backdrop-blur-sm"
                 aria-label="Projekt Details schließen"
               >
                 <X className="w-6 h-6" />
@@ -317,38 +317,38 @@ export function PortfolioSection() {
                 />
               </div>
               
-              <div className="flex-1 relative pt-4 md:pt-8 flex flex-col">
-                <div className="mb-8">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{selectedProject.title}</h2>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="text-slate-600 font-medium bg-slate-100 px-4 py-1.5 rounded-full text-sm uppercase tracking-wider">
+              <div className="flex-1 relative pt-2 md:pt-8 flex flex-col">
+                <div className="mb-6 md:mb-8">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 tracking-tight pr-10">{selectedProject.title}</h2>
+                  <div className="flex flex-wrap gap-2 md:gap-3">
+                    <span className="text-slate-600 font-medium bg-slate-100 px-3 md:px-4 py-1 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-wider">
                       {selectedProject.category}
                     </span>
-                    <span className="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-full text-sm flex items-center gap-1.5">
-                      <TrendingUp className="w-4 h-4" />
+                    <span className="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-3 md:px-4 py-1 md:py-1.5 rounded-full text-xs md:text-sm flex items-center gap-1.5">
+                      <TrendingUp className="w-3 h-3 md:w-4 md:h-4" />
                       {selectedProject.metric}
                     </span>
                   </div>
                 </div>
                 
-                <div className="space-y-8 flex-1">
+                <div className="space-y-6 md:space-y-8 flex-1">
                   <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
-                      <Target className="w-4 h-4 text-slate-400" /> Challenge
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
+                      <Target className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Challenge
                     </h4>
-                    <p className="text-slate-600 leading-relaxed">{selectedProject.challenge}</p>
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.challenge}</p>
                   </div>
                   <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
-                      <Lightbulb className="w-4 h-4 text-slate-400" /> Solution
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
+                      <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Solution
                     </h4>
-                    <p className="text-slate-600 leading-relaxed">{selectedProject.solution}</p>
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.solution}</p>
                   </div>
                   <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">
-                      <TrendingUp className="w-4 h-4 text-slate-400" /> Result
+                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
+                      <TrendingUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Result
                     </h4>
-                    <p className="text-slate-600 leading-relaxed">{selectedProject.result}</p>
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.result}</p>
                   </div>
                 </div>
                 
@@ -358,7 +358,7 @@ export function PortfolioSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+                  className="mt-8 md:mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none text-sm md:text-base"
                 >
                   Live Webseite ansehen <ExternalLink className="w-4 h-4" />
                 </motion.a>

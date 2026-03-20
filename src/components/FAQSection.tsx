@@ -46,26 +46,26 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
-      <div className="flex flex-col md:flex-row gap-16">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-16">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/3"
+          className="w-full md:w-1/3 text-center md:text-left"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
-          <p className="text-slate-500 mb-8">Du findest keine Antwort? Kontaktiere unser Team.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
+          <p className="text-slate-500 mb-6 md:mb-8 text-sm md:text-base">Du findest keine Antwort? Kontaktiere unser Team.</p>
           <motion.button 
             onClick={onOpenContact}
             aria-label="Termin buchen"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-all text-sm relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="group bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full font-medium flex items-center justify-center md:justify-start gap-2 transition-all text-sm relative overflow-hidden animate-shimmer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none mx-auto md:mx-0"
           >
             Termin buchen
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -74,33 +74,34 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
         
         <div className="w-full md:w-2/3 space-y-4">
           {faqs.map((faq, i) => (
-            <motion.div 
+            <motion.details 
               key={i} 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200"
+              className="group bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200 [&_summary::-webkit-details-marker]:hidden"
+              open={openIndex === i}
+              onToggle={(e) => {
+                if ((e.target as HTMLDetailsElement).open) {
+                  setOpenIndex(i);
+                } else if (openIndex === i) {
+                  setOpenIndex(null);
+                }
+              }}
             >
-              <button 
-                className="w-full px-6 py-6 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary hover:bg-slate-50 transition-colors"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                aria-expanded={openIndex === i}
-                aria-controls={`faq-answer-${i}`}
-                id={`faq-question-${i}`}
+              <summary 
+                className="w-full px-5 py-5 md:px-6 md:py-6 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary hover:bg-slate-50 transition-colors cursor-pointer list-none"
               >
-                <span className="font-medium text-slate-900">{faq.q}</span>
-                <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
-              </button>
+                <span className="font-medium text-slate-900 text-sm md:text-base pr-4">{faq.q}</span>
+                <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
+              </summary>
               <div 
-                id={`faq-answer-${i}`}
-                role="region"
-                aria-labelledby={`faq-question-${i}`}
-                className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                className="px-5 md:px-6 pb-5 md:pb-6 text-slate-500 leading-relaxed text-xs sm:text-sm"
               >
-                <p className="text-slate-500 leading-relaxed text-sm">{faq.a}</p>
+                <p>{faq.a}</p>
               </div>
-            </motion.div>
+            </motion.details>
           ))}
         </div>
       </div>

@@ -25,7 +25,6 @@ import { Footer } from './components/Footer';
 import { LegalPage } from './components/LegalPage';
 import { ContactPopup } from './components/ContactPopup';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
-import { WhatsAppBanner } from './components/WhatsAppBanner';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -39,7 +38,9 @@ function ScrollToTop() {
         }
       }, 100);
     } else {
-      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }, 0);
     }
   }, [pathname, hash]);
 
@@ -115,7 +116,6 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
-        <WhatsAppBanner />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} />
         <div id="referenzen"><PortfolioSection /></div>

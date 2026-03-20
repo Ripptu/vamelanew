@@ -2,33 +2,33 @@ import { motion } from 'motion/react';
 
 export function ProblemSection() {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-3xl mx-auto mb-20"
+        className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
           Warum du aktuell <span className="font-serif italic text-primary font-normal">Kunden verlierst</span>
         </h2>
-        <p className="text-slate-600 text-lg">
+        <p className="text-slate-600 text-base md:text-lg">
           Wenn deine Webseite nicht für dich arbeitet, arbeitet sie gegen dich. Das sind die drei häufigsten Gründe, warum B2B-Dienstleister Potenzial auf der Strecke lassen:
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-8">
         {/* Card 1 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
+          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
@@ -55,18 +55,18 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Obwohl dein Angebot vielleicht viel besser ist, entscheiden sich Interessenten für die Konkurrenz – einfach weil deren Webseite professioneller und vertrauenswürdiger wirkt.
           </p>
-        </motion.div>
+        </motion.article>
 
         {/* Card 2 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
+          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
@@ -89,18 +89,18 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Du musst in Erstgesprächen immer wieder bei null anfangen, weil deine aktuelle Webseite deine Expertise nicht klar kommuniziert und Besucher nicht vorqualifiziert.
           </p>
-        </motion.div>
+        </motion.article>
 
         {/* Card 3 */}
-        <motion.div 
+        <motion.article 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.3 }}
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white rounded-3xl p-8 border border-slate-200 transition-shadow"
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-48 bg-slate-50 rounded-2xl mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
+          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
@@ -123,7 +123,7 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Eine unprofessionelle Webseite zieht Kunden an, die nur auf den Preis schauen. Premium-Kunden buchen nur bei Experten, die auch digital wie Experten auftreten.
           </p>
-        </motion.div>
+        </motion.article>
       </div>
     </section>
   );

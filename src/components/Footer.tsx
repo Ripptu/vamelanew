@@ -18,18 +18,18 @@ export function Footer() {
           </motion.h2>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-border pt-12">
-          <div className="text-sm text-body">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 border-t border-border pt-8 md:pt-12">
+          <div className="text-sm text-body text-center md:text-left order-3 md:order-1">
             © {new Date().getFullYear()} VAMELA. Alle Rechte vorbehalten.
           </div>
           
-          <div className="flex gap-8 text-sm text-body font-medium">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm text-body font-medium order-1 md:order-2">
             <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
             <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
             <Link to="/agb" className="hover:text-primary transition-colors">AGB</Link>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center gap-6 order-2 md:order-3">
             <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-body hover:text-primary transition-colors">
               <MessageCircle className="w-6 h-6" />
             </a>
