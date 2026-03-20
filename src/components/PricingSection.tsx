@@ -28,10 +28,6 @@ export function PricingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 mb-6">
-            <ShieldCheck className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-slate-700">Transparente Investition</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">
             Professionelle Webseiten <span className="font-serif italic text-primary font-normal">im fairen Abo.</span>
           </h2>
@@ -61,7 +57,7 @@ export function PricingSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-center max-w-6xl mx-auto pt-4 md:pt-0">
           {/* Starter */}
           <motion.article 
             initial={{ opacity: 0, y: 30 }}
@@ -141,7 +137,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-blue-500 flex flex-col relative z-30 md:scale-105 shadow-[0_0_50px_rgba(59,130,246,0.6)] h-full"
+            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-blue-500 flex flex-col relative z-30 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.4)] md:shadow-[0_0_50px_rgba(59,130,246,0.6)] h-full"
           >
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 border border-white whitespace-nowrap shadow-sm">
               <Sparkles className="w-3 h-3" />
