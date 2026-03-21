@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, Instagram, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
+  </svg>
+);
 
 export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -102,6 +108,19 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               </span>
               <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
             </motion.button>
+            
+            <div className="flex lg:hidden items-center gap-4 mr-4 text-slate-800">
+              <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Instagram">
+                <Instagram className="w-[1.15rem] h-[1.15rem]" />
+              </a>
+              <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="TikTok">
+                <TikTokIcon className="w-[1.15rem] h-[1.15rem]" />
+              </a>
+              <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="WhatsApp">
+                <MessageCircle className="w-[1.15rem] h-[1.15rem]" />
+              </a>
+            </div>
+
             <button 
               className="lg:hidden p-2 -mr-2 text-slate-900 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md transition-colors hover:bg-slate-100" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}

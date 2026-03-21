@@ -1,5 +1,11 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
+  </svg>
+);
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   return (
@@ -25,6 +31,26 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       
       {/* White Fade Overlay - stronger fade to white */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white pointer-events-none"></div>
+
+      {/* Social Links Sidebar */}
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="hidden lg:flex absolute left-8 xl:left-12 top-1/2 -translate-y-1/2 flex-col items-center gap-6 z-30"
+      >
+        <div className="w-[1px] h-12 bg-slate-400/50"></div>
+        <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="Instagram">
+          <Instagram className="w-5 h-5" />
+        </a>
+        <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="TikTok">
+          <TikTokIcon className="w-5 h-5" />
+        </a>
+        <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="WhatsApp">
+          <MessageCircle className="w-5 h-5" />
+        </a>
+        <div className="w-[1px] h-12 bg-slate-400/50"></div>
+      </motion.div>
 
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
         <motion.h1 
