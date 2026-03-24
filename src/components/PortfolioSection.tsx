@@ -176,12 +176,12 @@ const PROJECTS = [
   }
 ];
 
-export function PortfolioSection() {
+export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, showLinkToPage?: boolean }) {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
   const [showAll, setShowAll] = useState(false);
   const buttonRef = useRef<HTMLDivElement>(null);
 
-  const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 4);
+  const displayedProjects = limit && !showAll ? PROJECTS.slice(0, limit) : (showAll ? PROJECTS : PROJECTS.slice(0, 4));
 
   const handleToggleShowAll = () => {
     if (showAll) {
@@ -260,7 +260,22 @@ export function PortfolioSection() {
           })}
         </div>
 
-        {PROJECTS.length > 4 && (
+        {showLinkToPage ? (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 md:mt-32 flex justify-center"
+          >
+            <a
+              href="/referenzen"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
+            >
+              Alle Referenzen ansehen
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </a>
+          </motion.div>
+        ) : PROJECTS.length > (limit || 4) && (
           <motion.div 
             ref={buttonRef}
             initial={{ opacity: 0, y: 20 }}

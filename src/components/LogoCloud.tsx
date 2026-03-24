@@ -2,15 +2,11 @@ import { motion } from 'motion/react';
 
 export function LogoCloud() {
   const baseLogos = [
-    "https://www.svgrepo.com/show/303177/photoshop-cc-logo.svg",
-    "https://www.svgrepo.com/show/452150/adobe-premiere.svg",
-    "https://www.svgrepo.com/show/452202/figma.svg",
-    "https://www.svgrepo.com/show/409983/webflow.svg",
-    "https://www.svgrepo.com/show/521303/react-16.svg",
-    "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/affinity-studio-icon.png",
-    "https://www.svgrepo.com/show/331444/ionos.svg",
-    "https://images.seeklogo.com/logo-png/66/1/higgsfield-logo-png_seeklogo-660244.png?v=1964531789390079920",
-    "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/netlify-icon.png"
+    "https://i.postimg.cc/VLVz13zy/nur-logo.png",
+    "https://i.postimg.cc/pTPCtyfc/Logo-neu.png",
+    "https://s1.directupload.eu/images/260324/tf5v78j7.webp",
+    "https://s1.directupload.eu/images/260224/kgemdfqa.png",
+    "https://s1.directupload.eu/images/260324/3y7e3s67.webp"
   ];
 
   // Duplicate a few times so one half is wider than most screens
@@ -31,7 +27,7 @@ export function LogoCloud() {
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`first-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" width="40" height="40" loading="lazy" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
+                <img src={logo} alt="Logo" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
               </div>
             ))}
           </div>
@@ -39,7 +35,7 @@ export function LogoCloud() {
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`second-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" width="40" height="40" loading="lazy" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
+                <img src={logo} alt="Logo" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
               </div>
             ))}
           </div>

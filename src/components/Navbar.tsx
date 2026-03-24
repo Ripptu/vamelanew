@@ -78,10 +78,10 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           
           <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/60 backdrop-blur-md border border-white/40 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-sm">
             {[
-              { name: 'Strategie-Workshop', href: '/strategie-workshop' },
-              { name: 'Referenzen', href: '/#referenzen' },
-              { name: 'Prozess', href: '/#prozess' },
-              { name: 'Preise', href: '/#zahlung' }
+              { name: 'Leistungen & Preise', href: '/leistungen' },
+              { name: 'Referenzen', href: '/referenzen' },
+              { name: 'Agentur & Prozess', href: '/agentur' },
+              { name: 'Strategie-Workshop', href: '/strategie-workshop' }
             ].map((item) => (
               <Link 
                 key={item.name}
@@ -158,10 +158,10 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             
             <div className="flex-1 flex flex-col justify-center px-8 gap-6">
               {[
-                { name: 'Strategie-Workshop', href: '/strategie-workshop' },
-                { name: 'Referenzen', href: '/#referenzen' },
-                { name: 'Prozess', href: '/#prozess' },
-                { name: 'Preise', href: '/#zahlung' }
+                { name: 'Leistungen & Preise', href: '/leistungen' },
+                { name: 'Referenzen', href: '/referenzen' },
+                { name: 'Agentur & Prozess', href: '/agentur' },
+                { name: 'Strategie-Workshop', href: '/strategie-workshop' }
               ].map((item, i) => (
                 <motion.div
                   key={item.name}

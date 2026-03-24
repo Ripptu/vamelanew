@@ -2,7 +2,7 @@ import { CheckCircle2, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { useRef } from 'react';
 
-export function ProcessSection() {
+export function ProcessSection({ limit, showLinkToPage }: { limit?: number, showLinkToPage?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -15,34 +15,34 @@ export function ProcessSection() {
     restDelta: 0.001
   });
 
-  const steps = [
+  const allSteps = [
     {
       num: "1",
       title: "Positionierung und Branding",
       desc: "Hier entsteht die Basis einer starken Marktführer-Marke",
       bullets: ["Strategische Marktpositionierung", "Visuelle Identität & CI-Entwicklung", "Zielgruppen & Konkurrenzanalyse"],
-      animation: "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ac8f038978863631a0e9c9_Frame%202147239722.avif"
+      animation: "https://s1.directupload.eu/images/260324/r7h7zk97.webp"
     },
     {
       num: "2",
       title: "Strategie und Copywriting",
       desc: "Sorgen für eine Webseite, die wirklich Anfragen generiert",
       bullets: ["Verkaufspsychologischer Aufbau", "Conversionoptimierte Texte", "Zielführende Nutzerführung"],
-      animation: "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ac912b04959af6636f00a3_aa.avif"
+      animation: "https://s1.directupload.eu/images/260324/z56hnw8n.webp"
     },
     {
       num: "3",
       title: "High-End Webdesign",
       desc: "Baut Vertrauen auf und macht dich unvergleichbar",
       bullets: ["Weltklasse Visualisierungen", "Ein Gesamtbild das sofort Eindruck hinterlässt", "Designed um Kunden zu gewinnen"],
-      animation: "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ac91443954ec50f27ee307_ssss.avif"
+      animation: "https://s1.directupload.eu/images/260324/48hfhplc.webp"
     },
     {
       num: "4",
       title: "Webflow Entwicklung & Launch",
       desc: "Deine Webseite läuft auf der Nr. 1 Webseiten-Plattform",
       bullets: ["Blitzschnelle Ladezeiten", "Perfekt um auf Google gefunden zu werden", "Atemberaubende Animationen"],
-      animation: "https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69ac91a15d07945e1fea4711_Frame%202147239858.avif"
+      animation: "https://s1.directupload.eu/images/260324/2vkzmtsb.webp"
     },
     {
       num: "5",
@@ -52,6 +52,8 @@ export function ProcessSection() {
       animation: "https://s1.directupload.eu/images/260320/mgj4ozbw.webp"
     }
   ];
+
+  const steps = limit ? allSteps.slice(0, limit) : allSteps;
 
   return (
     <section ref={containerRef} className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
@@ -63,7 +65,7 @@ export function ProcessSection() {
         className="text-center mb-16 md:mb-20"
       >
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
-          In 4 Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
+          In {allSteps.length} Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
           Unser bewährter Prozess, um Tag für Tag beeindruckende Marken mit hochkonvertierenden Online-Auftritten zu erschaffen.
@@ -197,13 +199,32 @@ export function ProcessSection() {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="flex-1 relative group mt-6 lg:mt-0 w-full"
                   >
-                    <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl border border-slate-200 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
+                    <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl border border-slate-200 relative z-10" loading="lazy" />
                   </motion.div>
                 )}
               </div>
             </motion.article>
           ))}
         </div>
+        
+        {showLinkToPage && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 md:mt-24 flex justify-center relative z-20"
+          >
+            <a
+              href="/agentur"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white"
+            >
+              Gesamten Prozess ansehen
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </motion.div>
+        )}
       </div>
     </section>
   );

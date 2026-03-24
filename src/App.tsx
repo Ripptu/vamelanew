@@ -57,6 +57,9 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
       <Navbar onOpenContact={onOpenContact} />
       <Routes>
         <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
+        <Route path="/leistungen" element={<ServicesPage onOpenContact={onOpenContact} />} />
+        <Route path="/agentur" element={<AgencyPage onOpenContact={onOpenContact} />} />
+        <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
         <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
         <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
         <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />
@@ -130,16 +133,62 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
         <LogoCloud />
         <ProblemSection />
-        <SolutionSection onOpenContact={onOpenContact} />
-        <div id="referenzen"><PortfolioSection /></div>
-        <div id="prozess"><ProcessSection /></div>
+        <SolutionSection onOpenContact={onOpenContact} limit={3} showLinkToPage={true} />
+        <ProcessSection limit={2} showLinkToPage={true} />
+        <div id="referenzen"><PortfolioSection limit={4} showLinkToPage={true} /></div>
         <TestimonialsSection />
-        <FounderSection />
-        <div id="leistungen"><ComparisonSection /></div>
-        <PricingSection />
         <FreeDraftSection />
-        <NextStepsSection onOpenContact={onOpenContact} />
+        <FooterCTA onOpenContact={onOpenContact} />
+      </main>
+    </div>
+  );
+}
+
+function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
+  return (
+    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+      <Helmet>
+        <title>Leistungen & Preise | VAMELA</title>
+        <meta name="description" content="Unsere Webdesign-Leistungen und Preise im Überblick." />
+      </Helmet>
+      <main>
+        <SolutionSection onOpenContact={onOpenContact} />
+        <ComparisonSection />
+        <PricingSection />
         <FAQSection onOpenContact={onOpenContact} />
+        <NextStepsSection onOpenContact={onOpenContact} />
+        <FooterCTA onOpenContact={onOpenContact} />
+      </main>
+    </div>
+  );
+}
+
+function AgencyPage({ onOpenContact }: { onOpenContact: () => void }) {
+  return (
+    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+      <Helmet>
+        <title>Agentur & Prozess | VAMELA</title>
+        <meta name="description" content="Lerne uns und unseren bewährten Prozess kennen." />
+      </Helmet>
+      <main>
+        <FounderSection />
+        <ProcessSection />
+        <FooterCTA onOpenContact={onOpenContact} />
+      </main>
+    </div>
+  );
+}
+
+function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
+  return (
+    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+      <Helmet>
+        <title>Referenzen | VAMELA</title>
+        <meta name="description" content="Unsere erfolgreichen Webdesign-Projekte." />
+      </Helmet>
+      <main>
+        <PortfolioSection />
+        <TestimonialsSection />
         <FooterCTA onOpenContact={onOpenContact} />
       </main>
     </div>
