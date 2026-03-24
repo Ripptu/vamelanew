@@ -44,7 +44,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto mb-8 md:mb-10"
           >
-            Im kostenlosen Erstgespräch zeigen wir dir, wie dein neuer Online-Auftritt aussehen und rund um die Uhr für dich verkaufen wird.
+            Im kostenlosen Erstgespräch zeige ich dir, wie dein neuer Online-Auftritt aussehen und rund um die Uhr für dich verkaufen wird.
           </motion.p>
           
           <motion.div 
@@ -68,9 +68,9 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
             <div className="flex flex-col items-center gap-4 text-sm text-slate-500">
               <div className="flex -space-x-3">
                 {[
-                  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80",
-                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80",
-                  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100&q=80"
+                  "https://s1.directupload.eu/images/260324/b4ic9qjm.webp",
+                  "https://s1.directupload.eu/images/260324/25ibmjz4.webp",
+                  "https://s1.directupload.eu/images/260324/do2yh9ju.webp"
                 ].map((src, i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
                     <img src={src} alt="Kunde" className="w-full h-full object-cover" referrerPolicy="no-referrer" />

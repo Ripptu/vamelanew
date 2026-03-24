@@ -32,7 +32,7 @@ export function PricingSection() {
             Professionelle Webseiten <span className="font-serif italic text-primary font-normal">im fairen Abo.</span>
           </h2>
           <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            Keine hohen Einmalkosten. Wähle das Paket, das zu deinem Unternehmen passt und profitiere von unserem All-Inclusive Service.
+            Keine hohen Einmalkosten. Wähle das Paket, das zu deinem Unternehmen passt und profitiere von meinem All-Inclusive Service.
           </p>
 
           {/* Pricing Toggle */}

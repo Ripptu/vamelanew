@@ -14,12 +14,13 @@ export function Footer() {
     <footer className="bg-background pt-24 pb-12 md:pb-12 px-4 sm:px-6 lg:px-8 pb-safe">
       <div className="max-w-7xl mx-auto">
         {/* Large Gradient Text */}
-        <div className="text-center mb-16 md:mb-24">
+        <div className="text-center mb-16 md:mb-24 relative flex justify-center">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="text-[18vw] md:text-[12rem] font-black tracking-tighter leading-none text-border select-none"
+            className="text-[20vw] md:text-[14rem] font-black tracking-tighter leading-none select-none bg-clip-text text-transparent bg-gradient-to-b from-slate-900 via-slate-600 to-transparent [mask-image:linear-gradient(to_bottom,black_40%,transparent_100%)]"
           >
             VAMELA
           </motion.h2>

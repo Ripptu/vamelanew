@@ -58,7 +58,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
       <Routes>
         <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
         <Route path="/leistungen" element={<ServicesPage onOpenContact={onOpenContact} />} />
-        <Route path="/agentur" element={<AgencyPage onOpenContact={onOpenContact} />} />
+        <Route path="/ueber-mich" element={<AboutPage onOpenContact={onOpenContact} />} />
         <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
         <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
         <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
@@ -125,8 +125,8 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
       <Helmet>
-        <title>VAMELA | Webdesign Agentur für mehr Anfragen</title>
-        <meta name="description" content="Wir bauen hochkonvertierende Websites für Dienstleister und Handwerker. Mehr Anfragen, mehr Umsatz, weniger Stress." />
+        <title>VAMELA | Webdesign für mehr Anfragen</title>
+        <meta name="description" content="Ich baue hochkonvertierende Websites für Dienstleister und Handwerker. Mehr Anfragen, mehr Umsatz, weniger Stress." />
         <link rel="canonical" href="https://vamela.info/" />
       </Helmet>
       <main>
@@ -149,7 +149,7 @@ function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Leistungen & Preise | VAMELA</title>
-        <meta name="description" content="Unsere Webdesign-Leistungen und Preise im Überblick." />
+        <meta name="description" content="Meine Webdesign-Leistungen und Preise im Überblick." />
       </Helmet>
       <main>
         <SolutionSection onOpenContact={onOpenContact} />
@@ -163,12 +163,12 @@ function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
   );
 }
 
-function AgencyPage({ onOpenContact }: { onOpenContact: () => void }) {
+function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
-        <title>Agentur & Prozess | VAMELA</title>
-        <meta name="description" content="Lerne uns und unseren bewährten Prozess kennen." />
+        <title>Über mich & Prozess | VAMELA</title>
+        <meta name="description" content="Lerne mich und meinen bewährten Prozess kennen." />
       </Helmet>
       <main>
         <FounderSection />
@@ -184,7 +184,7 @@ function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
     <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Referenzen | VAMELA</title>
-        <meta name="description" content="Unsere erfolgreichen Webdesign-Projekte." />
+        <meta name="description" content="Meine erfolgreichen Webdesign-Projekte." />
       </Helmet>
       <main>
         <PortfolioSection />

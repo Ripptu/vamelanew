@@ -25,7 +25,7 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
   return (
     <main className="min-h-screen bg-slate-50 pt-24 pb-16">
       <Helmet>
-        <title>Webdesign für Facility Management | VAMELA Agentur</title>
+        <title>Webdesign für Facility Management | VAMELA</title>
         <meta name="description" content="Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices." />
         <meta property="og:title" content="Webdesign für Facility Management | VAMELA" />
         <meta property="og:description" content="Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices." />
@@ -69,7 +69,7 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
       <section className="py-12 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-8">
-            Diesen Facility-Management-Unternehmen helfen wir bereits beim Wachstum
+            Diesen Facility-Management-Unternehmen helfe ich bereits beim Wachstum
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale">
             {/* Placeholders for references */}
@@ -153,7 +153,7 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
                 <ChevronDown className="w-5 h-5 text-slate-500 transition-transform group-open:-rotate-180" />
               </summary>
               <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                Facility Management ist ein stark lokales Geschäft. Durch gezielte lokale Suchmaschinenoptimierung (Local SEO) stellen wir sicher, dass Ihr Unternehmen bei Suchanfragen wie "Gebäudereinigung [Ihre Stadt]" oder "Hausmeisterservice [Ihre Region]" ganz oben auf Google erscheint. Das bringt Ihnen kontinuierlich warme Anfragen von Kunden, die genau jetzt Ihren Service in Ihrer Nähe benötigen.
+                Facility Management ist ein stark lokales Geschäft. Durch gezielte lokale Suchmaschinenoptimierung (Local SEO) stelle ich sicher, dass Ihr Unternehmen bei Suchanfragen wie "Gebäudereinigung [Ihre Stadt]" oder "Hausmeisterservice [Ihre Region]" ganz oben auf Google erscheint. Das bringt Ihnen kontinuierlich warme Anfragen von Kunden, die genau jetzt Ihren Service in Ihrer Nähe benötigen.
               </div>
             </details>
 
@@ -163,7 +163,7 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
                 <ChevronDown className="w-5 h-5 text-slate-500 transition-transform group-open:-rotate-180" />
               </summary>
               <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                Wir wissen, dass Sie im Tagesgeschäft eingespannt sind. Unser Prozess ist "Done-for-You". Nach einem kurzen Strategiegespräch übernehmen wir Konzeption, Design, Texterstellung und technische Umsetzung komplett. Sie müssen lediglich die Entwürfe freigeben. So erhalten Sie eine hochprofessionelle Website mit minimalem eigenen Zeitaufwand.
+                Ich weiß, dass Sie im Tagesgeschäft eingespannt sind. Mein Prozess ist "Done-for-You". Nach einem kurzen Strategiegespräch übernehme ich Konzeption, Design, Texterstellung und technische Umsetzung komplett. Sie müssen lediglich die Entwürfe freigeben. So erhalten Sie eine hochprofessionelle Website mit minimalem eigenen Zeitaufwand.
               </div>
             </details>
 
@@ -173,7 +173,7 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
                 <ChevronDown className="w-5 h-5 text-slate-500 transition-transform group-open:-rotate-180" />
               </summary>
               <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                Absolut. Der Fachkräftemangel ist im Facility Management eine der größten Herausforderungen. Wir integrieren auf Wunsch optimierte Karriere-Seiten und einfache, mobile Bewerbungsprozesse (z.B. 60-Sekunden-Bewerbung ohne Anschreiben), um Ihre Website nicht nur zur Kunden-, sondern auch zur Mitarbeiter-Gewinnungsmaschine zu machen.
+                Absolut. Der Fachkräftemangel ist im Facility Management eine der größten Herausforderungen. Ich integriere auf Wunsch optimierte Karriere-Seiten und einfache, mobile Bewerbungsprozesse (z.B. 60-Sekunden-Bewerbung ohne Anschreiben), um Ihre Website nicht nur zur Kunden-, sondern auch zur Mitarbeiter-Gewinnungsmaschine zu machen.
               </div>
             </details>
           </div>

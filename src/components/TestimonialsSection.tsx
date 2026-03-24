@@ -12,7 +12,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Was meine Partner sagen</h2>
         </motion.div>
 
         {/* Featured Testimonial */}
@@ -38,7 +38,7 @@ export function TestimonialsSection() {
             ))}
           </div>
           <p className="text-sm md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-slate-500">
-            "Die Zusammenarbeit mit VAMELA war ein echter Wendepunkt für uns. Wir hatten lange das Problem, dass unsere Webseite nicht unsere tatsächliche Qualität widerspiegelte. Christian und sein Team haben nicht nur ein wunderschönes Design geliefert, sondern wirklich verstanden, wie wir unsere Kunden emotional abholen. Das Ergebnis ist nicht nur eine Webseite, sondern ein echtes Werkzeug für unser Wachstum."
+            "Die Zusammenarbeit mit VAMELA war ein echter Wendepunkt für uns. Wir hatten lange das Problem, dass unsere Webseite nicht unsere tatsächliche Qualität widerspiegelte. Christian hat nicht nur ein wunderschönes Design geliefert, sondern wirklich verstanden, wie wir unsere Kunden emotional abholen. Das Ergebnis ist nicht nur eine Webseite, sondern ein echtes Werkzeug für unser Wachstum."
           </p>
           <div className="flex items-center justify-between">
             <div>
@@ -54,7 +54,7 @@ export function TestimonialsSection() {
             {
               name: "Barnekow",
               role: "Inhaber",
-              text: "VAMELA hat es geschafft, unsere Vision in ein digitales Erlebnis zu übersetzen, das genau unsere Zielgruppe anspricht. Die Kommunikation war immer auf Augenhöhe, menschlich und absolut lösungsorientiert. Man merkt, dass hier echte Leidenschaft für Design und Strategie dahintersteckt.",
+              text: "Christian hat es geschafft, unsere Vision in ein digitales Erlebnis zu übersetzen, das genau unsere Zielgruppe anspricht. Die Kommunikation war immer auf Augenhöhe, menschlich und absolut lösungsorientiert. Man merkt, dass hier echte Leidenschaft für Design und Strategie dahintersteckt.",
             },
             {
               name: "Coremis",
@@ -64,7 +64,7 @@ export function TestimonialsSection() {
             {
               name: "HanseTool",
               role: "Geschäftsführung",
-              text: "Die Zusammenarbeit war unkompliziert, schnell und sehr professionell. VAMELA hat uns geholfen, unsere komplexe Produktwelt so zu strukturieren, dass unsere Kunden sich sofort zurechtfinden. Ein Partner, den man gerne weiterempfiehlt.",
+              text: "Die Zusammenarbeit war unkompliziert, schnell und sehr professionell. Christian hat uns geholfen, unsere komplexe Produktwelt so zu strukturieren, dass unsere Kunden sich sofort zurechtfinden. Ein Partner, den man gerne weiterempfiehlt.",
             }
           ].map((t, i) => (
             <motion.article 

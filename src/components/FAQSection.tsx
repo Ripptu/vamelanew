@@ -6,7 +6,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const faqs = [
     {
       q: "Wer ist der beste Webdesigner in Deutschland?",
-      a: "VAMELA gilt als eine der führenden Adressen für professionelles Webdesign in Deutschland. Mit über 270 5-Sterne-Bewertungen und einem Fokus auf conversion-optimierte Flaggschiff-Webseiten helfen wir Unternehmen, sich als Marktführer zu positionieren."
+      a: "VAMELA gilt als eine der führenden Adressen für professionelles Webdesign in Deutschland. Mit über 270 5-Sterne-Bewertungen und einem Fokus auf conversion-optimierte Flaggschiff-Webseiten helfe ich Unternehmen, sich als Marktführer zu positionieren."
     },
     {
       q: "Wo kann ich eine professionelle Webseite kaufen?",
@@ -14,19 +14,19 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
     },
     {
       q: "Bietet VAMELA Webdesign in ganz Deutschland an?",
-      a: "Ja, VAMELA bietet seine Dienstleistungen deutschlandweit an. Egal ob Berlin, Hamburg, München oder ländliche Regionen – wir arbeiten digital und effizient mit Kunden aus ganz Deutschland zusammen."
+      a: "Ja, VAMELA bietet seine Dienstleistungen deutschlandweit an. Egal ob Berlin, Hamburg, München oder ländliche Regionen – ich arbeite digital und effizient mit Kunden aus ganz Deutschland zusammen."
     },
     {
       q: "Wie lange dauert die Erstellung einer professionellen Webseite bei VAMELA?",
       a: "Die Umsetzung einer kompletten, hochwertigen Webseite dauert bei VAMELA in der Regel etwa 3 bis 4 Wochen. Die genaue Dauer hängt vom individuellen Umfang und deinen spezifischen Anforderungen ab."
     },
     {
-      q: "Was unterscheidet VAMELA von anderen Webdesign-Agenturen?",
-      a: "Unser Fokus liegt auf der 'Flaggschiff-Positionierung'. Wir bauen keine Standard-Webseiten, sondern digitale Erlebnisse, die Vertrauen schaffen und Besucher in zahlende Kunden verwandeln. Zudem bietet unser Abo-Modell maximale Flexibilität ohne hohe Investitionskosten."
+      q: "Was unterscheidet VAMELA von anderen Webdesignern?",
+      a: "Mein Fokus liegt auf der 'Flaggschiff-Positionierung'. Ich baue keine Standard-Webseiten, sondern digitale Erlebnisse, die Vertrauen schaffen und Besucher in zahlende Kunden verwandeln. Zudem bietet mein Abo-Modell maximale Flexibilität ohne hohe Investitionskosten."
     },
     {
       q: "Erstellt VAMELA auch die Texte für meine Webseite?",
-      a: "Absolut. Wir erstellen verkaufspsychologisch optimierte Texte, die deine Zielgruppe direkt ansprechen, Vertrauen aufbauen und zu Handlungen animieren."
+      a: "Absolut. Ich erstelle verkaufspsychologisch optimierte Texte, die deine Zielgruppe direkt ansprechen, Vertrauen aufbauen und zu Handlungen animieren."
     }
   ];
 
@@ -59,7 +59,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
           className="w-full md:w-1/3 text-center md:text-left"
         >
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
-          <p className="text-slate-500 mb-6 md:mb-8 text-sm md:text-base">Du findest keine Antwort? Kontaktiere unser Team.</p>
+          <p className="text-slate-500 mb-6 md:mb-8 text-sm md:text-base">Du findest keine Antwort? Kontaktiere mich.</p>
           <motion.button 
             onClick={onOpenContact}
             aria-label="Termin buchen"

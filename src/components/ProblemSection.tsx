@@ -14,7 +14,7 @@ export function ProblemSection() {
           Warum klassisches Webdesign <span className="font-serif italic text-primary font-normal">oft frustrierend ist</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Eine professionelle Webseite ist wichtig, aber der Weg dorthin ist oft steinig. Das sind die drei größten Probleme bei traditionellen Agenturen:
+          Eine professionelle Webseite ist wichtig, aber der Weg dorthin ist oft steinig. Das sind die drei größten Probleme bei traditionellen Webdesignern:
         </p>
       </motion.div>
 

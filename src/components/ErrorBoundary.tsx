@@ -38,7 +38,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
             <h1 className="text-2xl font-bold text-slate-900 mb-2">Ups! Etwas ist schiefgelaufen.</h1>
             <p className="text-slate-600 mb-8">
-              Es gab einen unerwarteten Fehler. Bitte lade die Seite neu oder kontaktiere uns, wenn das Problem weiterhin besteht.
+              Es gab einen unerwarteten Fehler. Bitte lade die Seite neu oder kontaktiere mich, wenn das Problem weiterhin besteht.
             </p>
             <button
               onClick={() => window.location.reload()}

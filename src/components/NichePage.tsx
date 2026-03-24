@@ -37,7 +37,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
   return (
     <main className="min-h-screen bg-slate-50 pt-24 pb-16">
       <Helmet>
-        <title>Webdesign für {niche.name} | VAMELA Agentur</title>
+        <title>Webdesign für {niche.name} | VAMELA</title>
         <meta name="description" content={niche.schemaDescription} />
         <meta property="og:title" content={`Webdesign für ${niche.name} | VAMELA`} />
         <meta property="og:description" content={niche.schemaDescription} />

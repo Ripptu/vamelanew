@@ -32,7 +32,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
               <PhoneCall className="w-6 h-6" />
             </div>
             <h3 className="font-bold mb-3 text-slate-900">Kostenloses Design-Konzept</h3>
-            <p className="text-sm text-slate-500">In einem gemeinsamen Erstgespräch lernen wir dich und dein Angebot kennen, um ein grobes Design-Konzept auszuarbeiten.</p>
+            <p className="text-sm text-slate-500">In einem gemeinsamen Erstgespräch lerne ich dich und dein Angebot kennen, um ein grobes Design-Konzept auszuarbeiten.</p>
           </motion.article>
           
           <motion.article 
@@ -60,7 +60,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
               <Rocket className="w-6 h-6" />
             </div>
             <h3 className="font-bold mb-3 text-slate-900">Lehn dich entspannt zurück!</h3>
-            <p className="text-sm text-slate-500">Wir beginnen mit unserer Arbeit, du erhältst regelmäßige Updates und hast nach Ø 3 Wochen deine fertige Flaggschiff-Webseite.</p>
+            <p className="text-sm text-slate-500">Ich beginne mit meiner Arbeit, du erhältst regelmäßige Updates und hast nach Ø 3 Wochen deine fertige Flaggschiff-Webseite.</p>
           </motion.article>
         </div>
       </div>

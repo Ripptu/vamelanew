@@ -124,7 +124,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
         </div>
       </div>
       <h3 className="text-lg font-bold mb-2 relative z-10 text-slate-900">All-Inclusive Service</h3>
-      <p className="text-slate-600 text-sm md:text-base relative z-10">Wir kümmern uns um Hosting, Wartung und Updates. Du lehnst dich entspannt zurück.</p>
+      <p className="text-slate-600 text-sm md:text-base relative z-10">Ich kümmere mich um Hosting, Wartung und Updates. Du lehnst dich entspannt zurück.</p>
     </motion.article>,
 
     // Card 4
@@ -188,7 +188,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
           Die smarte Lösung: <span className="font-serif italic text-primary font-normal">Website as a Service</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">
-          Wir bauen nicht einfach nur Webseiten. Wir bieten dir ein Rundum-Sorglos-Paket, das mit deinem Unternehmen wächst – zum fairen monatlichen Festpreis.
+          Ich baue nicht einfach nur Webseiten. Ich biete dir ein Rundum-Sorglos-Paket, das mit deinem Unternehmen wächst – zum fairen monatlichen Festpreis.
         </p>
       </motion.div>
 

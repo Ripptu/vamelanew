@@ -47,7 +47,7 @@ export function ComparisonSection() {
         <div className="md:hidden flex flex-col gap-6">
           {[
             { id: 's', name: 'VAMELA', isPrimary: true, logo: "https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" },
-            { id: 'k', name: 'Klassische Webagenturen', isPrimary: false },
+            { id: 'k', name: 'Klassische Webdesigner', isPrimary: false },
             { id: 'kr', name: 'Kreativagenturen', isPrimary: false },
             { id: 'm', name: 'Marketingagenturen', isPrimary: false },
           ].map((agency, idx) => (
@@ -89,7 +89,7 @@ export function ComparisonSection() {
           <div className="overflow-x-auto hide-scrollbar">
             <div className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[700px]">
               <div className="p-6 text-left border-r border-slate-200 sticky left-0 bg-slate-50 z-20"></div>
-              <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Klassische Webagenturen</div>
+              <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Klassische Webdesigner</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Kreativagenturen</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Marketingagenturen</div>
               <div className="p-6 bg-primary/10 text-primary flex items-center justify-center gap-2 text-sm">

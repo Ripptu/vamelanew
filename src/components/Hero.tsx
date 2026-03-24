@@ -62,13 +62,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
 
       <div className="sr-only" aria-hidden="true">
         <h2>Bester Webdesigner in Deutschland</h2>
-        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Wir erstellen hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder eine Webdesign-Agentur suchen, die auf Conversion-Optimierung spezialisiert ist, ist VAMELA Ihr Partner.</p>
+        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Ich erstelle hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder einen Webdesigner suchen, der auf Conversion-Optimierung spezialisiert ist, ist VAMELA Ihr Partner.</p>
         <ul>
           <li>Webdesign Deutschland</li>
           <li>Professionelle Webseite erstellen lassen</li>
-          <li>Webdesign Agentur Kosten</li>
+          <li>Webdesigner Kosten</li>
           <li>Webseite kaufen im Abo</li>
-          <li>Beste Webdesign Agentur B2B</li>
+          <li>Bester Webdesigner B2B</li>
         </ul>
       </div>
 
@@ -88,7 +88,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-base md:text-xl text-slate-700 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
-          Keine hohen Einmalkosten. Wir kümmern uns um Design, Hosting, Wartung und Updates – alles in einem flexiblen monatlichen Paket. So kannst du dich voll auf dein Geschäft konzentrieren.
+          Keine hohen Einmalkosten. Ich kümmere mich um Design, Hosting, Wartung und Updates – alles in einem flexiblen monatlichen Paket. So kannst du dich voll auf dein Geschäft konzentrieren.
         </motion.p>
         
         <motion.div 
@@ -129,9 +129,9 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-2 sm:mt-0">
             <div className="flex -space-x-3">
               {[
-                "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100&q=80",
-                "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80",
-                "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100&q=80"
+                "https://s1.directupload.eu/images/260324/b4ic9qjm.webp",
+                "https://s1.directupload.eu/images/260324/25ibmjz4.webp",
+                "https://s1.directupload.eu/images/260324/do2yh9ju.webp"
               ].map((src, i) => (
                 <motion.div 
                   key={i} 

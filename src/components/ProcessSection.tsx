@@ -47,7 +47,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
     {
       num: "5",
       title: "All-Inclusive Betreuung",
-      desc: "Wir kümmern uns um alles, damit du dich auf dein Geschäft konzentrieren kannst",
+      desc: "Ich kümmere mich um alles, damit du dich auf dein Geschäft konzentrieren kannst",
       bullets: ["Premium Hosting inklusive", "Regelmäßige Sicherheits-Updates", "Kleine Anpassungen auf Zuruf"],
       animation: "https://s1.directupload.eu/images/260320/mgj4ozbw.webp"
     }
@@ -68,7 +68,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
           In {allSteps.length} Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
-          Unser bewährter Prozess, um Tag für Tag beeindruckende Marken mit hochkonvertierenden Online-Auftritten zu erschaffen.
+          Mein bewährter Prozess, um Tag für Tag beeindruckende Marken mit hochkonvertierenden Online-Auftritten zu erschaffen.
         </p>
       </motion.div>
 
@@ -215,7 +215,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
             className="mt-16 md:mt-24 flex justify-center relative z-20"
           >
             <a
-              href="/agentur"
+              href="/ueber-mich"
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white"
             >
               Gesamten Prozess ansehen

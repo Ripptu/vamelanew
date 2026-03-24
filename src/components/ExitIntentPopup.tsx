@@ -71,7 +71,7 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
             </h2>
             
             <p className="text-slate-600 mb-8 text-base leading-relaxed relative z-10">
-              Bevor du gehst: Lass uns dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – <span className="text-primary font-medium">komplett kostenlos.</span>
+              Bevor du gehst: Lass mich dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – <span className="text-primary font-medium">komplett kostenlos.</span>
             </p>
             
             <div className="flex flex-col gap-3 relative z-10">

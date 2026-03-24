@@ -80,7 +80,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             {[
               { name: 'Leistungen & Preise', href: '/leistungen' },
               { name: 'Referenzen', href: '/referenzen' },
-              { name: 'Agentur & Prozess', href: '/agentur' },
+              { name: 'Über mich & Prozess', href: '/ueber-mich' },
               { name: 'Strategie-Workshop', href: '/strategie-workshop' }
             ].map((item) => (
               <Link 
@@ -160,7 +160,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               {[
                 { name: 'Leistungen & Preise', href: '/leistungen' },
                 { name: 'Referenzen', href: '/referenzen' },
-                { name: 'Agentur & Prozess', href: '/agentur' },
+                { name: 'Über mich & Prozess', href: '/ueber-mich' },
                 { name: 'Strategie-Workshop', href: '/strategie-workshop' }
               ].map((item, i) => (
                 <motion.div

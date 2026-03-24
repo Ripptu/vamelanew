@@ -32,7 +32,7 @@ export function FounderSection() {
                   Dein Ansprechpartner
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-0.5 md:mb-1">Christian</h3>
-                <p className="text-slate-300 font-medium text-sm md:text-base">Gründer & Geschäftsführer</p>
+                <p className="text-slate-300 font-medium text-sm md:text-base">Gründer & Webdesigner</p>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ export function FounderSection() {
           
           <div className="space-y-4 md:space-y-6 text-base md:text-xl text-slate-500 leading-relaxed">
             <p>
-              Der Markt ist voll von alt eingesessenen Agenturen, die auf veralteten Systemen und ressourcenfressenden Prozessen festhängen – nur um am Ende eine Seite zu liefern, die aussieht, als wäre sie aus 2016.
+              Der Markt ist voll von alt eingesessenen Webdesignern, die auf veralteten Systemen und ressourcenfressenden Prozessen festhängen – nur um am Ende eine Seite zu liefern, die aussieht, als wäre sie aus 2016.
             </p>
             <p>
               Am anderen Ende: Kreativagenturen, zu stolz um ihre Fähigkeiten in einem markttauglichen Kontext einzusetzen. Und Marketing-Agenturen, die alles anbieten, aber nichts davon wirklich können.
@@ -58,7 +58,7 @@ export function FounderSection() {
               VAMELA existiert, um diese <span className="text-primary">Lücke zu schließen.</span>
             </p>
             <p>
-              Wir kombinieren Flaggschiff-Design, verkaufspsychologische Copy und modernste Technologie. Alles aus einer Hand, ohne Kompromisse. Unser Ziel ist es, deinen digitalen Auftritt so stark zu machen, dass du in deiner Branche als klarer Favorit wahrgenommen wirst.
+              Ich kombiniere Flaggschiff-Design, verkaufspsychologische Copy und modernste Technologie. Alles aus einer Hand, ohne Kompromisse. Mein Ziel ist es, deinen digitalen Auftritt so stark zu machen, dass du in deiner Branche als klarer Favorit wahrgenommen wirst.
             </p>
           </div>
           

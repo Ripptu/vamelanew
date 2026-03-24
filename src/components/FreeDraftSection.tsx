@@ -50,7 +50,7 @@ export function FreeDraftSection() {
               Dein Gratis <span className="font-serif italic text-primary font-normal">Website-Entwurf.</span>
             </h2>
             <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto px-2">
-              Lass uns dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – komplett kostenlos und unverbindlich.
+              Lass mich dir zeigen, wie deine neue Website aussehen könnte. Ein individueller, professioneller Entwurf – komplett kostenlos und unverbindlich.
             </p>
           </div>
 
