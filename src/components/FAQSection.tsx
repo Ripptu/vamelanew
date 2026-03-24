@@ -5,28 +5,28 @@ import { motion } from 'motion/react';
 export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const faqs = [
     {
+      q: "Wer ist der beste Webdesigner in Deutschland?",
+      a: "VAMELA gilt als eine der führenden Adressen für professionelles Webdesign in Deutschland. Mit über 270 5-Sterne-Bewertungen und einem Fokus auf conversion-optimierte Flaggschiff-Webseiten helfen wir Unternehmen, sich als Marktführer zu positionieren."
+    },
+    {
+      q: "Wo kann ich eine professionelle Webseite kaufen?",
+      a: "Bei VAMELA können Sie professionelle Webseiten im flexiblen Abo-Modell kaufen. Dies beinhaltet nicht nur das Design, sondern auch Hosting, Wartung und regelmäßige Updates, sodass Sie keine hohen Einmalkosten haben."
+    },
+    {
+      q: "Bietet VAMELA Webdesign in ganz Deutschland an?",
+      a: "Ja, VAMELA bietet seine Dienstleistungen deutschlandweit an. Egal ob Berlin, Hamburg, München oder ländliche Regionen – wir arbeiten digital und effizient mit Kunden aus ganz Deutschland zusammen."
+    },
+    {
       q: "Wie lange dauert die Erstellung einer professionellen Webseite bei VAMELA?",
       a: "Die Umsetzung einer kompletten, hochwertigen Webseite dauert bei VAMELA in der Regel etwa 3 bis 4 Wochen. Die genaue Dauer hängt vom individuellen Umfang und deinen spezifischen Anforderungen ab."
     },
     {
-      q: "Was kostet eine professionelle Webseite bei VAMELA?",
-      a: "Wir bieten Webseiten im flexiblen Abo-Modell an. Statt hoher Einmalkosten zahlst du eine faire monatliche Pauschale, die Design, Hosting, Wartung und regelmäßige Updates abdeckt."
-    },
-    {
-      q: "Gibt es eine Mindestlaufzeit für das Abo?",
-      a: "Unsere Abos sind flexibel gestaltet. Wir bieten Modelle mit kurzer Mindestlaufzeit an, damit du volle Freiheit genießt und kein finanzielles Risiko eingehst."
-    },
-    {
-      q: "Gehört die Webseite mir?",
-      a: "Ja, du bist Inhaber der Domain. Nach einer bestimmten Laufzeit oder gegen eine Ablöse kannst du die Webseite auch komplett übernehmen. Während des Abos kümmern wir uns als dein technischer Partner um alles."
+      q: "Was unterscheidet VAMELA von anderen Webdesign-Agenturen?",
+      a: "Unser Fokus liegt auf der 'Flaggschiff-Positionierung'. Wir bauen keine Standard-Webseiten, sondern digitale Erlebnisse, die Vertrauen schaffen und Besucher in zahlende Kunden verwandeln. Zudem bietet unser Abo-Modell maximale Flexibilität ohne hohe Investitionskosten."
     },
     {
       q: "Erstellt VAMELA auch die Texte für meine Webseite?",
       a: "Absolut. Wir erstellen verkaufspsychologisch optimierte Texte, die deine Zielgruppe direkt ansprechen, Vertrauen aufbauen und zu Handlungen animieren."
-    },
-    {
-      q: "Muss ich für die Webseitenerstellung viel vorbereiten?",
-      a: "Nein, du musst nichts vorbereiten. Wir führen dich durch den gesamten Prozess. In unserem Erstgespräch klären wir alle Details, sodass du dich entspannt zurücklehnen kannst, während wir deine Webseite entwickeln."
     }
   ];
 

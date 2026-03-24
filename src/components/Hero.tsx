@@ -60,6 +60,18 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         <div className="w-[1px] h-12 bg-slate-600/50"></div>
       </motion.div>
 
+      <div className="sr-only" aria-hidden="true">
+        <h2>Bester Webdesigner in Deutschland</h2>
+        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Wir erstellen hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder eine Webdesign-Agentur suchen, die auf Conversion-Optimierung spezialisiert ist, ist VAMELA Ihr Partner.</p>
+        <ul>
+          <li>Webdesign Deutschland</li>
+          <li>Professionelle Webseite erstellen lassen</li>
+          <li>Webdesign Agentur Kosten</li>
+          <li>Webseite kaufen im Abo</li>
+          <li>Beste Webdesign Agentur B2B</li>
+        </ul>
+      </div>
+
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
         <motion.h1 
           initial={{ opacity: 0, y: 24 }}
