@@ -1,5 +1,5 @@
-import { CheckCircle2 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { CheckCircle2, Sparkles } from 'lucide-react';
+import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { useRef } from 'react';
 
 export function ProcessSection() {
@@ -7,6 +7,12 @@ export function ProcessSection() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 50,
+    damping: 20,
+    restDelta: 0.001
   });
 
   const steps = [
@@ -66,18 +72,67 @@ export function ProcessSection() {
 
       <div className="relative">
         {/* Vertical Line Track */}
-        <div className="absolute left-[19px] md:left-[25px] top-8 bottom-8 w-1.5 bg-slate-200 rounded-full">
+        <div className="absolute left-[19px] md:left-[25px] top-8 bottom-8 w-1.5 bg-slate-100 rounded-full overflow-visible">
+          {/* Outer Glow (Wider) */}
+          <motion.div 
+            className="absolute top-0 left-[-4px] w-[calc(100%+8px)] rounded-full bg-primary/20 blur-[6px]"
+            style={{ 
+              height: useTransform(smoothProgress, [0, 1], ["0%", "100%"])
+            }}
+          />
+
           {/* Animated Gradient Beam */}
           <motion.div 
-            className="absolute top-0 left-0 w-full rounded-full bg-gradient-to-b from-indigo-300 via-primary to-primary"
+            className="absolute top-0 left-0 w-full rounded-full bg-gradient-to-b from-primary/40 via-primary to-primary shadow-[0_0_20px_rgba(59,130,246,0.6)] z-10"
             style={{ 
-              height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+              height: useTransform(smoothProgress, [0, 1], ["0%", "100%"])
             }}
           >
-            {/* Leading Spark/Comet */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-16 bg-gradient-to-t from-white to-transparent rounded-full blur-[3px] opacity-80"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-6 bg-white rounded-full"></div>
+            {/* Leading Spark/Comet - Premium Glow */}
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-8 h-32 bg-gradient-to-t from-primary via-primary/30 to-transparent rounded-full blur-[12px] opacity-70"></div>
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-16 bg-gradient-to-t from-white via-primary to-transparent rounded-full blur-[4px]"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_15px_#fff] z-20">
+              {/* Extra Sparkle Icon at the tip */}
+              <motion.div
+                animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-1 -left-1 text-white opacity-80"
+              >
+                <Sparkles className="w-4 h-4" />
+              </motion.div>
+            </div>
+            
+            {/* Pulsing Glow Effect */}
+            <motion.div 
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full bg-white blur-[2px] opacity-20 rounded-full"
+            />
           </motion.div>
+
+          {/* Subtle Particles following the head */}
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute left-1/2 w-1 h-1 bg-primary rounded-full blur-[1px] z-0"
+              style={{
+                top: useTransform(smoothProgress, [0, 1], ["0%", "100%"]),
+                x: "-50%",
+              }}
+              animate={{
+                y: [0, 20 + i * 10],
+                opacity: [0, 0.6, 0],
+                scale: [0, 1, 0],
+                x: ["-50%", `${(i - 1) * 15}%`]
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.4,
+                ease: "easeOut"
+              }}
+            />
+          ))}
         </div>
 
         <div className="space-y-16 md:space-y-24">
@@ -100,7 +155,7 @@ export function ProcessSection() {
                   variants={{
                     hidden: { backgroundColor: "#e2e8f0", scale: 0.8 },
                     visible: { 
-                      backgroundColor: "#4F46E5", 
+                      backgroundColor: "#3B82F6", 
                       scale: [1, 1.2, 1]
                     }
                   }}

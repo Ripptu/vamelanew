@@ -76,7 +76,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-slate-50/80 backdrop-blur-md border border-slate-200/60 rounded-full p-1 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/60 backdrop-blur-md border border-white/40 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-sm">
             {[
               { name: 'Strategie-Workshop', href: '/strategie-workshop' },
               { name: 'Referenzen', href: '/#referenzen' },
@@ -97,13 +97,13 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           <div className="flex items-center">
             <motion.button
               onClick={onOpenContact}
-              aria-label="Kostenloses Design-Konzept anfragen"
+              aria-label="Kostenloser Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Kostenloses Design-Konzept
+                Kostenloser Entwurf
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </span>
               <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
@@ -188,7 +188,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 }}
                 className="w-full bg-primary text-white text-lg font-semibold py-4 rounded-xl hover:bg-primary-hover transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-primary focus-visible:outline-none"
               >
-                Projekt anfragen
+                Kostenloser Entwurf
               </button>
             </div>
           </motion.div>

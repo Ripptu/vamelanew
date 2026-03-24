@@ -17,8 +17,8 @@ export function PricingSection() {
         }
       `}</style>
       {/* Background Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-primary/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div 
@@ -41,7 +41,7 @@ export function PricingSection() {
             <button 
               onClick={() => setIsYearly(!isYearly)}
               className="relative inline-flex h-7 w-14 items-center rounded-full bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              style={{ backgroundColor: isYearly ? '#3b82f6' : '#e2e8f0' }}
+              style={{ backgroundColor: isYearly ? 'var(--color-primary)' : '#e2e8f0' }}
             >
               <span className="sr-only">Abrechnungsintervall umschalten</span>
               <motion.span
@@ -137,16 +137,16 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-blue-500 flex flex-col relative z-30 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.4)] md:shadow-[0_0_50px_rgba(59,130,246,0.6)] h-full"
+            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-primary flex flex-col relative z-30 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.3)] md:shadow-[0_0_50px_rgba(59,130,246,0.4)] h-full"
           >
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 border border-white whitespace-nowrap shadow-sm">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 border border-white whitespace-nowrap shadow-sm">
               <Sparkles className="w-3 h-3" />
               Am beliebtesten
             </div>
             
             <div className="mb-6 mt-2 relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center border border-blue-100">
+                <div className="w-10 h-10 bg-primary/5 text-primary rounded-xl flex items-center justify-center border border-primary/10">
                   <Calendar className="w-5 h-5" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">Lokal-Dominanz</h3>
@@ -155,7 +155,7 @@ export function PricingSection() {
                 <span className="text-4xl font-extrabold text-slate-900">
                   {isYearly ? '239 €' : '299 €'}
                 </span>
-                <span className="text-blue-600/80 font-medium text-sm">/ Monat</span>
+                <span className="text-primary/80 font-medium text-sm">/ Monat</span>
               </div>
               <div className="h-6 mb-2">
                 <AnimatePresence>
@@ -190,15 +190,15 @@ export function PricingSection() {
                 'Schneller WhatsApp-Support'
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-700 text-sm">
-                  <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100">
-                    <Check className="w-3 h-3 text-blue-600" strokeWidth={2.5} /> 
+                  <div className="w-5 h-5 rounded-full bg-primary/5 flex items-center justify-center shrink-0 mt-0.5 border border-primary/10">
+                    <Check className="w-3 h-3 text-primary" strokeWidth={2.5} /> 
                   </div>
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <a href="#gratis-entwurf" className="group w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium text-sm text-center transition-all flex items-center justify-center gap-2 relative z-10 mt-auto shadow-md">
+            <a href="#gratis-entwurf" className="group w-full bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-xl font-medium text-sm text-center transition-all flex items-center justify-center gap-2 relative z-10 mt-auto shadow-md">
               Abo anfragen
               <ArrowRight className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
             </a>

@@ -30,7 +30,7 @@ export function ProblemSection() {
         >
           <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
             <div className="w-full max-w-[200px] bg-white rounded-t-xl border border-slate-200 h-full translate-y-4 relative z-10 p-3">
               <div className="flex gap-1 mb-3 border-b border-slate-100 pb-2">
@@ -68,7 +68,7 @@ export function ProblemSection() {
         >
           <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
             <div className="w-28 h-36 bg-white rounded-lg border border-slate-200 relative z-10 -rotate-6 translate-y-2 p-2">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[8px] px-2 py-0.5 rounded-full whitespace-nowrap z-20">Deine Webseite</div>
@@ -102,7 +102,7 @@ export function ProblemSection() {
         >
           <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
             <div className="w-16 h-16 rounded-xl bg-white border border-primary flex items-center justify-center z-10">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-serif italic text-lg">Y</div>

@@ -93,7 +93,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
                     whileInView={{ height: `${h}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
-                    className={`flex-1 rounded-t-md relative ${i === 4 ? 'bg-gradient-to-t from-primary to-blue-400' : 'bg-slate-200'}`} 
+                    className={`flex-1 rounded-t-md relative ${i === 4 ? 'bg-gradient-to-t from-primary to-purple-400' : 'bg-slate-200'}`} 
                   >
                     {i === 4 && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>

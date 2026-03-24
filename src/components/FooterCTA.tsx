@@ -96,7 +96,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
           whileInView={{ opacity: 0.8, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-[120px] md:text-[200px] font-bold text-slate-200 leading-none tracking-tighter whitespace-nowrap"
+          className="text-[120px] md:text-[200px] font-bold text-primary/5 leading-none tracking-tighter whitespace-nowrap"
         >
           VAMELA
         </motion.div>

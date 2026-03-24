@@ -3,13 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
-import { FacilityManagementPage } from './components/FacilityManagementPage';
-import { NichePage } from './components/NichePage';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+
+// Import components directly
+import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
+import { FacilityManagementPage } from './components/FacilityManagementPage';
+import { NichePage } from './components/NichePage';
 import { LogoCloud } from './components/LogoCloud';
 import { ProblemSection } from './components/ProblemSection';
 import { SolutionSection } from './components/SolutionSection';

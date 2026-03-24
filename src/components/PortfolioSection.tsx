@@ -235,6 +235,7 @@ export function PortfolioSection() {
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
                   
@@ -314,6 +315,7 @@ export function PortfolioSection() {
                   alt={selectedProject.title} 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer" 
+                  loading="lazy"
                 />
               </div>
               

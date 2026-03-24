@@ -57,9 +57,9 @@ export function ComparisonSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className={`rounded-2xl border ${agency.isPrimary ? 'border-primary bg-indigo-50/30 shadow-md' : 'border-slate-200 bg-white'} overflow-hidden`}
+              className={`rounded-2xl border ${agency.isPrimary ? 'border-primary bg-primary/5 shadow-md' : 'border-slate-200 bg-white'} overflow-hidden`}
             >
-              <div className={`p-4 border-b ${agency.isPrimary ? 'border-primary/20 bg-indigo-50' : 'border-slate-200 bg-slate-50'} font-bold text-center flex items-center justify-center min-h-[64px]`}>
+              <div className={`p-4 border-b ${agency.isPrimary ? 'border-primary/20 bg-primary/10' : 'border-slate-200 bg-slate-50'} font-bold text-center flex items-center justify-center min-h-[64px]`}>
                 {agency.logo ? (
                   <img src={agency.logo} alt="VAMELA" className="h-8 object-contain brightness-0" referrerPolicy="no-referrer" />
                 ) : (
@@ -92,7 +92,7 @@ export function ComparisonSection() {
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Klassische Webagenturen</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Kreativagenturen</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Marketingagenturen</div>
-              <div className="p-6 bg-indigo-50 text-indigo-900 flex items-center justify-center gap-2 text-sm">
+              <div className="p-6 bg-primary/10 text-primary flex items-center justify-center gap-2 text-sm">
                 <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 object-contain brightness-0" referrerPolicy="no-referrer" />
               </div>
             </div>
@@ -111,7 +111,7 @@ export function ComparisonSection() {
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center">{renderIcon(row.kr)}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>
-                <div className="p-6 bg-indigo-50/30 flex items-center justify-center">{renderIcon(row.s)}</div>
+                <div className="p-6 bg-primary/5 flex items-center justify-center">{renderIcon(row.s)}</div>
               </motion.div>
             ))}
           </div>

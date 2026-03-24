@@ -13,24 +13,32 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       className="relative w-full pt-28 pb-16 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
-      {/* Mobile White Background */}
-      <div className="md:hidden absolute inset-0 w-full h-full bg-white z-0 pointer-events-none" />
+      {/* Desktop Sky Background */}
+      <div className="hidden md:block absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <img 
+          src="https://s1.directupload.eu/images/260324/4xeiep72.webp" 
+          alt="Blue sky with clouds" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+          loading="eager"
+        />
+        {/* White overlay to lighten the image for better readability on desktop */}
+        <div className="absolute inset-0 bg-white/50"></div>
+        {/* Soft white gradient overlay at the top and white gradient at the bottom to transition to the next section */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white"></div>
+      </div>
       
-      {/* Desktop Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        controls={false}
-        className="hidden md:block absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        aria-hidden="true"
-      >
-        <source src="https://res.cloudinary.com/dubyt9p64/video/upload/v1773257630/hf_20260311_191854_939b9625-99a5-4581-ae75-85b8cadc0a5b_ymyfwx.mp4" type="video/mp4" />
-      </video>
-      
-      {/* White Fade Overlay - stronger fade to white */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/10 via-white/50 to-white pointer-events-none"></div>
+      {/* Mobile Sky Background */}
+      <div className="md:hidden absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <img 
+          src="https://s1.directupload.eu/images/260324/tqtp8d2z.jpg" 
+          alt="Blue sky with clouds" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white"></div>
+      </div>
 
       {/* Social Links Sidebar */}
       <motion.div 
@@ -39,17 +47,17 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="hidden lg:flex absolute left-8 xl:left-12 top-1/2 -translate-y-1/2 flex-col items-center gap-6 z-30"
       >
-        <div className="w-[1px] h-12 bg-slate-400/50"></div>
-        <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="Instagram">
+        <div className="w-[1px] h-12 bg-slate-600/50"></div>
+        <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="Instagram">
           <Instagram className="w-5 h-5" />
         </a>
-        <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="TikTok">
           <TikTokIcon className="w-5 h-5" />
         </a>
-        <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors" aria-label="WhatsApp">
+        <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="WhatsApp">
           <MessageCircle className="w-5 h-5" />
         </a>
-        <div className="w-[1px] h-12 bg-slate-400/50"></div>
+        <div className="w-[1px] h-12 bg-slate-600/50"></div>
       </motion.div>
 
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
@@ -66,7 +74,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base md:text-xl text-slate-500 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
+          className="text-base md:text-xl text-slate-700 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
           Keine hohen Einmalkosten. Wir kümmern uns um Design, Hosting, Wartung und Updates – alles in einem flexiblen monatlichen Paket. So kannst du dich voll auf dein Geschäft konzentrieren.
         </motion.p>
@@ -80,13 +88,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full sm:w-auto">
             <motion.button
               onClick={onOpenContact}
-              aria-label="Kostenlosen Entwurf anfragen"
+              aria-label="Kostenloser Entwurf"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="group w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-6 py-4 sm:px-8 sm:py-4 rounded-full font-medium text-base md:text-lg flex items-center justify-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Kostenlosen Entwurf anfragen
+                Kostenloser Entwurf
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
               </span>
               <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
