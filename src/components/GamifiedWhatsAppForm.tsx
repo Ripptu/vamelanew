@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Send, Info } from 'lucide-react';
+import { sanitize, isBot, limitLength } from '../lib/security';
 
 interface FormData {
   needs: string;
@@ -8,6 +9,7 @@ interface FormData {
   company: string;
   budget: string;
   subscription: string;
+  honeypot: string;
 }
 
 const steps = [
@@ -20,10 +22,23 @@ const steps = [
 
 export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState<FormData>({ needs: '', goals: '', company: '', budget: '', subscription: '' });
+  const [formData, setFormData] = useState<FormData>({ 
+    needs: '', 
+    goals: '', 
+    company: '', 
+    budget: '', 
+    subscription: '',
+    honeypot: ''
+  });
   const [inputValue, setInputValue] = useState('');
 
   const handleNext = () => {
+    // Security: Bot check
+    if (isBot(formData.honeypot)) {
+      console.warn('Bot detected');
+      return;
+    }
+
     const currentStepId = steps[step].id as keyof FormData;
     const updatedFormData = { ...formData, [currentStepId]: inputValue };
     setFormData(updatedFormData);
@@ -36,12 +51,19 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
   };
 
   const sendToWhatsApp = (finalData: FormData) => {
+    // Security: Sanitize and limit length
+    const sanitizedNeeds = sanitize(limitLength(finalData.needs, 200));
+    const sanitizedGoals = sanitize(limitLength(finalData.goals, 200));
+    const sanitizedCompany = sanitize(limitLength(finalData.company, 100));
+    const sanitizedBudget = sanitize(limitLength(finalData.budget, 100));
+    const sanitizedSubscription = sanitize(limitLength(finalData.subscription, 100));
+
     const message = `Hallo VAMELA, ich habe eine Anfrage:
-- Bedarf: ${finalData.needs}
-- Ziel: ${finalData.goals}
-- Unternehmen: ${finalData.company}
-- Budget: ${finalData.budget}
-- Gewünschtes Abo: ${finalData.subscription}`;
+- Bedarf: ${sanitizedNeeds}
+- Ziel: ${sanitizedGoals}
+- Unternehmen: ${sanitizedCompany}
+- Budget: ${sanitizedBudget}
+- Gewünschtes Abo: ${sanitizedSubscription}`;
     
     const whatsappUrl = `https://wa.me/4917624200179?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -52,6 +74,18 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="w-full">
+      {/* Honeypot field - hidden from users */}
+      <div className="hidden" aria-hidden="true">
+        <input 
+          type="text" 
+          name="honeypot" 
+          tabIndex={-1} 
+          autoComplete="off"
+          value={formData.honeypot}
+          onChange={(e) => setFormData({...formData, honeypot: e.target.value})}
+        />
+      </div>
+
       {/* Progress Bar */}
       <div className="h-2 w-full bg-border rounded-full mb-8 overflow-hidden">
         <motion.div 
@@ -87,6 +121,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={steps[step].placeholder}
+            maxLength={200}
             className="w-full p-5 text-lg rounded-2xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 bg-white text-body"
             onKeyDown={(e) => e.key === 'Enter' && inputValue && handleNext()}
             autoFocus

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, X, Target, Lightbulb, TrendingUp, ArrowRight, ArrowDown } from 'lucide-react';
+import { sanitizeAlt } from '../lib/security';
 
 const PROJECTS = [
 // ... (keep existing projects)
@@ -201,7 +202,7 @@ export function PortfolioSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold font-display tracking-tight mb-4 md:mb-6"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold font-display tracking-tight mb-4 md:mb-6"
           >
             Ausgewählte Arbeiten.
           </motion.h2>
@@ -226,13 +227,13 @@ export function PortfolioSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: isEven ? 0 : 0.2 }}
-                className={`group cursor-pointer flex flex-col gap-4 md:gap-6 ${!isEven ? 'md:mt-32' : ''}`}
+                className={`group cursor-pointer flex flex-col gap-4 md:gap-6 ${!isEven ? 'md:mt-16 lg:mt-32' : ''}`}
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3] sm:aspect-[4/5] md:aspect-[3/4]">
                   <img 
                     src={project.image} 
-                    alt={project.title} 
+                    alt={sanitizeAlt(project.title)} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                     loading="lazy"
@@ -312,7 +313,7 @@ export function PortfolioSection() {
               <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100 aspect-video md:aspect-auto">
                 <img 
                   src={selectedProject.image} 
-                  alt={selectedProject.title} 
+                  alt={sanitizeAlt(selectedProject.title)} 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer" 
                   loading="lazy"

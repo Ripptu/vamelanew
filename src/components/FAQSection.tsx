@@ -58,7 +58,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
           transition={{ duration: 0.6 }}
           className="w-full md:w-1/3 text-center md:text-left"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">Häufig gestellte Fragen</h2>
           <p className="text-slate-500 mb-6 md:mb-8 text-sm md:text-base">Du findest keine Antwort? Kontaktiere unser Team.</p>
           <motion.button 
             onClick={onOpenContact}

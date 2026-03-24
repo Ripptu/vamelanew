@@ -37,7 +37,7 @@ export function ComparisonSection() {
         transition={{ duration: 0.6 }}
         className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-4 md:gap-6"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
           Endlich der <span className="font-serif italic text-primary font-normal">richtige Partner</span>
         </h2>
       </motion.div>
@@ -66,10 +66,10 @@ export function ComparisonSection() {
                   <span className="text-slate-800">{agency.name}</span>
                 )}
               </div>
-              <div className="p-4 space-y-4">
+              <div className="p-5 space-y-5">
                 {criteria.map((c, i) => (
-                  <div key={i} className="flex justify-between items-center text-sm border-b border-slate-100 last:border-0 pb-3 last:pb-0">
-                    <span className="text-slate-600 pr-4 font-medium">{c.name}</span>
+                  <div key={i} className="flex justify-between items-center text-sm border-b border-slate-100 last:border-0 pb-4 last:pb-0">
+                    <span className="text-slate-600 pr-4 font-medium leading-tight">{c.name}</span>
                     <span className="flex-shrink-0">{renderIcon(c[agency.id as keyof typeof c])}</span>
                   </div>
                 ))}
@@ -87,7 +87,7 @@ export function ComparisonSection() {
           className="hidden md:block bg-white rounded-3xl border border-slate-200 overflow-hidden relative"
         >
           <div className="overflow-x-auto hide-scrollbar">
-            <div className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[600px]">
+            <div className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[700px]">
               <div className="p-6 text-left border-r border-slate-200 sticky left-0 bg-slate-50 z-20"></div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Klassische Webagenturen</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Kreativagenturen</div>
@@ -105,7 +105,7 @@ export function ComparisonSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 whileHover={{ backgroundColor: "rgba(248, 250, 252, 0.8)" }}
-                className="grid grid-cols-[1fr_repeat(4,minmax(100px,1fr))] border-b border-slate-200 last:border-0 text-sm min-w-[600px] transition-colors"
+                className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] border-b border-slate-200 last:border-0 text-sm min-w-[700px] transition-colors"
               >
                 <div className="p-6 font-medium text-slate-500 border-r border-slate-200 flex items-center sticky left-0 bg-white z-20">{row.name}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>

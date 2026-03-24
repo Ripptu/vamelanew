@@ -10,7 +10,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <section 
-      className="relative w-full pt-28 pb-16 md:pt-64 md:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
+      className="relative w-full pt-28 pb-16 md:pt-40 md:pb-32 lg:pt-64 lg:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
       {/* Desktop Sky Background */}
@@ -65,7 +65,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
+          className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
           Professionelle Webseiten<br/><span className="font-serif italic text-primary font-normal">im günstigen Abo.</span>
         </motion.h1>

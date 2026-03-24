@@ -12,7 +12,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Was unsere Partner sagen</h2>
         </motion.div>
 
         {/* Featured Testimonial */}

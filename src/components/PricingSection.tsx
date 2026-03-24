@@ -28,7 +28,7 @@ export function PricingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">
             Professionelle Webseiten <span className="font-serif italic text-primary font-normal">im fairen Abo.</span>
           </h2>
           <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
@@ -57,7 +57,7 @@ export function PricingSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-center max-w-6xl mx-auto pt-4 md:pt-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-stretch max-w-6xl mx-auto pt-4 md:pt-0">
           {/* Starter */}
           <motion.article 
             initial={{ opacity: 0, y: 30 }}

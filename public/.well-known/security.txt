@@ -1,0 +1,4 @@
+Contact: mailto:kontakt@vamela.info
+Expires: 2027-03-24T10:42:21Z
+Preferred-Languages: de, en
+Canonical: https://vamela.info/.well-known/security.txt

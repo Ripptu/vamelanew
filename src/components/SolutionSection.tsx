@@ -11,7 +11,7 @@ export function SolutionSection({ onOpenContact }: { onOpenContact: () => void }
         transition={{ duration: 0.6 }}
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
           Die smarte Lösung: <span className="font-serif italic text-primary font-normal">Website as a Service</span>
         </h2>
         <p className="text-slate-600 text-base md:text-lg">

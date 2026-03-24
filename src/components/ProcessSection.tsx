@@ -62,7 +62,7 @@ export function ProcessSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 md:mb-20"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
           In 4 Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export function ProcessSection() {
 
       <div className="relative">
         {/* Vertical Line Track */}
-        <div className="absolute left-[19px] md:left-[25px] top-8 bottom-8 w-1.5 bg-slate-100 rounded-full overflow-visible">
+        <div className="absolute left-[15px] sm:left-[19px] md:left-[25px] top-8 bottom-8 w-1.5 bg-slate-100 rounded-full overflow-visible">
           {/* Outer Glow (Wider) */}
           <motion.div 
             className="absolute top-0 left-[-4px] w-[calc(100%+8px)] rounded-full bg-primary/20 blur-[6px]"
@@ -139,7 +139,7 @@ export function ProcessSection() {
           {steps.map((step, i) => (
             <motion.article 
               key={i} 
-              className="relative pl-14 md:pl-20"
+              className="relative pl-10 sm:pl-14 md:pl-20"
               whileInView="visible"
               initial="hidden"
               variants={{
@@ -150,7 +150,7 @@ export function ProcessSection() {
               viewport={{ amount: 0.5, margin: "-20% 0px -20% 0px" }}
             >
               {/* Dot */}
-              <div className="absolute left-[7px] md:left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
+              <div className="absolute left-[3px] sm:left-[7px] md:left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
                 <motion.div 
                   variants={{
                     hidden: { backgroundColor: "#e2e8f0", scale: 0.8 },
@@ -173,7 +173,7 @@ export function ProcessSection() {
                 </motion.div>
               </div>
               
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
                 <div className="flex-1">
                   <div className="text-5xl md:text-6xl font-bold text-slate-200 mb-1 md:mb-2 font-serif leading-none">{step.num}</div>
                   <h3 className="text-xl md:text-2xl font-bold mb-2">{step.title}</h3>
@@ -195,7 +195,7 @@ export function ProcessSection() {
                   <motion.div 
                     whileHover={{ scale: 1.02, rotate: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="flex-1 relative group mt-6 md:mt-0 w-full"
+                    className="flex-1 relative group mt-6 lg:mt-0 w-full"
                   >
                     <img src={step.animation} alt={step.title} width="600" height="400" className="w-full h-auto rounded-2xl border border-slate-200 relative z-10" referrerPolicy="no-referrer" loading="lazy" />
                   </motion.div>

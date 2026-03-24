@@ -10,7 +10,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4">
           Du wünschst dir eine<br/><span className="font-serif italic text-primary font-normal">neue Webseite?</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg mb-10 md:mb-16">Das sind deine nächsten Schritte!</p>
@@ -18,7 +18,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
 
       <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 relative mb-10 md:mb-12">
         {/* Dashed line connecting steps */}
-        <div className="absolute top-20 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-200 hidden md:block"></div>
+        <div className="absolute top-20 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-200 hidden lg:block"></div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative z-10">
           <motion.article 
