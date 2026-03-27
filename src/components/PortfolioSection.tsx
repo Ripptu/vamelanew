@@ -12,11 +12,11 @@ const PROJECTS = [
     category: "Webdesign & Strategie",
     image: "https://i.postimg.cc/Y2xzGLL0/hf-20260131-102458-7dbca7c3-0d46-45fc-87db-c75ff3479c84.jpg",
     url: "http://vamela.info",
-    description: "Modernste B2B-Webseite mit Fokus auf Conversion und Markenautorität.",
+    description: "Modernste B2B-Webseite mit Fokus auf mehr Kundenanfragen und Markenautorität.",
     challenge: "Etablierung als Marktführer durch ein Premium-Design.",
     solution: "Entwicklung einer Flaggschiff-Webseite mit verkaufspsychologischer Copy.",
     result: "Signifikante Steigerung der qualifizierten Anfragen.",
-    metric: "+45% Conversion-Rate"
+    metric: "+45% mehr Anfragen"
   },
   {
     id: 2,
@@ -49,9 +49,9 @@ const PROJECTS = [
     image: "https://i.postimg.cc/2yXsCc4n/hf-20260131-093913-af8f4bc9-28b7-4f75-9907-cd0653e7ca30.png",
     url: "http://coremis.ch",
     description: "Performance-orientierte Web-Lösung für nachhaltiges Wachstum.",
-    challenge: "Optimierung der Conversion-Rate.",
+    challenge: "Optimierung der Anfragenquote.",
     solution: "Fokus auf User-Experience und klare Call-to-Actions.",
-    result: "Deutlich messbare Verbesserung der Lead-Qualität.",
+    result: "Deutlich messbare Verbesserung der Anfragen-Qualität.",
     metric: "-60% Bounce-Rate"
   },
   {
@@ -112,7 +112,7 @@ const PROJECTS = [
     challenge: "Komplexe Dienstleistungen für B2B- und B2C-Kunden übersichtlich und überzeugend darstellen.",
     solution: "Klare Informationsarchitektur, starke Trust-Elemente und extrem kurze Wege zur Kontaktaufnahme.",
     result: "Ein kontinuierlicher, automatisierter Strom an hochqualifizierten Kundenanfragen.",
-    metric: "+120% Lead-Volumen"
+    metric: "+120% mehr Anfragen"
   },
   {
     id: 10,
@@ -172,7 +172,7 @@ const PROJECTS = [
     challenge: "Sich vom Wettbewerb abheben und die hohe Qualität der Arbeit digital beweisen.",
     solution: "Ein vertrauensbildendes Design mit beeindruckenden Vorher-Nachher-Galerien und klarem Fokus auf Expertise.",
     result: "Weniger Preiskämpfe und deutlich mehr Anfragen für lukrative Großprojekte.",
-    metric: "Premium Leads"
+    metric: "Premium Kunden"
   }
 ];
 

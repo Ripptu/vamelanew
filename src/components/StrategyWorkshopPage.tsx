@@ -42,7 +42,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mb-16">
           {[
             { title: "Deep Dive", icon: BrainCircuit, desc: "Ich analysiere dein Business, deine Zielgruppe und deine Pain Points, um genau zu verstehen, was deine Kunden wirklich brauchen." },
-            { title: "Conversion-Journey", icon: Target, desc: "Ich plane den Weg vom ersten Klick zur Anfrage. Psychologisch fundiert, um Einwände vorab zu entkräften." },
+            { title: "Kundenreise", icon: Target, desc: "Ich plane den Weg vom ersten Klick zur Anfrage. Psychologisch fundiert, um Einwände vorab zu entkräften." },
             { title: "Brand Voice", icon: Zap, desc: "Ich definiere, wie deine Marke spricht und welche Trust-Elemente nötig sind, um unwiderstehliche Autorität aufzubauen." },
             { title: "Technik & SEO", icon: CheckCircle2, desc: "Ich lege den Grundstein für eine blitzschnelle, SEO-optimierte Webseite, die Google und deine Kunden lieben." }
           ].map((item, i) => (
@@ -87,7 +87,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 text-left">
               <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 className="font-bold text-slate-900 mb-1 md:mb-2 text-sm md:text-base">Keine Anfragen?</h4>
-                <p className="text-xs md:text-sm text-slate-600">Ich analysiere, warum Besucher abspringen und drehe die Conversion-Schrauben.</p>
+                <p className="text-xs md:text-sm text-slate-600">Ich analysiere, warum Besucher abspringen und drehe die Stellschrauben für mehr Anfragen.</p>
               </div>
               <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 className="font-bold text-slate-900 mb-1 md:mb-2 text-sm md:text-base">Unklare Botschaft?</h4>

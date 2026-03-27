@@ -66,7 +66,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       <div className="relative h-40 md:h-48 flex justify-center items-end">
         <div className="w-full max-w-md bg-white border border-slate-200 rounded-xl p-6 relative overflow-hidden">
           <div className="flex justify-between items-center mb-8 relative z-10">
-            <div className="text-sm font-bold">Conversions Rate</div>
+            <div className="text-sm font-bold">Anfragenquote</div>
             <div className="bg-primary text-white text-xs px-2 py-1 rounded-full font-bold">+75%</div>
           </div>
           

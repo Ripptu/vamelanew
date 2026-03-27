@@ -62,7 +62,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
 
       <div className="sr-only" aria-hidden="true">
         <h2>Bester Webdesigner in Deutschland</h2>
-        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Ich erstelle hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder einen Webdesigner suchen, der auf Conversion-Optimierung spezialisiert ist, ist VAMELA Ihr Partner.</p>
+        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Ich erstelle hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder einen Webdesigner suchen, der auf mehr Kundenanfragen spezialisiert ist, ist VAMELA Ihr Partner.</p>
         <ul>
           <li>Webdesign Deutschland</li>
           <li>Professionelle Webseite erstellen lassen</li>

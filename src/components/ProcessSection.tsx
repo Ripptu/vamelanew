@@ -27,7 +27,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
       num: "2",
       title: "Strategie und Copywriting",
       desc: "Sorgen für eine Webseite, die wirklich Anfragen generiert",
-      bullets: ["Verkaufspsychologischer Aufbau", "Conversionoptimierte Texte", "Zielführende Nutzerführung"],
+      bullets: ["Verkaufspsychologischer Aufbau", "Überzeugende Texte", "Zielführende Nutzerführung"],
       animation: "https://s1.directupload.eu/images/260324/z56hnw8n.webp"
     },
     {

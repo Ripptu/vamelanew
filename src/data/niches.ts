@@ -109,7 +109,7 @@ export const niches: NicheData[] = [
     benefits: [
       { icon: Award, title: 'Experten-Positionierung', description: 'Ich rücke Ihre Fachanwaltstitel, Publikationen und Erfolge in den Fokus, um sofortige Autorität aufzubauen.' },
       { icon: Search, title: 'Gezielte Mandantengewinnung', description: 'SEO-Optimierung für Ihre spezifischen Rechtsgebiete (z.B. "Fachanwalt Arbeitsrecht München"), damit Sie bei akuten Rechtsproblemen gefunden werden.' },
-      { icon: Zap, title: 'Hohe Conversion-Rate', description: 'Klare Handlungsaufforderungen (CTAs) und einfache Kontaktmöglichkeiten, um die Hemmschwelle für eine Erstberatung zu senken.' }
+      { icon: Zap, title: 'Hohe Anfragenquote', description: 'Klare Handlungsaufforderungen (CTAs) und einfache Kontaktmöglichkeiten, um die Hemmschwelle für eine Erstberatung zu senken.' }
     ],
     faqs: [
       { question: 'Wie stellen Sie sicher, dass die Website seriös wirkt?', answer: 'Ich verzichte auf reißerische Elemente und setzen auf ein klares, strukturiertes Design, hochwertige Typografie und eine Farbpsychologie, die Vertrauen, Diskretion und Kompetenz vermittelt.' },
@@ -122,20 +122,20 @@ export const niches: NicheData[] = [
     name: 'Immobilienmakler',
     icon: Home,
     badgeText: 'Exklusiv für Immobilienmakler',
-    h1: 'Mehr Alleinaufträge und qualifizierte Leads durch eine Makler-Website,',
+    h1: 'Mehr Alleinaufträge und qualifizierte Anfragen durch eine Makler-Website,',
     h1Highlight: 'die Eigentümer überzeugt.',
     heroSub: 'Werden Sie der Platzhirsch in Ihrer Region. Ich baue Webseiten für Immobilienmakler, die Vertrauen bei Verkäufern schaffen und den Objekt-Einkauf automatisieren.',
-    schemaDescription: 'Webdesign für Immobilienmakler. Spezialisiert auf Objekt-Einkauf, Lead-Generierung und regionale SEO.',
+    schemaDescription: 'Webdesign für Immobilienmakler. Spezialisiert auf Objekt-Einkauf, Kundengewinnung und regionale SEO.',
     trustText: 'Erfolgreiche Makler, die mit mir den Markt dominieren',
     trustLogos: ['Premium Immobilien', 'City Makler', 'ImmoExperts'],
     benefits: [
-      { icon: Target, title: 'Fokus auf Objekt-Einkauf', description: 'Spezielle Landingpages und Lead-Magneten (z.B. Online-Immobilienbewertung), um gezielt Eigentümer anzusprechen, die verkaufen möchten.' },
+      { icon: Target, title: 'Fokus auf Objekt-Einkauf', description: 'Spezielle Landingpages und Anreize (z.B. Online-Immobilienbewertung), um gezielt Eigentümer anzusprechen, die verkaufen möchten.' },
       { icon: Sparkles, title: 'Hochwertige Objektpräsentation', description: 'Ihre Immobilien werden in einem modernen, großzügigen Layout präsentiert, das den Wert der Objekte unterstreicht.' },
       { icon: Search, title: 'Lokale Marktdominanz', description: 'Durch gezielte SEO-Strategien werden Sie bei Suchanfragen wie "Haus verkaufen [Stadt]" als erster Ansprechpartner gefunden.' }
     ],
     faqs: [
       { question: 'Können Sie meine Maklersoftware (z.B. onOffice, FlowFact) anbinden?', answer: 'Ja, ich integriere Ihre bestehende Maklersoftware über API-Schnittstellen, sodass Ihre Immobilienangebote automatisch auf der Website synchronisiert und aktualisiert werden.' },
-      { question: 'Wie generieren wir mehr Leads von Verkäufern?', answer: 'Ich implementiere interaktive Tools wie Online-Wertermittlungen oder Ratgeber-Downloads. Eigentümer erhalten eine erste Einschätzung und Sie erhalten im Gegenzug qualifizierte Kontaktdaten für die Akquise.' },
+      { question: 'Wie generieren wir mehr Anfragen von Verkäufern?', answer: 'Ich implementiere interaktive Tools wie Online-Wertermittlungen oder Ratgeber-Downloads. Eigentümer erhalten eine erste Einschätzung und Sie erhalten im Gegenzug qualifizierte Kontaktdaten für die Akquise.' },
       { question: 'Warum reicht ein Profil auf ImmobilienScout24 nicht aus?', answer: 'Auf Portalen sind Sie nur einer von vielen und zahlen hohe Gebühren. Eine eigene, starke Website baut Ihre eigene Marke auf, macht Sie unabhängig von Portalen und generiert exklusive Alleinaufträge ohne direkte Konkurrenz.' }
     ]
   },
@@ -213,12 +213,12 @@ export const niches: NicheData[] = [
     h1: 'Gewinnen Sie hochkarätige B2B-Kunden durch eine Consulting-Website,',
     h1Highlight: 'die Ihre Expertise belegt.',
     heroSub: 'Verwandeln Sie Ihre Methodik in messbare Anfragen. Ich baue Webseiten für Unternehmensberater, die komplexe Dienstleistungen verständlich machen und C-Level-Entscheider überzeugen.',
-    schemaDescription: 'Premium Webdesign für Unternehmensberater, Coaches und Consulting-Agenturen. Fokus auf B2B Lead-Generierung.',
+    schemaDescription: 'Premium Webdesign für Unternehmensberater, Coaches und Consulting-Agenturen. Fokus auf B2B Kundengewinnung.',
     trustText: 'Beratungsunternehmen, die mit mir skalieren',
     trustLogos: ['Consulting Group', 'Strategy Partners', 'Innovate Consulting'],
     benefits: [
       { icon: Award, title: 'Premium-Positionierung', description: 'Ein High-End-Design, das Ihre Tagessätze rechtfertigt und Sie als absolute Autorität in Ihrer Nische etabliert.' },
-      { icon: Target, title: 'Lead-Generierung', description: 'Strategische Platzierung von Whitepapern, Case Studies und Erstgesprächs-Funnels, um anonyme Besucher in qualifizierte Leads zu verwandeln.' },
+      { icon: Target, title: 'Kundengewinnung', description: 'Strategische Platzierung von Whitepapern, Case Studies und Erstgesprächs-Funnels, um anonyme Besucher in qualifizierte Anfragen zu verwandeln.' },
       { icon: PenTool, title: 'Komplexes einfach erklärt', description: 'Ich übersetze Ihre komplexen Beratungsmethoden in klare, nutzenorientierte Copy (Texte), die Ihre Zielgruppe sofort versteht.' }
     ],
     faqs: [
@@ -234,8 +234,8 @@ export const niches: NicheData[] = [
     badgeText: 'Exklusiv für Systemhäuser & IT-Consulting',
     h1: 'Mehr Managed-Services-Verträge durch eine IT-Website,',
     h1Highlight: 'die Innovation und Sicherheit ausstrahlt.',
-    heroSub: 'Schluss mit technischem Fachjargon. Ich übersetze Ihre IT-Dienstleistungen in klare Geschäftsvorteile und generieren qualifizierte B2B-Leads für Ihr Systemhaus.',
-    schemaDescription: 'Webdesign und Lead-Generierung für IT-Systemhäuser, Softwareentwickler und Managed Service Provider (MSP).',
+    heroSub: 'Schluss mit technischem Fachjargon. Ich übersetze Ihre IT-Dienstleistungen in klare Geschäftsvorteile und generiere qualifizierte B2B-Anfragen für Ihr Systemhaus.',
+    schemaDescription: 'Webdesign und Kundengewinnung für IT-Systemhäuser, Softwareentwickler und Managed Service Provider (MSP).',
     trustText: 'IT-Unternehmen, deren digitalen Vertrieb ich optimiert habe',
     trustLogos: ['TechSolutions', 'SecureIT', 'CloudSystems GmbH'],
     benefits: [
@@ -246,7 +246,7 @@ export const niches: NicheData[] = [
     faqs: [
       { question: 'Warum verstehen meine Kunden meine aktuelle Website nicht?', answer: 'Viele IT-Websites sind von Technikern für Techniker geschrieben. Geschäftsführer (Ihre Käufer) wollen aber wissen, wie Sie ihr Geschäft sicherer und effizienter machen. Ich übersetze "Tech-Speak" in "Business-Value".' },
       { question: 'Können wir meine Partner-Logos (Microsoft, Cisco etc.) einbinden?', answer: 'Selbstverständlich. Zertifizierungen und Partnerschaften sind wichtige Trust-Elemente im IT-Sektor. Ich binde diese prominent und optisch ansprechend ein.' },
-      { question: 'Wie helfen Sie uns bei der Lead-Generierung?', answer: 'Ich implementiere z.B. IT-Sicherheits-Checks oder Cloud-Readiness-Assessments als Lead-Magneten. Interessenten erhalten einen ersten Mehrwert, und Ihr Vertrieb erhält qualifizierte Kontaktdaten.' }
+      { question: 'Wie helfen Sie uns bei der Kundengewinnung?', answer: 'Ich implementiere z.B. IT-Sicherheits-Checks oder Cloud-Readiness-Assessments als Anreiz. Interessenten erhalten einen ersten Mehrwert, und Ihr Vertrieb erhält qualifizierte Kontaktdaten.' }
     ]
   },
   {
@@ -257,12 +257,12 @@ export const niches: NicheData[] = [
     h1: 'Gewinnen Sie vermögende Mandanten durch eine Website,',
     h1Highlight: 'die absolute Seriosität vermittelt.',
     heroSub: 'In der Finanzbranche ist Vertrauen die härteste Währung. Ich baue digitale Präsenzen, die Ihre Expertise unterstreichen und qualifizierte Anfragen für Beratungstermine generieren.',
-    schemaDescription: 'Webdesign für Finanzberater, Vermögensverwalter und Versicherungsmakler. Fokus auf Vertrauensaufbau und Lead-Generierung.',
+    schemaDescription: 'Webdesign für Finanzberater, Vermögensverwalter und Versicherungsmakler. Fokus auf Vertrauensaufbau und Kundengewinnung.',
     trustText: 'Finanzexperten, die mit mir digital wachsen',
     trustLogos: ['Finance Partners', 'Wealth Management', 'Capital Advisors'],
     benefits: [
       { icon: ShieldCheck, title: 'Maximales Vertrauen', description: 'Ein Premium-Design, das Diskretion, Sicherheit und langjährige Erfahrung ausstrahlt – essenziell für die Vermögensberatung.' },
-      { icon: Target, title: 'Qualifizierte Leads', description: 'Intelligente Kontaktformulare, die Anfragen vorqualifizieren (z.B. nach Anlagevolumen), damit Sie nur mit passenden Interessenten sprechen.' },
+      { icon: Target, title: 'Qualifizierte Anfragen', description: 'Intelligente Kontaktformulare, die Anfragen vorqualifizieren (z.B. nach Anlagevolumen), damit Sie nur mit passenden Interessenten sprechen.' },
       { icon: PenTool, title: 'Compliance-konform', description: 'Ich berücksichtige alle rechtlichen Vorgaben (BaFin, Erstinformationen, Impressumspflichten) für Finanzdienstleister.' }
     ],
     faqs: [
@@ -301,7 +301,7 @@ export const niches: NicheData[] = [
     h1: 'Gewinnen Sie Top-Kandidaten und neue Mandate durch eine Website,',
     h1Highlight: 'die verbindet.',
     heroSub: 'Der Markt für Fachkräfte ist umkämpft. Ich baue Webseiten für Personalberater, die das Vertrauen von passiv suchenden Kandidaten und suchenden Unternehmen gleichermaßen gewinnen.',
-    schemaDescription: 'Webdesign für Personalvermittler, Headhunter und Zeitarbeitsfirmen. Optimiert für Kandidatengewinnung und B2B-Lead-Gen.',
+    schemaDescription: 'Webdesign für Personalvermittler, Headhunter und Zeitarbeitsfirmen. Optimiert für Kandidatengewinnung und B2B-Kundenakquise.',
     trustText: 'Recruiting-Agenturen, die mit mir den Markt erobern',
     trustLogos: ['Talent Connect', 'Executive Search', 'HR Partners'],
     benefits: [
@@ -311,7 +311,7 @@ export const niches: NicheData[] = [
     ],
     faqs: [
       { question: 'Wie senken ich die Abbruchquote bei Bewerbungen?', answer: 'Ich implementiere "One-Click-Bewerbungen" oder kurze Chatbot-Funnels. Kandidaten können sich mobil in unter 60 Sekunden bewerben, z.B. durch einfachen Upload des LinkedIn-Profils.' },
-      { question: 'Wie generieren wir Leads von Unternehmen, die Personal suchen?', answer: 'Ich positioniere Sie als Branchenexperten (z.B. durch Gehaltsstudien oder Whitepaper als Download) und integriere klare Call-to-Actions für ein unverbindliches Bedarfsgespräch.' },
+      { question: 'Wie generieren wir Anfragen von Unternehmen, die Personal suchen?', answer: 'Ich positioniere Sie als Branchenexperten (z.B. durch Gehaltsstudien oder Whitepaper als Download) und integriere klare Call-to-Actions für ein unverbindliches Bedarfsgespräch.' },
       { question: 'Können wir uns auf bestimmte Branchen (z.B. IT, Pflege) spezialisieren?', answer: 'Unbedingt. Eine spitze Positionierung konvertiert am besten. Ich gestalte die Bildsprache und Texte exakt passend zu Ihrer Zielbranche.' }
     ]
   },
@@ -416,7 +416,7 @@ export const niches: NicheData[] = [
     trustLogos: ['Live Experiences', 'Event Creators', 'Corporate Moments'],
     benefits: [
       { icon: Sparkles, title: 'Immersives Portfolio', description: 'Ich nutze Video-Header, fließende Animationen und großflächige Galerien, um die Emotionen Ihrer vergangenen Events digital erlebbar zu machen.' },
-      { icon: Target, title: 'B2B-Leadgenerierung', description: 'Gezielte Ansprache von Marketingleitern und Geschäftsführern, die nach zuverlässigen Partnern für Jubiläen, Messen oder Produktlaunches suchen.' },
+      { icon: Target, title: 'B2B-Kundengewinnung', description: 'Gezielte Ansprache von Marketingleitern und Geschäftsführern, die nach zuverlässigen Partnern für Jubiläen, Messen oder Produktlaunches suchen.' },
       { icon: PenTool, title: 'Kreatives Branding', description: 'Ein Design, das aus der Masse heraussticht und Ihre kreative Kompetenz als Agentur auf den ersten Blick unterstreicht.' }
     ],
     faqs: [
@@ -455,11 +455,11 @@ export const niches: NicheData[] = [
     h1: 'Mehr Probetrainings und Premium-Mitglieder durch eine Website,',
     h1Highlight: 'die motiviert.',
     heroSub: 'Verwandeln Sie Website-Besucher in loyale Mitglieder. Ich baue digitale Präsenzen für Boutique-Studios, Personal Trainer und CrossFit-Boxen, die Ihre Community wachsen lassen.',
-    schemaDescription: 'Webdesign und Lead-Generierung für Fitnessstudios, Personal Trainer und Yoga-Studios.',
+    schemaDescription: 'Webdesign und Kundengewinnung für Fitnessstudios, Personal Trainer und Yoga-Studios.',
     trustText: 'Fitness-Brands, die mit mir wachsen',
     trustLogos: ['CrossFit Elite', 'Premium Fitness', 'Personal Training Club'],
     benefits: [
-      { icon: Target, title: 'Lead-Generierung', description: 'Hochkonvertierende Formulare für Probetrainings oder Erstgespräche, die die Hemmschwelle für Interessenten massiv senken.' },
+      { icon: Target, title: 'Kundengewinnung', description: 'Hochkonvertierende Formulare für Probetrainings oder Erstgespräche, die die Hemmschwelle für Interessenten massiv senken.' },
       { icon: Calendar, title: 'Kursplan-Integration', description: 'Nahtlose Einbindung Ihrer Buchungssoftware (z.B. Eversports, Mindbody), damit Mitglieder Kurse direkt online buchen können.' },
       { icon: Heart, title: 'Community Building', description: 'Ich präsentiere Ihre Trainer, Ihre Räumlichkeiten und echte Erfolgsgeschichten (Transformationen), um eine emotionale Bindung aufzubauen.' }
     ],

@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 export function ComparisonSection() {
   const criteria = [
     { name: "Premium Design-Level", k: "x", kr: "m", m: "x", s: "c" },
-    { name: "Conversion-Optimierte Texte", k: "x", kr: "x", m: "c", s: "c" },
+    { name: "Überzeugende Texte", k: "x", kr: "x", m: "c", s: "c" },
     { name: "Keine hohen Einmalkosten", k: "x", kr: "x", m: "x", s: "c" },
     { name: "All-Inclusive (Hosting, Updates)", k: "x", kr: "x", m: "x", s: "c" },
     { name: "Minimaler Aufwand für den Kunden", k: "x", kr: "x", m: "m", s: "c" },
