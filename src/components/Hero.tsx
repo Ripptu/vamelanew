@@ -1,5 +1,6 @@
 import { ArrowRight, MessageCircle, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useEffect, useRef } from 'react';
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -8,19 +9,32 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Force autoplay on mobile devices where the attribute might be ignored
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section 
       className="relative w-full pt-28 pb-16 md:pt-40 md:pb-32 lg:pt-64 lg:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
         crossOrigin="anonymous"
-        className="absolute inset-0 w-full h-full object-cover z-0 bg-white"
+        className="absolute inset-0 w-full h-full object-cover z-0 bg-white pointer-events-none"
+        style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
       >
         <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4" type="video/mp4" />
         Ihr Browser unterstützt kein Video-Tag.
