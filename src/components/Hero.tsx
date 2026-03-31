@@ -13,33 +13,20 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       className="relative w-full pt-28 pb-16 md:pt-40 md:pb-32 lg:pt-64 lg:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
-      {/* Desktop Sky Background */}
-      <div className="hidden md:block absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <img 
-          src="https://s1.directupload.eu/images/260324/4xeiep72.webp" 
-          alt="Blue sky with clouds" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-          loading="eager"
-        />
-        {/* White overlay to lighten the image for better readability on desktop */}
-        <div className="absolute inset-0 bg-white/50"></div>
-        {/* Soft white gradient overlay at the top and white gradient at the bottom to transition to the next section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white"></div>
-      </div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        crossOrigin="anonymous"
+        className="absolute inset-0 w-full h-full object-cover z-0 bg-white"
+      >
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4" type="video/mp4" />
+        Ihr Browser unterstützt kein Video-Tag.
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-white z-10"></div>
       
-      {/* Mobile Sky Background */}
-      <div className="md:hidden absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <img 
-          src="https://s1.directupload.eu/images/260324/tqtp8d2z.jpg" 
-          alt="Blue sky with clouds" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white"></div>
-      </div>
-
       {/* Social Links Sidebar */}
       <motion.div 
         initial={{ opacity: 0, x: -20 }}

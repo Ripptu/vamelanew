@@ -123,7 +123,7 @@ import { Helmet } from 'react-helmet-async';
 
 function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
       <Helmet>
         <title>VAMELA | Webdesign für mehr Anfragen</title>
         <meta name="description" content="Ich baue hochkonvertierende Websites für Dienstleister und Handwerker. Mehr Anfragen, mehr Umsatz, weniger Stress." />
@@ -146,7 +146,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Leistungen & Preise | VAMELA</title>
         <meta name="description" content="Meine Webdesign-Leistungen und Preise im Überblick." />
@@ -165,7 +165,7 @@ function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Über mich & Prozess | VAMELA</title>
         <meta name="description" content="Lerne mich und meinen bewährten Prozess kennen." />
@@ -181,7 +181,7 @@ function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-[#ffffff] font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Referenzen | VAMELA</title>
         <meta name="description" content="Meine erfolgreichen Webdesign-Projekte." />
@@ -215,9 +215,11 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <AppContent onOpenContact={openPopup} />
-      <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
-      <ExitIntentPopup onOpenContact={openPopup} />
+      <div className="relative min-h-screen w-full">
+        <AppContent onOpenContact={openPopup} />
+        <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
+        <ExitIntentPopup onOpenContact={openPopup} />
+      </div>
     </Router>
   );
 }

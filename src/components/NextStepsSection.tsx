@@ -16,7 +16,7 @@ export function NextStepsSection({ onOpenContact }: { onOpenContact: () => void 
         <p className="text-slate-500 text-base md:text-lg mb-10 md:mb-16">Das sind deine nächsten Schritte!</p>
       </motion.div>
 
-      <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 relative mb-10 md:mb-12">
+      <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 relative mb-10 md:mb-12">
         {/* Dashed line connecting steps */}
         <div className="absolute top-20 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-200 hidden lg:block"></div>
         

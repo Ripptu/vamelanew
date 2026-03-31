@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 md:py-32 bg-bg-light px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="py-20 md:py-32 bg-transparent px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ y: -5 }}
-          className="bg-white rounded-3xl p-6 md:p-12 border border-slate-200 mb-8 transition-transform"
+          className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-12 border border-slate-200 mb-8 transition-transform"
         >
           <div className="flex gap-1 mb-4 md:mb-6">
             {[1,2,3,4,5].map(i => (
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col transition-transform"
+              className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col transition-transform"
             >
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(j => (

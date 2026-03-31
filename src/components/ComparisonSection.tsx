@@ -57,7 +57,7 @@ export function ComparisonSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className={`rounded-2xl border ${agency.isPrimary ? 'border-primary bg-primary/5 shadow-md' : 'border-slate-200 bg-white'} overflow-hidden`}
+              className={`rounded-2xl border ${agency.isPrimary ? 'border-primary bg-primary/10 shadow-md' : 'border-slate-200 bg-white/80 backdrop-blur-md'} overflow-hidden`}
             >
               <div className={`p-4 border-b ${agency.isPrimary ? 'border-primary/20 bg-primary/10' : 'border-slate-200 bg-slate-50'} font-bold text-center flex items-center justify-center min-h-[64px]`}>
                 {agency.logo ? (
@@ -84,7 +84,7 @@ export function ComparisonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:block bg-white rounded-3xl border border-slate-200 overflow-hidden relative"
+          className="hidden md:block bg-white/80 backdrop-blur-md rounded-3xl border border-slate-200 overflow-hidden relative"
         >
           <div className="overflow-x-auto hide-scrollbar">
             <div className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[700px]">
@@ -107,7 +107,7 @@ export function ComparisonSection() {
                 whileHover={{ backgroundColor: "rgba(248, 250, 252, 0.8)" }}
                 className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] border-b border-slate-200 last:border-0 text-sm min-w-[700px] transition-colors"
               >
-                <div className="p-6 font-medium text-slate-500 border-r border-slate-200 flex items-center sticky left-0 bg-white z-20">{row.name}</div>
+                <div className="p-6 font-medium text-slate-500 border-r border-slate-200 flex items-center sticky left-0 bg-white/80 backdrop-blur-md z-20">{row.name}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center">{renderIcon(row.kr)}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>

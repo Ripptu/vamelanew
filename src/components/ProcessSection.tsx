@@ -93,7 +93,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
             {/* Leading Spark/Comet - Premium Glow */}
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-8 h-32 bg-gradient-to-t from-primary via-primary/30 to-transparent rounded-full blur-[12px] opacity-70"></div>
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-16 bg-gradient-to-t from-white via-primary to-transparent rounded-full blur-[4px]"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_15px_#fff] z-20">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white/80 backdrop-blur-md rounded-full shadow-[0_0_15px_#fff] z-20">
               {/* Extra Sparkle Icon at the tip */}
               <motion.div
                 animate={{ rotate: 360, scale: [1, 1.2, 1] }}
@@ -108,7 +108,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
             <motion.div 
               animate={{ opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full bg-white blur-[2px] opacity-20 rounded-full"
+              className="absolute inset-0 w-full h-full bg-white/80 backdrop-blur-md blur-[2px] opacity-20 rounded-full"
             />
           </motion.div>
 
@@ -152,7 +152,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
               viewport={{ amount: 0.5, margin: "-20% 0px -20% 0px" }}
             >
               {/* Dot */}
-              <div className="absolute left-[3px] sm:left-[7px] md:left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white bg-white flex items-center justify-center z-10">
+              <div className="absolute left-[3px] sm:left-[7px] md:left-[13px] top-2 w-8 h-8 rounded-full border-4 border-white/80 backdrop-blur-md bg-white/80 backdrop-blur-md flex items-center justify-center z-10">
                 <motion.div 
                   variants={{
                     hidden: { backgroundColor: "#e2e8f0", scale: 0.8 },
@@ -216,7 +216,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
           >
             <a
               href="/ueber-mich"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-slate-50/80 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white/80 backdrop-blur-md"
             >
               Gesamten Prozess ansehen
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -80,7 +80,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200 [&_summary::-webkit-details-marker]:hidden"
+              className="group bg-white/80 backdrop-blur-md border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200 [&_summary::-webkit-details-marker]:hidden"
               open={openIndex === i}
               onToggle={(e) => {
                 if ((e.target as HTMLDetailsElement).open) {

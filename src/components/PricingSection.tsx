@@ -6,7 +6,7 @@ export function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="zahlung" className="py-16 md:py-24 relative overflow-hidden bg-slate-50">
+    <section id="zahlung" className="py-16 md:py-24 relative overflow-hidden bg-transparent">
       <style>{`
         @keyframes goldShimmer {
           0% { background-position: 200% 0; }
@@ -46,7 +46,7 @@ export function PricingSection() {
               <span className="sr-only">Abrechnungsintervall umschalten</span>
               <motion.span
                 layout
-                className="inline-block h-5 w-5 rounded-full bg-white shadow transform transition-transform"
+                className="inline-block h-5 w-5 rounded-full bg-white/80 backdrop-blur-md shadow transform transition-transform"
                 animate={{ x: isYearly ? 32 : 4 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
@@ -65,7 +65,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-8 rounded-[1.5rem] border border-slate-200 flex flex-col relative z-10 h-full"
+            className="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] border border-slate-200 flex flex-col relative z-10 h-full"
           >
             <div className="mb-6">
               <div className="flex items-center gap-3 mb-4">
@@ -137,7 +137,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            className="bg-white p-6 md:p-8 rounded-[1.5rem] border-2 border-primary flex flex-col relative z-30 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.3)] md:shadow-[0_0_50px_rgba(59,130,246,0.4)] h-full"
+            className="bg-white/90 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] border-2 border-primary flex flex-col relative z-30 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.3)] md:shadow-[0_0_50px_rgba(59,130,246,0.4)] h-full"
           >
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 border border-white whitespace-nowrap shadow-sm">
               <Sparkles className="w-3 h-3" />
@@ -216,7 +216,7 @@ export function PricingSection() {
             {/* Gold Shimmer Border */}
             <div className="absolute inset-0 bg-[linear-gradient(110deg,#fbbf24,45%,#fffbeb,55%,#fbbf24)] bg-[length:200%_100%] animate-gold-shimmer rounded-[1.5rem]"></div>
             
-            <div className="relative bg-white p-6 md:p-8 rounded-[calc(1.5rem-2px)] flex flex-col h-full z-10">
+            <div className="relative bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-[calc(1.5rem-2px)] flex flex-col h-full z-10">
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center border border-amber-100">

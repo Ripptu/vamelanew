@@ -35,7 +35,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
   const Icon = niche.icon;
 
   return (
-    <main className="min-h-screen bg-slate-50 pt-24 pb-16">
+    <main className="min-h-screen bg-transparent pt-24 pb-16">
       <Helmet>
         <title>Webdesign für {niche.name} | VAMELA</title>
         <meta name="description" content={niche.schemaDescription} />
@@ -55,7 +55,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 mb-6 md:mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-slate-200 mb-6 md:mb-8 shadow-sm">
             <Icon className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-slate-700">{niche.badgeText}</span>
           </div>
@@ -78,7 +78,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
       </section>
 
       {/* Trust Section */}
-      <section className="py-12 bg-white border-y border-slate-200">
+      <section className="py-12 bg-white/80 backdrop-blur-md border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-8">
             {niche.trustText}
@@ -108,7 +108,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
           {niche.benefits.map((benefit, index) => {
             const BenefitIcon = benefit.icon;
             return (
-              <article key={index} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <article key={index} className="bg-white/80 backdrop-blur-md p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 text-primary">
                   <BenefitIcon className="w-6 h-6" />
                 </div>
@@ -123,7 +123,7 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
       </section>
 
       {/* GEO-optimiertes FAQ */}
-      <section className="py-20 bg-white border-t border-slate-200">
+      <section className="py-20 bg-white/80 backdrop-blur-md border-t border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">

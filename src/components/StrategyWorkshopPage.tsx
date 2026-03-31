@@ -18,7 +18,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
   }, []);
 
   return (
-    <main className="min-h-screen bg-white pt-24 pb-16 selection:bg-primary/20 selection:text-primary">
+    <main className="min-h-screen bg-transparent pt-24 pb-16 selection:bg-primary/20 selection:text-primary">
       <Helmet>
         <title>Strategie-Workshop | VAMELA</title>
         <meta name="description" content="Gemeinsam entwickeln wir die perfekte digitale Strategie für dein Unternehmen. Jetzt kostenlosen Strategie-Workshop anfragen." />
@@ -51,7 +51,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i, duration: 0.6 }}
-              className="p-6 md:p-8 rounded-3xl bg-white border border-slate-200 transition-shadow hover:shadow-md"
+              className="p-6 md:p-8 rounded-3xl bg-white/80 backdrop-blur-md border border-slate-200 transition-shadow hover:shadow-md"
             >
               <item.icon className="w-8 h-8 md:w-10 md:h-10 text-primary mb-4 md:mb-6" />
               <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{item.title}</h3>
@@ -64,7 +64,7 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="relative p-6 md:p-12 rounded-[2.5rem] text-center overflow-hidden border border-slate-200 bg-slate-50"
+          className="relative p-6 md:p-12 rounded-[2.5rem] text-center overflow-hidden border border-slate-200 bg-slate-50/80 backdrop-blur-md"
         >
           {/* Graph Paper Pattern */}
           <div 
@@ -85,15 +85,15 @@ export function StrategyWorkshopPage({ onOpenContact }: { onOpenContact?: () => 
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 text-left">
-              <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="bg-white/80 backdrop-blur-md p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 className="font-bold text-slate-900 mb-1 md:mb-2 text-sm md:text-base">Keine Anfragen?</h4>
                 <p className="text-xs md:text-sm text-slate-600">Ich analysiere, warum Besucher abspringen und drehe die Stellschrauben für mehr Anfragen.</p>
               </div>
-              <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="bg-white/80 backdrop-blur-md p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 className="font-bold text-slate-900 mb-1 md:mb-2 text-sm md:text-base">Unklare Botschaft?</h4>
                 <p className="text-xs md:text-sm text-slate-600">Ich schärfe dein Profil, damit Kunden sofort verstehen, warum sie bei dir kaufen müssen.</p>
               </div>
-              <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="bg-white/80 backdrop-blur-md p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 className="font-bold text-slate-900 mb-1 md:mb-2 text-sm md:text-base">Kein Fahrplan?</h4>
                 <p className="text-xs md:text-sm text-slate-600">Du erhältst den Vamela Blueprint: Deine komplette Strategie, Sitemap, Wireframe-Skizzen und Content-Roadmap.</p>
               </div>

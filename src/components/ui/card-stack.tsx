@@ -225,7 +225,7 @@ export function CardStack<T extends CardStackItem>({
       >
         {/* background wash / spotlight (unique feel) */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-6 mx-auto h-48 w-[70%] rounded-full bg-black/5 blur-3xl dark:bg-white/5"
+          className="pointer-events-none absolute inset-x-0 top-6 mx-auto h-48 w-[70%] rounded-full bg-black/5 blur-3xl dark:bg-white/10"
           aria-hidden="true"
         />
         <div

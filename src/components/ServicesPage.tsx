@@ -7,7 +7,7 @@ import { FooterCTA } from './FooterCTA';
 
 export function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <Navbar onOpenContact={onOpenContact} />
       <main className="pt-24">
         <ComparisonSection />

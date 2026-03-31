@@ -87,7 +87,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 key={item.name}
                 to={item.href} 
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-2 rounded-full hover:bg-white hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="px-4 py-2 rounded-full hover:bg-white/80 hover:backdrop-blur-md hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {item.name}
               </Link>
@@ -149,7 +149,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
               </Link>
               <button 
                 onClick={() => setIsMenuOpen(false)} 
-                className="text-white p-2 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md hover:bg-white/10 transition-colors"
+                className="text-white p-2 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md hover:bg-white/20 transition-colors"
                 aria-label="Menü schließen"
               >
                 <X className="w-8 h-8" />

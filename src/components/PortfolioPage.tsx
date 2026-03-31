@@ -5,7 +5,7 @@ import { FooterCTA } from './FooterCTA';
 
 export function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <Navbar onOpenContact={onOpenContact} />
       <main className="pt-24">
         <PortfolioSection />
