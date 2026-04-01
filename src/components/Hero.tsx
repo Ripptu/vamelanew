@@ -24,6 +24,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
     if (videoRef.current) {
       if (isMobile) {
         videoRef.current.pause();
+        videoRef.current.currentTime = 0.001;
       } else {
         videoRef.current.play().catch(error => {
           console.log("Video autoplay failed:", error);
@@ -48,7 +49,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         className="absolute inset-0 w-full h-full object-cover z-0 bg-white pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden"
         style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
       >
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4" type="video/mp4" />
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4#t=0.001" type="video/mp4" />
         Ihr Browser unterstützt kein Video-Tag.
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-white z-10"></div>
