@@ -38,12 +38,12 @@ export function TestimonialsSection() {
             ))}
           </div>
           <p className="text-sm md:text-xl font-medium leading-relaxed mb-6 md:mb-8 text-slate-500">
-            "Die Zusammenarbeit mit VAMELA war ein echter Wendepunkt für uns. Wir hatten lange das Problem, dass unsere Webseite nicht unsere tatsächliche Qualität widerspiegelte. Christian hat nicht nur ein wunderschönes Design geliefert, sondern wirklich verstanden, wie wir unsere Kunden emotional abholen. Das Ergebnis ist nicht nur eine Webseite, sondern ein echtes Werkzeug für unser Wachstum."
+            "Die Zusammenarbeit mit Christian war ein echter Glücksgriff für mich. Ich brauchte einfach jemanden, der mir schnell und unkompliziert eine moderne Webseite baut, ohne dass ich mich um Technik oder Hosting kümmern muss. Christian hat sofort verstanden, worauf es ankommt. Das Ergebnis sieht super aus und ich bekomme regelmäßig Komplimente von meinen Kunden."
           </p>
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-bold text-base md:text-lg">Thomas Rott</div>
-              <div className="text-slate-500 text-xs md:text-sm">Geschäftsführer, Thomas Rott Facility Management</div>
+              <div className="font-bold text-base md:text-lg">Thomas R.</div>
+              <div className="text-slate-500 text-xs md:text-sm">Inhaber, Handwerksbetrieb</div>
             </div>
           </div>
         </motion.article>
@@ -52,19 +52,19 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              name: "Barnekow",
-              role: "Inhaber",
-              text: "Christian hat es geschafft, unsere Vision in ein digitales Erlebnis zu übersetzen, das genau unsere Zielgruppe anspricht. Die Kommunikation war immer auf Augenhöhe, menschlich und absolut lösungsorientiert. Man merkt, dass hier echte Leidenschaft für Design und Strategie dahintersteckt.",
+              name: "Michael B.",
+              role: "Selbstständiger Berater",
+              text: "Christian hat mir eine Webseite gebaut, die genau zu mir passt. Keine versteckten Kosten, direkter Kontakt über WhatsApp und schnelle Umsetzung. Genau das, was ich als Einzelunternehmer gesucht habe.",
             },
             {
-              name: "Coremis",
-              role: "Management",
-              text: "Was ich an der Zusammenarbeit besonders schätze, ist die Kombination aus technischer Expertise und echtem Verständnis für unsere unternehmerischen Ziele. Wir haben uns zu jeder Zeit verstanden gefühlt, und das Endergebnis hat unsere Erwartungen bei weitem übertroffen.",
+              name: "Sarah K.",
+              role: "Inhaberin",
+              text: "Als kleines Unternehmen brauchte ich jemanden, der sich um alles kümmert. Christian war genau der Richtige. Er hat nicht nur das Design gemacht, sondern kümmert sich jetzt auch um die Wartung.",
             },
             {
-              name: "HanseTool",
-              role: "Geschäftsführung",
-              text: "Die Zusammenarbeit war unkompliziert, schnell und sehr professionell. Christian hat uns geholfen, unsere komplexe Produktwelt so zu strukturieren, dass unsere Kunden sich sofort zurechtfinden. Ein Partner, den man gerne weiterempfiehlt.",
+              name: "Johannes M.",
+              role: "Dienstleister",
+              text: "Endlich ein Webdesigner, der hält, was er verspricht. Die Kommunikation war immer auf Augenhöhe und absolut lösungsorientiert. Ein zuverlässiger Partner, den ich gerne weiterempfehle.",
             }
           ].map((t, i) => (
             <motion.article 

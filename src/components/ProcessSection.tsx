@@ -19,7 +19,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
     {
       num: "1",
       title: "Positionierung und Branding",
-      desc: "Hier entsteht die Basis einer starken Marktführer-Marke",
+      desc: "Hier entsteht die Basis für deinen professionellen Auftritt",
       bullets: ["Strategische Marktpositionierung", "Visuelle Identität & CI-Entwicklung", "Zielgruppen & Konkurrenzanalyse"],
       animation: "https://s1.directupload.eu/images/260324/r7h7zk97.webp"
     },
@@ -68,7 +68,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
           In {allSteps.length} Schritten zum<br/><span className="font-serif italic text-primary font-normal">perfekten digitalen Auftritt</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
-          Mein bewährter Prozess, um Tag für Tag beeindruckende Marken mit hochkonvertierenden Online-Auftritten zu erschaffen.
+          Mein bewährter Prozess, um dir schnell und unkompliziert zu einer professionellen Webseite zu verhelfen.
         </p>
       </motion.div>
 

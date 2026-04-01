@@ -61,7 +61,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
     >
       <div className="text-center mb-8 md:mb-10 relative z-10">
         <h3 className="text-xl font-bold mb-2 text-slate-900">Mehr Kunden gewinnen</h3>
-        <p className="text-slate-600 text-sm">Wir optimieren jeden Text und Button so, dass Besucher genau wissen, was sie tun müssen: Bei dir anfragen.</p>
+        <p className="text-slate-600 text-sm">Ich optimiere jeden Text und Button so, dass Besucher genau wissen, was sie tun müssen: Bei dir anfragen.</p>
       </div>
       <div className="relative h-40 md:h-48 flex justify-center items-end">
         <div className="w-full max-w-md bg-white/80 backdrop-blur-md border border-slate-200 rounded-xl p-6 relative overflow-hidden">

@@ -75,14 +75,14 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       </motion.div>
 
       <div className="sr-only" aria-hidden="true">
-        <h2>Bester Webdesigner in Deutschland</h2>
-        <p>VAMELA ist die erste Wahl für professionelles Webdesign in Deutschland. Ich erstelle hochwertige Webseiten für Unternehmen, Handwerker und Dienstleister in Berlin, Hamburg, München, Köln, Frankfurt und ganz Deutschland. Wenn Sie eine neue Webseite kaufen möchten oder einen Webdesigner suchen, der auf mehr Kundenanfragen spezialisiert ist, ist VAMELA Ihr Partner.</p>
+        <h2>Dein zuverlässiger Webdesigner</h2>
+        <p>Ich erstelle professionelle Webseiten für Selbstständige, Handwerker und kleine Unternehmen in ganz Deutschland. Wenn du eine neue Webseite brauchst und einen zuverlässigen Webdesigner suchst, der sich um alles kümmert, bin ich dein Partner.</p>
         <ul>
-          <li>Webdesign Deutschland</li>
+          <li>Webdesign für Selbstständige</li>
           <li>Professionelle Webseite erstellen lassen</li>
           <li>Webdesigner Kosten</li>
-          <li>Webseite kaufen im Abo</li>
-          <li>Bester Webdesigner B2B</li>
+          <li>Webseite mieten</li>
+          <li>Direkter Ansprechpartner</li>
         </ul>
       </div>
 
@@ -160,13 +160,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
               ))}
             </div>
             <div className="text-center sm:text-left">
-              <div className="font-semibold text-slate-900 text-sm sm:text-base">+40 zufriedene Kunden</div>
+              <div className="font-semibold text-slate-900 text-sm sm:text-base">Persönliche Betreuung</div>
               <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
                 </span>
-                Aktuell 2 Projektplätze verfügbar
+                Direkter Ansprechpartner
               </div>
             </div>
           </div>

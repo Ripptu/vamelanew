@@ -245,7 +245,7 @@ export function PricingSection() {
                   </AnimatePresence>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Nur für extrem solvente Betriebe. Das absolute Rundum-Sorglos-Paket.
+                  Für Unternehmen, die das absolute Rundum-Sorglos-Paket wollen.
                 </p>
               </div>
               

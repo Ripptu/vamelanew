@@ -49,16 +49,16 @@ export function FounderSection() {
           
           <div className="space-y-4 md:space-y-6 text-base md:text-xl text-slate-500 leading-relaxed">
             <p>
-              Der Markt ist voll von alt eingesessenen Webdesignern, die auf veralteten Systemen und ressourcenfressenden Prozessen festhängen – nur um am Ende eine Seite zu liefern, die aussieht, als wäre sie aus 2016.
+              Oft ist es schwer, einen zuverlässigen Webdesigner zu finden. Große Agenturen sind für kleine Unternehmen meist zu teuer und unpersönlich. Und viele Freelancer tauchen nach Projektabschluss einfach ab.
             </p>
             <p>
-              Am anderen Ende: Kreativagenturen, zu stolz um ihre Fähigkeiten in einem markttauglichen Kontext einzusetzen. Und Marketing-Agenturen, die alles anbieten, aber nichts davon wirklich können.
+              Genau deshalb habe ich VAMELA gegründet. Ich möchte Selbstständigen und kleinen Unternehmen eine professionelle Webseite bieten, ohne dass sie sich um Technik, Hosting oder Updates kümmern müssen.
             </p>
             <p className="text-xl md:text-3xl font-serif italic text-slate-900 font-medium my-6 md:my-8">
-              VAMELA existiert, um diese <span className="text-primary">Lücke zu schließen.</span>
+              Mein Ansatz: <span className="text-primary">Alles aus einer Hand.</span>
             </p>
             <p>
-              Ich kombiniere Flaggschiff-Design, verkaufspsychologische Copy und modernste Technologie. Alles aus einer Hand, ohne Kompromisse. Mein Ziel ist es, deinen digitalen Auftritt so stark zu machen, dass du in deiner Branche als klarer Favorit wahrgenommen wirst.
+              Ich kombiniere modernes Design, klare Texte und aktuelle Technik. Als dein direkter Ansprechpartner kümmere ich mich persönlich um dein Projekt – von der ersten Idee bis zur laufenden Betreuung.
             </p>
           </div>
           
