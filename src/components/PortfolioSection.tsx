@@ -8,15 +8,15 @@ const PROJECTS = [
 
   {
     id: 1,
-    title: "Vamela",
-    category: "Webdesign & Strategie",
-    image: "https://i.postimg.cc/Y2xzGLL0/hf-20260131-102458-7dbca7c3-0d46-45fc-87db-c75ff3479c84.jpg",
-    url: "http://vamela.info",
-    description: "Modernste B2B-Webseite mit Fokus auf mehr Kundenanfragen und Markenautorität.",
-    challenge: "Etablierung als Marktführer durch ein Premium-Design.",
-    solution: "Entwicklung einer Flaggschiff-Webseite mit verkaufspsychologischer Copy.",
-    result: "Signifikante Steigerung der qualifizierten Anfragen.",
-    metric: "+45% mehr Anfragen"
+    title: "Schlossallee Haag an der Amper",
+    category: "Gastronomie",
+    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_2zg6kRsQgLvpBAc5mmGVtMaqZi0%2Fhf_20260429_062820_0556a83d-1424-4c90-9d71-859731a2e056.png&w=1280&q=85",
+    url: "https://schlossalleehaag.de",
+    description: "Moderner digitaler Auftritt für den Traditionsbiergarten in Haag an der Amper.",
+    challenge: "Digitale Präsenz modernisieren und mehr Gäste für den Biergarten anziehen.",
+    solution: "Einladendes Design mit klarem Fokus auf das Erlebnis und einfache Kontaktaufnahme.",
+    result: "Deutlich mehr Gäste und ein frischer, authentischer Markenauftritt.",
+    metric: "Mehr Gäste"
   },
   {
     id: 2,
