@@ -93,7 +93,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
-          Professionelle Webseiten<br/><span className="font-serif italic text-primary font-normal">im günstigen Abo.</span>
+          Professionelle Webseiten<br/><span className="font-serif italic text-primary font-normal">ab 299€.</span>
         </motion.h1>
         
         <motion.p 
@@ -102,7 +102,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-base md:text-xl text-slate-700 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
-          Keine hohen Einmalkosten. Ich kümmere mich um Design, Hosting, Wartung und Updates – alles in einem flexiblen monatlichen Paket. So kannst du dich voll auf dein Geschäft konzentrieren.
+          Egal ob flexibel im Abo oder als günstige Einmalzahlung ab 299€. Ich kümmere mich um Design, Entwicklung und bei Bedarf auch um Wartung und Updates. So kannst du dich voll auf dein Geschäft konzentrieren.
         </motion.p>
         
         <motion.div 

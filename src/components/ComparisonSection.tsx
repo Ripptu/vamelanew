@@ -5,10 +5,9 @@ export function ComparisonSection() {
   const criteria = [
     { name: "Modernes, ansprechendes Design", k: "x", kr: "m", m: "x", s: "c" },
     { name: "Passende Texte", k: "x", kr: "x", m: "c", s: "c" },
-    { name: "Keine hohen Einmalkosten", k: "x", kr: "x", m: "x", s: "c" },
+    { name: "Flexible Zahlungsmodelle (Einmalig/Abo)", k: "x", kr: "x", m: "x", s: "c" },
     { name: "Alles inklusive (Hosting, Updates)", k: "x", kr: "x", m: "x", s: "c" },
     { name: "Minimaler Aufwand für dich", k: "x", kr: "x", m: "m", s: "c" },
-    { name: "Monatlich kündbar", k: "x", kr: "x", m: "x", s: "c" },
   ];
 
   const renderIcon = (type: string) => {
