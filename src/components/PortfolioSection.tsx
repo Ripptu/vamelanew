@@ -10,7 +10,7 @@ const PROJECTS = [
     id: 1,
     title: "Schlossallee Haag an der Amper",
     category: "Gastronomie",
-    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_2zg6kRsQgLvpBAc5mmGVtMaqZi0%2Fhf_20260429_062820_0556a83d-1424-4c90-9d71-859731a2e056.png&w=1280&q=85",
+    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_2zg6kRsQgLvpBAc5mmGVtMaqZi0%2Fhf_20260429_063505_6973451c-4c4e-4bc2-b643-ebfa0ea89241.png&w=1280&q=85",
     url: "https://schlossalleehaag.de",
     description: "Moderner digitaler Auftritt für den Traditionsbiergarten in Haag an der Amper.",
     challenge: "Digitale Präsenz modernisieren und mehr Gäste für den Biergarten anziehen.",
