@@ -47,7 +47,7 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="w-full max-w-md relative z-10 flex flex-col items-center justify-center"
         >
-          <div className="bg-white/80 backdrop-blur-2xl rounded-[2rem] p-8 md:p-10 border border-white/60 text-center relative overflow-hidden w-full">
+          <div className="bg-white  rounded-[2rem] p-8 md:p-10 border border-white/60 text-center relative overflow-hidden w-full">
             {/* Close Button */}
             <button 
               onClick={() => setIsVisible(false)} 

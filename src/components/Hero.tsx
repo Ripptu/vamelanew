@@ -47,7 +47,6 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         preload="auto"
         crossOrigin="anonymous"
         className="absolute inset-0 w-full h-full object-cover z-0 bg-white pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden"
-        style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
       >
         <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4#t=0.001" type="video/mp4" />
         Ihr Browser unterstützt kein Video-Tag.

@@ -67,7 +67,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isScrolled ? 'backdrop-blur-2xl bg-white/5' : 'bg-transparent'}`}
+        } ${isScrolled ? ' bg-white/5' : 'bg-transparent'}`}
       >
         <nav className="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/60 backdrop-blur-md border border-white/40 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-sm">
+          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/90  border border-white/40 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-sm">
             {[
               { name: 'Leistungen & Preise', href: '/leistungen' },
               { name: 'Referenzen', href: '/referenzen' },
@@ -87,7 +87,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 key={item.name}
                 to={item.href} 
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-2 rounded-full hover:bg-white/80 hover:backdrop-blur-md hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="px-4 py-2 rounded-full hover:bg-white hover: hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {item.name}
               </Link>

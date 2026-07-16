@@ -43,7 +43,7 @@ export function FreeDraftSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white/80 backdrop-blur-md p-5 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] border border-slate-200 relative overflow-hidden"
+          className="bg-white  p-5 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] border border-slate-200 relative overflow-hidden"
         >
           <div className="text-center mb-8 md:mb-12 relative z-10">
             <h2 id="free-draft-title" className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4 md:mb-6">
@@ -75,7 +75,7 @@ export function FreeDraftSection() {
                   required
                   type="text" 
                   maxLength={100}
-                  className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md focus:bg-white/90 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
+                  className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white  focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
                   placeholder="Dein Name"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -88,7 +88,7 @@ export function FreeDraftSection() {
                   required
                   type="text" 
                   maxLength={100}
-                  className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md focus:bg-white/90 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
+                  className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white  focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
                   placeholder="Dein Business / Deine Tätigkeit"
                   value={formData.business}
                   onChange={(e) => setFormData({...formData, business: e.target.value})}
@@ -101,7 +101,7 @@ export function FreeDraftSection() {
                 id="draft-goal"
                 required
                 maxLength={1000}
-                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md focus:bg-white/90 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900 min-h-[100px] md:min-h-[120px] resize-y"
+                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white  focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900 min-h-[100px] md:min-h-[120px] resize-y"
                 placeholder="Dein Ziel (z.B. mehr Anfragen, Image-Aufbau...)"
                 value={formData.goal}
                 onChange={(e) => setFormData({...formData, goal: e.target.value})}
@@ -113,7 +113,7 @@ export function FreeDraftSection() {
                 id="draft-style"
                 type="text"
                 maxLength={100}
-                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md focus:bg-white/90 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
+                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white  focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-sm md:text-base text-slate-900"
                 placeholder="Ideen: minimalistisch, dunkel, hell, modern, clean"
                 value={formData.style}
                 onChange={(e) => setFormData({...formData, style: e.target.value})}
@@ -128,7 +128,7 @@ export function FreeDraftSection() {
               </div>
               <select
                 id="draft-subscription"
-                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md focus:bg-white/90 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm md:text-base text-slate-900 appearance-none"
+                className="w-full px-4 py-3 md:px-5 md:py-4 rounded-xl md:rounded-2xl border border-slate-200 bg-white  focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm md:text-base text-slate-900 appearance-none"
                 value={formData.subscription}
                 onChange={(e) => setFormData({...formData, subscription: e.target.value})}
               >

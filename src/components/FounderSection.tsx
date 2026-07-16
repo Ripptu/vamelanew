@@ -27,7 +27,7 @@ export function FounderSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
               
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-[10px] md:text-xs font-medium mb-3 md:mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20  border border-white/30 text-[10px] md:text-xs font-medium mb-3 md:mb-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
                   Dein Ansprechpartner
                 </div>

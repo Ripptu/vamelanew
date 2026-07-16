@@ -29,7 +29,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="w-full max-w-lg relative z-10"
           >
-            <div className="bg-white/80 backdrop-blur-md rounded-[2rem] p-6 sm:p-10 relative overflow-hidden border border-border">
+            <div className="bg-white  rounded-[2rem] p-6 sm:p-10 relative overflow-hidden border border-border">
               {/* Close Button - Made larger and more accessible */}
               <button 
                 onClick={onClose} 

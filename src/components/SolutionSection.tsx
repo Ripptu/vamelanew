@@ -11,15 +11,15 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: 0.1 }}
       whileHover={{ y: -5, scale: 1.01 }}
-      className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
+      className="bg-white  rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
     >
       <div className="text-center mb-8 md:mb-10 relative z-10">
         <h3 className="text-xl font-bold mb-2 text-slate-900">Professionelles Design</h3>
         <p className="text-slate-600 text-sm">Eine Webseite, die deine wahre Qualität widerspiegelt und Vertrauen aufbaut – ganz ohne hohe Einmalkosten.</p>
       </div>
       <div className="relative h-40 md:h-48 flex justify-center items-end">
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-md border border-slate-200 rounded-t-xl relative flex flex-col items-center pt-8">
-          <div className="absolute -top-6 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full border border-slate-200 flex items-center justify-center text-primary font-bold italic z-10">S</div>
+        <div className="w-full max-w-md bg-white  border border-slate-200 rounded-t-xl relative flex flex-col items-center pt-8">
+          <div className="absolute -top-6 w-12 h-12 bg-white  rounded-full border border-slate-200 flex items-center justify-center text-primary font-bold italic z-10">S</div>
           
           {/* Lines connecting to S */}
           <div className="absolute top-0 w-full h-12 flex justify-center">
@@ -32,7 +32,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
               <div className="h-2 bg-slate-200 rounded w-full mb-2"></div>
               <div className="h-16 bg-slate-200 rounded w-full"></div>
             </div>
-            <div className="flex-1 bg-white/80 backdrop-blur-md border border-primary/20 rounded-lg p-3">
+            <div className="flex-1 bg-white  border border-primary/20 rounded-lg p-3">
               <div className="flex items-center gap-1 mb-2">
                 <div className="w-3 h-3 bg-primary rounded-sm"></div>
                 <div className="text-[8px] font-bold">Zenith AI</div>
@@ -57,14 +57,14 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: 0.2 }}
       whileHover={{ y: -5, scale: 1.01 }}
-      className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
+      className="bg-white  rounded-3xl p-6 md:p-10 border border-slate-200 overflow-hidden relative transition-shadow"
     >
       <div className="text-center mb-8 md:mb-10 relative z-10">
         <h3 className="text-xl font-bold mb-2 text-slate-900">Mehr Kunden gewinnen</h3>
         <p className="text-slate-600 text-sm">Ich optimiere jeden Text und Button so, dass Besucher genau wissen, was sie tun müssen: Bei dir anfragen.</p>
       </div>
       <div className="relative h-40 md:h-48 flex justify-center items-end">
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-md border border-slate-200 rounded-xl p-6 relative overflow-hidden">
+        <div className="w-full max-w-md bg-white  border border-slate-200 rounded-xl p-6 relative overflow-hidden">
           <div className="flex justify-between items-center mb-8 relative z-10">
             <div className="text-sm font-bold">Anfragenquote</div>
             <div className="bg-primary text-white text-xs px-2 py-1 rounded-full font-bold">+75%</div>
@@ -81,7 +81,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
                 className={`flex-1 rounded-t-md relative ${i === 4 ? 'bg-gradient-to-t from-primary to-purple-400' : 'bg-slate-200'}`} 
               >
                 {i === 4 && (
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/80 backdrop-blur-md rounded-full"></div>
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-white  rounded-full"></div>
                 )}
               </motion.div>
             ))}
@@ -101,7 +101,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: 0.3 }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+      className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
     >
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
       <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
@@ -135,7 +135,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: 0.4 }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+      className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
       <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
@@ -158,7 +158,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: 0.5 }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
+      className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 text-center relative overflow-hidden transition-shadow"
     >
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
       <div className="h-32 md:h-40 flex items-center justify-center mb-4 md:mb-6 relative z-10">
@@ -224,7 +224,7 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
             href="/leistungen"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group bg-white/80 backdrop-blur-md hover:bg-slate-50/80 text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none w-full sm:w-auto justify-center"
+            className="group bg-white  hover:bg-slate-50/80 text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none w-full sm:w-auto justify-center"
           >
             Alle Leistungen ansehen
           </motion.a>

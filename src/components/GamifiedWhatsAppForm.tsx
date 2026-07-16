@@ -122,7 +122,7 @@ export function GamifiedWhatsAppForm({ onClose }: { onClose: () => void }) {
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={steps[step].placeholder}
             maxLength={200}
-            className="w-full p-5 text-lg rounded-2xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 bg-white/80 backdrop-blur-md text-body"
+            className="w-full p-5 text-lg rounded-2xl border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all duration-300 bg-white  text-body"
             onKeyDown={(e) => e.key === 'Enter' && inputValue && handleNext()}
             autoFocus
           />

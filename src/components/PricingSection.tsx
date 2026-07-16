@@ -37,7 +37,7 @@ export function PricingSection() {
               <span className="sr-only">Zahlungsweise umschalten</span>
               <motion.span
                 layout
-                className="inline-block h-5 w-5 rounded-full bg-white/80 backdrop-blur-md shadow transform transition-transform"
+                className="inline-block h-5 w-5 rounded-full bg-white  shadow transform transition-transform"
                 animate={{ x: !isOneTime ? 32 : 4 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
@@ -126,7 +126,7 @@ function PricingCard({ title, price, period, description, features, isHighlighte
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -4 }}
-      className={`p-6 md:p-8 rounded-[1.5rem] flex flex-col relative ${isHighlighted ? 'bg-white/90 backdrop-blur-md border-2 border-primary shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-white/80 backdrop-blur-md border border-slate-200'}`}
+      className={`p-6 md:p-8 rounded-[1.5rem] flex flex-col relative ${isHighlighted ? 'bg-white  border-2 border-primary shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-white  border border-slate-200'}`}
     >
       {isHighlighted && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide shadow-sm">

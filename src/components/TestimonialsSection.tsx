@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ y: -5 }}
-          className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-12 border border-slate-200 mb-8 transition-transform"
+          className="bg-white  rounded-3xl p-6 md:p-12 border border-slate-200 mb-8 transition-transform"
         >
           <div className="flex gap-1 mb-4 md:mb-6">
             {[1,2,3,4,5].map(i => (
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col transition-transform"
+              className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col transition-transform"
             >
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(j => (

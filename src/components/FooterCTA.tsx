@@ -20,7 +20,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-        className="bg-white/80 backdrop-blur-md rounded-[32px] md:rounded-[40px] border border-slate-200 p-8 sm:p-12 md:p-20 text-center relative overflow-hidden"
+        className="bg-white  rounded-[32px] md:rounded-[40px] border border-slate-200 p-8 sm:p-12 md:p-20 text-center relative overflow-hidden"
       >
         {/* Grid Background Pattern */}
         <div className="absolute inset-0 opacity-[0.05]" 

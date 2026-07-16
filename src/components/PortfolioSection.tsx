@@ -242,7 +242,7 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
                   
                   {/* Hover overlay with button */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white/80 backdrop-blur-md text-slate-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="bg-white  text-slate-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       Case Study <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -306,7 +306,7 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 "
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -314,12 +314,12 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white/80 backdrop-blur-md rounded-3xl md:rounded-[2rem] p-6 md:p-8 max-w-5xl w-full flex flex-col md:flex-row gap-6 md:gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white  rounded-3xl md:rounded-[2rem] p-6 md:p-8 max-w-5xl w-full flex flex-col md:flex-row gap-6 md:gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedProject(null)} 
-                className="absolute top-3 right-3 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white/80 backdrop-blur-md shadow-sm"
+                className="absolute top-3 right-3 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white  shadow-sm"
                 aria-label="Projekt Details schließen"
               >
                 <X className="w-5 h-5 md:w-6 md:h-6" />
