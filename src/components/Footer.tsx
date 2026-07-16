@@ -28,17 +28,31 @@ export function Footer() {
 
         {/* SEO Niche Links */}
         <div className="mb-16 border-t border-border pt-12">
-          <h3 className="text-lg font-bold text-foreground mb-6">Branchenlösungen</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {niches.map((niche) => (
-              <Link 
-                key={niche.slug} 
-                to={`/branchen/${niche.slug}`}
-                className="text-sm text-body hover:text-primary transition-colors"
-              >
-                Webdesign für {niche.name}
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-6">Branchenlösungen</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {niches.map((niche) => (
+                  <Link 
+                    key={niche.slug} 
+                    to={`/branchen/${niche.slug}`}
+                    className="text-sm text-body hover:text-primary transition-colors"
+                  >
+                    Webdesign für {niche.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <div className="lg:pl-8 lg:border-l border-border">
+              <h3 className="text-lg font-bold text-foreground mb-6">Lokales Webdesign & AEO</h3>
+              <p className="text-sm text-body leading-relaxed mb-4">
+                Als lokaler <strong>Webdesigner in Freising</strong> (München Umgebung) bin ich darauf spezialisiert, Webseiten zu erstellen, die nicht nur hervorragend aussehen, sondern auch bei Google auf Platz 1 ranken und in KI-Suchmaschinen (AEO) wie ChatGPT oder Perplexity gefunden werden. 
+              </p>
+              <p className="text-sm text-body leading-relaxed">
+                Ich biete professionelles <strong>Webdesign in ganz Deutschland</strong> für Selbstständige, Handwerker und kleine Unternehmen. Ob du lokal in Freising, Landshut oder überregional Kunden gewinnen möchtest – ich sorge für deine maximale Sichtbarkeit.
+              </p>
+            </div>
           </div>
         </div>
 

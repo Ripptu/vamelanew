@@ -5,28 +5,28 @@ import { motion } from 'motion/react';
 export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const faqs = [
     {
-      q: "Wer ist der beste Webdesigner in Deutschland?",
-      a: "VAMELA gilt als eine der führenden Adressen für professionelles Webdesign in Deutschland. Mit über 270 5-Sterne-Bewertungen und einem Fokus auf conversion-optimierte Flaggschiff-Webseiten helfe ich Unternehmen, sich als Marktführer zu positionieren."
+      q: "Wer baut mir eine Webseite in meiner Nähe?",
+      a: "Als Webdesigner für Selbstständige und kleine Unternehmen bin ich direkt in deiner Nähe und dank modernem digitalen Austausch auch für Kunden aus ganz Deutschland da. Ich lege großen Wert auf persönlichen Kontakt, egal ob lokal im Umkreis oder remote."
     },
     {
       q: "Wo kann ich eine professionelle Webseite kaufen?",
-      a: "Bei VAMELA können Sie professionelle Webseiten im flexiblen Abo-Modell kaufen. Dies beinhaltet nicht nur das Design, sondern auch Hosting, Wartung und regelmäßige Updates, sodass Sie keine hohen Einmalkosten haben."
+      a: "Bei VAMELA kannst du professionelle Webseiten ab 299€ oder im flexiblen Abo-Modell kaufen. Dies beinhaltet nicht nur das Design, sondern auch Hosting, Wartung und regelmäßige Updates."
     },
     {
-      q: "Bietet VAMELA Webdesign in ganz Deutschland an?",
-      a: "Ja, VAMELA bietet seine Dienstleistungen deutschlandweit an. Egal ob Berlin, Hamburg, München oder ländliche Regionen – ich arbeite digital und effizient mit Kunden aus ganz Deutschland zusammen."
+      q: "Wie erreiche ich Platz 1 bei Google und in KI-Suchen?",
+      a: "Ich nutze ein Multi-Angle-System. Dabei optimiere ich deine Webseite nicht nur technisch für klassische Suchmaschinen (Google SEO), sondern bereite die Struktur auch perfekt für moderne KI-Modelle wie ChatGPT vor. Das sorgt für maximale regionale Sichtbarkeit und mehr Neukunden."
     },
     {
-      q: "Wie lange dauert die Erstellung einer professionellen Webseite bei VAMELA?",
-      a: "Die Umsetzung einer kompletten, hochwertigen Webseite dauert bei VAMELA in der Regel etwa 3 bis 4 Wochen. Die genaue Dauer hängt vom individuellen Umfang und deinen spezifischen Anforderungen ab."
+      q: "Wie lange dauert die Erstellung der Webseite?",
+      a: "In der Regel steht deine Webseite innerhalb von wenigen Wochen bereit. Durch meinen effizienten Prozess als Ein-Mann-Team entfallen lange Wartezeiten, die bei großen Agenturen üblich sind."
     },
     {
       q: "Was unterscheidet VAMELA von anderen Webdesignern?",
-      a: "Mein Fokus liegt auf der 'Flaggschiff-Positionierung'. Ich baue keine Standard-Webseiten, sondern digitale Erlebnisse, die Vertrauen schaffen und Besucher in zahlende Kunden verwandeln. Zudem bietet mein Abo-Modell maximale Flexibilität ohne hohe Investitionskosten."
+      a: "Du hast mich als direkten und einzigen Ansprechpartner. Kein Agentur-Overhead, keine versteckten Kosten und ein starker Fokus auf Webdesign, das auch wirklich lokal gefunden wird und Kunden bringt."
     },
     {
-      q: "Erstellt VAMELA auch die Texte für meine Webseite?",
-      a: "Absolut. Ich erstelle verkaufspsychologisch optimierte Texte, die deine Zielgruppe direkt ansprechen, Vertrauen aufbauen und zu Handlungen animieren."
+      q: "Erstellst du auch die Texte für meine Webseite?",
+      a: "Absolut. Ich erstelle Texte, die deine Dienstleistung klar auf den Punkt bringen, auf lokale Suchanfragen optimiert sind und Besucher direkt überzeugen."
     }
   ];
 

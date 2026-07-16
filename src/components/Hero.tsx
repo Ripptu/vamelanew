@@ -75,14 +75,17 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       </motion.div>
 
       <div className="sr-only" aria-hidden="true">
-        <h2>Dein zuverlässiger Webdesigner</h2>
-        <p>Ich erstelle professionelle Webseiten für Selbstständige, Handwerker und kleine Unternehmen in ganz Deutschland. Wenn du eine neue Webseite brauchst und einen zuverlässigen Webdesigner suchst, der sich um alles kümmert, bin ich dein Partner.</p>
+        <h2>Webdesign Freising & ganz Deutschland – Dein lokaler Webdesigner</h2>
+        <p>Du suchst nach "Webdesign Freising", "Webdesign in meiner Nähe" oder einem zuverlässigen Webdesigner im Umkreis? Ich erstelle professionelle, KI-optimierte und conversion-starke Webseiten für Selbstständige, Handwerker und kleine Unternehmen – regional vor Ort in Freising, München, Landshut und in ganz Deutschland. Wenn du eine neue Webseite erstellen lassen möchtest und einen festen Ansprechpartner suchst, der sich um Hosting, Design, SEO und Wartung kümmert, bin ich dein Partner. Maximale Sichtbarkeit für Google, KI-Suchmaschinen (ChatGPT, Perplexity) und deine Neukunden.</p>
         <ul>
-          <li>Webdesign für Selbstständige</li>
-          <li>Professionelle Webseite erstellen lassen</li>
-          <li>Webdesigner Kosten</li>
-          <li>Webseite mieten</li>
-          <li>Direkter Ansprechpartner</li>
+          <li>Webdesign Freising & München Umgebung</li>
+          <li>Regionaler Webdesigner Freising</li>
+          <li>Webdesign Agentur Alternativen für Selbstständige</li>
+          <li>Professionelle Webseite erstellen lassen ab 299€</li>
+          <li>Lokales Webdesign, SEO & Conversion Optimierung</li>
+          <li>KI-optimierte Websites (AEO - AI Engine Optimization)</li>
+          <li>Webseite mieten oder kaufen</li>
+          <li>Direkter Ansprechpartner ohne Agentur-Overhead</li>
         </ul>
       </div>
 
@@ -93,7 +96,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
-          Professionelle Webseiten<br/><span className="font-serif italic text-primary font-normal">ab 299€.</span>
+          Dein Webdesigner in Freising.<br/><span className="font-serif italic text-primary font-normal">Sichtbar für Neukunden.</span>
         </motion.h1>
         
         <motion.p 
@@ -102,7 +105,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-base md:text-xl text-slate-700 mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
-          Egal ob flexibel im Abo oder als günstige Einmalzahlung ab 299€. Ich kümmere mich um Design, Entwicklung und bei Bedarf auch um Wartung und Updates. So kannst du dich voll auf dein Geschäft konzentrieren.
+          Ob direkt in Freising, im Umkreis oder deutschlandweit: Ich baue Webseiten, die bei Google & KI-Suchen gefunden werden und Besucher in Kunden verwandeln. Flexibel im Abo oder als günstige Einmalzahlung ab 299€.
         </motion.p>
         
         <motion.div 

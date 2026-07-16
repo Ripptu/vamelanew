@@ -5,6 +5,8 @@ import { useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { niches } from '../data/niches';
 
+import { NicheDeepContent } from './NicheDeepContent';
+
 export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
   const { slug } = useParams<{ slug: string }>();
   
@@ -149,6 +151,9 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
           </div>
         </div>
       </section>
+
+      {/* Deep SEO & Content Cluster */}
+      <NicheDeepContent niche={niche} />
     </main>
   );
 }

@@ -2,11 +2,15 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Search, PenTool, Building2, Chev
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { niches } from '../data/niches';
+import { NicheDeepContent } from './NicheDeepContent';
 
 export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () => void }) {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
+
+  const facilityNiche = niches.find(n => n.slug === 'facility-management')!;
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -179,6 +183,9 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
           </div>
         </div>
       </section>
+
+      {/* Deep SEO Content */}
+      <NicheDeepContent niche={facilityNiche} />
     </main>
   );
 }

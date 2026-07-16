@@ -125,8 +125,8 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
       <Helmet>
-        <title>VAMELA | Webdesign für mehr Anfragen</title>
-        <meta name="description" content="Ich baue hochkonvertierende Websites für Dienstleister und Handwerker. Mehr Anfragen, mehr Umsatz, weniger Stress." />
+        <title>Webdesigner in der Nähe & ganz Deutschland | VAMELA</title>
+        <meta name="description" content="Professioneller Webdesigner für Selbstständige & kleine Unternehmen. Webseiten, die bei Google & KI auf Platz 1 stehen und Neukunden bringen." />
         <link rel="canonical" href="https://vamela.info/" />
       </Helmet>
       <main>

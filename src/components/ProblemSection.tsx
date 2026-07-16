@@ -85,9 +85,9 @@ export function ProblemSection() {
               <div className="h-2 bg-slate-200 rounded w-2/3"></div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-3 text-slate-900">Veraltete Technik</h3>
+          <h3 className="text-xl font-bold mb-3 text-slate-900">Keine lokale Sichtbarkeit</h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Nach dem Launch kümmert sich niemand mehr um die Seite. Sie veraltet schnell, wird unsicher und verliert an Wirkung bei Google und Kunden.
+            Viele Webseiten sehen zwar okay aus, werden aber bei Google und in neuen KI-Suchen (wie ChatGPT) einfach nicht gefunden. Du verlierst wertvolle Neukunden an die Konkurrenz.
           </p>
         </motion.article>
 
