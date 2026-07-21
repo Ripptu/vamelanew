@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { MessageCircle, Instagram, ArrowUp } from 'lucide-react';
 import { niches } from '../data/niches';
+import { FlowersContainer } from './Flowers';
 
 export const TikTokIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -10,22 +10,11 @@ export const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 export function Footer() {
-  return (
-    <footer className="bg-background pt-24 pb-12 md:pb-12 px-4 sm:px-6 lg:px-8 pb-safe">
-      <div className="max-w-7xl mx-auto">
-        {/* Large Gradient Text */}
-        <div className="text-center mb-16 md:mb-24 relative flex justify-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="text-[20vw] md:text-[14rem] font-black tracking-tighter leading-none select-none bg-clip-text text-transparent bg-gradient-to-b from-slate-900 via-slate-600 to-transparent [mask-image:linear-gradient(to_bottom,black_40%,transparent_100%)]"
-          >
-            VAMELA
-          </motion.h2>
-        </div>
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+  return (
+    <footer className="bg-background pt-24 px-4 sm:px-6 lg:px-8 pb-4 md:pb-8 pb-safe">
+      <div className="max-w-7xl mx-auto">
         {/* SEO Niche Links */}
         <div className="mb-16 border-t border-border pt-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
@@ -56,27 +45,77 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-8 border-t border-border pt-10 md:pt-12">
-          <div className="text-sm text-body text-center md:text-left order-3 md:order-1">
-            © {new Date().getFullYear()} VAMELA. Alle Rechte vorbehalten.
-          </div>
+        {/* The new Footer Block */}
+        <div className="mt-16 md:mt-24 relative">
           
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-body font-medium order-1 md:order-2">
-            <Link to="/impressum" className="hover:text-primary transition-colors py-2 md:py-0">Impressum</Link>
-            <Link to="/datenschutz" className="hover:text-primary transition-colors py-2 md:py-0">Datenschutz</Link>
-            <Link to="/agb" className="hover:text-primary transition-colors py-2 md:py-0">AGB</Link>
+          {/* Header texts above block */}
+          <div className="flex justify-between items-end px-4 md:px-8 mb-[-1rem] relative z-10 pointer-events-none">
+            <span className="text-xs md:text-sm text-slate-500 font-medium hidden sm:block">
+              Lokal in Freising, Bayern
+            </span>
+            <div className="flex-1 pointer-events-auto">
+              <FlowersContainer />
+            </div>
+            <span className="text-xs md:text-sm text-slate-500 font-medium hidden sm:block text-right">
+              Viele Webseiten, kein Ende in Sicht
+            </span>
           </div>
-          
-          <div className="flex items-center justify-center gap-8 md:gap-6 order-2 md:order-3">
-            <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-body hover:text-primary transition-colors p-2 md:p-0">
-              <MessageCircle className="w-7 h-7 md:w-6 md:h-6" />
-            </a>
-            <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-body hover:text-primary transition-colors p-2 md:p-0">
-              <Instagram className="w-7 h-7 md:w-6 md:h-6" />
-            </a>
-            <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-body hover:text-primary transition-colors p-2 md:p-0">
-              <TikTokIcon className="w-7 h-7 md:w-6 md:h-6" />
-            </a>
+
+          {/* Blue rounded block */}
+          <div className="bg-gradient-to-b from-primary to-white rounded-t-[2rem] md:rounded-[3rem] pt-16 md:pt-24 pb-12 px-6 flex flex-col items-center relative overflow-hidden">
+            
+            {/* Links and Socials */}
+            <div className="flex flex-col md:flex-row items-center justify-center flex-wrap gap-6 md:gap-10 text-white/90 font-medium text-sm md:text-base z-10 mb-20 md:mb-32 w-full">
+              <div className="flex items-center gap-6">
+                <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <MessageCircle size={18} />
+                  <span className="hidden md:inline">WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Instagram size={18} />
+                  <span className="hidden md:inline">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <TikTokIcon className="w-[18px] h-[18px]" />
+                  <span className="hidden md:inline">TikTok</span>
+                </a>
+              </div>
+
+              <div className="w-1 h-1 rounded-full bg-white/30 hidden md:block"></div>
+              
+              <div className="flex items-center gap-6">
+                <Link to="/impressum" className="hover:text-white transition-colors">Impressum</Link>
+                <Link to="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
+                <Link to="/agb" className="hover:text-white transition-colors">AGB</Link>
+              </div>
+
+              <div className="w-1 h-1 rounded-full bg-white/30 hidden md:block"></div>
+              
+              <button onClick={scrollToTop} className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer mt-4 md:mt-0">
+                <ArrowUp size={18} />
+                <span>Nach oben</span>
+              </button>
+            </div>
+
+            {/* Giant Faded Text at the bottom */}
+            <div className="w-full absolute bottom-0 md:-bottom-[5%] left-0 right-0 flex justify-center pointer-events-none select-none overflow-hidden">
+              <span 
+                className="text-[25vw] md:text-[18rem] font-black tracking-tighter leading-none select-none text-transparent"
+                style={{ 
+                  WebkitTextStroke: '1px rgba(255,255,255,0.1)',
+                  backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0.4), transparent)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text'
+                }}
+              >
+                VAMELA
+              </span>
+            </div>
+
+            <div className="w-full text-center mt-auto relative z-10 pt-10 text-white/50 text-xs">
+              © {new Date().getFullYear()} VAMELA. Alle Rechte vorbehalten.
+            </div>
+
           </div>
         </div>
       </div>

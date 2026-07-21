@@ -231,12 +231,12 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3] sm:aspect-[4/5] md:aspect-[3/4]">
-                  <img 
+                  <img loading="lazy"  
                     src={project.image} 
                     alt={sanitizeAlt(project.title)} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
-                    loading="lazy"
+                    
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
                   
@@ -326,12 +326,12 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
               </button>
 
               <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100 aspect-video md:aspect-auto">
-                <img 
+                <img loading="lazy"  
                   src={selectedProject.image} 
                   alt={sanitizeAlt(selectedProject.title)} 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer" 
-                  loading="lazy"
+                  
                 />
               </div>
               

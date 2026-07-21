@@ -17,12 +17,12 @@ export function FounderSection() {
             <div className="absolute -inset-4 bg-primary/10 rounded-[2rem] md:rounded-[2.5rem] -z-10 transform -rotate-3"></div>
             
             <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden relative border border-slate-200">
-              <img 
+              <img loading="lazy"  
                 src="https://i.postimg.cc/cZPmBdCM/4995ad88-01bd-465e-9b20-c3178ee83d1e.png" 
                 alt="Christian" 
                 className="w-full aspect-[4/5] object-cover" 
                 referrerPolicy="no-referrer" 
-                loading="lazy"
+                
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
               

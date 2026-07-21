@@ -79,7 +79,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
           <motion.div 
             className="absolute top-0 left-[-4px] w-[calc(100%+8px)] rounded-full bg-primary/20 blur-[6px]"
             style={{ 
-              height: useTransform(smoothProgress, [0, 1], ["0%", "100%"])
+              scaleY: useTransform(smoothProgress, [0, 1], [0, 1]), transformOrigin: "top"
             }}
           />
 
@@ -87,7 +87,7 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
           <motion.div 
             className="absolute top-0 left-0 w-full rounded-full bg-gradient-to-b from-primary/40 via-primary to-primary shadow-[0_0_20px_rgba(59,130,246,0.6)] z-10"
             style={{ 
-              height: useTransform(smoothProgress, [0, 1], ["0%", "100%"])
+              scaleY: useTransform(smoothProgress, [0, 1], [0, 1]), transformOrigin: "top"
             }}
           >
             {/* Leading Spark/Comet - Premium Glow */}

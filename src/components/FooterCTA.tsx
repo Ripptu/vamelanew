@@ -73,7 +73,7 @@ export function FooterCTA({ onOpenContact }: { onOpenContact: () => void }) {
                   "https://s1.directupload.eu/images/260324/do2yh9ju.webp"
                 ].map((src, i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                    <img src={src} alt="Kunde" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" src={src} alt="Kunde" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 ))}
               </div>
