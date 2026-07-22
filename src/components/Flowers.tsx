@@ -61,7 +61,7 @@ function AnimatedFlower({
     };
     
     updatePosition();
-    window.addEventListener('resize', updatePosition);
+    window.addEventListener('resize', updatePosition, { passive: true });
     return () => window.removeEventListener('resize', updatePosition);
   }, []);
 
@@ -69,9 +69,7 @@ function AnimatedFlower({
     if (val === -1000) return 0;
     const dist = val - flowerX.get();
     
-    // max bend distance
     const range = 100;
-    // max bend angle
     const maxAngle = 35;
 
     if (dist > -range && dist < 0) {
@@ -92,7 +90,7 @@ function AnimatedFlower({
         rotate: smoothRotation,
         transformOrigin: "bottom center",
       }}
-      className="inline-flex cursor-pointer relative z-10"
+      className="inline-flex cursor-pointer relative z-10 will-change-transform transform-gpu"
     >
       {children}
     </motion.div>
@@ -102,11 +100,21 @@ function AnimatedFlower({
 export function FlowersContainer() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-1000);
+  const tickingRef = useRef(false);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    mouseX.set(e.clientX - rect.left);
+    const clientX = e.clientX;
+    if (!tickingRef.current) {
+      window.requestAnimationFrame(() => {
+        if (containerRef.current) {
+          const rect = containerRef.current.getBoundingClientRect();
+          mouseX.set(clientX - rect.left);
+        }
+        tickingRef.current = false;
+      });
+      tickingRef.current = true;
+    }
   };
 
   const handleMouseLeave = () => {

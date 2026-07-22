@@ -11,7 +11,6 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,23 +26,29 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   }, [isMenuOpen]);
 
   useEffect(() => {
+    let lastY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Add background when scrolled
-      setIsScrolled(currentScrollY > 20);
-      
-      if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrolled = currentScrollY > 20;
+          const visible = currentScrollY < lastY || currentScrollY < 50;
+
+          setIsScrolled(prev => prev === scrolled ? prev : scrolled);
+          setIsVisible(prev => prev === visible ? prev : visible);
+
+          lastY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#') && window.location.pathname === '/') {

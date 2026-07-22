@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, Target, Lightbulb, TrendingUp, ArrowRight, ArrowDown } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ExternalLink, ArrowRight, ArrowDown } from 'lucide-react';
 import { sanitizeAlt } from '../lib/security';
 
 const PROJECTS = [
@@ -23,7 +23,7 @@ const PROJECTS = [
     title: "Thomas Rott",
     category: "Webdesign & Strategie",
     image: "https://i.postimg.cc/vTSJGqW9/hf-20260131-093208-fa0f1ac6-5829-4c3b-9fc1-0b801232456c.png",
-    url: "http://thomasrott.de",
+    url: "https://thomasrott.de",
     description: "Professionelle Präsenz für Experten-Positionierung.",
     challenge: "Komplexe Dienstleistungen einfach und überzeugend darstellen.",
     solution: "Klares Design-System und strukturierte Informationsarchitektur.",
@@ -35,7 +35,7 @@ const PROJECTS = [
     title: "Barnekow",
     category: "Webdesign & Strategie",
     image: "https://i.postimg.cc/GhhJk3vG/hf-20260131-102337-33acfd6c-14c7-4fc7-b0f6-c1094684ea64.png",
-    url: "http://barnekow.netlify.app",
+    url: "https://barnekow.netlify.app",
     description: "Ästhetisches und funktionales Webdesign für maximale Wirkung.",
     challenge: "Modernisierung des Markenauftritts.",
     solution: "Implementierung eines zeitgemäßen, minimalistischen Designs.",
@@ -47,7 +47,7 @@ const PROJECTS = [
     title: "Coremis",
     category: "Webdesign & Strategie",
     image: "https://i.postimg.cc/2yXsCc4n/hf-20260131-093913-af8f4bc9-28b7-4f75-9907-cd0653e7ca30.png",
-    url: "http://coremis.ch",
+    url: "https://coremis.ch",
     description: "Performance-orientierte Web-Lösung für nachhaltiges Wachstum.",
     challenge: "Optimierung der Anfragenquote.",
     solution: "Fokus auf User-Experience und klare Call-to-Actions.",
@@ -59,7 +59,7 @@ const PROJECTS = [
     title: "HanseTool",
     category: "Webdesign & Strategie",
     image: "https://i.postimg.cc/jSyF1dkF/modernes-webdesign-agentur-freising-hansetool-jpg.webp",
-    url: "http://hansetool.de",
+    url: "https://hansetool.de",
     description: "Technisch exzellente Webseite für industrielle Anforderungen.",
     challenge: "Komplexe Produktpalette übersichtlich präsentieren.",
     solution: "Intuitive Navigation und performante technische Umsetzung.",
@@ -177,7 +177,6 @@ const PROJECTS = [
 ];
 
 export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, showLinkToPage?: boolean }) {
-  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
   const [showAll, setShowAll] = useState(false);
   const buttonRef = useRef<HTMLDivElement>(null);
 
@@ -197,7 +196,7 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
   return (
     <section className="bg-transparent text-slate-900 py-20 md:py-32 relative overflow-hidden" id="referenzen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 md:mb-32 max-w-3xl">
+        <div className="mb-12 md:mb-24 max-w-3xl">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -217,45 +216,68 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {displayedProjects.map((project, index) => {
             const isEven = index % 2 === 0;
             return (
-              <motion.article 
+              <motion.a 
                 key={project.id}
-                initial={{ opacity: 0, y: 40 }}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, delay: isEven ? 0 : 0.2 }}
-                className={`group cursor-pointer flex flex-col gap-4 md:gap-6 ${!isEven ? 'md:mt-16 lg:mt-32' : ''}`}
-                onClick={() => setSelectedProject(project)}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: isEven ? 0 : 0.15 }}
+                className={`group block cursor-pointer flex flex-col gap-4 ${!isEven ? 'md:mt-10 lg:mt-16' : ''}`}
               >
-                <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3] sm:aspect-[4/5] md:aspect-[3/4]">
-                  <img loading="lazy"  
+                {/* Clean 16:9 Website Hero Preview Card */}
+                <div className="relative overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm group-hover:shadow-xl group-hover:border-slate-300 transition-all duration-300 aspect-video w-full">
+                  <img 
+                    loading="lazy"  
+                    decoding="async"
                     src={project.image} 
                     alt={sanitizeAlt(project.title)} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
-                    
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+
+                  {/* Live Website Viewport */}
+                  <iframe
+                    src={project.url}
+                    title={sanitizeAlt(project.title)}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full border-0 pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity duration-300 bg-white"
+                    sandbox="allow-scripts allow-same-origin"
+                  />
                   
-                  {/* Hover overlay with button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white  text-slate-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      Case Study <ArrowRight className="w-4 h-4" />
+                  <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/15 transition-colors duration-300 pointer-events-none" />
+                  
+                  {/* Live Indicator Badge */}
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md border border-slate-200/90 text-slate-900 px-2.5 py-1 rounded-full text-[11px] font-semibold shadow-sm flex items-center gap-1.5 z-10 pointer-events-none">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    LIVE
+                  </div>
+
+                  {/* Hover Overlay Button */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                    <div className="bg-slate-900 text-white px-4 py-2 rounded-full font-medium text-xs sm:text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">
+                      Website öffnen <ExternalLink className="w-3.5 h-3.5" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1 sm:gap-4">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h3>
-                    <span className="text-xs sm:text-sm font-medium text-slate-500 uppercase tracking-wider">{project.category}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1.5 gap-1 sm:gap-4">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors flex items-center gap-2">
+                      {project.title}
+                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                    </h3>
+                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">{project.category}</span>
                   </div>
-                  <p className="text-slate-600 text-base md:text-lg line-clamp-2">{project.description}</p>
+                  <p className="text-slate-600 text-sm md:text-base line-clamp-2">{project.description}</p>
                 </div>
-              </motion.article>
+              </motion.a>
             );
           })}
         </div>
@@ -265,7 +287,7 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 md:mt-32 flex justify-center"
+            className="mt-16 md:mt-24 flex justify-center"
           >
             <a
               href="/referenzen"
@@ -281,7 +303,7 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 md:mt-32 flex justify-center"
+            className="mt-16 md:mt-24 flex justify-center"
           >
             <button
               onClick={handleToggleShowAll}
@@ -298,93 +320,6 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
           </motion.div>
         )}
       </div>
-
-      {/* Modal for project details */}
-      <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 "
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white  rounded-3xl md:rounded-[2rem] p-6 md:p-8 max-w-5xl w-full flex flex-col md:flex-row gap-6 md:gap-12 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setSelectedProject(null)} 
-                className="absolute top-3 right-3 md:top-6 md:right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-all z-20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none bg-white  shadow-sm"
-                aria-label="Projekt Details schließen"
-              >
-                <X className="w-5 h-5 md:w-6 md:h-6" />
-              </button>
-
-              <div className="w-full md:w-1/2 rounded-2xl overflow-hidden bg-slate-100 aspect-video md:aspect-auto">
-                <img loading="lazy"  
-                  src={selectedProject.image} 
-                  alt={sanitizeAlt(selectedProject.title)} 
-                  className="w-full h-full object-cover" 
-                  referrerPolicy="no-referrer" 
-                  
-                />
-              </div>
-              
-              <div className="flex-1 relative pt-2 md:pt-8 flex flex-col">
-                <div className="mb-6 md:mb-8">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 tracking-tight pr-10">{selectedProject.title}</h2>
-                  <div className="flex flex-wrap gap-2 md:gap-3">
-                    <span className="text-slate-600 font-medium bg-slate-100 px-3 md:px-4 py-1 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-wider">
-                      {selectedProject.category}
-                    </span>
-                    <span className="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-3 md:px-4 py-1 md:py-1.5 rounded-full text-xs md:text-sm flex items-center gap-1.5">
-                      <TrendingUp className="w-3 h-3 md:w-4 md:h-4" />
-                      {selectedProject.metric}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-6 md:space-y-8 flex-1">
-                  <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
-                      <Target className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Challenge
-                    </h4>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.challenge}</p>
-                  </div>
-                  <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
-                      <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Solution
-                    </h4>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.solution}</p>
-                  </div>
-                  <div>
-                    <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-1.5 md:mb-2 uppercase tracking-wider text-xs md:text-sm">
-                      <TrendingUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" /> Result
-                    </h4>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{selectedProject.result}</p>
-                  </div>
-                </div>
-                
-                <motion.a 
-                  href={selectedProject.url} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="mt-8 md:mt-12 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium w-full transition-colors shadow-lg shadow-slate-900/20 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none text-sm md:text-base"
-                >
-                  Live Webseite ansehen <ExternalLink className="w-4 h-4" />
-                </motion.a>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

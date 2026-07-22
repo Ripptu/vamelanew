@@ -150,6 +150,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img, video {
+  content-visibility: auto;
+}
+
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes shimmer {
