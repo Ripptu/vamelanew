@@ -132,7 +132,7 @@ export function FlowersContainer() {
     >
       {plants.map((plant) => (
         <AnimatedFlower key={plant.id} mouseX={mouseX} containerRef={containerRef}>
-          <div style={{ transform: `translateY(${plant.y}px)` }}>
+          <div>
             <plant.type className={plant.className} />
           </div>
         </AnimatedFlower>

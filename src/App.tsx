@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -27,8 +27,9 @@ import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
 import { Footer } from './components/Footer';
 import { LegalPage } from './components/LegalPage';
-import { ContactPopup } from './components/ContactPopup';
-import { ExitIntentPopup } from './components/ExitIntentPopup';
+const ContactPopup = lazy(() => import('./components/ContactPopup').then(module => ({ default: module.ContactPopup })));
+const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup').then(module => ({ default: module.ExitIntentPopup })));
+import { MobileStickyCTA } from './components/MobileStickyCTA';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -115,6 +116,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
         } />} />
       </Routes>
       <Footer />
+      <MobileStickyCTA onOpenContact={onOpenContact} />
     </>
   );
 }
@@ -123,11 +125,62 @@ import { Helmet } from 'react-helmet-async';
 
 function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
+    <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary">
       <Helmet>
         <title>Webdesigner in der Nähe & ganz Deutschland | VAMELA</title>
         <meta name="description" content="Professioneller Webdesigner für Selbstständige & kleine Unternehmen. Webseiten, die bei Google & KI auf Platz 1 stehen und Neukunden bringen." />
         <link rel="canonical" href="https://vamela.info/" />
+        <script type="application/ld+json">
+
+          {`
+
+            {
+
+              "@context": "https://schema.org",
+
+              "@type": "LocalBusiness",
+
+              "name": "Vamela Webdesign",
+
+              "image": "https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png",
+
+              "description": "Professionelles Webdesign und KI-optimierte Websites für Selbstständige und kleine Unternehmen in Freising, München und deutschlandweit.",
+
+              "address": {
+
+                "@type": "PostalAddress",
+
+                "streetAddress": "In der Leiten 10",
+
+                "addressLocality": "Haag an der Amper",
+
+                "postalCode": "85410",
+
+                "addressCountry": "DE"
+
+              },
+
+              "geo": {
+
+                "@type": "GeoCoordinates",
+
+                "latitude": 48.4578,
+
+                "longitude": 11.8262
+
+              },
+
+              "url": "https://vamela.info",
+
+              "telephone": "+4917624200179",
+
+              "priceRange": "€€"
+
+            }
+
+          `}
+
+        </script>
       </Helmet>
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
@@ -146,7 +199,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Leistungen & Preise | VAMELA</title>
         <meta name="description" content="Meine Webdesign-Leistungen und Preise im Überblick." />
@@ -165,7 +218,7 @@ function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Über mich & Prozess | VAMELA</title>
         <meta name="description" content="Lerne mich und meinen bewährten Prozess kennen." />
@@ -181,7 +234,7 @@ function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
 
 function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <div className="min-h-screen bg-transparent font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
+    <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
         <title>Referenzen | VAMELA</title>
         <meta name="description" content="Meine erfolgreichen Webdesign-Projekte." />
@@ -217,8 +270,8 @@ export default function App() {
       <ScrollToTop />
       <div className="relative min-h-screen w-full">
         <AppContent onOpenContact={openPopup} />
-        <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
-        <ExitIntentPopup onOpenContact={openPopup} />
+        <Suspense fallback={null}><ContactPopup isOpen={isPopupOpen} onClose={closePopup} /></Suspense>
+        <Suspense fallback={null}><ExitIntentPopup onOpenContact={openPopup} /></Suspense>
       </div>
     </Router>
   );

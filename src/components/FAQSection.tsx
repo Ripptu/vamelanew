@@ -6,7 +6,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
   const faqs = [
     {
       q: "Wer baut mir eine Webseite in meiner Nähe?",
-      a: "Als Webdesigner für Selbstständige und kleine Unternehmen bin ich direkt in deiner Nähe und dank modernem digitalen Austausch auch für Kunden aus ganz Deutschland da. Ich lege großen Wert auf persönlichen Kontakt, egal ob lokal im Umkreis oder remote."
+      a: "Als Webdesigner für Selbstständige und kleine Unternehmen bin ich direkt in deiner Nähe und dank modernem digitalen Austausch auch für Kunden aus ganz Deutschland da. Ich lege großen Wert auf persönlichen Kontakt, egal ob lokal in Freising, München, Landshut und Umgebung oder remote in ganz Deutschland."
     },
     {
       q: "Wo kann ich eine professionelle Webseite kaufen?",
@@ -91,7 +91,7 @@ export function FAQSection({ onOpenContact }: { onOpenContact?: () => void }) {
               }}
             >
               <summary 
-                className="w-full px-5 py-5 md:px-6 md:py-6 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary hover:bg-slate-50 transition-colors cursor-pointer list-none"
+                className="w-full px-5 py-5 md:px-6 md:py-6 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary hover:bg-warm-100 transition-colors cursor-pointer list-none"
               >
                 <span className="font-medium text-slate-900 text-sm md:text-base pr-4">{faq.q}</span>
                 <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />

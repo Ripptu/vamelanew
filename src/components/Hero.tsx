@@ -38,7 +38,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       className="relative w-full pt-28 pb-16 md:pt-40 md:pb-32 lg:pt-64 lg:pb-48 px-4 sm:px-6 lg:px-8 text-center overflow-hidden"
       aria-label="Hero Section"
     >
-      <video
+      <video poster="https://s1.directupload.eu/images/260324/do2yh9ju.webp"
         ref={videoRef}
         autoPlay={!isMobile}
         loop
@@ -73,20 +73,6 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         <div className="w-[1px] h-12 bg-slate-600/50"></div>
       </motion.div>
 
-      <div className="sr-only" aria-hidden="true">
-        <h2>Webdesign Freising & ganz Deutschland – Dein lokaler Webdesigner</h2>
-        <p>Du suchst nach "Webdesign Freising", "Webdesign in meiner Nähe" oder einem zuverlässigen Webdesigner im Umkreis? Ich erstelle professionelle, KI-optimierte und conversion-starke Webseiten für Selbstständige, Handwerker und kleine Unternehmen – regional vor Ort in Freising, München, Landshut und in ganz Deutschland. Wenn du eine neue Webseite erstellen lassen möchtest und einen festen Ansprechpartner suchst, der sich um Hosting, Design, SEO und Wartung kümmert, bin ich dein Partner. Maximale Sichtbarkeit für Google, KI-Suchmaschinen (ChatGPT, Perplexity) und deine Neukunden.</p>
-        <ul>
-          <li>Webdesign Freising & München Umgebung</li>
-          <li>Regionaler Webdesigner Freising</li>
-          <li>Webdesign Agentur Alternativen für Selbstständige</li>
-          <li>Professionelle Webseite erstellen lassen ab 299€</li>
-          <li>Lokales Webdesign, SEO & Conversion Optimierung</li>
-          <li>KI-optimierte Websites (AEO - AI Engine Optimization)</li>
-          <li>Webseite mieten oder kaufen</li>
-          <li>Direkter Ansprechpartner ohne Agentur-Overhead</li>
-        </ul>
-      </div>
 
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
         <motion.h1 

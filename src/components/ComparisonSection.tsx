@@ -58,7 +58,7 @@ export function ComparisonSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className={`rounded-2xl border ${agency.isPrimary ? 'border-primary bg-primary/10 shadow-md' : 'border-slate-200 bg-white '} overflow-hidden`}
             >
-              <div className={`p-4 border-b ${agency.isPrimary ? 'border-primary/20 bg-primary/10' : 'border-slate-200 bg-slate-50'} font-bold text-center flex items-center justify-center min-h-[64px]`}>
+              <div className={`p-4 border-b ${agency.isPrimary ? 'border-primary/20 bg-primary/10' : 'border-slate-200 bg-warm-100'} font-bold text-center flex items-center justify-center min-h-[64px]`}>
                 {agency.logo ? (
                   <img src={agency.logo} alt="VAMELA" className="h-8 object-contain brightness-0" referrerPolicy="no-referrer" />
                 ) : (
@@ -86,8 +86,8 @@ export function ComparisonSection() {
           className="hidden md:block bg-white  rounded-3xl border border-slate-200 overflow-hidden relative"
         >
           <div className="overflow-x-auto hide-scrollbar">
-            <div className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[700px]">
-              <div className="p-6 text-left border-r border-slate-200 sticky left-0 bg-slate-50 z-20"></div>
+            <div className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] bg-warm-100 border-b border-slate-200 text-xs font-bold text-slate-900 text-center min-w-[700px]">
+              <div className="p-6 text-left border-r border-slate-200 sticky left-0 bg-warm-100 z-20"></div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Klassische Webdesigner</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Kreativagenturen</div>
               <div className="p-6 border-r border-slate-200 flex items-center justify-center leading-tight">Marketingagenturen</div>
@@ -107,9 +107,9 @@ export function ComparisonSection() {
                 className="grid grid-cols-[1.5fr_repeat(4,minmax(120px,1fr))] border-b border-slate-200 last:border-0 text-sm min-w-[700px] transition-colors"
               >
                 <div className="p-6 font-medium text-slate-500 border-r border-slate-200 flex items-center sticky left-0 bg-white  z-20">{row.name}</div>
-                <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.k)}</div>
+                <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-warm-100/30">{renderIcon(row.k)}</div>
                 <div className="p-6 border-r border-slate-200 flex items-center justify-center">{renderIcon(row.kr)}</div>
-                <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-slate-50/30">{renderIcon(row.m)}</div>
+                <div className="p-6 border-r border-slate-200 flex items-center justify-center bg-warm-100/30">{renderIcon(row.m)}</div>
                 <div className="p-6 bg-primary/5 flex items-center justify-center">{renderIcon(row.s)}</div>
               </motion.div>
             ))}

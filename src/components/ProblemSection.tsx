@@ -28,7 +28,7 @@ export function ProblemSection() {
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
           className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
+          <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
@@ -66,7 +66,7 @@ export function ProblemSection() {
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
           className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
+          <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
@@ -100,7 +100,7 @@ export function ProblemSection() {
           whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
           className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
         >
-          <div className="h-40 md:h-48 bg-slate-50 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
+          <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
             
