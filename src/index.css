@@ -215,19 +215,24 @@ img, video {
   }
 }
 
-@utility scroll-reveal {
-  animation: scroll-reveal linear both;
-  animation-timeline: view();
-  animation-range: entry 10% cover 25%;
+/* Mobile Performance Optimization - Static & Instant Rendering */
+@media (max-width: 768px) {
+  *, ::before, ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .animate-marquee,
+  .animate-shimmer,
+  .scroll-reveal {
+    animation: none !important;
+  }
+  .backdrop-blur-md,
+  .backdrop-blur-sm,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
-@keyframes scroll-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

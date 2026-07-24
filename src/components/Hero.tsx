@@ -50,9 +50,14 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      if (!isMobile) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0.001;
+      }
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <section 
@@ -64,8 +69,8 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         <video 
           poster="https://s1.directupload.eu/images/260324/do2yh9ju.webp"
           ref={videoRef}
-          autoPlay
-          loop
+          autoPlay={!isMobile}
+          loop={!isMobile}
           muted
           playsInline
           preload="auto"
