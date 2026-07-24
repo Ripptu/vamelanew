@@ -49,10 +49,10 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   }, []);
 
   useEffect(() => {
-    if (!isMobile && videoRef.current) {
+    if (videoRef.current) {
       videoRef.current.play().catch(() => {});
     }
-  }, [isMobile]);
+  }, []);
 
   return (
     <section 
@@ -61,31 +61,20 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
     >
       {/* Background Visual Container */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {isMobile ? (
-          <img 
-            src="https://s1.directupload.eu/images/260324/do2yh9ju.webp"
-            alt=""
-            loading="eager"
-            // @ts-expect-error fetchpriority attribute
-            fetchpriority="high"
-            className="w-full h-full object-cover opacity-20"
-          />
-        ) : (
-          <video 
-            poster="https://s1.directupload.eu/images/260324/do2yh9ju.webp"
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            crossOrigin="anonymous"
-            className="w-full h-full object-cover opacity-25 transition-opacity duration-700"
-          >
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4#t=0.001" type="video/mp4" />
-          </video>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-warm-50/90 via-warm-50/70 to-warm-50"></div>
+        <video 
+          poster="https://s1.directupload.eu/images/260324/do2yh9ju.webp"
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          crossOrigin="anonymous"
+          className="w-full h-full object-cover opacity-65 transition-opacity duration-700"
+        >
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4#t=0.001" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-warm-50/60 via-warm-50/30 to-warm-50"></div>
       </div>
 
       {/* Social Links Sidebar */}
@@ -182,7 +171,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
             </motion.a>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mt-2 sm:mt-1 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/80 shadow-xs">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mt-3 sm:mt-2">
             <div className="flex -space-x-2.5">
               {[
                 "https://s1.directupload.eu/images/260324/b4ic9qjm.webp",

@@ -72,7 +72,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/60 shadow-xs' : 'bg-transparent'}`}
+        } ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xs' : 'bg-transparent'}`}
       >
         <nav className="flex justify-between items-center px-4 py-3.5 md:px-8 md:py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">

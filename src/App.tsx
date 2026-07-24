@@ -192,9 +192,8 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <LogoCloud />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} limit={3} showLinkToPage={true} />
-        <NicheSection />
-        <ProcessSection limit={2} showLinkToPage={true} />
         <div id="referenzen"><PortfolioSection limit={4} showLinkToPage={true} /></div>
+        <div id="preise"><PricingSection /></div>
         <TestimonialsSection />
         <FreeDraftSection />
         <FooterCTA onOpenContact={onOpenContact} />
