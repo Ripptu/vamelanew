@@ -72,16 +72,16 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isScrolled ? ' bg-white/5' : 'bg-transparent'}`}
+        } ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/60 shadow-xs' : 'bg-transparent'}`}
       >
-        <nav className="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 max-w-7xl mx-auto">
+        <nav className="flex justify-between items-center px-4 py-3.5 md:px-8 md:py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-md">
-              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-8 md:h-10 w-auto object-contain brightness-0" referrerPolicy="no-referrer" />
+              <img src="https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png" alt="VAMELA Logo" className="h-7 sm:h-8 md:h-9 w-auto object-contain brightness-0" referrerPolicy="no-referrer" />
             </Link>
           </div>
           
-          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/90  border border-white/40 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-sm">
+          <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/90 border border-slate-200/80 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-xs">
             {[
               { name: 'Leistungen & Preise', href: '/leistungen' },
               { name: 'Referenzen', href: '/referenzen' },
@@ -92,33 +92,25 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 key={item.name}
                 to={item.href} 
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-2 rounded-full hover:bg-white hover: hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="px-3.5 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none text-xs sm:text-sm"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="hidden xl:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-medium border border-emerald-100">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              Noch 2 freie Slots im August
-            </div>
+          <div className="flex items-center gap-3 sm:gap-4">
             <motion.button
               onClick={onOpenContact}
               aria-label="Kostenloser Entwurf anfragen"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="group hidden lg:flex bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-full font-medium text-xs sm:text-sm items-center gap-2 transition-colors relative overflow-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary focus-visible:outline-none shadow-xs"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-1.5">
                 Kostenloser Entwurf
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </span>
-              <div className="absolute inset-0 -translate-x-full  bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
             </motion.button>
             
             <div className="flex lg:hidden items-center gap-4 mr-4 text-slate-800">
