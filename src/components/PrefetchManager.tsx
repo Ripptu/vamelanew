@@ -26,12 +26,14 @@ export default function PrefetchManager() {
       }
     };
 
+    // Only run hover prefetching on desktop/devices with a precise pointer
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) return;
+
     document.addEventListener('mouseover', handleMouseOver, { passive: true });
-    document.addEventListener('touchstart', handleMouseOver, { passive: true });
 
     return () => {
       document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('touchstart', handleMouseOver);
     };
   }, []);
 

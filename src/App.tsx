@@ -8,10 +8,12 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 
-// Import components directly
-import { StrategyWorkshopPage } from './components/StrategyWorkshopPage';
-import { FacilityManagementPage } from './components/FacilityManagementPage';
-import { NichePage } from './components/NichePage';
+// Lazy load subpages and heavy standalone pages
+const StrategyWorkshopPage = lazy(() => import('./components/StrategyWorkshopPage').then(m => ({ default: m.StrategyWorkshopPage })));
+const FacilityManagementPage = lazy(() => import('./components/FacilityManagementPage').then(m => ({ default: m.FacilityManagementPage })));
+const NichePage = lazy(() => import('./components/NichePage').then(m => ({ default: m.NichePage })));
+const LegalPage = lazy(() => import('./components/LegalPage').then(m => ({ default: m.LegalPage })));
+
 import { LogoCloud } from './components/LogoCloud';
 import { ProblemSection } from './components/ProblemSection';
 import { SolutionSection } from './components/SolutionSection';
@@ -27,7 +29,6 @@ import { NextStepsSection } from './components/NextStepsSection';
 import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
 import { Footer } from './components/Footer';
-import { LegalPage } from './components/LegalPage';
 const ContactPopup = lazy(() => import('./components/ContactPopup').then(module => ({ default: module.ContactPopup })));
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup').then(module => ({ default: module.ExitIntentPopup })));
 import { MobileStickyCTA } from './components/MobileStickyCTA';
@@ -58,65 +59,67 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <>
       <Navbar onOpenContact={onOpenContact} />
-      <Routes>
-        <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
-        <Route path="/leistungen" element={<ServicesPage onOpenContact={onOpenContact} />} />
-        <Route path="/ueber-mich" element={<AboutPage onOpenContact={onOpenContact} />} />
-        <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
-        <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
-        <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
-        <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />
-        <Route path="/impressum" element={<LegalPage title="Impressum" content={
-          <div className="space-y-6">
-            <section>
-              <h2 className="text-xl font-bold">Angaben gemäß § 5 TMG</h2>
-              <p>Christian Stockmeier<br/>Vamela<br/>In der Leiten 10<br/>85410 Haag an der Amper</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">Kontakt</h2>
-              <p>Telefon: +49 176 24200179<br/>E-Mail: kontakt@vamela.info</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">Umsatzsteuer-ID</h2>
-              <p>Steuernummer: 115/278/10061</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">Verantwortlich für den Inhalt</h2>
-              <p>Christian Stockmeier<br/>In der Leiten 10<br/>85410 Haag an der Amper</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">EU-Streitschlichtung</h2>
-              <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-sm px-1">https://ec.europa.eu/consumers/odr/</a>.<br/>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-            </section>
-          </div>
-        } />} />
-        <Route path="/agb" element={<LegalPage title="Allgemeine Geschäftsbedingungen" content={
-          <div className="space-y-6">
-            <section>
-              <h2 className="text-xl font-bold">§ 1 Geltungsbereich</h2>
-              <p>Für die Geschäftsbeziehung zwischen dem Anbieter und dem Kunden gelten ausschließlich die nachfolgenden Allgemeinen Geschäftsbedingungen in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">§ 2 Vertragsschluss</h2>
-              <p>Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar.</p>
-            </section>
-          </div>
-        } />} />
-        <Route path="/datenschutz" element={<LegalPage title="Datenschutzerklärung" content={
-          <div className="space-y-6">
-            <section>
-              <h2 className="text-xl font-bold">1. Datenschutz auf einen Blick</h2>
-              <h3 className="font-bold">Allgemeine Hinweise</h3>
-              <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-            </section>
-            <section>
-              <h2 className="text-xl font-bold">2. Allgemeine Hinweise und Pflichtinformationen</h2>
-              <h3 className="font-bold">Datenschutz</h3>
-              <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-            </section>
-          </div>
-        } />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen bg-warm-50" />}>
+        <Routes>
+          <Route path="/" element={<HomePage onOpenContact={onOpenContact} />} />
+          <Route path="/leistungen" element={<ServicesPage onOpenContact={onOpenContact} />} />
+          <Route path="/ueber-mich" element={<AboutPage onOpenContact={onOpenContact} />} />
+          <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
+          <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
+          <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
+          <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />
+          <Route path="/impressum" element={<LegalPage title="Impressum" content={
+            <div className="space-y-6">
+              <section>
+                <h2 className="text-xl font-bold">Angaben gemäß § 5 TMG</h2>
+                <p>Christian Stockmeier<br/>Vamela<br/>In der Leiten 10<br/>85410 Haag an der Amper</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">Kontakt</h2>
+                <p>Telefon: +49 176 24200179<br/>E-Mail: kontakt@vamela.info</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">Umsatzsteuer-ID</h2>
+                <p>Steuernummer: 115/278/10061</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">Verantwortlich für den Inhalt</h2>
+                <p>Christian Stockmeier<br/>In der Leiten 10<br/>85410 Haag an der Amper</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">EU-Streitschlichtung</h2>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-sm px-1">https://ec.europa.eu/consumers/odr/</a>.<br/>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+              </section>
+            </div>
+          } />} />
+          <Route path="/agb" element={<LegalPage title="Allgemeine Geschäftsbedingungen" content={
+            <div className="space-y-6">
+              <section>
+                <h2 className="text-xl font-bold">§ 1 Geltungsbereich</h2>
+                <p>Für die Geschäftsbeziehung zwischen dem Anbieter und dem Kunden gelten ausschließlich die nachfolgenden Allgemeinen Geschäftsbedingungen in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">§ 2 Vertragsschluss</h2>
+                <p>Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar.</p>
+              </section>
+            </div>
+          } />} />
+          <Route path="/datenschutz" element={<LegalPage title="Datenschutzerklärung" content={
+            <div className="space-y-6">
+              <section>
+                <h2 className="text-xl font-bold">1. Datenschutz auf einen Blick</h2>
+                <h3 className="font-bold">Allgemeine Hinweise</h3>
+                <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+              </section>
+              <section>
+                <h2 className="text-xl font-bold">2. Allgemeine Hinweise und Pflichtinformationen</h2>
+                <h3 className="font-bold">Datenschutz</h3>
+                <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+              </section>
+            </div>
+          } />} />
+        </Routes>
+      </Suspense>
       <Footer />
       <MobileStickyCTA onOpenContact={onOpenContact} />
     </>
