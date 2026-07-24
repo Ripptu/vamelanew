@@ -34,6 +34,30 @@
   
   --text-h4: clamp(1.25rem, 3vw, 1.875rem);
   --text-h4--line-height: 1.4;
+
+  /* Fluid Tailwind Default Text Sizes */
+  --text-xs: clamp(0.75rem, 0.71rem + 0.2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.83rem + 0.24vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.07rem + 0.27vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.18rem + 0.35vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.39rem + 0.54vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.7rem + 0.89vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.98rem + 1.34vw, 3rem);
+  --text-5xl: clamp(3rem, 2.58rem + 2.08vw, 4rem);
+  --text-6xl: clamp(3.75rem, 3.12rem + 3.15vw, 5rem);
+  --text-7xl: clamp(4.5rem, 3.61rem + 4.46vw, 6rem);
+  
+  /* Fluid Spacing Scale */
+  --spacing-4: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --spacing-6: clamp(1.5rem, 1.39rem + 0.54vw, 1.875rem);
+  --spacing-8: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+  --spacing-10: clamp(2.5rem, 2.3rem + 1vw, 3rem);
+  --spacing-12: clamp(3rem, 2.8rem + 1vw, 4rem);
+  --spacing-16: clamp(4rem, 3.6rem + 2vw, 5rem);
+  --spacing-20: clamp(5rem, 4.4rem + 3vw, 7rem);
+  --spacing-24: clamp(6rem, 5.2rem + 4vw, 9rem);
+  --spacing-32: clamp(8rem, 6.8rem + 6vw, 12rem);
   
   --text-body-lg: 1.25rem;
   --text-body-lg--line-height: 1.6;
@@ -188,5 +212,22 @@ img, video {
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .pb-safe {
     padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+  }
+}
+
+@utility scroll-reveal {
+  animation: scroll-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 25%;
+}
+
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

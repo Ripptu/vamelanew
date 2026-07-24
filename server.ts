@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import path from "path";
@@ -8,6 +9,9 @@ async function startServer() {
   const PORT = 3000;
 
   app.use(express.json());
+  
+  // Radikale Asset-Kompression auf Serverseite
+  app.use(compression());
 
   // API routes FIRST
   app.post("/api/generate", async (req, res) => {
@@ -56,7 +60,19 @@ Wichtige Vorgaben:
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    
+    // Edge-Caching & CDN Delivery Setup
+    app.use(express.static(distPath, {
+      maxAge: '1y',
+      setHeaders: (res, path) => {
+        if (path.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+        } else {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+      }
+    }));
+    
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });

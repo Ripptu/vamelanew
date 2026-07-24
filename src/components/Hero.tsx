@@ -11,6 +11,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+  const [location, setLocation] = useState('Freising');
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,6 +19,24 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Lokales Geo-Targeting
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        if (data.city) {
+          if (data.city === 'Munich' || data.city === 'München') {
+            setLocation('Freising, München & Umgebung');
+          } else if (data.city !== 'Freising') {
+            setLocation(`Freising & ${data.city}`);
+          }
+        }
+      })
+      .catch(() => {
+        // Fallback
+      });
   }, []);
 
   useEffect(() => {
@@ -44,9 +63,12 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         crossOrigin="anonymous"
-        className="absolute inset-0 w-full h-full object-cover z-0 bg-white pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden"
+        className="absolute inset-0 w-full h-full object-cover z-0 bg-white pointer-events-none [&::-webkit-media-controls]:!hidden [&::-webkit-media-controls-start-playback-button]:!hidden opacity-0 transition-opacity duration-1000"
+        onLoadedData={(e) => {
+          e.currentTarget.classList.remove('opacity-0');
+        }}
       >
         <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4#t=0.001" type="video/mp4" />
         Ihr Browser unterstützt kein Video-Tag.
@@ -60,19 +82,18 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="hidden lg:flex absolute left-8 xl:left-12 top-1/2 -translate-y-1/2 flex-col items-center gap-6 z-30"
       >
-        <div className="w-[1px] h-12 bg-slate-600/50"></div>
-        <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="Instagram">
+        <div className="w-[1px] h-12 bg-slate-300"></div>
+        <a href="https://www.instagram.com/vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 transition-colors" aria-label="Instagram">
           <Instagram className="w-5 h-5" />
         </a>
-        <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@vamela.info" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 transition-colors" aria-label="TikTok">
           <TikTokIcon className="w-5 h-5" />
         </a>
-        <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors" aria-label="WhatsApp">
+        <a href="https://wa.me/4917624200179" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 transition-colors" aria-label="WhatsApp">
           <MessageCircle className="w-5 h-5" />
         </a>
-        <div className="w-[1px] h-12 bg-slate-600/50"></div>
+        <div className="w-[1px] h-12 bg-slate-300"></div>
       </motion.div>
-
 
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
         <motion.h1 
@@ -81,7 +102,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 leading-[1.2] md:leading-[1.05] text-slate-950"
         >
-          Dein Webdesigner in Freising.<br/><span className="font-serif italic text-primary font-normal">Sichtbar für Neukunden.</span>
+          Dein Webdesigner für {location}.<br/><span className="font-serif italic text-primary font-normal">Sichtbar für Neukunden.</span>
         </motion.h1>
         
         <motion.p 

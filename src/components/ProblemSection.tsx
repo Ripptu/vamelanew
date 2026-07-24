@@ -20,13 +20,8 @@ export function ProblemSection() {
 
       <div className="grid md:grid-cols-3 gap-6 md:gap-8">
         {/* Card 1 */}
-        <motion.article 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
+        <article 
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow scroll-reveal"
         >
           <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center">
             {/* Dots background */}
@@ -55,16 +50,12 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Professionelle Webseiten kosten oft tausende Euro auf einen Schlag. Ein großes finanzielles Risiko, besonders für wachsende Unternehmen.
           </p>
-        </motion.article>
+        </article>
 
         {/* Card 2 */}
-        <motion.article 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
+        <article 
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow scroll-reveal"
+          style={{ animationDelay: '0.1s' }}
         >
           <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-2">
             {/* Dots background */}
@@ -89,16 +80,12 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Viele Webseiten sehen zwar okay aus, werden aber bei Google und in neuen KI-Suchen (wie ChatGPT) einfach nicht gefunden. Du verlierst wertvolle Neukunden an die Konkurrenz.
           </p>
-        </motion.article>
+        </article>
 
         {/* Card 3 */}
-        <motion.article 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
-          className="bg-white  rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow"
+        <article 
+          className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 transition-shadow scroll-reveal"
+          style={{ animationDelay: '0.2s' }}
         >
           <div className="h-40 md:h-48 bg-warm-100 rounded-2xl mb-6 md:mb-8 border border-slate-200 p-4 relative overflow-hidden flex items-center justify-center gap-4">
             {/* Dots background */}
@@ -123,7 +110,7 @@ export function ProblemSection() {
           <p className="text-slate-600 text-sm leading-relaxed">
             Hosting, Updates, kleine Textänderungen – alles kostet extra Zeit und Geld. Du bist ständig selbst gefragt, anstatt dich auf dein Geschäft zu konzentrieren.
           </p>
-        </motion.article>
+        </article>
       </div>
     </section>
   );

@@ -20,7 +20,12 @@ export default function LenisScroll() {
     let rafId: number;
 
     function raf(time: number) {
-      lenis.raf(time);
+      // Offload React render cycles triggered by scroll to concurrent mode
+      import('react').then(({ startTransition }) => {
+        startTransition(() => {
+          lenis.raf(time);
+        });
+      });
       rafId = requestAnimationFrame(raf);
     }
 

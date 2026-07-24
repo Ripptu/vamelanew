@@ -99,7 +99,14 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             ))}
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-medium border border-emerald-100">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              Noch 2 freie Slots im August
+            </div>
             <motion.button
               onClick={onOpenContact}
               aria-label="Kostenloser Entwurf anfragen"
@@ -111,7 +118,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
                 Kostenloser Entwurf
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </span>
-              <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
+              <div className="absolute inset-0 -translate-x-full  bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
             </motion.button>
             
             <div className="flex lg:hidden items-center gap-4 mr-4 text-slate-800">

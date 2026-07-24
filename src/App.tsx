@@ -15,6 +15,7 @@ import { NichePage } from './components/NichePage';
 import { LogoCloud } from './components/LogoCloud';
 import { ProblemSection } from './components/ProblemSection';
 import { SolutionSection } from './components/SolutionSection';
+import { NicheSection } from './components/NicheSection';
 import { PortfolioSection } from './components/PortfolioSection';
 import { ProcessSection } from './components/ProcessSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -30,6 +31,7 @@ import { LegalPage } from './components/LegalPage';
 const ContactPopup = lazy(() => import('./components/ContactPopup').then(module => ({ default: module.ContactPopup })));
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup').then(module => ({ default: module.ExitIntentPopup })));
 import { MobileStickyCTA } from './components/MobileStickyCTA';
+import PrefetchManager from './components/PrefetchManager';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -187,6 +189,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <LogoCloud />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} limit={3} showLinkToPage={true} />
+        <NicheSection />
         <ProcessSection limit={2} showLinkToPage={true} />
         <div id="referenzen"><PortfolioSection limit={4} showLinkToPage={true} /></div>
         <TestimonialsSection />
@@ -267,6 +270,7 @@ export default function App() {
 
   return (
     <Router>
+      <PrefetchManager />
       <ScrollToTop />
       <div className="relative min-h-screen w-full">
         <AppContent onOpenContact={openPopup} />
