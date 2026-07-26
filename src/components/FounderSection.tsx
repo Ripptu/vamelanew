@@ -20,8 +20,7 @@ export function FounderSection() {
               <img 
                 loading="eager"
                 decoding="async"
-                // @ts-expect-error fetchpriority attribute
-                fetchpriority="high"
+                fetchPriority="high"
                 src="https://i.postimg.cc/cZPmBdCM/4995ad88-01bd-465e-9b20-c3178ee83d1e.png" 
                 alt="Christian" 
                 className="w-full aspect-[4/5] object-cover" 
