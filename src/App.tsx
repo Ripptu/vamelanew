@@ -26,6 +26,7 @@ import { FounderSection } from './components/FounderSection';
 import { ComparisonSection } from './components/ComparisonSection';
 import { PricingSection } from './components/PricingSection';
 import { FreeDraftSection } from './components/FreeDraftSection';
+import { WhyVamelaArticle } from './components/WhyVamelaArticle';
 import { NextStepsSection } from './components/NextStepsSection';
 import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
@@ -196,6 +197,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <div id="referenzen"><PortfolioSection limit={4} showLinkToPage={true} /></div>
         <div id="preise"><PricingSection /></div>
         <TestimonialsSection />
+        <WhyVamelaArticle onOpenContact={onOpenContact} />
         <FreeDraftSection />
         <FooterCTA onOpenContact={onOpenContact} />
       </main>
