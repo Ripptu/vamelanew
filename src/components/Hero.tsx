@@ -10,13 +10,16 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+  // Seeded false rather than from window.innerWidth so the markup is identical
+  // on server and client; the effect below corrects it after mount.
+  const [isMobile, setIsMobile] = useState(false);
   const [location, setLocation] = useState('Freising & Umgebung');
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -73,7 +76,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           loop={!isMobile}
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           crossOrigin="anonymous"
           className="w-full h-full object-cover opacity-65 transition-opacity duration-700"
         >

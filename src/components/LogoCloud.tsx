@@ -19,15 +19,19 @@ export function LogoCloud() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       id="logos" 
+      aria-labelledby="logos-heading"
       className="py-16 bg-transparent overflow-hidden"
     >
-      <div className="relative flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+      <h2 id="logos-heading" className="sr-only">Kunden und Partner</h2>
+      {/* Purely decorative: the same five marks repeated for the marquee, so the
+          images carry no alt text and the strip is hidden from assistive tech. */}
+      <div aria-hidden="true" className="relative flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <div className="animate-marquee flex w-max">
           {/* First Half */}
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`first-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <img src={logo} alt="" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
               </div>
             ))}
           </div>
@@ -35,7 +39,7 @@ export function LogoCloud() {
           <div className="flex items-center">
             {logos.map((logo, i) => (
               <div key={`second-${i}`} className="select-none flex-shrink-0 w-40 flex justify-center">
-                <img src={logo} alt="Logo" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <img src={logo} alt="" loading="lazy" className="h-12 w-auto max-w-[120px] object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
               </div>
             ))}
           </div>

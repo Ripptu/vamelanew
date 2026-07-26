@@ -55,8 +55,9 @@ export function TestimonialsSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-20 md:py-28 bg-transparent px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section aria-labelledby="testimonials-heading" className="py-20 md:py-28 bg-transparent px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="w-full max-w-4xl mx-auto">
+        <h2 id="testimonials-heading" className="sr-only">Was meine Kunden sagen</h2>
         {/* Quote */}
         <div className="relative min-h-[180px] sm:min-h-[140px] md:min-h-[120px] mb-16 md:mb-20 flex items-center justify-center px-4 sm:px-8">
           {testimonials.map((t, i) => (
@@ -92,7 +93,7 @@ export function TestimonialsSection() {
                   ${active === i ? "z-10 scale-110 ring-[#c9974a]" : "hover:scale-105 opacity-90 hover:opacity-100"}
                 `}
               >
-                <img src={t.image} alt={t.name} className="w-full h-full object-cover bg-white" />
+                <img src={t.image} alt={t.name} width="40" height="40" loading="lazy" decoding="async" className="w-full h-full object-cover bg-white" />
               </button>
             ))}
           </div>

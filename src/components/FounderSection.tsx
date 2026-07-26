@@ -22,7 +22,9 @@ export function FounderSection() {
                 decoding="async"
                 fetchPriority="high"
                 src="https://i.postimg.cc/cZPmBdCM/4995ad88-01bd-465e-9b20-c3178ee83d1e.png" 
-                alt="Christian" 
+                width="800"
+                height="1000"
+                alt="Christian Stockmeier, Gründer und Webdesigner bei VAMELA" 
                 className="w-full aspect-[4/5] object-cover" 
                 referrerPolicy="no-referrer" 
               />

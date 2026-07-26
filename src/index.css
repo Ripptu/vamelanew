@@ -1,20 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
-
-@font-face {
-  font-family: 'Instrumentserif';
-  src: url('https://cdn.prod.website-files.com/69a30d3de5292c55dfacc6d2/69a34e1d4c74b9564feb3d51_InstrumentSerif-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
+/* Webfonts are loaded via <link> in index.html, not @import.
+   An @import inside a bundled stylesheet is invisible to the preload scanner
+   and forces a serial chain: HTML -> app CSS -> Google CSS -> woff2. */
 @import "tailwindcss";
 
 @theme {
   /* Typography Scale (9 Levels) */
   --font-sans: "Inter", Arial, sans-serif;
   --font-display: "Instrument Serif", "Inter", sans-serif;
-  --font-serif: "Instrument Serif", "Instrumentserif", Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
   
   --text-display: clamp(3rem, 8vw, 4.5rem);
   --text-display--line-height: 1.1;
