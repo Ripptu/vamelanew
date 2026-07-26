@@ -9,6 +9,16 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+/** Shared by the desktop pill and the mobile overlay. Labels are kept short so
+ *  the desktop pill stays on a single line now that there are five entries. */
+const NAV_ITEMS = [
+  { name: 'Leistungen', href: '/leistungen' },
+  { name: 'Branchen', href: '/branchen' },
+  { name: 'Referenzen', href: '/referenzen' },
+  { name: 'Über mich', href: '/ueber-mich' },
+  { name: 'Strategie-Workshop', href: '/strategie-workshop' },
+];
+
 export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,17 +92,12 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
           </div>
           
           <div className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600 bg-white/90 border border-slate-200/80 rounded-full p-1 absolute left-1/2 -translate-x-1/2 shadow-xs">
-            {[
-              { name: 'Leistungen & Preise', href: '/leistungen' },
-              { name: 'Referenzen', href: '/referenzen' },
-              { name: 'Über mich & Prozess', href: '/ueber-mich' },
-              { name: 'Strategie-Workshop', href: '/strategie-workshop' }
-            ].map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link 
                 key={item.name}
                 to={item.href} 
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-3.5 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none text-xs sm:text-sm"
+                className="px-3.5 py-1.5 rounded-full whitespace-nowrap hover:bg-slate-100 hover:text-slate-900 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none text-xs sm:text-sm"
               >
                 {item.name}
               </Link>
@@ -161,12 +166,7 @@ export function Navbar({ onOpenContact }: { onOpenContact?: () => void }) {
             </div>
             
             <div className="flex-1 flex flex-col justify-center px-8 gap-6">
-              {[
-                { name: 'Leistungen & Preise', href: '/leistungen' },
-                { name: 'Referenzen', href: '/referenzen' },
-                { name: 'Über mich & Prozess', href: '/ueber-mich' },
-                { name: 'Strategie-Workshop', href: '/strategie-workshop' }
-              ].map((item, i) => (
+              {NAV_ITEMS.map((item, i) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}

@@ -1,4 +1,5 @@
 import { CheckCircle2, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { useRef } from 'react';
 
@@ -214,15 +215,15 @@ export function ProcessSection({ limit, showLinkToPage }: { limit?: number, show
             viewport={{ once: true }}
             className="mt-16 md:mt-24 flex justify-center relative z-20"
           >
-            <a
-              href="/ueber-mich"
+            <Link
+              to="/ueber-mich"
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-warm-100/80 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white "
             >
               Gesamten Prozess ansehen
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         )}
       </div>

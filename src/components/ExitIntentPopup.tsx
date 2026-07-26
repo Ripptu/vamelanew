@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Gift } from 'lucide-react';
 
@@ -75,13 +76,13 @@ export function ExitIntentPopup({ onOpenContact }: { onOpenContact: () => void }
             </p>
             
             <div className="flex flex-col gap-3 relative z-10">
-              <a
-                href="/#gratis-entwurf"
+              <Link
+                to="/#gratis-entwurf"
                 onClick={() => setIsVisible(false)}
                 className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-xl font-medium text-base transition-all active:scale-[0.98]"
               >
                 Gratis-Entwurf sichern
-              </a>
+              </Link>
               <button 
                 onClick={() => setIsVisible(false)}
                 className="text-slate-400 hover:text-slate-600 font-medium py-2 text-sm transition-colors focus-visible:ring-2 focus-visible:ring-slate-200 focus-visible:outline-none rounded-lg"

@@ -27,6 +27,8 @@ import { ComparisonSection } from './components/ComparisonSection';
 import { PricingSection } from './components/PricingSection';
 import { FreeDraftSection } from './components/FreeDraftSection';
 import { WhyVamelaArticle } from './components/WhyVamelaArticle';
+import { PageHeader } from './components/PageHeader';
+const BranchenPage = lazy(() => import('./components/BranchenPage').then(m => ({ default: m.BranchenPage })));
 import { NextStepsSection } from './components/NextStepsSection';
 import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
@@ -68,9 +70,10 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
           <Route path="/ueber-mich" element={<AboutPage onOpenContact={onOpenContact} />} />
           <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
           <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
+          <Route path="/branchen" element={<BranchenPage onOpenContact={onOpenContact} />} />
           <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
           <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />
-          <Route path="/impressum" element={<LegalPage title="Impressum" content={
+          <Route path="/impressum" element={<LegalPage title="Impressum" path="/impressum" description="Impressum und Anbieterkennzeichnung von VAMELA Webdesign, Christian Stockmeier, Haag an der Amper." content={
             <div className="space-y-6">
               <section>
                 <h2 className="text-xl font-bold">Angaben gemäß § 5 TMG</h2>
@@ -94,7 +97,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
               </section>
             </div>
           } />} />
-          <Route path="/agb" element={<LegalPage title="Allgemeine Geschäftsbedingungen" content={
+          <Route path="/agb" element={<LegalPage title="Allgemeine Geschäftsbedingungen" path="/agb" description="Allgemeine Geschäftsbedingungen für Webdesign-Leistungen von VAMELA." content={
             <div className="space-y-6">
               <section>
                 <h2 className="text-xl font-bold">§ 1 Geltungsbereich</h2>
@@ -106,7 +109,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
               </section>
             </div>
           } />} />
-          <Route path="/datenschutz" element={<LegalPage title="Datenschutzerklärung" content={
+          <Route path="/datenschutz" element={<LegalPage title="Datenschutzerklärung" path="/datenschutz" description="Informationen zur Verarbeitung personenbezogener Daten auf vamela.info." content={
             <div className="space-y-6">
               <section>
                 <h2 className="text-xl font-bold">1. Datenschutz auf einen Blick</h2>
@@ -143,6 +146,7 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <LogoCloud />
         <ProblemSection />
         <SolutionSection onOpenContact={onOpenContact} limit={3} showLinkToPage={true} />
+        <NicheSection />
         <div id="referenzen"><PortfolioSection limit={4} showLinkToPage={true} /></div>
         <div id="preise"><PricingSection /></div>
         <TestimonialsSection />
@@ -158,10 +162,17 @@ function ServicesPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
-        <title>Leistungen & Preise | VAMELA</title>
-        <meta name="description" content="Meine Webdesign-Leistungen und Preise im Überblick." />
+        <title>Webdesign Leistungen & Preise ab 299 € | VAMELA</title>
+        <meta name="description" content="Webdesign, lokales SEO und Betreuung aus einer Hand – einmalig ab 299 € oder im Abo ab 99 € im Monat. Alle Leistungen und Preise transparent im Überblick." />
+        <link rel="canonical" href="https://vamela.info/leistungen" />
       </Helmet>
       <main>
+        <PageHeader
+          badge="Leistungen & Preise"
+          title="Alles für deinen Auftritt –"
+          titleAccent="aus einer Hand."
+          lead="Von Positionierung über Design und Text bis zu Hosting und Wartung. Transparente Festpreise, keine versteckten Kosten."
+        />
         <SolutionSection onOpenContact={onOpenContact} />
         <ComparisonSection />
         <PricingSection />
@@ -177,10 +188,17 @@ function AboutPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
-        <title>Über mich & Prozess | VAMELA</title>
-        <meta name="description" content="Lerne mich und meinen bewährten Prozess kennen." />
+        <title>Über mich & mein Prozess | VAMELA Webdesign Freising</title>
+        <meta name="description" content="Christian Stockmeier, dein persönlicher Webdesigner aus der Region Freising. So arbeite ich – in fünf klaren Schritten zu deiner neuen Webseite." />
+        <link rel="canonical" href="https://vamela.info/ueber-mich" />
       </Helmet>
       <main>
+        <PageHeader
+          badge="Über mich"
+          title="Ein Ansprechpartner,"
+          titleAccent="kein Agentur-Apparat."
+          lead="Wer dein Projekt umsetzt, wer ans Telefon geht und wer verantwortlich ist, wenn etwas nicht passt: immer dieselbe Person."
+        />
         <FounderSection />
         <ProcessSection />
         <FooterCTA onOpenContact={onOpenContact} />
@@ -193,10 +211,17 @@ function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <div className="min-h-screen bg-warm-50 font-sans text-slate-900 selection:bg-primary/20 selection:text-primary pt-24">
       <Helmet>
-        <title>Referenzen | VAMELA</title>
-        <meta name="description" content="Meine erfolgreichen Webdesign-Projekte." />
+        <title>Referenzen & Kundenprojekte | VAMELA Webdesign</title>
+        <meta name="description" content="Ausgewählte Webdesign-Projekte aus Freising, München und Umgebung – vom Traditionsbiergarten bis zum Facility-Management-Dienstleister." />
+        <link rel="canonical" href="https://vamela.info/referenzen" />
       </Helmet>
       <main>
+        <PageHeader
+          badge="Referenzen"
+          title="Projekte, die"
+          titleAccent="live im Netz stehen."
+          lead="Referenzen, die du dir ansehen kannst, sagen mehr über Verlässlichkeit aus als jedes Versprechen auf einer Startseite."
+        />
         <PortfolioSection />
         <TestimonialsSection />
         <FooterCTA onOpenContact={onOpenContact} />

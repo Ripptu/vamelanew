@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ExternalLink, ArrowRight, ArrowDown } from 'lucide-react';
 import { sanitizeAlt } from '../lib/security';
@@ -227,13 +228,13 @@ export function PortfolioSection({ limit, showLinkToPage }: { limit?: number, sh
             transition={{ duration: 0.5 }}
             className="mt-12 md:mt-16 flex justify-center"
           >
-            <a
-              href="/referenzen"
+            <Link
+              to="/referenzen"
               className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-slate-300 hover:border-slate-900 text-slate-900 font-medium text-sm transition-all hover:bg-slate-900 hover:text-white shadow-xs focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none"
             >
               <span>Alle Referenzen ansehen</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </motion.div>
         ) : PROJECTS.length > (limit || 4) && (
           <motion.div 

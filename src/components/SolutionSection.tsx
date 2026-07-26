@@ -1,4 +1,5 @@
 import { ArrowRight, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOpenContact: () => void, limit?: number, showLinkToPage?: boolean }) {
@@ -220,14 +221,12 @@ export function SolutionSection({ onOpenContact, limit, showLinkToPage }: { onOp
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </motion.button>
         {showLinkToPage && (
-          <motion.a
-            href="/leistungen"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="group bg-white  hover:bg-slate-50/80 text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none w-full sm:w-auto justify-center"
+          <Link
+            to="/leistungen"
+            className="group bg-white hover:bg-slate-50/80 hover:-translate-y-0.5 active:scale-[0.98] text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-medium flex items-center gap-2 transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none w-full sm:w-auto justify-center"
           >
             Alle Leistungen ansehen
-          </motion.a>
+          </Link>
         )}
       </motion.div>
     </section>

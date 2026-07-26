@@ -57,6 +57,16 @@ export function NicheSection() {
             );
           })}
         </div>
+
+        <div className="mt-12 md:mt-16 flex justify-center">
+          <Link
+            to="/branchen"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 hover:border-slate-900 text-slate-900 font-medium transition-all hover:bg-warm-100/80 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900 focus-visible:outline-none bg-white"
+          >
+            Alle {niches.length} Branchen ansehen
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </section>
   );
