@@ -29,6 +29,7 @@ import { FreeDraftSection } from './components/FreeDraftSection';
 import { WhyVamelaArticle } from './components/WhyVamelaArticle';
 import { PageHeader } from './components/PageHeader';
 const BranchenPage = lazy(() => import('./components/BranchenPage').then(m => ({ default: m.BranchenPage })));
+const LocationPage = lazy(() => import('./components/LocationPage').then(m => ({ default: m.LocationPage })));
 import { NextStepsSection } from './components/NextStepsSection';
 import { FAQSection } from './components/FAQSection';
 import { FooterCTA } from './components/FooterCTA';
@@ -70,6 +71,7 @@ function AppContent({ onOpenContact }: { onOpenContact: () => void }) {
           <Route path="/ueber-mich" element={<AboutPage onOpenContact={onOpenContact} />} />
           <Route path="/referenzen" element={<PortfolioPage onOpenContact={onOpenContact} />} />
           <Route path="/strategie-workshop" element={<StrategyWorkshopPage onOpenContact={onOpenContact} />} />
+          <Route path="/webdesign/:stadt" element={<LocationPage onOpenContact={onOpenContact} />} />
           <Route path="/branchen" element={<BranchenPage onOpenContact={onOpenContact} />} />
           <Route path="/branchen/facility-management" element={<FacilityManagementPage onOpenContact={onOpenContact} />} />
           <Route path="/branchen/:slug" element={<NichePage onOpenContact={onOpenContact} />} />

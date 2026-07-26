@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MessageCircle, Instagram, ArrowUp } from 'lucide-react';
 import { niches } from '../data/niches';
+import { locations } from '../data/locations';
 import { FlowersContainer } from './Flowers';
 
 export const TikTokIcon = ({ className }: { className?: string }) => (
@@ -34,6 +35,19 @@ export function Footer() {
             </div>
             
             <div className="lg:pl-8 lg:border-l border-border">
+              <h3 className="text-lg font-bold text-foreground mb-6">Webdesign nach Standort</h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-3 mb-10">
+                {locations.map((location) => (
+                  <Link
+                    key={location.slug}
+                    to={`/webdesign/${location.slug}`}
+                    className="text-sm text-body hover:text-primary transition-colors"
+                  >
+                    Webdesign {location.city}
+                  </Link>
+                ))}
+              </div>
+
               <h3 className="text-lg font-bold text-foreground mb-6">Lokales Webdesign & AEO</h3>
               <p className="text-sm text-body leading-relaxed mb-4">
                 Als lokaler <strong>Webdesigner in Freising</strong> und der Region München bin ich darauf spezialisiert, Webseiten zu erstellen, die nicht nur hervorragend aussehen, sondern auch bei Google auf Platz 1 ranken und in KI-Suchmaschinen (AEO) wie ChatGPT oder Perplexity gefunden werden. 

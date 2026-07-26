@@ -1,4 +1,5 @@
 import { niches } from './data/niches';
+import { locations } from './data/locations';
 
 /**
  * Single source of truth for every crawlable URL on the site.
@@ -42,9 +43,17 @@ export const nicheRoutes: RouteDef[] = niches.map((niche) => ({
   priority: 0.7,
 }));
 
+/** Local landing pages — the primary target for "Webdesign <Stadt>" queries. */
+export const locationRoutes: RouteDef[] = locations.map((location) => ({
+  path: `/webdesign/${location.slug}`,
+  changefreq: 'monthly',
+  priority: 0.9,
+}));
+
 /** Every route that should be prerendered and listed in the sitemap. */
 export const allRoutes: RouteDef[] = [
   ...staticRoutes,
+  ...locationRoutes,
   ...nicheRoutes,
   ...legalRoutes,
 ];
