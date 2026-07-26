@@ -20,18 +20,32 @@ export function NichePage({ onOpenContact }: { onOpenContact?: () => void }) {
     return <Navigate to="/" replace />;
   }
 
+  const pageUrl = `https://vamela.info/branchen/${niche.slug}`;
+
+  // Referenced by @id so this Service resolves against the single Organization
+  // node declared in index.html rather than creating a competing entity.
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Webdesign für ${niche.name}`,
-    "provider": {
-      "@type": "Organization",
-      "name": "VAMELA",
-      "url": "https://vamela.info"
-    },
-    "description": niche.schemaDescription,
-    "serviceType": "WebDesign",
-    "areaServed": "DE"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        "name": `Webdesign für ${niche.name}`,
+        "provider": { "@id": "https://vamela.info/#organization" },
+        "description": niche.schemaDescription,
+        "serviceType": "Webdesign",
+        "areaServed": { "@type": "Country", "name": "Deutschland" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        "mainEntity": niche.faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }
+    ]
   };
 
   const Icon = niche.icon;

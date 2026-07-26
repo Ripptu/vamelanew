@@ -12,18 +12,30 @@ export function FacilityManagementPage({ onOpenContact }: { onOpenContact?: () =
 
   const facilityNiche = niches.find(n => n.slug === 'facility-management')!;
 
+  const pageUrl = 'https://vamela.info/branchen/facility-management';
+
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Webdesign für Facility Management & Hausmeisterservices",
-    "provider": {
-      "@type": "Organization",
-      "name": "VAMELA",
-      "url": "https://vamela.info"
-    },
-    "description": "Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices.",
-    "serviceType": "WebDesign",
-    "areaServed": "DE"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        "name": "Webdesign für Facility Management & Hausmeisterservices",
+        "provider": { "@id": "https://vamela.info/#organization" },
+        "description": "Professionelles Webdesign, SEO und Logo-Erstellung speziell für Facility Management Unternehmen, Gebäudedienstleister und Hausmeisterservices.",
+        "serviceType": "Webdesign",
+        "areaServed": { "@type": "Country", "name": "Deutschland" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        "mainEntity": facilityNiche.faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }
+    ]
   };
 
   return (

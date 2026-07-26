@@ -137,57 +137,6 @@ function HomePage({ onOpenContact }: { onOpenContact: () => void }) {
         <title>Webdesigner in der Nähe & ganz Deutschland | VAMELA</title>
         <meta name="description" content="Professioneller Webdesigner für Selbstständige & kleine Unternehmen. Webseiten, die bei Google & KI auf Platz 1 stehen und Neukunden bringen." />
         <link rel="canonical" href="https://vamela.info/" />
-        <script type="application/ld+json">
-
-          {`
-
-            {
-
-              "@context": "https://schema.org",
-
-              "@type": "LocalBusiness",
-
-              "name": "Vamela Webdesign",
-
-              "image": "https://i.postimg.cc/Lm8nq1Sf/Logo-weiss.png",
-
-              "description": "Professionelles Webdesign und KI-optimierte Websites für Selbstständige und kleine Unternehmen in Freising, München und deutschlandweit.",
-
-              "address": {
-
-                "@type": "PostalAddress",
-
-                "streetAddress": "In der Leiten 10",
-
-                "addressLocality": "Haag an der Amper",
-
-                "postalCode": "85410",
-
-                "addressCountry": "DE"
-
-              },
-
-              "geo": {
-
-                "@type": "GeoCoordinates",
-
-                "latitude": 48.4578,
-
-                "longitude": 11.8262
-
-              },
-
-              "url": "https://vamela.info",
-
-              "telephone": "+4917624200179",
-
-              "priceRange": "€€"
-
-            }
-
-          `}
-
-        </script>
       </Helmet>
       <main>
         <div id="home"><Hero onOpenContact={onOpenContact} /></div>
