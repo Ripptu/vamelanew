@@ -1,0 +1,87 @@
+/*
+ * MNTN — scoped design tokens.
+ *
+ * Note: the Playfair Display webfont is injected as a plain <link> from
+ * MntnPage.tsx rather than @import-ed here. An @import inside this file ends up
+ * in the code-split CSS chunk, and the browser will not fire `load` on that
+ * chunk's stylesheet until the imported font sheet settles — which stalls the
+ * lazy route behind a third-party request. Inter already ships globally.
+ *
+ * Everything lives under `.mntn` so this reconstruction never leaks into the
+ * rest of the app's theme. Tailwind utilities in the components read these via
+ * arbitrary values, e.g. `bg-[var(--mntn-bg)]`.
+ */
+.mntn {
+  /* Surfaces */
+  --mntn-bg: #0b1d26;
+  --mntn-bg-elevated: #0e242f;
+  --mntn-overlay: rgba(11, 29, 38, 0.55);
+
+  /* Accent */
+  --mntn-accent: #fbd784;
+  --mntn-accent-strong: #ffe6a8;
+
+  /* Text */
+  --mntn-text: #ffffff;
+  --mntn-text-muted: rgba(255, 255, 255, 0.78);
+  --mntn-text-subtle: rgba(255, 255, 255, 0.5);
+
+  /* Lines & ghost numerals */
+  --mntn-border: rgba(255, 255, 255, 0.16);
+  --mntn-ghost: rgba(255, 255, 255, 0.06);
+
+  /* Type */
+  --mntn-font-display: 'Playfair Display', 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --mntn-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  font-family: var(--mntn-font-sans);
+  background-color: var(--mntn-bg);
+  color: var(--mntn-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mntn-display {
+  font-family: var(--mntn-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Eyebrow label: 0.3em tracking is the signature of this design. */
+.mntn-eyebrow {
+  font-family: var(--mntn-font-sans);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Oversized watermark numeral sitting behind each section heading. */
+.mntn-ghost-number {
+  font-family: var(--mntn-font-display);
+  font-weight: 700;
+  color: var(--mntn-ghost);
+  line-height: 0.8;
+  user-select: none;
+}
+
+/* Consistent, always-visible keyboard affordance across the page. */
+.mntn :focus-visible {
+  outline: 2px solid var(--mntn-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* The hero headline reads best with generous leading at every breakpoint. */
+.mntn-hero-title {
+  line-height: 1.24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mntn *,
+  .mntn *::before,
+  .mntn *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

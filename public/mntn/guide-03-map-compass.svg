@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Hand hält einen Kompass über einem grünen Bergrücken unter Wolken">
+  <defs>
+    <linearGradient id="g3-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4E86AE"/>
+      <stop offset="0.5" stop-color="#8FB4C9"/>
+      <stop offset="1" stop-color="#CFDCDA"/>
+    </linearGradient>
+    <linearGradient id="g3-ridge" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#7EA85B"/>
+      <stop offset="0.55" stop-color="#4C7A3B"/>
+      <stop offset="1" stop-color="#22401E"/>
+    </linearGradient>
+    <linearGradient id="g3-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9FB4B4"/>
+      <stop offset="1" stop-color="#71898B"/>
+    </linearGradient>
+    <linearGradient id="g3-sleeve" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5D6A6C"/>
+      <stop offset="1" stop-color="#333D3F"/>
+    </linearGradient>
+    <radialGradient id="g3-dial" cx="0.38" cy="0.32" r="0.8">
+      <stop offset="0" stop-color="#3C4A50"/>
+      <stop offset="1" stop-color="#131A1E"/>
+    </radialGradient>
+    <linearGradient id="g3-vig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1D26" stop-opacity="0.10"/>
+      <stop offset="0.5" stop-color="#0B1D26" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0B1D26" stop-opacity="0.34"/>
+    </linearGradient>
+    <filter id="g3-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="g3-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#g3-sky)"/>
+
+  <!-- cumulus bank -->
+  <g filter="url(#g3-soft)">
+    <ellipse cx="180" cy="300" rx="230" ry="98" fill="#FFFFFF" opacity="0.94"/>
+    <ellipse cx="420" cy="250" rx="270" ry="110" fill="#FFFFFF" opacity="0.9"/>
+    <ellipse cx="700" cy="316" rx="250" ry="92" fill="#F4F8F8" opacity="0.88"/>
+    <ellipse cx="450" cy="404" rx="520" ry="60" fill="#E4EDEC" opacity="0.8"/>
+  </g>
+
+  <!-- distant hazy range -->
+  <path d="M0 596 L170 536 L340 586 L520 522 L700 590 L900 540 L900 760 L0 760 Z" fill="url(#g3-far)"/>
+
+  <!-- broad green ridge -->
+  <path d="M-20 1200 L-20 800 C 180 706 400 660 620 690 C 760 710 850 764 920 830 L920 1200 Z" fill="url(#g3-ridge)"/>
+  <path d="M-20 1200 L-20 950 C 200 884 440 858 660 890 C 790 910 870 950 920 986 L920 1200 Z" fill="#2A4A24" opacity="0.72"/>
+
+  <!-- forearm + hand holding compass -->
+  <path d="M900 1200 L900 1000 L640 900 L470 860 L430 940 L620 1020 L800 1200 Z" fill="url(#g3-sleeve)"/>
+  <path d="M470 858 C 405 846 356 866 344 906 C 332 950 366 986 420 992 L520 996 L560 906 Z" fill="#D8AE8C"/>
+  <path d="M352 942 C 372 968 410 980 448 972 L452 934 Z" fill="#C4977A"/>
+
+  <!-- compass -->
+  <g transform="translate(432 916)">
+    <circle r="112" fill="#0E1518"/>
+    <circle r="104" fill="url(#g3-dial)"/>
+    <circle r="86" fill="none" stroke="#8E9BA0" stroke-width="2" opacity="0.55"/>
+    <circle r="70" fill="#0B1114"/>
+    <g stroke="#C8D2D4" stroke-width="3" stroke-linecap="round" opacity="0.8">
+      <line x1="0" y1="-96" x2="0" y2="-80"/>
+      <line x1="0" y1="96" x2="0" y2="80"/>
+      <line x1="-96" y1="0" x2="-80" y2="0"/>
+      <line x1="96" y1="0" x2="80" y2="0"/>
+    </g>
+    <path d="M0 -58 L14 0 L0 58 L-14 0 Z" fill="#E24B35"/>
+    <path d="M0 58 L14 0 L0 -58 L-14 0 Z" fill="#EDF1F0" opacity="0.9" transform="rotate(180)"/>
+    <circle r="8" fill="#C8D2D4"/>
+  </g>
+
+  <rect width="900" height="1200" fill="url(#g3-vig)"/>
+  <rect width="900" height="1200" filter="url(#g3-grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

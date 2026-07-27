@@ -14,6 +14,8 @@ const StrategyWorkshopPage = lazy(() => import('./components/StrategyWorkshopPag
 const FacilityManagementPage = lazy(() => import('./components/FacilityManagementPage').then(m => ({ default: m.FacilityManagementPage })));
 const NichePage = lazy(() => import('./components/NichePage').then(m => ({ default: m.NichePage })));
 const LegalPage = lazy(() => import('./components/LegalPage').then(m => ({ default: m.LegalPage })));
+// Standalone design reconstruction — renders without the VAMELA shell.
+const MntnPage = lazy(() => import('./components/mntn/MntnPage'));
 
 import { LogoCloud } from './components/LogoCloud';
 import { ProblemSection } from './components/ProblemSection';
@@ -283,12 +285,45 @@ export default function App() {
       <Router>
         <PrefetchManager />
         <ScrollToTop />
-        <div className="relative min-h-screen w-full">
-          <AppContent onOpenContact={openPopup} />
-          <Suspense fallback={null}><ContactPopup isOpen={isPopupOpen} onClose={closePopup} /></Suspense>
-          <Suspense fallback={null}><ExitIntentPopup onOpenContact={openPopup} /></Suspense>
-        </div>
+        <RootShell
+          isPopupOpen={isPopupOpen}
+          onOpenContact={openPopup}
+          onClosePopup={closePopup}
+        />
       </Router>
     </MotionConfig>
+  );
+}
+
+/**
+ * Chooses the page shell. Standalone pages such as `/mntn` bring their own
+ * header, footer and theme, so they bypass the VAMELA navigation and the
+ * contact/exit-intent popups entirely.
+ */
+function RootShell({
+  isPopupOpen,
+  onOpenContact,
+  onClosePopup,
+}: {
+  isPopupOpen: boolean;
+  onOpenContact: () => void;
+  onClosePopup: () => void;
+}) {
+  const { pathname } = useLocation();
+
+  if (pathname === '/mntn') {
+    return (
+      <Suspense fallback={<div className="min-h-screen w-full bg-[#0b1d26]" />}>
+        <MntnPage />
+      </Suspense>
+    );
+  }
+
+  return (
+    <div className="relative min-h-screen w-full">
+      <AppContent onOpenContact={onOpenContact} />
+      <Suspense fallback={null}><ContactPopup isOpen={isPopupOpen} onClose={onClosePopup} /></Suspense>
+      <Suspense fallback={null}><ExitIntentPopup onOpenContact={onOpenContact} /></Suspense>
+    </div>
   );
 }
