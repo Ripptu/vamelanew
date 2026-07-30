@@ -11,6 +11,16 @@ export default defineConfig(({mode}) => {
       'process.env.GEMINI_API_KEY': JSON.stringify(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY),
     },
     base: '/',
+    build: {
+      rollupOptions: {
+        input: {
+          // Bestehende Vamela-Seite
+          main: path.resolve(__dirname, 'index.html'),
+          // Entwurf Entruempelungs-Website, erreichbar unter /entruempelung.html
+          entruempelung: path.resolve(__dirname, 'entruempelung.html'),
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

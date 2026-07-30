@@ -1,0 +1,87 @@
+/*
+ * Hartinger Entruempelung - Design-Token-Layer
+ * Basis: Notion-Design-Analyse (DESIGN.md). Adaption fuer einen lokalen
+ * Dienstleister: Navy-Band als Marken-Grund, ein einziger Akzent (Purple),
+ * 8px-Buttons / 12px-Cards. Kein zweiter Akzent auf der ganzen Seite.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Notion Sans ist nicht oeffentlich lizenziert. Die Vorlage nennt sie
+     "Inter-based" - wir nutzen daher Inter mit der Fallback-Kette. */
+  --font-sans: 'Inter', -apple-system, system-ui, 'Segoe UI', Helvetica, sans-serif;
+
+  /* Marke */
+  --color-primary: #5645d4;
+  --color-primary-pressed: #4534b3;
+  --color-navy: #0a1530;
+  --color-navy-deep: #070f24;
+  --color-navy-mid: #1a2a52;
+
+  /* Flaechen */
+  --color-canvas: #ffffff;
+  --color-surface: #f6f5f4;
+  --color-hairline: #e5e3df;
+  --color-hairline-strong: #c8c4be;
+
+  /* Text */
+  --color-ink: #1a1a1a;
+  --color-charcoal: #37352f;
+  --color-slate: #5d5b54;
+  --color-steel: #787671;
+  --color-stone: #a4a097;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #a4a097;
+
+  /* Radien: Buttons 8px, Cards 12px. Eine Skala, keine Ausnahmen. */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-mockup: 0 24px 48px -8px rgb(15 15 15 / 0.45);
+}
+
+/*
+ * Semantische Flaechen-Tokens. Das Hero-Band bleibt in beiden Modi navy,
+ * die hellen Sektionen darunter kippen ueber prefers-color-scheme.
+ */
+@layer base {
+  :root {
+    --page: #ffffff;
+    --page-fg: #1a1a1a;
+    --page-muted: #5d5b54;
+    --page-line: #e5e3df;
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0d1220;
+      --page-fg: #f3f2f0;
+      --page-muted: #a8a6a1;
+      --page-line: #232b3d;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--page);
+    color: var(--page-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Sichtbarer Fokus ueberall, auch auf dem dunklen Band. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-navy :focus-visible {
+    outline-color: #ffffff;
+  }
+}
