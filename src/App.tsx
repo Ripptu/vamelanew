@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { MotionConfig } from 'motion/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -234,10 +234,12 @@ function PortfolioPage({ onOpenContact }: { onOpenContact: () => void }) {
 
 export default function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+  // Seeded false so prerendered and hydrated markup agree; corrected on mount.
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -256,17 +258,17 @@ export default function App() {
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
 
+  // The router is supplied by the entry point (BrowserRouter in the browser,
+  // StaticRouter during prerender), so App itself stays renderable on the server.
   return (
     <MotionConfig reducedMotion={isMobile ? "always" : "user"}>
-      <Router>
-        <PrefetchManager />
-        <ScrollToTop />
-        <div className="relative min-h-screen w-full">
-          <AppContent onOpenContact={openPopup} />
-          <Suspense fallback={null}><ContactPopup isOpen={isPopupOpen} onClose={closePopup} /></Suspense>
-          <Suspense fallback={null}><ExitIntentPopup onOpenContact={openPopup} /></Suspense>
-        </div>
-      </Router>
+      <PrefetchManager />
+      <ScrollToTop />
+      <div className="relative min-h-screen w-full">
+        <AppContent onOpenContact={openPopup} />
+        <Suspense fallback={null}><ContactPopup isOpen={isPopupOpen} onClose={closePopup} /></Suspense>
+        <Suspense fallback={null}><ExitIntentPopup onOpenContact={openPopup} /></Suspense>
+      </div>
     </MotionConfig>
   );
 }
